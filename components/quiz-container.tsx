@@ -141,12 +141,10 @@ export default function QuizContainer() {
   const handleNavigateToQuestion = (index: number) => {
     // Only allow navigation to answered questions
     const questionId = questions[index]?.id;
-    const isQuestionAnswered = userAnswers.some(
-      (a) => a.questionId === questionId,
-    );
-    if (isQuestionAnswered) {
+    const previousAnswer = userAnswers.find((a) => a.questionId === questionId);
+    if (previousAnswer) {
       setCurrentIndex(index);
-      setSelectedOption(null);
+      setSelectedOption(previousAnswer.selectedOptionId);
       setState("revealed");
     }
   };

@@ -18,6 +18,11 @@ export default function ChapterSelect({ onSelectChapter }: ChapterSelectProps) {
       description: "Assembly Language Fundamentals",
     },
     {
+      id: "Chapter 4",
+      label: "Chapter 4",
+      description: "Data Transfers, Addressing, and Arithmetic",
+    },
+    {
       id: null,
       label: "All Chapters",
       description: "All questions from every chapter",
