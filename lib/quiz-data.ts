@@ -1880,7 +1880,7 @@ const cpe301Chapter1: Question[] = [
       { id: "c", text: "The number is positive" },
       { id: "d", text: "The number is zero" },
     ],
-    correctOptionId: "b",
+    correctOptionId: "a",
   },
   {
     id: "cpe301-155",
