@@ -23,14 +23,14 @@ export const csc311InfoSystemsCourse: Course = {
       description:
         "Concept of Organizing Data and Information - Covers data hierarchy, entities/attributes/keys, traditional vs database approach, database models (hierarchical, network, relational), SQL and its categories (DDL, DML, DCL, TCL), schemas/subschemas, data dictionary, distributed databases, data warehousing, data mining, OLAP, ODBC, and ORDBMS.",
     },
-    {
-      id: "Chapter 3",
-      label: "Module 3 Lecture 3",
-      description:
-        "Fundamentals of web design including design principles, website evolution, design processes, usability, accessibility, and introduction to HTML5 and CSS basics.",
-    },
+    // {
+    //   id: "Chapter 3",
+    //   label: "Module 3 Lecture 3",
+    //   description:
+    //     "Fundamentals of web design including design principles, website evolution, design processes, usability, accessibility, and introduction to HTML5 and CSS basics.",
+    // },
   ],
   getQuestions: (): Question[] => {
-    return [...chapter1, ...chapter2, ...chapter3];
+    return [...chapter1, ...chapter2];
   },
 };
