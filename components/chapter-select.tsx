@@ -137,7 +137,7 @@ export default function ChapterSelect({
             </div>
           </button>
         </div>
-        
+
         <p className="text-center mt-auto pt-8 text-slate-400 text-sm">
           Crafted by Cipher 💻 ❤️
         </p>
