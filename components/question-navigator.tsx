@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { cn } from "@/lib/utils";
 import { ChevronUp, ChevronDown } from "lucide-react";
 
@@ -27,6 +27,17 @@ export default function QuestionNavigator({
 }: QuestionNavigatorProps) {
   const [isExpanded, setIsExpanded] = useState(false);
 
+  // Prevent body scroll when expanded on mobile
+  useEffect(() => {
+    if (isExpanded) {
+      const originalStyle = window.getComputedStyle(document.body).overflow;
+      document.body.style.overflow = "hidden";
+      return () => {
+        document.body.style.overflow = originalStyle;
+      };
+    }
+  }, [isExpanded]);
+
   const getAnswerStatus = (index: number) => {
     const questionId = questionIds[index];
     const answer = userAnswers.find((a) => a.questionId === questionId);
@@ -43,7 +54,14 @@ export default function QuestionNavigator({
   const correctCount = userAnswers.filter((a) => a.isCorrect).length;
 
   return (
-    <div className="fixed bottom-0 left-0 right-0 bg-slate-900/95 backdrop-blur-sm border-t border-slate-700 z-50">
+    <div 
+      className="fixed bottom-0 left-0 right-0 bg-slate-900/95 backdrop-blur-sm border-t border-slate-700 z-50"
+      style={{ 
+        paddingBottom: 'max(env(safe-area-inset-bottom, 0), 0px)',
+        WebkitBackfaceVisibility: 'hidden',
+        backfaceVisibility: 'hidden',
+      }}
+    >
       {/* Collapsed view - always visible */}
       <div className="px-4 py-2">
         <div className="max-w-2xl mx-auto flex items-center justify-between">
@@ -68,8 +86,16 @@ export default function QuestionNavigator({
             </span>
           </div>
           <button
-            onClick={() => setIsExpanded(!isExpanded)}
+            onClick={(e) => {
+              e.preventDefault();
+              e.stopPropagation();
+              setIsExpanded(!isExpanded);
+            }}
+            onTouchStart={(e) => {
+              e.stopPropagation();
+            }}
             className="flex items-center gap-1 text-sm text-blue-400 hover:text-blue-300 transition-colors"
+            style={{ touchAction: 'manipulation' }}
           >
             {isExpanded ? (
               <>
@@ -86,9 +112,20 @@ export default function QuestionNavigator({
 
       {/* Expanded view - question grid */}
       {isExpanded && (
-        <div className="px-4 pb-3 border-t border-slate-700/50">
+        <div 
+          className="px-4 pb-3 border-t border-slate-700/50"
+          onTouchStart={(e) => e.stopPropagation()}
+          onTouchMove={(e) => e.stopPropagation()}
+        >
           <div className="max-w-2xl mx-auto pt-3">
-            <div className="max-h-32 overflow-y-auto">
+            <div 
+              className="max-h-32 overflow-y-auto overscroll-contain"
+              style={{ 
+                WebkitOverflowScrolling: 'touch',
+                touchAction: 'pan-y',
+                overscrollBehavior: 'contain'
+              }}
+            >
               <div className="flex flex-wrap justify-center gap-1.5">
                 {Array.from({ length: totalQuestions }, (_, index) => {
                   const answered = isAnswered(index);
@@ -98,22 +135,34 @@ export default function QuestionNavigator({
                   return (
                     <button
                       key={index}
-                      onClick={() => answered && onNavigate(index)}
+                      onClick={(e) => {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        if (answered) {
+                          onNavigate(index);
+                          setIsExpanded(false);
+                        }
+                      }}
+                      onTouchStart={(e) => {
+                        e.stopPropagation();
+                      }}
                       disabled={!answered}
                       className={cn(
-                        "relative w-7 h-7 rounded text-xs font-medium transition-all duration-200",
+                        "relative w-8 h-8 sm:w-7 sm:h-7 rounded text-xs font-medium transition-all duration-200",
                         "flex items-center justify-center",
+                        "active:scale-95",
                         isCurrent && "ring-2 ring-blue-500",
                         answered &&
                           status === true &&
-                          "bg-green-600 text-white hover:bg-green-500 cursor-pointer",
+                          "bg-green-600 text-white hover:bg-green-500 active:bg-green-500 cursor-pointer",
                         answered &&
                           status === false &&
-                          "bg-red-600 text-white hover:bg-red-500 cursor-pointer",
+                          "bg-red-600 text-white hover:bg-red-500 active:bg-red-500 cursor-pointer",
                         !answered &&
                           "bg-slate-700 text-slate-400 cursor-not-allowed",
                         isCurrent && !answered && "bg-blue-600 text-white",
                       )}
+                      style={{ touchAction: 'manipulation' }}
                       title={
                         answered
                           ? `Question ${index + 1} - ${status ? "Correct" : "Incorrect"}`
