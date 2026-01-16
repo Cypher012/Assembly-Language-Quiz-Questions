@@ -151,7 +151,7 @@ export const csc307Chapter1Questions: CSC307QuestionBank = [
         blankAtLevel: 4,
       },
       {
-        text: "deliberate, interruptible, reversible, and repeatable",
+        text: "deliberate, interruptible, reversible and repeatable",
         type: "content",
         blankAtLevel: 2,
       },
