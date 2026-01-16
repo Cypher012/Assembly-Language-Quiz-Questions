@@ -64,7 +64,8 @@ export default function CSC307QuizContainer({
   // Load questions on mount
   useEffect(() => {
     const allQuestions = getCSC307Questions();
-    setQuestions(shuffleArray(allQuestions));
+    // setQuestions(shuffleArray(allQuestions));
+    setQuestions(allQuestions);
   }, []);
 
   // Warn user before leaving during active quiz
