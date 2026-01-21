@@ -1,8 +1,13 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { type Question } from "@/lib/quiz-types";
-import { courses, getCourseById, filterByChapter, Course } from "@/lib/courses";
+import {
+  getEnabledCourses,
+  getCourseById,
+  filterByChapter,
+  Course,
+} from "@/lib/courses";
 import QuestionCard from "./question-card";
 import ProgressHeader from "./progress-header";
 import ResultSummary from "./result-summary";
@@ -34,6 +39,7 @@ export default function QuizContainer() {
   const [selectedChapter, setSelectedChapter] = useState<
     string | null | undefined
   >(undefined);
+  const [enabledCourses, setEnabledCourses] = useState<Course[]>([]);
 
   // Quiz state
   const [questions, setQuestions] = useState<Question[]>([]);
@@ -43,6 +49,16 @@ export default function QuizContainer() {
   const [selectedOption, setSelectedOption] = useState<string | null>(null);
   const [userAnswers, setUserAnswers] = useState<UserAnswer[]>([]);
   const [score, setScore] = useState(0);
+
+  // Load enabled courses on mount
+  useEffect(() => {
+    setEnabledCourses(getEnabledCourses());
+  }, []);
+
+  // Refresh enabled courses when settings change
+  const handleSettingsChange = useCallback(() => {
+    setEnabledCourses(getEnabledCourses());
+  }, []);
 
   const handleSelectCourse = (courseId: string) => {
     const course = getCourseById(courseId);
@@ -173,7 +189,11 @@ export default function QuizContainer() {
   // Show course selection if no course selected yet
   if (!selectedCourse) {
     return (
-      <CourseSelect courses={courses} onSelectCourse={handleSelectCourse} />
+      <CourseSelect
+        courses={enabledCourses}
+        onSelectCourse={handleSelectCourse}
+        onSettingsChange={handleSettingsChange}
+      />
     );
   }
 

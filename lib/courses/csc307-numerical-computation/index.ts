@@ -108,10 +108,21 @@ export function countAnchors(question: CSC307Question): number {
   return question.tokens.filter((t) => t.type === "anchor").length;
 }
 
-// Helper: Check if answer matches (case-insensitive, trim whitespace)
+// Helper: Normalize text for comparison
+// Removes hyphens, extra commas, and normalizes whitespace
+function normalizeText(text: string): string {
+  return text
+    .toLowerCase()
+    .trim()
+    .replace(/-/g, " ") // Replace hyphens with spaces
+    .replace(/,/g, "") // Remove commas
+    .replace(/\s+/g, " "); // Normalize multiple spaces to single space
+}
+
+// Helper: Check if answer matches (case-insensitive, flexible punctuation)
 export function checkAnswer(expected: string, userAnswer: string): boolean {
-  const normalizedExpected = expected.toLowerCase().trim();
-  const normalizedAnswer = userAnswer.toLowerCase().trim();
+  const normalizedExpected = normalizeText(expected);
+  const normalizedAnswer = normalizeText(userAnswer);
   return normalizedExpected === normalizedAnswer;
 }
 

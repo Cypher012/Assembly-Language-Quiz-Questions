@@ -54,12 +54,12 @@ export default function QuestionNavigator({
   const correctCount = userAnswers.filter((a) => a.isCorrect).length;
 
   return (
-    <div 
+    <div
       className="fixed bottom-0 left-0 right-0 bg-slate-900/95 backdrop-blur-sm border-t border-slate-700 z-50"
-      style={{ 
-        paddingBottom: 'max(env(safe-area-inset-bottom, 0), 0px)',
-        WebkitBackfaceVisibility: 'hidden',
-        backfaceVisibility: 'hidden',
+      style={{
+        paddingBottom: "max(env(safe-area-inset-bottom, 0), 0px)",
+        WebkitBackfaceVisibility: "hidden",
+        backfaceVisibility: "hidden",
       }}
     >
       {/* Collapsed view - always visible */}
@@ -95,7 +95,7 @@ export default function QuestionNavigator({
               e.stopPropagation();
             }}
             className="flex items-center gap-1 text-sm text-blue-400 hover:text-blue-300 transition-colors"
-            style={{ touchAction: 'manipulation' }}
+            style={{ touchAction: "manipulation" }}
           >
             {isExpanded ? (
               <>
@@ -112,18 +112,18 @@ export default function QuestionNavigator({
 
       {/* Expanded view - question grid */}
       {isExpanded && (
-        <div 
+        <div
           className="px-4 pb-3 border-t border-slate-700/50"
           onTouchStart={(e) => e.stopPropagation()}
           onTouchMove={(e) => e.stopPropagation()}
         >
           <div className="max-w-2xl mx-auto pt-3">
-            <div 
+            <div
               className="max-h-32 overflow-y-auto overscroll-contain"
-              style={{ 
-                WebkitOverflowScrolling: 'touch',
-                touchAction: 'pan-y',
-                overscrollBehavior: 'contain'
+              style={{
+                WebkitOverflowScrolling: "touch",
+                touchAction: "pan-y",
+                overscrollBehavior: "contain",
               }}
             >
               <div className="flex flex-wrap justify-center gap-1.5">
@@ -162,7 +162,7 @@ export default function QuestionNavigator({
                           "bg-slate-700 text-slate-400 cursor-not-allowed",
                         isCurrent && !answered && "bg-blue-600 text-white",
                       )}
-                      style={{ touchAction: 'manipulation' }}
+                      style={{ touchAction: "manipulation" }}
                       title={
                         answered
                           ? `Question ${index + 1} - ${status ? "Correct" : "Incorrect"}`

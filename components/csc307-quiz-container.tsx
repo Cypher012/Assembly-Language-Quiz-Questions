@@ -18,6 +18,8 @@ import {
 } from "@/lib/courses/csc307-numerical-computation";
 import {
   ChevronLeft,
+  ChevronUp,
+  ChevronDown,
   BookOpen,
   GraduationCap,
   Target,
@@ -60,6 +62,7 @@ export default function CSC307QuizContainer({
   const [currentLevel, setCurrentLevel] = useState<MasteryLevel>(1);
   const [scores, setScores] = useState<QuestionScore[]>([]);
   const [isComplete, setIsComplete] = useState(false);
+  const [isNavigatorExpanded, setIsNavigatorExpanded] = useState(false);
 
   // Load questions on mount
   useEffect(() => {
@@ -83,6 +86,17 @@ export default function CSC307QuizContainer({
     window.addEventListener("beforeunload", handleBeforeUnload);
     return () => window.removeEventListener("beforeunload", handleBeforeUnload);
   }, [mode, isComplete, scores.length]);
+
+  // Prevent body scroll when navigator is expanded
+  useEffect(() => {
+    if (isNavigatorExpanded) {
+      const originalStyle = window.getComputedStyle(document.body).overflow;
+      document.body.style.overflow = "hidden";
+      return () => {
+        document.body.style.overflow = originalStyle;
+      };
+    }
+  }, [isNavigatorExpanded]);
 
   const currentQuestion = questions[currentIndex];
   const isLastQuestion = currentIndex === questions.length - 1;
@@ -147,6 +161,33 @@ export default function CSC307QuizContainer({
     setCurrentLevel(1);
     setScores([]);
     setIsComplete(false);
+  };
+
+  const handleNavigateToQuestion = (index: number) => {
+    if (index < 0 || index >= questions.length) return;
+
+    const questionId = questions[index]?.id;
+    const previousScore = scores.find((s) => s.questionId === questionId);
+
+    setCurrentIndex(index);
+    // In learn mode, reset to level 1 for navigation to any question
+    // In test mode, keep the selected level
+    if (mode === "learn" && !previousScore) {
+      setCurrentLevel(1);
+    }
+    setIsNavigatorExpanded(false);
+  };
+
+  const isQuestionAnswered = (index: number) => {
+    const questionId = questions[index]?.id;
+    return scores.some((s) => s.questionId === questionId);
+  };
+
+  const getQuestionScore = (index: number) => {
+    const questionId = questions[index]?.id;
+    const score = scores.find((s) => s.questionId === questionId);
+    if (!score) return null;
+    return score.score === score.total;
   };
 
   // Calculate totals
@@ -535,6 +576,132 @@ export default function CSC307QuizContainer({
             onLevelUp={mode === "learn" ? handleLevelUp : undefined}
             isLastQuestion={isLastQuestion}
           />
+        )}
+      </div>
+
+      {/* Question Navigator */}
+      <div
+        className="fixed bottom-0 left-0 right-0 bg-slate-900/95 backdrop-blur-sm border-t border-slate-700 z-50"
+        style={{
+          paddingBottom: "max(env(safe-area-inset-bottom, 0), 0px)",
+          WebkitBackfaceVisibility: "hidden",
+          backfaceVisibility: "hidden",
+        }}
+      >
+        {/* Collapsed view */}
+        <div className="px-4 py-2">
+          <div className="max-w-3xl mx-auto flex items-center justify-between">
+            <div className="flex items-center gap-4 text-sm">
+              <span className="text-slate-400">
+                Question{" "}
+                <span className="text-white font-semibold">
+                  {currentIndex + 1}
+                </span>{" "}
+                of {questions.length}
+              </span>
+              <span className="text-slate-500">|</span>
+              <span className="text-slate-400">
+                Answered:{" "}
+                <span className="text-white font-semibold">
+                  {scores.length}
+                </span>
+              </span>
+            </div>
+            <button
+              onClick={(e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                setIsNavigatorExpanded(!isNavigatorExpanded);
+              }}
+              onTouchStart={(e) => {
+                e.stopPropagation();
+              }}
+              className="flex items-center gap-1 text-sm text-blue-400 hover:text-blue-300 transition-colors"
+              style={{ touchAction: "manipulation" }}
+            >
+              {isNavigatorExpanded ? (
+                <>
+                  Hide <ChevronDown className="w-4 h-4" />
+                </>
+              ) : (
+                <>
+                  Jump to <ChevronUp className="w-4 h-4" />
+                </>
+              )}
+            </button>
+          </div>
+        </div>
+
+        {/* Expanded view - question grid */}
+        {isNavigatorExpanded && (
+          <div
+            className="px-4 pb-3 border-t border-slate-700/50"
+            onTouchStart={(e) => e.stopPropagation()}
+            onTouchMove={(e) => e.stopPropagation()}
+          >
+            <div className="max-w-3xl mx-auto pt-3">
+              <div
+                className="max-h-32 overflow-y-auto overscroll-contain"
+                style={{
+                  WebkitOverflowScrolling: "touch",
+                  touchAction: "pan-y",
+                  overscrollBehavior: "contain",
+                }}
+              >
+                <div className="flex flex-wrap justify-center gap-1.5">
+                  {questions.map((_, index) => {
+                    const answered = isQuestionAnswered(index);
+                    const isPerfect = getQuestionScore(index);
+                    const isCurrent = index === currentIndex;
+
+                    return (
+                      <button
+                        key={index}
+                        onClick={(e) => {
+                          e.preventDefault();
+                          e.stopPropagation();
+                          handleNavigateToQuestion(index);
+                        }}
+                        onTouchStart={(e) => {
+                          e.stopPropagation();
+                        }}
+                        className={cn(
+                          "relative w-8 h-8 sm:w-7 sm:h-7 rounded text-xs font-medium transition-all duration-200",
+                          "flex items-center justify-center",
+                          "active:scale-95 cursor-pointer",
+                          isCurrent && "ring-2 ring-blue-500",
+                          answered &&
+                            isPerfect === true &&
+                            "bg-green-600 text-white hover:bg-green-500 active:bg-green-500",
+                          answered &&
+                            isPerfect === false &&
+                            "bg-orange-600 text-white hover:bg-orange-500 active:bg-orange-500",
+                          !answered &&
+                            !isCurrent &&
+                            "bg-slate-700 text-slate-300 hover:bg-slate-600 active:bg-slate-600",
+                          isCurrent && !answered && "bg-blue-600 text-white",
+                        )}
+                        style={{ touchAction: "manipulation" }}
+                        title={
+                          answered
+                            ? `Question ${index + 1} - ${isPerfect ? "Perfect" : "Partial"}`
+                            : `Question ${index + 1} - Not answered yet`
+                        }
+                      >
+                        {answered ? (
+                          <span className="text-xs font-bold">
+                            {isPerfect ? "✓" : "~"}
+                          </span>
+                        ) : (
+                          <span>{index + 1}</span>
+                        )}
+                      </button>
+                    );
+                  })}
+                </div>
+              </div>
+            </div>
+          </div>
         )}
       </div>
     </div>
