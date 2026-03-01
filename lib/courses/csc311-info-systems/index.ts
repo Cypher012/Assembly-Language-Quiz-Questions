@@ -5,6 +5,8 @@ import chapter2 from "./chapter-2";
 import chapter3 from "./chapter-3";
 import { csc311Chapter4_1 } from "./chapter-41";
 import { csc311Chapter4_2 } from "./chapter-42";
+import csc311Chapter5 from "./chapter-5";
+import csc311Chapter6 from "./chapter-6";
 
 export const csc311InfoSystemsCourse: Course = {
   id: "csc311-info-systems",
@@ -17,31 +19,43 @@ export const csc311InfoSystemsCourse: Course = {
       id: "Chapter 1",
       label: "Module 1 Lecture 2",
       description:
-        "Introduction to Information System - Covers history of information communication and IS, data vs information vs knowledge, properties of information, organization and representation of information, system concepts, system components, system classifications, system performance, and system modelling.",
+        "Introduction to Information Systems, data vs information vs knowledge, system concepts and classifications.",
     },
     {
       id: "Chapter 2",
       label: "Module 2 Lecture 2-2",
       description:
-        "Concept of Organizing Data and Information - Covers data hierarchy, entities/attributes/keys, traditional vs database approach, database models (hierarchical, network, relational), SQL and its categories (DDL, DML, DCL, TCL), schemas/subschemas, data dictionary, distributed databases, data warehousing, data mining, OLAP, ODBC, and ORDBMS.",
+        "Organizing data and information, database models, SQL categories, data warehousing and mining.",
     },
     {
       id: "Chapter 3",
       label: "Module 3 Lecture 3",
       description:
-        "Organizations and Information Systems - Covers technical and behavioral definitions of organizations, organizational features (routines, business processes, politics, culture, environment, structure), organizational levels (strategic, management, operational, knowledge workers), and their relationship with information systems.",
+        "Organizations and IS, organizational features, levels, and their relationship with information systems.",
     },
     {
       id: "Chapter 4_1",
       label: "Module 4 Lecture 4-1",
       description:
-        "Information Systems Fundamentals - Covers IS history (1642-present), major development stages (1960s-2000s), IS definitions, six core components (hardware, software, data, people, procedures, networks), technical/social/socio-technical perspectives, IS users and usage patterns, benefits, five fundamental principles, real-world applications (banking, universities, hospitals, retail, e-government), and emerging consequences.",
+        "IS fundamentals, history, six core components, perspectives, principles, and real-world applications.",
     },
     {
       id: "Chapter 4_2",
       label: "Module 4 Lecture 4-2",
       description:
-        "System Development Life Cycle (SDLC) - Covers SDLC purpose, 6 core phases (Planning, Analysis, Design, Implementation, Testing, Maintenance), SDLC models (Waterfall, Iterative, Spiral, Agile), feasibility studies, requirements gathering, as-is/to-be models, logical vs physical design, deployment strategies (Parallel, Pilot, Phased, Plunge), testing types (Unit, Integration, System, UAT), and roles of users and managers.",
+        "System Development Life Cycle (SDLC), phases, models, deployment strategies, and testing types.",
+    },
+    {
+      id: "Chapter 5",
+      label: "Lecture 5",
+      description:
+        "Strategic IS, Porter's Five Forces, competitive strategies, Value Chain analysis, and IS metrics.",
+    },
+    {
+      id: "Chapter 6",
+      label: "Lecture 6",
+      description:
+        "The Internet and web services, TCP/IP, client-server architecture, and HTTP fundamentals.",
     },
   ],
   getQuestions: (): QuestionV2[] => {
@@ -51,6 +65,8 @@ export const csc311InfoSystemsCourse: Course = {
       ...chapter3,
       ...csc311Chapter4_1,
       ...csc311Chapter4_2,
+      ...csc311Chapter5,
+      ...csc311Chapter6,
     ];
   },
 };

@@ -1,1686 +1,1106 @@
 import { QuestionV2 } from "@/lib/quiz-types";
 
-export const csc311Chapter2: QuestionV2[] = [
+const csc311Chapter2: QuestionV2[] = [
   {
-    "id": "csc311_001",
-    "course": "CSC 311",
-    "chapter": "Chapter 2",
-    "text": "What is data in the context of information systems?",
-    "options": [
-      "Processed and organized facts",
-      "Raw facts that when organized may be transformed into information",
-      "A collection of related files",
-      "A group of programs that manipulate information"
-    ],
-    "correctAnswer": 1,
-    "explanation": "Data consists of raw facts, and when organized may be transformed into information. It is a necessity for almost any enterprise to carry out its business."
+    id: "csc311_m2_001",
+    course: "CSC 311",
+    chapter: "Chapter 2",
+    text: "Data consists of raw facts, and when organized may be transformed into ______.",
+    options: ["knowledge bases", "information", "entities", "data marts"],
+    correctAnswer: 1,
+    explanation:
+      "Data consists of raw facts, and when organized may be transformed into information.",
   },
   {
-    "id": "csc311_002",
-    "course": "CSC 311",
-    "chapter": "Chapter 2",
-    "text": "What is a database?",
-    "options": [
-      "A single file containing records",
-      "A collection of data organized to meet users' needs",
-      "A program that processes data",
-      "A hardware device for storing data"
-    ],
-    "correctAnswer": 1,
-    "explanation": "A database is a collection of data organized to meet users' needs."
+    id: "csc311_m2_002",
+    course: "CSC 311",
+    chapter: "Chapter 2",
+    text: "A ______ is a collection of data organized to meet users’ needs.",
+    options: ["Database", "Record", "Subschema", "Data dictionary"],
+    correctAnswer: 0,
+    explanation:
+      "Database: A collection of data organized to meet users’ needs.",
   },
   {
-    "id": "csc311_003",
-    "course": "CSC 311",
-    "chapter": "Chapter 2",
-    "text": "What is a Database Management System (DBMS)?",
-    "options": [
-      "A collection of raw data",
-      "A hardware component for data storage",
-      "A group of programs that manipulate the database and provide an interface between the database and users",
-      "A network protocol for data transfer"
+    id: "csc311_m2_003",
+    course: "CSC 311",
+    chapter: "Chapter 2",
+    text: "A group of programs that manipulate the database and provide an interface between the database and the user is called a ______.",
+    options: [
+      "Data model",
+      "Database management system (DBMS)",
+      "Structured query language (SQL)",
+      "Logical access path",
     ],
-    "correctAnswer": 2,
-    "explanation": "A Database Management System (DBMS) is a group of programs that manipulate the database and provide an interface between the database and the user of the database or other application programs."
+    correctAnswer: 1,
+    explanation:
+      "Database management system (DBMS): A group of programs that manipulate the database and provide an interface between the database and the user.",
   },
   {
-    "id": "csc311_004",
-    "course": "CSC 311",
-    "chapter": "Chapter 2",
-    "text": "In the hierarchy of data, what is the basic building block of information?",
-    "options": [
-      "Field",
-      "Record",
-      "Character",
-      "File"
-    ],
-    "correctAnswer": 2,
-    "explanation": "Character is the basic building block of information, represented by a byte."
+    id: "csc311_m2_004",
+    course: "CSC 311",
+    chapter: "Chapter 2",
+    text: "In the hierarchy of data, a database is a collection of integrated and related ______.",
+    options: ["fields", "characters", "records", "files"],
+    correctAnswer: 3,
+    explanation:
+      "Terminology: Database - A collection of integrated and related files.",
   },
   {
-    "id": "csc311_005",
-    "course": "CSC 311",
-    "chapter": "Chapter 2",
-    "text": "A character in database terminology is represented by a:",
-    "options": [
-      "Bit",
-      "Byte",
-      "Word",
-      "Block"
-    ],
-    "correctAnswer": 1,
-    "explanation": "A character is the basic building block of information, represented by a byte."
+    id: "csc311_m2_005",
+    course: "CSC 311",
+    chapter: "Chapter 2",
+    text: "A file is a collection of integrated and related databases.",
+    options: ["True", "False", "I don't know", "Maybe"],
+    correctAnswer: 1,
+    explanation:
+      "False. A File is a collection of related records, not related databases.",
   },
   {
-    "id": "csc311_006",
-    "course": "CSC 311",
-    "chapter": "Chapter 2",
-    "text": "What is a field in database terminology?",
-    "options": [
-      "A collection of related files",
-      "A collection of related records",
-      "A group of characters",
-      "A single character"
-    ],
-    "correctAnswer": 2,
-    "explanation": "A field is a group of characters."
+    id: "csc311_m2_006",
+    course: "CSC 311",
+    chapter: "Chapter 2",
+    text: "A record is defined as a collection of related ______.",
+    options: ["files", "fields", "characters", "attributes"],
+    correctAnswer: 1,
+    explanation: "Record: A collection of related fields.",
   },
   {
-    "id": "csc311_007",
-    "course": "CSC 311",
-    "chapter": "Chapter 2",
-    "text": "What is a record in database terminology?",
-    "options": [
-      "A collection of related fields",
-      "A collection of related files",
-      "A group of characters",
-      "A collection of integrated databases"
-    ],
-    "correctAnswer": 0,
-    "explanation": "A record is a collection of related fields."
+    id: "csc311_m2_007",
+    course: "CSC 311",
+    chapter: "Chapter 2",
+    text: "A field is a group of ______.",
+    options: ["records", "characters", "files", "entities"],
+    correctAnswer: 1,
+    explanation: "Field: A group of characters.",
   },
   {
-    "id": "csc311_008",
-    "course": "CSC 311",
-    "chapter": "Chapter 2",
-    "text": "What is a file in database terminology?",
-    "options": [
-      "A group of characters",
-      "A collection of related fields",
-      "A collection of related records",
-      "A collection of integrated databases"
-    ],
-    "correctAnswer": 2,
-    "explanation": "A file is a collection of related records."
+    id: "csc311_m2_008",
+    course: "CSC 311",
+    chapter: "Chapter 2",
+    text: "The basic building block of information is a ______, represented by a byte.",
+    options: ["Character", "Field", "Record", "Key"],
+    correctAnswer: 0,
+    explanation:
+      "Character: Basic building block of information, represented by a byte.",
   },
   {
-    "id": "csc311_009",
-    "course": "CSC 311",
-    "chapter": "Chapter 2",
-    "text": "A database can be defined as:",
-    "options": [
-      "A collection of related fields",
-      "A collection of related records",
-      "A collection of integrated and related files",
-      "A group of characters"
-    ],
-    "correctAnswer": 2,
-    "explanation": "A database is a collection of integrated and related files."
+    id: "csc311_m2_009",
+    course: "CSC 311",
+    chapter: "Chapter 2",
+    text: "An ______ is a generalized class of people, places, or things (objects) for which data are collected, stored, and maintained.",
+    options: ["Attribute", "Entity", "Object-relation", "Access path"],
+    correctAnswer: 1,
+    explanation:
+      "Entity: A generalized class of people, places, or things (objects) for which data are collected, stored, and maintained.",
   },
   {
-    "id": "csc311_010",
-    "course": "CSC 311",
-    "chapter": "Chapter 2",
-    "text": "What is the correct hierarchy of data from smallest to largest?",
-    "options": [
-      "Field → Character → Record → File → Database",
-      "Character → Field → Record → File → Database",
-      "Record → Field → Character → File → Database",
-      "Database → File → Record → Field → Character"
-    ],
-    "correctAnswer": 1,
-    "explanation": "The correct hierarchy from smallest to largest is: Character → Field → Record → File → Database."
+    id: "csc311_m2_010",
+    course: "CSC 311",
+    chapter: "Chapter 2",
+    text: "Customer name and Employee name are examples of an ______.",
+    options: ["Attribute", "Entity", "Object", "Interface"],
+    correctAnswer: 0,
+    explanation:
+      "Attribute: A characteristic of an entity; something the entity is identified by. E.g., Customer name, Employee name.",
   },
   {
-    "id": "csc311_011",
-    "course": "CSC 311",
-    "chapter": "Chapter 2",
-    "text": "What is an entity in database terminology?",
-    "options": [
-      "A characteristic of a person or thing",
-      "A generalized class of people, places, or things for which data are collected, stored, and maintained",
-      "A field used to identify records",
-      "A collection of related records"
-    ],
-    "correctAnswer": 1,
-    "explanation": "An entity is a generalized class of people, places, or things (objects) for which data are collected, stored, and maintained. E.g., Customer, Employee."
+    id: "csc311_m2_011",
+    course: "CSC 311",
+    chapter: "Chapter 2",
+    text: "A field or set of fields in a record that is used to uniquely identify the record is called a ______.",
+    options: ["Key", "Schema", "Data model", "Subschema"],
+    correctAnswer: 0,
+    explanation:
+      "Keys: A field or set of fields in a record that is used to identify the record... uniquely identifies the record.",
   },
   {
-    "id": "csc311_012",
-    "course": "CSC 311",
-    "chapter": "Chapter 2",
-    "text": "Which of the following is an example of an entity?",
-    "options": [
-      "Customer name",
-      "Employee ID",
-      "Customer",
-      "Date of birth"
-    ],
-    "correctAnswer": 2,
-    "explanation": "Customer is an example of an entity. An entity is a generalized class of people, places, or things. Customer name would be an attribute."
+    id: "csc311_m2_012",
+    course: "CSC 311",
+    chapter: "Chapter 2",
+    text: "In the traditional approach, a pool of related data is shared by multiple application programs.",
+    options: ["I don't know", "Maybe", "True", "False"],
+    correctAnswer: 3,
+    explanation:
+      "False. In the traditional approach, separate files are created and stored for each application program. The database approach shares a pool of related data.",
   },
   {
-    "id": "csc311_013",
-    "course": "CSC 311",
-    "chapter": "Chapter 2",
-    "text": "What is an attribute in database terminology?",
-    "options": [
-      "A generalized class of objects",
-      "A characteristic of an entity",
-      "A collection of related files",
-      "A database management program"
-    ],
-    "correctAnswer": 1,
-    "explanation": "An attribute is a characteristic of an entity; something the entity is identified by. E.g., Customer name, Employee name."
+    id: "csc311_m2_013",
+    course: "CSC 311",
+    chapter: "Chapter 2",
+    text: "Data ______ is the duplication of data in separate files.",
+    options: ["integrity", "independence", "redundancy", "concurrency"],
+    correctAnswer: 2,
+    explanation: "Data redundancy: Duplication of data in separate files.",
   },
   {
-    "id": "csc311_014",
-    "course": "CSC 311",
-    "chapter": "Chapter 2",
-    "text": "Which of the following is an example of an attribute?",
-    "options": [
-      "Employee",
-      "Customer",
-      "Product",
-      "Employee name"
-    ],
-    "correctAnswer": 3,
-    "explanation": "Employee name is an example of an attribute. It is a characteristic of the Employee entity."
+    id: "csc311_m2_014",
+    course: "CSC 311",
+    chapter: "Chapter 2",
+    text: "The degree to which the data in any one file is accurate refers to data ______.",
+    options: ["integrity", "redundancy", "dependence", "mining"],
+    correctAnswer: 0,
+    explanation:
+      "Lack of data integrity: The degree to which the data in any one file is accurate.",
   },
   {
-    "id": "csc311_015",
-    "course": "CSC 311",
-    "chapter": "Chapter 2",
-    "text": "What is a key in database terminology?",
-    "options": [
-      "A characteristic of an entity",
-      "A field or set of fields in a record that is used to identify the record",
-      "A generalized class of objects",
-      "A collection of related files"
-    ],
-    "correctAnswer": 1,
-    "explanation": "A key is a field or set of fields in a record that is used to identify the record, typically uniquely identifying it."
-  },
-  {
-    "id": "csc311_016",
-    "course": "CSC 311",
-    "chapter": "Chapter 2",
-    "text": "In the traditional approach to data management:",
-    "options": [
-      "A pool of related data is shared by multiple applications",
-      "Separate files are created and stored for each application program",
-      "Data redundancy is eliminated",
-      "All applications use a centralized database"
-    ],
-    "correctAnswer": 1,
-    "explanation": "In the traditional approach, separate files are created and stored for each application program."
-  },
-  {
-    "id": "csc311_017",
-    "course": "CSC 311",
-    "chapter": "Chapter 2",
-    "text": "What is data redundancy?",
-    "options": [
-      "The accuracy of data in a file",
-      "Duplication of data in separate files",
-      "A method of data backup",
-      "The speed of data retrieval"
-    ],
-    "correctAnswer": 1,
-    "explanation": "Data redundancy refers to the duplication of data in separate files, which is a drawback of the traditional approach."
-  },
-  {
-    "id": "csc311_018",
-    "course": "CSC 311",
-    "chapter": "Chapter 2",
-    "text": "What is data integrity?",
-    "options": [
-      "The speed of data processing",
-      "The degree to which the data in any one file is accurate",
-      "The amount of data stored",
-      "The duplication of data"
-    ],
-    "correctAnswer": 1,
-    "explanation": "Data integrity refers to the degree to which the data in any one file is accurate. Lack of data integrity is a drawback of the traditional approach."
-  },
-  {
-    "id": "csc311_019",
-    "course": "CSC 311",
-    "chapter": "Chapter 2",
-    "text": "Program-data dependence refers to:",
-    "options": [
-      "Programs that can work with any data format",
-      "A situation where program and data organized for one application are incompatible with those organized differently for another application",
-      "Programs that are independent of data",
-      "Data that can be used by any program"
-    ],
-    "correctAnswer": 1,
-    "explanation": "Program-data dependence is a situation in which program and data organized for one application are incompatible with programs and data organized differently for another application."
-  },
-  {
-    "id": "csc311_020",
-    "course": "CSC 311",
-    "chapter": "Chapter 2",
-    "text": "Which of the following is NOT a drawback of the traditional approach?",
-    "options": [
+    id: "csc311_m2_015",
+    course: "CSC 311",
+    chapter: "Chapter 2",
+    text: "______ is a situation in which program and data organized for one application are incompatible with programs and data organized differently for another application.",
+    options: [
       "Data redundancy",
-      "Lack of data integrity",
+      "Concurrency control",
       "Program-data dependence",
-      "Improved data sharing"
+      "Data extraction",
     ],
-    "correctAnswer": 3,
-    "explanation": "Improved data sharing is not a drawback; it is actually an advantage of the database approach. The drawbacks of the traditional approach include data redundancy, lack of data integrity, and program-data dependence."
+    correctAnswer: 2,
+    explanation:
+      "Program-data dependence: A situation in which program and data organized for one application are incompatible with programs and data organized differently for another application.",
   },
   {
-    "id": "csc311_021",
-    "course": "CSC 311",
-    "chapter": "Chapter 2",
-    "text": "In the database approach:",
-    "options": [
-      "Separate files are created for each application",
-      "A pool of related data is shared by multiple application programs",
-      "Each program maintains its own data files",
-      "Data redundancy is increased"
-    ],
-    "correctAnswer": 1,
-    "explanation": "In the database approach, a pool of related data is shared by multiple application programs. Each application uses a collection of data that is either joined or related in the database."
+    id: "csc311_m2_016",
+    course: "CSC 311",
+    chapter: "Chapter 2",
+    text: "In the ______ approach, a pool of related data is shared by multiple application programs.",
+    options: ["Traditional", "Database", "Hierarchical", "Network"],
+    correctAnswer: 1,
+    explanation:
+      "The database approach... A pool of related data is shared by multiple application programs.",
   },
   {
-    "id": "csc311_022",
-    "course": "CSC 311",
-    "chapter": "Chapter 2",
-    "text": "Which of the following is an advantage of the database approach?",
-    "options": [
-      "Increased data redundancy",
-      "Reduced data integrity",
-      "Reduced data redundancy",
-      "Increased program-data dependence"
-    ],
-    "correctAnswer": 2,
-    "explanation": "Reduced data redundancy is an advantage of the database approach."
+    id: "csc311_m2_017",
+    course: "CSC 311",
+    chapter: "Chapter 2",
+    text: "One disadvantage of the database approach is the relatively high cost of purchasing and operating a DBMS in a ______ operating environment.",
+    options: ["mainframe", "distributed", "personal computer", "cloud"],
+    correctAnswer: 0,
+    explanation:
+      "Disadvantages: Relatively high cost of purchasing and operating a DBMS in a mainframe operating environment.",
   },
   {
-    "id": "csc311_023",
-    "course": "CSC 311",
-    "chapter": "Chapter 2",
-    "text": "Which of the following is NOT an advantage of the database approach?",
-    "options": [
-      "Improved data integrity",
-      "Easier modification and updating",
-      "Increased vulnerability",
-      "Better access to data and information"
-    ],
-    "correctAnswer": 2,
-    "explanation": "Increased vulnerability is a disadvantage, not an advantage, of the database approach."
+    id: "csc311_m2_018",
+    course: "CSC 311",
+    chapter: "Chapter 2",
+    text: "Easier modification and updating is an advantage of the Database Approach.",
+    options: ["Maybe", "I don't know", "False", "True"],
+    correctAnswer: 3,
+    explanation:
+      "True. Advantages of the database approach include: Easier modification and updating, Reduced data redundancy, and Improved data integrity.",
   },
   {
-    "id": "csc311_024",
-    "course": "CSC 311",
-    "chapter": "Chapter 2",
-    "text": "Which is a disadvantage of the database approach?",
-    "options": [
-      "Improved strategic use of corporate data",
-      "Standardization of data access",
-      "Relatively high cost of purchasing and operating a DBMS",
-      "Data and program independence"
-    ],
-    "correctAnswer": 2,
-    "explanation": "Relatively high cost of purchasing and operating a DBMS in a mainframe operating environment is a disadvantage of the database approach."
+    id: "csc311_m2_019",
+    course: "CSC 311",
+    chapter: "Chapter 2",
+    text: "A way of organizing data in which the logical database design is altered so that certain data entities are combined is called ______ data redundancy.",
+    options: ["traditional", "unplanned", "planned", "logical"],
+    correctAnswer: 2,
+    explanation:
+      "Planned data redundancy: A way of organizing data in which the logical database design is altered so that certain data entities are combined.",
   },
   {
-    "id": "csc311_025",
-    "course": "CSC 311",
-    "chapter": "Chapter 2",
-    "text": "Which of the following is a disadvantage of the database approach?",
-    "options": [
-      "Shared data and information resources",
-      "Better overall protection of the data",
-      "Increased cost of specialized staff",
-      "A framework for program development"
+    id: "csc311_m2_020",
+    course: "CSC 311",
+    chapter: "Chapter 2",
+    text: "A ______ is a map or diagram of entities and their relationships.",
+    options: [
+      "schema blueprint",
+      "data model",
+      "subschema",
+      "concurrency path",
     ],
-    "correctAnswer": 2,
-    "explanation": "Increased cost of specialized staff is a disadvantage of the database approach."
+    correctAnswer: 1,
+    explanation:
+      "Data model: A map or diagram of entities and their relationships.",
   },
   {
-    "id": "csc311_026",
-    "course": "CSC 311",
-    "chapter": "Chapter 2",
-    "text": "What is planned data redundancy?",
-    "options": [
-      "Accidental duplication of data",
-      "A way of organizing data in which the logical database design is altered so that certain data entities are combined",
-      "Elimination of all data duplication",
-      "A method of data encryption"
-    ],
-    "correctAnswer": 1,
-    "explanation": "Planned data redundancy is a way of organizing data in which the logical database design is altered so that certain data entities are combined to improve database performance."
+    id: "csc311_m2_021",
+    course: "CSC 311",
+    chapter: "Chapter 2",
+    text: "Enterprise data modeling is data modeling done at the level of the entire ______.",
+    options: ["application", "subschema", "department", "organization"],
+    correctAnswer: 3,
+    explanation:
+      "Enterprise data modeling: Data modeling done at the level of the entire organization.",
   },
   {
-    "id": "csc311_027",
-    "course": "CSC 311",
-    "chapter": "Chapter 2",
-    "text": "What is a data model?",
-    "options": [
-      "A physical storage device",
-      "A map or diagram of entities and their relationships",
-      "A type of database software",
-      "A backup of the database"
-    ],
-    "correctAnswer": 1,
-    "explanation": "A data model is a map or diagram of entities and their relationships."
+    id: "csc311_m2_022",
+    course: "CSC 311",
+    chapter: "Chapter 2",
+    text: "Entity-relationship (ER) diagrams use basic ______ symbols to show the organization of and relationships between data.",
+    options: ["alphanumeric", "graphical", "mathematical", "spatial"],
+    correctAnswer: 1,
+    explanation:
+      "Entity-relationship (ER) diagrams: A data model that uses basic graphical symbols to show the organization of and relationships between data.",
   },
   {
-    "id": "csc311_028",
-    "course": "CSC 311",
-    "chapter": "Chapter 2",
-    "text": "What is enterprise data modeling?",
-    "options": [
-      "Data modeling done for a single department",
-      "Data modeling done at the level of the entire organization",
-      "Data modeling for small businesses only",
-      "Data modeling for personal use"
-    ],
-    "correctAnswer": 1,
-    "explanation": "Enterprise data modeling is data modeling done at the level of the entire organization."
+    id: "csc311_m2_023",
+    course: "CSC 311",
+    chapter: "Chapter 2",
+    text: "In an ER Diagram, a 1:N notation signifies a ______ relationship.",
+    options: ["one-to-one", "many-to-many", "one-to-many", "many-to-one"],
+    correctAnswer: 2,
+    explanation: "Example ER Diagram specifies '1:N one-to-many relationship'.",
   },
   {
-    "id": "csc311_029",
-    "course": "CSC 311",
-    "chapter": "Chapter 2",
-    "text": "What is an Entity-Relationship (ER) diagram?",
-    "options": [
-      "A physical diagram of hardware components",
-      "A data model that uses basic graphical symbols to show the organization of and relationships between data",
-      "A flowchart of program logic",
-      "A network topology diagram"
-    ],
-    "correctAnswer": 1,
-    "explanation": "An Entity-Relationship (ER) diagram is a data model that uses basic graphical symbols to show the organization of and relationships between data."
+    id: "csc311_m2_024",
+    course: "CSC 311",
+    chapter: "Chapter 2",
+    text: "The ______ database model is a data model in which data are organized in a top-down, or inverted tree structure.",
+    options: ["Relational", "Hierarchical", "Network", "Object-oriented"],
+    correctAnswer: 1,
+    explanation:
+      "Hierarchical database model: A data model in which data are organized in a top-down, or inverted tree structure.",
   },
   {
-    "id": "csc311_030",
-    "course": "CSC 311",
-    "chapter": "Chapter 2",
-    "text": "In planned data redundancy, which of the following may occur?",
-    "options": [
-      "All data is deleted",
-      "Some data attributes are repeated in more than one data entity to improve database performance",
-      "No data is stored",
-      "Data is encrypted"
-    ],
-    "correctAnswer": 1,
-    "explanation": "In planned data redundancy, some data attributes are repeated in more than one data entity to improve database performance."
+    id: "csc311_m2_025",
+    course: "CSC 311",
+    chapter: "Chapter 2",
+    text: "The ______ data model is an expansion of the hierarchical database model with an owner-member relationship in which a member may have many owners.",
+    options: ["Network", "Spatial", "Relational", "Hierarchical"],
+    correctAnswer: 0,
+    explanation:
+      "Network data model: An expansion of the hierarchical database model with an owner-member relationship in which a member may have many owners.",
   },
   {
-    "id": "csc311_031",
-    "course": "CSC 311",
-    "chapter": "Chapter 2",
-    "text": "The hierarchical database model organizes data in:",
-    "options": [
-      "A two-dimensional table structure",
-      "A top-down, or inverted tree structure",
-      "A network structure with many-to-many relationships",
-      "A flat file structure"
-    ],
-    "correctAnswer": 1,
-    "explanation": "The hierarchical database model is a data model in which data are organized in a top-down, or inverted tree structure."
+    id: "csc311_m2_026",
+    course: "CSC 311",
+    chapter: "Chapter 2",
+    text: "The Relational data model is the most widely used model in modern database systems like MySQL and Oracle.",
+    options: ["Maybe", "True", "False", "I don't know"],
+    correctAnswer: 1,
+    explanation:
+      "True. All data elements are placed in two-dimensional tables... It is the most widely used model in modern dtabase system (MySQI, SQL, Oracle).",
   },
   {
-    "id": "csc311_032",
-    "course": "CSC 311",
-    "chapter": "Chapter 2",
-    "text": "What is the network data model?",
-    "options": [
-      "A model that uses two-dimensional tables",
-      "An expansion of the hierarchical database model with an owner-member relationship in which a member may have many owners",
-      "A model where data is organized in a simple list",
-      "A model used only for internet applications"
-    ],
-    "correctAnswer": 1,
-    "explanation": "The network data model is an expansion of the hierarchical database model with an owner-member relationship in which a member may have many owners."
+    id: "csc311_m2_027",
+    course: "CSC 311",
+    chapter: "Chapter 2",
+    text: "In a relational data model, all data elements are placed in two-dimensional tables called ______.",
+    options: ["schemas", "relations", "entities", "subschemas"],
+    correctAnswer: 1,
+    explanation:
+      "Relational data model: This is a way of organizing and structuring data using tables calles relation... All data elements are placed in two-dimensional tables, called relations.",
   },
   {
-    "id": "csc311_033",
-    "course": "CSC 311",
-    "chapter": "Chapter 2",
-    "text": "What is the relational data model?",
-    "options": [
-      "A model that organizes data in a tree structure",
-      "A model with owner-member relationships",
-      "A way of organizing and structuring data using tables called relations",
-      "A model used only for multimedia data"
-    ],
-    "correctAnswer": 2,
-    "explanation": "The relational data model is a way of organizing and structuring data using tables called relations. All data elements are placed in two-dimensional tables."
+    id: "csc311_m2_028",
+    course: "CSC 311",
+    chapter: "Chapter 2",
+    text: "In relational database terminology, data manipulation that eliminates rows according to certain criteria is called ______.",
+    options: ["Joining", "Linking", "Selecting", "Projecting"],
+    correctAnswer: 2,
+    explanation:
+      "Selecting: Data manipulation that eliminates rows according to certain criteria.",
   },
   {
-    "id": "csc311_034",
-    "course": "CSC 311",
-    "chapter": "Chapter 2",
-    "text": "In a relational database, data is organized in:",
-    "options": [
-      "Tree structures",
-      "Network structures",
-      "Two-dimensional tables called relations",
-      "Linear lists"
-    ],
-    "correctAnswer": 2,
-    "explanation": "In the relational data model, all data elements are placed in two-dimensional tables, called relations, that are the logical equivalent of files."
+    id: "csc311_m2_029",
+    course: "CSC 311",
+    chapter: "Chapter 2",
+    text: "In relational database terminology, data manipulation that eliminates columns in a table is called ______.",
+    options: ["Projecting", "Selecting", "Joining", "Extracting"],
+    correctAnswer: 0,
+    explanation:
+      "Projecting: Data manipulation that eliminates columns in a table.",
   },
   {
-    "id": "csc311_035",
-    "course": "CSC 311",
-    "chapter": "Chapter 2",
-    "text": "Which of the following is the most widely used database model in modern database systems?",
-    "options": [
-      "Hierarchical model",
+    id: "csc311_m2_030",
+    course: "CSC 311",
+    chapter: "Chapter 2",
+    text: "Data manipulation that combines two or more tables is called ______.",
+    options: ["Projecting", "Selecting", "Joining", "Mapping"],
+    correctAnswer: 2,
+    explanation: "Joining: Data manipulation that combines two or more tables.",
+  },
+  {
+    id: "csc311_m2_031",
+    course: "CSC 311",
+    chapter: "Chapter 2",
+    text: "Relating tables in a relational database together is referred to as ______.",
+    options: ["Joining", "Selecting", "Linking", "Schema design"],
+    correctAnswer: 2,
+    explanation: "Linked: Relating tables in a relational database together.",
+  },
+  {
+    id: "csc311_m2_032",
+    course: "CSC 311",
+    chapter: "Chapter 2",
+    text: "A description of the entire database, or the overall logical structure of the blueprint, is called a ______.",
+    options: ["Schema", "Subschema", "Data Dictionary", "Data Model"],
+    correctAnswer: 0,
+    explanation:
+      "Schema: A description of the entire database. i.e over logical structure of the entire database(the blueprint of a whole database).",
+  },
+  {
+    id: "csc311_m2_033",
+    course: "CSC 311",
+    chapter: "Chapter 2",
+    text: "A schema is a subset of the database schema accessible to a particular user.",
+    options: ["False", "True", "I don't know", "Maybe"],
+    correctAnswer: 0,
+    explanation:
+      "False. A schema is the description of the ENTIRE database. A Subschema is a subset of the database schema accessible to a particular user.",
+  },
+  {
+    id: "csc311_m2_034",
+    course: "CSC 311",
+    chapter: "Chapter 2",
+    text: "A ______ is a file that contains a description of a subset of the database and identifies which users can perform modifications on those data items.",
+    options: ["Schema", "Data Dictionary", "Subschema", "Directory"],
+    correctAnswer: 2,
+    explanation:
+      "Subschema: A file that contains a description of a subset of the database and identifies which users can perform modifications on the data items in that subset.",
+  },
+  {
+    id: "csc311_m2_035",
+    course: "CSC 311",
+    chapter: "Chapter 2",
+    text: "A detailed description of all data used in the database, including what each data means and where it is stored, is found in the ______.",
+    options: [
+      "Schema blueprint",
+      "Data Dictionary",
       "Network model",
-      "Relational model",
-      "Flat file model"
+      "Subschema",
     ],
-    "correctAnswer": 2,
-    "explanation": "The relational data model is the most widely used model in modern database systems (MySQL, SQL Server, Oracle)."
+    correctAnswer: 1,
+    explanation:
+      "Data Dictionary: A detailed description of all data used in the database. It describes metadata that is data about data...",
   },
   {
-    "id": "csc311_036",
-    "course": "CSC 311",
-    "chapter": "Chapter 2",
-    "text": "Which of the following is an example of a relational database management system?",
-    "options": [
-      "Microsoft Word",
-      "MySQL",
-      "Adobe Photoshop",
-      "Microsoft PowerPoint"
+    id: "csc311_m2_036",
+    course: "CSC 311",
+    chapter: "Chapter 2",
+    text: "Metadata can be simply defined as ______.",
+    options: [
+      "data about subschemas",
+      "data about data",
+      "data about hardware",
+      "data about network paths",
     ],
-    "correctAnswer": 1,
-    "explanation": "MySQL is an example of a relational database management system. Oracle and SQL Server are also examples."
+    correctAnswer: 1,
+    explanation:
+      "It describes metadata that is data about data, what data exists, what each data means...",
   },
   {
-    "id": "csc311_037",
-    "course": "CSC 311",
-    "chapter": "Chapter 2",
-    "text": "What is 'selecting' in relational database terminology?",
-    "options": [
-      "Data manipulation that eliminates columns in a table",
-      "Data manipulation that eliminates rows according to certain criteria",
-      "Data manipulation that combines two or more tables",
-      "Relating tables together"
-    ],
-    "correctAnswer": 1,
-    "explanation": "Selecting is data manipulation that eliminates rows according to certain criteria."
+    id: "csc311_m2_037",
+    course: "CSC 311",
+    chapter: "Chapter 2",
+    text: "The Logical access path (LAP) occurs when the ______ requires information from the DBMS.",
+    options: ["storage device", "operating system", "hardware", "Application"],
+    correctAnswer: 3,
+    explanation:
+      "Logical access path (LAP): Application requires information from the DBMS.",
   },
   {
-    "id": "csc311_038",
-    "course": "CSC 311",
-    "chapter": "Chapter 2",
-    "text": "What is 'projecting' in relational database terminology?",
-    "options": [
-      "Data manipulation that eliminates rows",
-      "Data manipulation that eliminates columns in a table",
-      "Data manipulation that combines tables",
-      "Creating new tables"
+    id: "csc311_m2_038",
+    course: "CSC 311",
+    chapter: "Chapter 2",
+    text: "The Physical access path (PAP) is when the DBMS accesses a ______ to retrieve data.",
+    options: [
+      "subschema",
+      "storage device",
+      "data dictionary",
+      "logical schema",
     ],
-    "correctAnswer": 1,
-    "explanation": "Projecting is data manipulation that eliminates columns in a table."
+    correctAnswer: 1,
+    explanation:
+      "Physical access path (PAP): DBMS accesses a storage device to retrieve data.",
   },
   {
-    "id": "csc311_039",
-    "course": "CSC 311",
-    "chapter": "Chapter 2",
-    "text": "What is 'joining' in relational database terminology?",
-    "options": [
-      "Data manipulation that eliminates rows",
-      "Data manipulation that eliminates columns",
-      "Data manipulation that combines two or more tables",
-      "Deleting data from tables"
-    ],
-    "correctAnswer": 2,
-    "explanation": "Joining is data manipulation that combines two or more tables."
+    id: "csc311_m2_039",
+    course: "CSC 311",
+    chapter: "Chapter 2",
+    text: "Structured Query Language (SQL) was invented at IBM’s Almaden Research Centre in the 1990s.",
+    options: ["I don't know", "True", "False", "Maybe"],
+    correctAnswer: 2,
+    explanation:
+      "False. SQL was “Invented” at IBM’s Almaden Research Centre (San Jose, CA) in the 1970s.",
   },
   {
-    "id": "csc311_040",
-    "course": "CSC 311",
-    "chapter": "Chapter 2",
-    "text": "What does 'linking' mean in relational databases?",
-    "options": [
-      "Deleting tables",
-      "Relating tables in a relational database together",
-      "Creating new databases",
-      "Backing up data"
-    ],
-    "correctAnswer": 1,
-    "explanation": "Linking means relating tables in a relational database together."
+    id: "csc311_m2_040",
+    course: "CSC 311",
+    chapter: "Chapter 2",
+    text: "In the SQL query `SELECT * FROM EMPLOYEE`, the asterisk (*) means to select all ______.",
+    options: ["tables", "columns", "databases", "subschemas"],
+    correctAnswer: 1,
+    explanation: "E.g., Select all (“*”) columns from the EMPLOYEE table...",
   },
   {
-    "id": "csc311_041",
-    "course": "CSC 311",
-    "chapter": "Chapter 2",
-    "text": "What is a schema in database terminology?",
-    "options": [
-      "A subset of the database",
-      "A description of the entire database and its logical structure",
-      "A single table",
-      "A backup file"
+    id: "csc311_m2_041",
+    course: "CSC 311",
+    chapter: "Chapter 2",
+    text: "______ is a collection of instructions and commands used to define and describe data and data relationships in a specific database.",
+    options: [
+      "Data Manipulation Language (DML)",
+      "Data Definition Language (DDL)",
+      "Transaction Control Language (TCL)",
+      "Data Control Language (DCL)",
     ],
-    "correctAnswer": 1,
-    "explanation": "A schema is a description of the entire database, i.e., the overall logical structure of the entire database (the blueprint of a whole database)."
+    correctAnswer: 1,
+    explanation:
+      "Data Definition Language (DDL): A collection of instructions and commands used to define and describe data and data relationships in a specific database.",
   },
   {
-    "id": "csc311_042",
-    "course": "CSC 311",
-    "chapter": "Chapter 2",
-    "text": "A schema can be described as:",
-    "options": [
-      "A user-specific view of the database",
-      "The blueprint of a whole database",
-      "A single record in a table",
-      "A type of data redundancy"
-    ],
-    "correctAnswer": 1,
-    "explanation": "A schema is the blueprint of a whole database, describing the overall logical structure of the entire database."
+    id: "csc311_m2_042",
+    course: "CSC 311",
+    chapter: "Chapter 2",
+    text: "Creating database objects, altering database structures, and truncating tables are functions of ______.",
+    options: ["DDL", "DML", "DCL", "TCL"],
+    correctAnswer: 0,
+    explanation:
+      "Functions [of DDL]: create database objects, alter database structures, drop/delete objects, rename objects, truncate tables.",
   },
   {
-    "id": "csc311_043",
-    "course": "CSC 311",
-    "chapter": "Chapter 2",
-    "text": "What is a subschema?",
-    "options": [
-      "The entire database structure",
-      "A file containing a description of a subset of the database accessible to a particular user",
-      "A backup of the database",
-      "A type of network topology"
+    id: "csc311_m2_043",
+    course: "CSC 311",
+    chapter: "Chapter 2",
+    text: "______ is a method of dealing with a situation in which two or more people need to access the same record in a database at the same time.",
+    options: [
+      "Spatial data analysis",
+      "Data redundancy",
+      "Concurrency control",
+      "Schema modification",
     ],
-    "correctAnswer": 1,
-    "explanation": "A subschema is a file that contains a description of a subset of the database and identifies which users can perform modifications on the data items in that subset. It is a user-specific view of the database."
+    correctAnswer: 2,
+    explanation:
+      "Concurrency control: A method of dealing with a situation in which two or more people need to access the same record in a database at the same time.",
   },
   {
-    "id": "csc311_044",
-    "course": "CSC 311",
-    "chapter": "Chapter 2",
-    "text": "A subschema is also known as:",
-    "options": [
-      "The blueprint of a whole database",
-      "A user-specific view of the database",
-      "The physical storage structure",
-      "A data dictionary"
+    id: "csc311_m2_044",
+    course: "CSC 311",
+    chapter: "Chapter 2",
+    text: "The commands that are used to manipulate the data in a database fall under ______.",
+    options: [
+      "Data Definition Language (DDL)",
+      "Data Control Language (DCL)",
+      "Transaction Control Language (TCL)",
+      "Data Manipulation Language (DML)",
     ],
-    "correctAnswer": 1,
-    "explanation": "A subschema is a subset of the database schema accessible to a particular user, also called a user-specific view of the database."
+    correctAnswer: 3,
+    explanation:
+      "Data manipulation language (DML): The commands that are used to manipulate the data in a database.",
   },
   {
-    "id": "csc311_045",
-    "course": "CSC 311",
-    "chapter": "Chapter 2",
-    "text": "What is a data dictionary?",
-    "options": [
-      "A collection of related records",
-      "A detailed description of all data used in the database",
-      "A type of database model",
-      "A programming language"
+    id: "csc311_m2_045",
+    course: "CSC 311",
+    chapter: "Chapter 2",
+    text: "Microsoft Access 98 and Lotus Approach 98 are examples of popular ______.",
+    options: [
+      "data warehouses",
+      "Database Management Systems for End Users",
+      "Object-Relational systems",
+      "Distributed databases",
     ],
-    "correctAnswer": 1,
-    "explanation": "A data dictionary is a detailed description of all data used in the database. It describes metadata, that is, data about data."
+    correctAnswer: 1,
+    explanation:
+      "Popular Database Management Systems for End Users: Microsoft Access 98, Lotus Approach 98, Inprise (formerly Borland) dBASE.",
   },
   {
-    "id": "csc311_046",
-    "course": "CSC 311",
-    "chapter": "Chapter 2",
-    "text": "A data dictionary describes:",
-    "options": [
-      "Network configurations",
-      "Metadata - data about data",
-      "Hardware specifications",
-      "User passwords"
-    ],
-    "correctAnswer": 1,
-    "explanation": "A data dictionary describes metadata, that is, data about data - what data exists, what each data means, where it is stored, and how it is used."
+    id: "csc311_m2_046",
+    course: "CSC 311",
+    chapter: "Chapter 2",
+    text: "A Distributed Database is one where actual data may be spread across several smaller databases connected via telecommunications devices.",
+    options: ["Maybe", "False", "True", "I don't know"],
+    correctAnswer: 2,
+    explanation:
+      "True. Distributed database... A database in which the actual data may be spread across several smaller databases connected via telecommunications devices.",
   },
   {
-    "id": "csc311_047",
-    "course": "CSC 311",
-    "chapter": "Chapter 2",
-    "text": "Which of the following is NOT a feature of a data dictionary?",
-    "options": [
-      "Provides a standard definition of terms and data elements",
-      "Assists programmers in designing and writing programs",
-      "Increases data redundancy",
-      "Reduces data redundancy"
+    id: "csc311_m2_047",
+    course: "CSC 311",
+    chapter: "Chapter 2",
+    text: "A ______ is a relational database management system designed specifically to support management decision making.",
+    options: [
+      "data dictionary",
+      "subschema",
+      "data warehouse",
+      "concurrency control system",
     ],
-    "correctAnswer": 2,
-    "explanation": "Increasing data redundancy is NOT a feature of a data dictionary. Data dictionaries actually help reduce data redundancy."
+    correctAnswer: 2,
+    explanation:
+      "Data warehouse: A relational database management system designed specifically to support management decision making.",
   },
   {
-    "id": "csc311_048",
-    "course": "CSC 311",
-    "chapter": "Chapter 2",
-    "text": "Which of the following is a feature of a data dictionary?",
-    "options": [
-      "Slower program development",
-      "Increased data redundancy",
-      "Faster program development",
-      "Decreased data reliability"
-    ],
-    "correctAnswer": 2,
-    "explanation": "Faster program development is a feature of a data dictionary."
-  },
-  {
-    "id": "csc311_049",
-    "course": "CSC 311",
-    "chapter": "Chapter 2",
-    "text": "What is the Logical Access Path (LAP)?",
-    "options": [
-      "The physical storage location of data",
-      "When an application requires information from the DBMS",
-      "The network route for data transfer",
-      "A type of database model"
-    ],
-    "correctAnswer": 1,
-    "explanation": "Logical Access Path (LAP) is when an application requires information from the DBMS."
-  },
-  {
-    "id": "csc311_050",
-    "course": "CSC 311",
-    "chapter": "Chapter 2",
-    "text": "What is the Physical Access Path (PAP)?",
-    "options": [
-      "When an application requires information",
-      "A logical view of data",
-      "When the DBMS accesses a storage device to retrieve data",
-      "A network protocol"
-    ],
-    "correctAnswer": 2,
-    "explanation": "Physical Access Path (PAP) is when the DBMS accesses a storage device to retrieve data."
-  },
-  {
-    "id": "csc311_051",
-    "course": "CSC 311",
-    "chapter": "Chapter 2",
-    "text": "What is SQL?",
-    "options": [
-      "A hardware component",
-      "A standard language used to create, manage, and manipulate relational databases",
-      "A network protocol",
-      "An operating system"
-    ],
-    "correctAnswer": 1,
-    "explanation": "SQL (Structured Query Language) is a standard language used to create, manage, and manipulate relational databases."
-  },
-  {
-    "id": "csc311_052",
-    "course": "CSC 311",
-    "chapter": "Chapter 2",
-    "text": "Where was SQL invented?",
-    "options": [
-      "Microsoft Research",
-      "IBM's Almaden Research Centre",
-      "Google Labs",
-      "Apple Research"
-    ],
-    "correctAnswer": 1,
-    "explanation": "SQL was 'invented' at IBM's Almaden Research Centre (San Jose, CA) in the 1970s."
-  },
-  {
-    "id": "csc311_053",
-    "course": "CSC 311",
-    "chapter": "Chapter 2",
-    "text": "In which decade was SQL invented?",
-    "options": [
-      "1960s",
-      "1970s",
-      "1980s",
-      "1990s"
-    ],
-    "correctAnswer": 1,
-    "explanation": "SQL was invented at IBM's Almaden Research Centre in the 1970s."
-  },
-  {
-    "id": "csc311_054",
-    "course": "CSC 311",
-    "chapter": "Chapter 2",
-    "text": "What does the SQL command 'SELECT * FROM EMPLOYEE' do?",
-    "options": [
-      "Deletes all records from EMPLOYEE table",
-      "Selects all columns from the EMPLOYEE table",
-      "Creates a new EMPLOYEE table",
-      "Updates the EMPLOYEE table"
-    ],
-    "correctAnswer": 1,
-    "explanation": "SELECT * FROM EMPLOYEE selects all ('*') columns from the EMPLOYEE table."
-  },
-  {
-    "id": "csc311_055",
-    "course": "CSC 311",
-    "chapter": "Chapter 2",
-    "text": "What is Data Definition Language (DDL)?",
-    "options": [
-      "Commands used to manipulate data",
-      "A collection of instructions and commands used to define and describe data and data relationships in a specific database",
-      "Commands used for transaction control",
-      "Commands used for access control"
-    ],
-    "correctAnswer": 1,
-    "explanation": "Data Definition Language (DDL) is a collection of instructions and commands used to define and describe data and data relationships in a specific database."
-  },
-  {
-    "id": "csc311_056",
-    "course": "CSC 311",
-    "chapter": "Chapter 2",
-    "text": "Which of the following is a function of DDL?",
-    "options": [
-      "Insert data into tables",
-      "Create database objects",
-      "Grant user permissions",
-      "Commit transactions"
-    ],
-    "correctAnswer": 1,
-    "explanation": "DDL functions include creating database objects, altering database structures, dropping/deleting objects, renaming objects, and truncating tables."
-  },
-  {
-    "id": "csc311_057",
-    "course": "CSC 311",
-    "chapter": "Chapter 2",
-    "text": "Which of the following is NOT a DDL function?",
-    "options": [
-      "Create database objects",
-      "Alter database structures",
-      "Insert data into tables",
-      "Drop/delete objects"
-    ],
-    "correctAnswer": 2,
-    "explanation": "Inserting data into tables is a DML (Data Manipulation Language) function, not a DDL function."
-  },
-  {
-    "id": "csc311_058",
-    "course": "CSC 311",
-    "chapter": "Chapter 2",
-    "text": "What is Data Manipulation Language (DML)?",
-    "options": [
-      "Commands used to define database structures",
-      "Commands used to manipulate the data in a database",
-      "Commands used to control access",
-      "Commands used for backup"
-    ],
-    "correctAnswer": 1,
-    "explanation": "Data Manipulation Language (DML) consists of commands that are used to manipulate the data in a database."
-  },
-  {
-    "id": "csc311_059",
-    "course": "CSC 311",
-    "chapter": "Chapter 2",
-    "text": "Which of the following are categories of SQL?",
-    "options": [
-      "DDL, DML, DCL, TCL",
-      "CREATE, DROP, ALTER, SELECT",
-      "INSERT, UPDATE, DELETE, SELECT",
-      "GRANT, REVOKE, COMMIT, ROLLBACK"
-    ],
-    "correctAnswer": 0,
-    "explanation": "The categories of SQL are DDL (Data Definition Language), DML (Data Manipulation Language), DCL (Data Control Language), and TCL (Transaction Control Language)."
-  },
-  {
-    "id": "csc311_060",
-    "course": "CSC 311",
-    "chapter": "Chapter 2",
-    "text": "What is concurrency control?",
-    "options": [
-      "A method of data encryption",
-      "A method of dealing with a situation where two or more people need to access the same record at the same time",
-      "A backup procedure",
-      "A network configuration"
-    ],
-    "correctAnswer": 1,
-    "explanation": "Concurrency control is a method of dealing with a situation in which two or more people need to access the same record in a database at the same time."
-  },
-  {
-    "id": "csc311_061",
-    "course": "CSC 311",
-    "chapter": "Chapter 2",
-    "text": "Which of the following is a popular DBMS for end users?",
-    "options": [
-      "Microsoft Word",
-      "Microsoft Access",
-      "Microsoft Excel",
-      "Microsoft PowerPoint"
-    ],
-    "correctAnswer": 1,
-    "explanation": "Microsoft Access is a popular Database Management System for end users."
-  },
-  {
-    "id": "csc311_062",
-    "course": "CSC 311",
-    "chapter": "Chapter 2",
-    "text": "Which of the following is NOT a DBMS selection criterion?",
-    "options": [
-      "Database size",
-      "Number of concurrent users",
-      "Color of the interface",
-      "Cost"
-    ],
-    "correctAnswer": 2,
-    "explanation": "DBMS selection criteria include database size, number of concurrent users, performance, integration, features, the vendor, and cost. Color of interface is not a criterion."
-  },
-  {
-    "id": "csc311_063",
-    "course": "CSC 311",
-    "chapter": "Chapter 2",
-    "text": "What is a distributed database?",
-    "options": [
-      "A database stored on a single computer",
-      "A database in which the actual data may be spread across several smaller databases connected via telecommunications devices",
-      "A database that is not connected to any network",
-      "A database backup system"
-    ],
-    "correctAnswer": 1,
-    "explanation": "A distributed database is a database in which the actual data may be spread across several smaller databases connected via telecommunications devices."
-  },
-  {
-    "id": "csc311_064",
-    "course": "CSC 311",
-    "chapter": "Chapter 2",
-    "text": "What is a data warehouse?",
-    "options": [
-      "A physical building for storing computers",
-      "A relational database management system designed specifically to support management decision making",
-      "A backup storage device",
-      "A network server"
-    ],
-    "correctAnswer": 1,
-    "explanation": "A data warehouse is a relational database management system designed specifically to support management decision making."
-  },
-  {
-    "id": "csc311_065",
-    "course": "CSC 311",
-    "chapter": "Chapter 2",
-    "text": "A data warehouse is the current evolution of:",
-    "options": [
-      "Operating Systems",
+    id: "csc311_m2_048",
+    course: "CSC 311",
+    chapter: "Chapter 2",
+    text: "A data warehouse is considered the current evolution of ______.",
+    options: [
       "Decision Support Systems (DSSs)",
-      "Network Systems",
-      "Programming Languages"
+      "Object-Relational Database Management Systems (ORDBMS)",
+      "Data Control Languages (DCL)",
+      "Hierarchical database models",
     ],
-    "correctAnswer": 1,
-    "explanation": "A data warehouse is the current evolution of Decision Support Systems (DSSs)."
+    correctAnswer: 0,
+    explanation:
+      "Data warehouse... Current evolution of Decision Support Systems (DSSs).",
   },
   {
-    "id": "csc311_066",
-    "course": "CSC 311",
-    "chapter": "Chapter 2",
-    "text": "What is a data mart?",
-    "options": [
-      "A large enterprise-wide data warehouse",
-      "A subset of a data warehouse for small and medium-size businesses or departments within larger companies",
-      "A data backup system",
-      "A type of database model"
+    id: "csc311_m2_049",
+    course: "CSC 311",
+    chapter: "Chapter 2",
+    text: "A ______ is a subset of a data warehouse designed for small and medium-size businesses or departments within larger companies.",
+    options: [
+      "data subschema",
+      "data mart",
+      "spatial database",
+      "hypertext model",
     ],
-    "correctAnswer": 1,
-    "explanation": "A data mart is a subset of a data warehouse for small and medium-size businesses or departments within larger companies."
+    correctAnswer: 1,
+    explanation:
+      "Data mart: A subset of a data warehouse for small and medium-size businesses or departments within larger companies.",
   },
   {
-    "id": "csc311_067",
-    "course": "CSC 311",
-    "chapter": "Chapter 2",
-    "text": "Which of the following is NOT a step in designing a customer data warehouse?",
-    "options": [
-      "Sharply define your goals and objectives",
-      "Choose the software that best fits your goals",
-      "Skip the planning phase",
-      "Measure results"
+    id: "csc311_m2_050",
+    course: "CSC 311",
+    chapter: "Chapter 2",
+    text: "Before you build a customer data warehouse, the very first step is to sharply define your ______.",
+    options: [
+      "software vendor",
+      "ER diagrams",
+      "subschemas",
+      "goals and objectives",
     ],
-    "correctAnswer": 2,
-    "explanation": "Developing a plan is an important step, not skipping it. Steps include: defining goals, choosing software, determining who/what should be in the database, developing a plan, and measuring results."
+    correctAnswer: 3,
+    explanation:
+      "Designing a Customer Data Warehouse: Sharply define your goals and objectives before you build the warehouse.",
   },
   {
-    "id": "csc311_068",
-    "course": "CSC 311",
-    "chapter": "Chapter 2",
-    "text": "What is data mining?",
-    "options": [
-      "Extracting physical minerals from the ground",
-      "The automated discovery of patterns and relationships in a data warehouse",
-      "Deleting old data from databases",
-      "Creating new databases"
-    ],
-    "correctAnswer": 1,
-    "explanation": "Data mining is the automated discovery of patterns and relationships in a data warehouse."
+    id: "csc311_m2_051",
+    course: "CSC 311",
+    chapter: "Chapter 2",
+    text: "Data mining provides top-down, query-driven analysis.",
+    options: ["I don't know", "True", "False", "Maybe"],
+    correctAnswer: 2,
+    explanation:
+      "False. Data mining provides bottom-up, discovery-driven analysis. Data warehouse and OLAP provide top-down, query-driven analysis.",
   },
   {
-    "id": "csc311_069",
-    "course": "CSC 311",
-    "chapter": "Chapter 2",
-    "text": "Which of the following is a data mining application?",
-    "options": [
-      "Word processing",
-      "Market segmentation",
-      "Photo editing",
-      "Video streaming"
-    ],
-    "correctAnswer": 1,
-    "explanation": "Market segmentation is a data mining application. Others include customer queries, fraud detection, direct marketing, market basket analysis, and trend analysis."
+    id: "csc311_m2_052",
+    course: "CSC 311",
+    chapter: "Chapter 2",
+    text: "The automated discovery of patterns and relationships in a data warehouse is known as ______.",
+    options: ["OLAP", "Data mining", "Data extraction", "Concurrency control"],
+    correctAnswer: 1,
+    explanation:
+      "Data mining: The automated discovery of patterns and relationships in a data warehouse.",
   },
   {
-    "id": "csc311_070",
-    "course": "CSC 311",
-    "chapter": "Chapter 2",
-    "text": "Which of the following is NOT a data mining application?",
-    "options": [
-      "Fraud detection",
-      "Direct marketing",
-      "Video editing",
-      "Trend analysis"
-    ],
-    "correctAnswer": 2,
-    "explanation": "Video editing is not a data mining application. Data mining applications include market segmentation, customer queries, fraud detection, direct marketing, market basket analysis, and trend analysis."
-  },
-  {
-    "id": "csc311_071",
-    "course": "CSC 311",
-    "chapter": "Chapter 2",
-    "text": "What is OLAP?",
-    "options": [
-      "Online Application Processing",
-      "On-Line Analytical Processing",
-      "Offline Analysis Program",
-      "Online Access Protocol"
-    ],
-    "correctAnswer": 1,
-    "explanation": "OLAP stands for On-Line Analytical Processing, which provides access to multidimensional databases with managerially useful display techniques."
-  },
-  {
-    "id": "csc311_072",
-    "course": "CSC 311",
-    "chapter": "Chapter 2",
-    "text": "OLAP provides:",
-    "options": [
-      "Bottom-up, discovery-driven analysis",
-      "Access to multidimensional databases providing managerially useful display techniques",
-      "Data backup services",
-      "Network connectivity"
-    ],
-    "correctAnswer": 1,
-    "explanation": "OLAP provides access to multidimensional databases providing managerially useful display techniques."
-  },
-  {
-    "id": "csc311_073",
-    "course": "CSC 311",
-    "chapter": "Chapter 2",
-    "text": "Data warehouse and OLAP provide:",
-    "options": [
-      "Bottom-up, discovery-driven analysis",
-      "Top-down, query-driven analysis",
-      "Random analysis",
-      "No analysis capabilities"
-    ],
-    "correctAnswer": 1,
-    "explanation": "Data warehouse and OLAP provide top-down, query-driven analysis."
-  },
-  {
-    "id": "csc311_074",
-    "course": "CSC 311",
-    "chapter": "Chapter 2",
-    "text": "Data mining provides:",
-    "options": [
-      "Top-down, query-driven analysis",
-      "Bottom-up, discovery-driven analysis",
-      "No analysis capabilities",
-      "Only data storage"
-    ],
-    "correctAnswer": 1,
-    "explanation": "Data mining provides bottom-up, discovery-driven analysis, unlike data warehouse and OLAP which provide top-down, query-driven analysis."
-  },
-  {
-    "id": "csc311_075",
-    "course": "CSC 311",
-    "chapter": "Chapter 2",
-    "text": "What is ODBC?",
-    "options": [
-      "Online Database Connection",
-      "Open Database Connectivity",
-      "Offline Data Backup Control",
-      "Object Database Configuration"
-    ],
-    "correctAnswer": 1,
-    "explanation": "ODBC stands for Open Database Connectivity, which is a set of standards that ensures software can be used with any ODBC-compliant database."
-  },
-  {
-    "id": "csc311_076",
-    "course": "CSC 311",
-    "chapter": "Chapter 2",
-    "text": "What does ODBC ensure?",
-    "options": [
-      "Data is encrypted",
-      "Software written to comply with ODBC standards can be used with any ODBC-compliant database",
-      "Data is automatically backed up",
-      "Networks are secure"
-    ],
-    "correctAnswer": 1,
-    "explanation": "ODBC is a set of standards that ensures software written to comply with these standards can be used with any ODBC-compliant database."
-  },
-  {
-    "id": "csc311_077",
-    "course": "CSC 311",
-    "chapter": "Chapter 2",
-    "text": "What is an Object-Relational Database Management System (ORDBMS)?",
-    "options": [
-      "A DBMS that can only handle text data",
-      "A DBMS capable of manipulating audio, video, and graphical data",
-      "A DBMS that only works offline",
-      "A DBMS for backup purposes only"
-    ],
-    "correctAnswer": 1,
-    "explanation": "An Object-Relational Database Management System (ORDBMS) is a DBMS capable of manipulating audio, video, and graphical data."
-  },
-  {
-    "id": "csc311_078",
-    "course": "CSC 311",
-    "chapter": "Chapter 2",
-    "text": "What is hypertext?",
-    "options": [
-      "A method that allows users to search and manipulate alphanumeric data in an unstructured way",
-      "A method for storing multimedia data",
-      "A network protocol",
-      "A database backup system"
-    ],
-    "correctAnswer": 0,
-    "explanation": "Hypertext allows users to search and manipulate alphanumeric data in an unstructured way."
-  },
-  {
-    "id": "csc311_079",
-    "course": "CSC 311",
-    "chapter": "Chapter 2",
-    "text": "What is hypermedia?",
-    "options": [
-      "A method for storing text only",
-      "A method that allows businesses to search and manipulate multimedia forms of data",
-      "A type of network",
-      "A programming language"
-    ],
-    "correctAnswer": 1,
-    "explanation": "Hypermedia allows businesses to search and manipulate multimedia forms of data."
-  },
-  {
-    "id": "csc311_080",
-    "course": "CSC 311",
-    "chapter": "Chapter 2",
-    "text": "What is spatial data technology?",
-    "options": [
-      "Technology for audio processing",
-      "Use of an object-relational database to store and access data according to the location it describes",
-      "Technology for video streaming",
-      "Technology for text processing"
-    ],
-    "correctAnswer": 1,
-    "explanation": "Spatial data technology is the use of an object-relational database to store and access data according to the location it describes and to permit spatial queries and analysis."
-  },
-  {
-    "id": "csc311_081",
-    "course": "CSC 311",
-    "chapter": "Chapter 2",
-    "text": "In planned data redundancy, summary totals are:",
-    "options": [
-      "Always calculated from elemental data",
-      "Carried in the data records rather than calculated from elemental data",
-      "Never stored",
-      "Deleted automatically"
-    ],
-    "correctAnswer": 1,
-    "explanation": "In planned data redundancy, summary totals are carried in the data records rather than calculated from elemental data to improve performance."
-  },
-  {
-    "id": "csc311_082",
-    "course": "CSC 311",
-    "chapter": "Chapter 2",
-    "text": "The difference between the hierarchical and network database models is:",
-    "options": [
-      "Hierarchical uses tables, network uses trees",
-      "In the network model, a member may have many owners",
-      "Network model uses two-dimensional tables",
-      "They are exactly the same"
-    ],
-    "correctAnswer": 1,
-    "explanation": "The network data model is an expansion of the hierarchical database model with an owner-member relationship in which a member may have many owners."
-  },
-  {
-    "id": "csc311_083",
-    "course": "CSC 311",
-    "chapter": "Chapter 2",
-    "text": "Relations in a relational database are the logical equivalent of:",
-    "options": [
-      "Characters",
-      "Fields",
-      "Records",
-      "Files"
-    ],
-    "correctAnswer": 3,
-    "explanation": "In the relational data model, all data elements are placed in two-dimensional tables, called relations, that are the logical equivalent of files."
-  },
-  {
-    "id": "csc311_084",
-    "course": "CSC 311",
-    "chapter": "Chapter 2",
-    "text": "Which database model uses owner-member relationships?",
-    "options": [
-      "Relational model",
-      "Hierarchical model",
-      "Network model",
-      "Flat file model"
-    ],
-    "correctAnswer": 2,
-    "explanation": "The network data model uses owner-member relationships in which a member may have many owners."
-  },
-  {
-    "id": "csc311_085",
-    "course": "CSC 311",
-    "chapter": "Chapter 2",
-    "text": "Which of the following is a DDL function?",
-    "options": [
-      "SELECT",
-      "INSERT",
-      "TRUNCATE",
-      "UPDATE"
-    ],
-    "correctAnswer": 2,
-    "explanation": "TRUNCATE (truncate tables) is a DDL function. DDL functions include create, alter, drop/delete, rename, and truncate."
-  },
-  {
-    "id": "csc311_086",
-    "course": "CSC 311",
-    "chapter": "Chapter 2",
-    "text": "Which SQL category is used to control access permissions?",
-    "options": [
-      "DDL",
-      "DML",
-      "DCL",
-      "TCL"
-    ],
-    "correctAnswer": 2,
-    "explanation": "DCL (Data Control Language) is used to control access permissions to the database."
-  },
-  {
-    "id": "csc311_087",
-    "course": "CSC 311",
-    "chapter": "Chapter 2",
-    "text": "Which SQL category is used to manage transactions?",
-    "options": [
-      "DDL",
-      "DML",
-      "DCL",
-      "TCL"
-    ],
-    "correctAnswer": 3,
-    "explanation": "TCL (Transaction Control Language) is used to manage transactions in the database."
-  },
-  {
-    "id": "csc311_088",
-    "course": "CSC 311",
-    "chapter": "Chapter 2",
-    "text": "Microsoft Access is an example of:",
-    "options": [
-      "A word processor",
-      "A spreadsheet application",
-      "A database management system",
-      "A presentation software"
-    ],
-    "correctAnswer": 2,
-    "explanation": "Microsoft Access is a popular Database Management System for end users."
-  },
-  {
-    "id": "csc311_089",
-    "course": "CSC 311",
-    "chapter": "Chapter 2",
-    "text": "Lotus Approach 98 is an example of:",
-    "options": [
-      "An operating system",
-      "A database management system",
-      "A programming language",
-      "A network protocol"
-    ],
-    "correctAnswer": 1,
-    "explanation": "Lotus Approach 98 is mentioned as one of the popular Database Management Systems for end users."
-  },
-  {
-    "id": "csc311_090",
-    "course": "CSC 311",
-    "chapter": "Chapter 2",
-    "text": "Which of the following is a DBMS selection criterion?",
-    "options": [
-      "Performance",
-      "Color scheme",
-      "Font type",
-      "Icon design"
-    ],
-    "correctAnswer": 0,
-    "explanation": "Performance is one of the DBMS selection criteria. Others include database size, number of concurrent users, integration, features, vendor, and cost."
-  },
-  {
-    "id": "csc311_091",
-    "course": "CSC 311",
-    "chapter": "Chapter 2",
-    "text": "Which of the following is a data mining application?",
-    "options": [
+    id: "csc311_m2_053",
+    course: "CSC 311",
+    chapter: "Chapter 2",
+    text: "Which of the following is an application of data mining?",
+    options: [
       "Market basket analysis",
-      "Word processing",
-      "Email management",
-      "Calendar scheduling"
+      "Designing an ER diagram",
+      "Writing DDL statements",
+      "Physical access path routing",
     ],
-    "correctAnswer": 0,
-    "explanation": "Market basket analysis is a data mining application used to discover purchasing patterns."
+    correctAnswer: 0,
+    explanation:
+      "Data mining applications: Market segmentation, Customer queries, Fraud detection, Direct marketing, Market basket analysis, Trend analysis.",
   },
   {
-    "id": "csc311_092",
-    "course": "CSC 311",
-    "chapter": "Chapter 2",
-    "text": "Customer queries is an application of:",
-    "options": [
-      "Word processing",
-      "Data mining",
-      "Network configuration",
-      "Video editing"
+    id: "csc311_m2_054",
+    course: "CSC 311",
+    chapter: "Chapter 2",
+    text: "______ provides access to multidimensional databases providing managerially useful display techniques.",
+    options: [
+      "DCL",
+      "ODBC",
+      "On-line analytic processing (OLAP)",
+      "Data dictionary",
     ],
-    "correctAnswer": 1,
-    "explanation": "Customer queries is one of the data mining applications listed."
+    correctAnswer: 2,
+    explanation:
+      "On-line analytic processing (OLAP): Access to multidimensional databases providing managerially useful display techniques.",
   },
   {
-    "id": "csc311_093",
-    "course": "CSC 311",
-    "chapter": "Chapter 2",
-    "text": "Fraud detection is an application of:",
-    "options": [
-      "Data entry",
-      "Data backup",
-      "Data mining",
-      "Data deletion"
-    ],
-    "correctAnswer": 2,
-    "explanation": "Fraud detection is one of the data mining applications."
+    id: "csc311_m2_055",
+    course: "CSC 311",
+    chapter: "Chapter 2",
+    text: "Data warehouse and OLAP are known to provide ______, query-driven analysis.",
+    options: ["bottom-up", "top-down", "horizontal", "spatial"],
+    correctAnswer: 1,
+    explanation:
+      "Data warehouse and OLAP: Provides top-down, query-driven analysis.",
   },
   {
-    "id": "csc311_094",
-    "course": "CSC 311",
-    "chapter": "Chapter 2",
-    "text": "OLAP is now used to:",
-    "options": [
-      "Delete data from databases",
-      "Store and deliver data warehouse information",
-      "Create network connections",
-      "Write programs"
-    ],
-    "correctAnswer": 1,
-    "explanation": "OLAP is now used to store and deliver data warehouse information."
+    id: "csc311_m2_056",
+    course: "CSC 311",
+    chapter: "Chapter 2",
+    text: "A set of standards that ensures software written to comply with these standards can be used with any compliant database is known as ______.",
+    options: ["ODBC", "ORDBMS", "OLAP", "DDL"],
+    correctAnswer: 0,
+    explanation:
+      "Open database connectivity (ODBC): A set of standards that ensures software written to comply with these standards can be used with any ODBC-compliant database.",
   },
   {
-    "id": "csc311_095",
-    "course": "CSC 311",
-    "chapter": "Chapter 2",
-    "text": "What information does a data dictionary contain about a data element?",
-    "options": [
-      "Only the name of the data element",
-      "Description, other names, value range, data type, and positions",
-      "Only the data type",
-      "Only the value range"
-    ],
-    "correctAnswer": 1,
-    "explanation": "A data dictionary contains detailed information including data element name, description, other names, value range, data type, and positions/columns."
+    id: "csc311_m2_057",
+    course: "CSC 311",
+    chapter: "Chapter 2",
+    text: "An Object-relational database management system (ORDBMS) is capable of manipulating ______, video, and graphical data.",
+    options: ["only numeric", "audio", "mainframe", "unstructured code"],
+    correctAnswer: 1,
+    explanation:
+      "Object-relational database management system (ORDBMS): A DBMS capable of manipulating audio, video, and graphical data.",
   },
   {
-    "id": "csc311_096",
-    "course": "CSC 311",
-    "chapter": "Chapter 2",
-    "text": "What does the term 'metadata' mean?",
-    "options": [
-      "Data that is deleted",
-      "Data about data",
-      "Data that is encrypted",
-      "Data that is compressed"
-    ],
-    "correctAnswer": 1,
-    "explanation": "Metadata is data about data. A data dictionary describes metadata - what data exists, what each data means, where it is stored, and how it is used."
+    id: "csc311_m2_058",
+    course: "CSC 311",
+    chapter: "Chapter 2",
+    text: "______ allows users to search and manipulate alphanumeric data in an unstructured way.",
+    options: ["Hypertext", "Spatial data", "Network model", "Data mart"],
+    correctAnswer: 0,
+    explanation:
+      "Hypertext: Users can search and manipulate alphanumeric data in an unstructured way.",
   },
   {
-    "id": "csc311_097",
-    "course": "CSC 311",
-    "chapter": "Chapter 2",
-    "text": "Which advantage of the database approach refers to easier modification and updating?",
-    "options": [
-      "Data redundancy",
-      "Program-data dependence",
-      "Data and program independence",
-      "Increased vulnerability"
+    id: "csc311_m2_059",
+    course: "CSC 311",
+    chapter: "Chapter 2",
+    text: "______ allows businesses to search and manipulate multimedia forms of data.",
+    options: [
+      "Hypertext",
+      "Hypermedia",
+      "Concurrency control",
+      "Data Definition Language",
     ],
-    "correctAnswer": 2,
-    "explanation": "Data and program independence is an advantage that allows for easier modification and updating in the database approach."
+    correctAnswer: 1,
+    explanation:
+      "Hypermedia: Allows businesses to search and manipulate multimedia forms of data.",
   },
   {
-    "id": "csc311_098",
-    "course": "CSC 311",
-    "chapter": "Chapter 2",
-    "text": "Which of the following best describes the difference between a schema and a subschema?",
-    "options": [
-      "A schema is for users, a subschema is for administrators",
-      "A schema describes the entire database, a subschema describes a subset accessible to a particular user",
-      "They are the same thing",
-      "A subschema is larger than a schema"
+    id: "csc311_m2_060",
+    course: "CSC 311",
+    chapter: "Chapter 2",
+    text: "______ technology uses an object-relational database to store and access data according to the location it describes.",
+    options: [
+      "Spatial data",
+      "Hypertext",
+      "Network data",
+      "Telecommunications",
     ],
-    "correctAnswer": 1,
-    "explanation": "A schema describes the entire database (blueprint of whole database), while a subschema describes a subset of the database accessible to a particular user (user-specific view)."
+    correctAnswer: 0,
+    explanation:
+      "Spatial data technology: Use of an object-relational database to store and access data according to the location it describes and to permit spatial queries and analysis.",
   },
   {
-    "id": "csc311_099",
-    "course": "CSC 311",
-    "chapter": "Chapter 2",
-    "text": "Inprise (formerly Borland) dBASE is an example of:",
-    "options": [
-      "An operating system",
-      "A programming language",
-      "A database management system",
-      "A network protocol"
-    ],
-    "correctAnswer": 2,
-    "explanation": "Inprise (formerly Borland) dBASE is mentioned as one of the popular Database Management Systems for end users."
+    id: "csc311_m2_061",
+    course: "CSC 311",
+    chapter: "Chapter 2",
+    text: "In the example of the hierarchy of data, the letter 'F' represented in ASCII is an example of a ______.",
+    options: ["File", "Record", "Character", "Database"],
+    correctAnswer: 2,
+    explanation:
+      "Hierarchy of data Example... 1000100 (Letter ‘F’ in ASCII) corresponds to Characters(bytes).",
   },
   {
-    "id": "csc311_100",
-    "course": "CSC 311",
-    "chapter": "Chapter 2",
-    "text": "The 'vendor' is one of the criteria for:",
-    "options": [
-      "Network selection",
-      "DBMS selection",
-      "Operating system selection",
-      "Hardware selection"
-    ],
-    "correctAnswer": 1,
-    "explanation": "The vendor is one of the DBMS selection criteria, along with database size, number of concurrent users, performance, integration, features, and cost."
+    id: "csc311_m2_062",
+    course: "CSC 311",
+    chapter: "Chapter 2",
+    text: "Increased vulnerability is considered an advantage of the Database Approach.",
+    options: ["Maybe", "I don't know", "False", "True"],
+    correctAnswer: 2,
+    explanation:
+      "False. Increased vulnerability is listed under Disadvantages of the database approach.",
   },
   {
-    "id": "csc311_101",
-    "course": "CSC 311",
-    "chapter": "Chapter 2",
-    "text": "Direct marketing is an application of:",
-    "options": [
-      "Network administration",
-      "Data mining",
-      "System backup",
-      "Hardware maintenance"
+    id: "csc311_m2_063",
+    course: "CSC 311",
+    chapter: "Chapter 2",
+    text: "Which of the following is NOT a feature of a Data Dictionary?",
+    options: [
+      "Provide a standard definition of terms",
+      "Eliminate the need for all database software",
+      "Simplify database modification",
+      "Reduce data redundancy",
     ],
-    "correctAnswer": 1,
-    "explanation": "Direct marketing is one of the data mining applications."
+    correctAnswer: 1,
+    explanation:
+      "Data Dictionary Features include: Provide a standard definition of terms, Simplify database modification, Reduce data redundancy. Eliminating software is not a feature.",
   },
   {
-    "id": "csc311_102",
-    "course": "CSC 311",
-    "chapter": "Chapter 2",
-    "text": "Trend analysis is an application of:",
-    "options": [
-      "Word processing",
-      "Spreadsheet",
-      "Data mining",
-      "Presentation software"
-    ],
-    "correctAnswer": 2,
-    "explanation": "Trend analysis is one of the data mining applications."
+    id: "csc311_m2_064",
+    course: "CSC 311",
+    chapter: "Chapter 2",
+    text: "A Data Dictionary can assist programmers in designing and writing programs.",
+    options: ["I don't know", "Maybe", "False", "True"],
+    correctAnswer: 3,
+    explanation:
+      "True. Data Dictionary Features: Assist programmers in designing and writing programs.",
   },
   {
-    "id": "csc311_103",
-    "course": "CSC 311",
-    "chapter": "Chapter 2",
-    "text": "The first step in designing a customer data warehouse is to:",
-    "options": [
-      "Choose the software",
-      "Sharply define your goals and objectives",
-      "Measure results",
-      "Install the database"
-    ],
-    "correctAnswer": 1,
-    "explanation": "The first step in designing a customer data warehouse is to sharply define your goals and objectives before you build the warehouse."
+    id: "csc311_m2_065",
+    course: "CSC 311",
+    chapter: "Chapter 2",
+    text: "Data mining provides ______, discovery-driven analysis.",
+    options: ["top-down", "bottom-up", "horizontal", "schematic"],
+    correctAnswer: 1,
+    explanation: "Data mining: Provides bottom-up, discovery-driven analysis.",
   },
   {
-    "id": "csc311_104",
-    "course": "CSC 311",
-    "chapter": "Chapter 2",
-    "text": "Which of the following is an advantage of the database approach?",
-    "options": [
-      "Increased vulnerability",
-      "Higher cost of specialized staff",
+    id: "csc311_m2_066",
+    course: "CSC 311",
+    chapter: "Chapter 2",
+    text: "In the context of SQL categories, TCL stands for ______.",
+    options: [
+      "Table Creation Language",
+      "Transaction Control Language",
+      "Test Case Language",
+      "Transfer Configuration Language",
+    ],
+    correctAnswer: 1,
+    explanation: "Categories of sql: ... TRANSACTION CONTROL LANGUAGE.",
+  },
+  {
+    id: "csc311_m2_067",
+    course: "CSC 311",
+    chapter: "Chapter 2",
+    text: "In the context of SQL categories, DCL stands for ______.",
+    options: [
+      "Data Creation Language",
+      "Database Configuration Language",
+      "Data Control Language",
+      "Digital Certificate Language",
+    ],
+    correctAnswer: 2,
+    explanation: "Categories of sql: ... DATA CONTROL LANGUAGE.",
+  },
+  {
+    id: "csc311_m2_068",
+    course: "CSC 311",
+    chapter: "Chapter 2",
+    text: "A subschema is a subset of the database schema accessible to a particular user.",
+    options: ["True", "False", "Maybe", "I don't know"],
+    correctAnswer: 0,
+    explanation:
+      "True. A subschema is a subset of the database schema acccesible to a particular user (user-specific view of the database).",
+  },
+  {
+    id: "csc311_m2_069",
+    course: "CSC 311",
+    chapter: "Chapter 2",
+    text: "In a Relational Data Model, tables are called ______.",
+    options: ["schemas", "subschemas", "relations", "hierarchies"],
+    correctAnswer: 2,
+    explanation:
+      "Relational data model: This is a way of organizing and structuring data using tables calles relation.",
+  },
+  {
+    id: "csc311_m2_070",
+    course: "CSC 311",
+    chapter: "Chapter 2",
+    text: "In a relational data model, columns can be eliminated using a manipulation called ______.",
+    options: ["Joining", "Selecting", "Projecting", "Truncating"],
+    correctAnswer: 2,
+    explanation:
+      "Projecting: Data manipulation that eliminates columns in a table.",
+  },
+  {
+    id: "csc311_m2_071",
+    course: "CSC 311",
+    chapter: "Chapter 2",
+    text: "Which of the following is NOT an advantage of the database approach?",
+    options: [
       "Standardization of data access",
-      "Higher operating costs"
+      "Increased vulnerability",
+      "Better overall protection of the data",
+      "Improved strategic use of corporate data",
     ],
-    "correctAnswer": 2,
-    "explanation": "Standardization of data access is an advantage of the database approach."
+    correctAnswer: 1,
+    explanation:
+      "Increased vulnerability is listed under Disadvantages, not Advantages.",
   },
   {
-    "id": "csc311_105",
-    "course": "CSC 311",
-    "chapter": "Chapter 2",
-    "text": "Oracle is an example of:",
-    "options": [
-      "A hierarchical database",
-      "A network database",
-      "A relational database management system",
-      "A flat file database"
-    ],
-    "correctAnswer": 2,
-    "explanation": "Oracle is mentioned as an example of a relational database management system, along with MySQL and SQL Server."
-  },
-  {
-    "id": "csc311_106",
-    "course": "CSC 311",
-    "chapter": "Chapter 2",
-    "text": "SQL Server is an example of:",
-    "options": [
-      "A hierarchical database",
-      "A network database",
-      "A relational database management system",
-      "An object-oriented database"
-    ],
-    "correctAnswer": 2,
-    "explanation": "SQL Server (SQL) is mentioned as an example of a relational database management system."
-  },
-  {
-    "id": "csc311_107",
-    "course": "CSC 311",
-    "chapter": "Chapter 2",
-    "text": "In the WHERE clause of SQL, what is the purpose?",
-    "options": [
-      "To specify which tables to use",
-      "To specify conditions for filtering records",
-      "To create new tables",
-      "To delete databases"
-    ],
-    "correctAnswer": 1,
-    "explanation": "The WHERE clause in SQL specifies conditions for filtering records. For example, WHERE JOB_CLASSIFICATION = 'C2' filters records where the job classification equals C2."
-  },
-  {
-    "id": "csc311_108",
-    "course": "CSC 311",
-    "chapter": "Chapter 2",
-    "text": "What does a key field uniquely identify?",
-    "options": [
-      "A database",
-      "A file",
-      "A record",
-      "A character"
-    ],
-    "correctAnswer": 2,
-    "explanation": "A key is a field or set of fields that uniquely identifies the record."
-  },
-  {
-    "id": "csc311_109",
-    "course": "CSC 311",
-    "chapter": "Chapter 2",
-    "text": "Which of the following simplifies database modification?",
-    "options": [
-      "Data redundancy",
-      "Data dictionary",
-      "Data deletion",
-      "Data corruption"
-    ],
-    "correctAnswer": 1,
-    "explanation": "One of the features of a data dictionary is that it simplifies database modification."
-  },
-  {
-    "id": "csc311_110",
-    "course": "CSC 311",
-    "chapter": "Chapter 2",
-    "text": "What increases data reliability?",
-    "options": [
-      "Data redundancy",
-      "Data corruption",
-      "Data dictionary",
-      "Data deletion"
-    ],
-    "correctAnswer": 2,
-    "explanation": "One of the features of a data dictionary is that it increases data reliability."
-  },
-  {
-    "id": "csc311_111",
-    "course": "CSC 311",
-    "chapter": "Chapter 2",
-    "text": "In a relational database, what operation would you use to get specific columns from a table?",
-    "options": [
-      "Selecting",
-      "Projecting",
-      "Joining",
-      "Linking"
-    ],
-    "correctAnswer": 1,
-    "explanation": "Projecting is the data manipulation operation that eliminates columns in a table, effectively getting specific columns."
-  },
-  {
-    "id": "csc311_112",
-    "course": "CSC 311",
-    "chapter": "Chapter 2",
-    "text": "In a relational database, what operation would you use to filter rows based on criteria?",
-    "options": [
-      "Projecting",
-      "Selecting",
-      "Joining",
-      "Linking"
-    ],
-    "correctAnswer": 1,
-    "explanation": "Selecting is the data manipulation operation that eliminates rows according to certain criteria."
-  },
-  {
-    "id": "csc311_113",
-    "course": "CSC 311",
-    "chapter": "Chapter 2",
-    "text": "What is the purpose of the 'integration' criterion in DBMS selection?",
-    "options": [
-      "To determine the color of the interface",
-      "To evaluate how well the DBMS works with other systems",
-      "To count the number of users",
-      "To measure database size"
-    ],
-    "correctAnswer": 1,
-    "explanation": "Integration is a DBMS selection criterion that evaluates how well the DBMS integrates with other systems and applications."
-  },
-  {
-    "id": "csc311_114",
-    "course": "CSC 311",
-    "chapter": "Chapter 2",
-    "text": "Data is described as a necessity for:",
-    "options": [
-      "Entertainment purposes only",
-      "Almost any enterprise to carry out its business",
-      "Personal hobbies",
-      "Social media only"
-    ],
-    "correctAnswer": 1,
-    "explanation": "Data is described as a necessity for almost any enterprise to carry out its business."
-  },
-  {
-    "id": "csc311_115",
-    "course": "CSC 311",
-    "chapter": "Chapter 2",
-    "text": "A DBMS provides an interface between:",
-    "options": [
-      "Hardware and software only",
-      "The database and the user or other application programs",
-      "Networks and servers",
-      "Printers and monitors"
-    ],
-    "correctAnswer": 1,
-    "explanation": "A DBMS provides an interface between the database and the user of the database or other application programs."
-  },
-  {
-    "id": "csc311_116",
-    "course": "CSC 311",
-    "chapter": "Chapter 2",
-    "text": "Which of the following represents the correct relationship?",
-    "options": [
-      "Entity contains attributes",
-      "Attribute contains entities",
-      "Key contains entities",
-      "Character contains fields"
-    ],
-    "correctAnswer": 0,
-    "explanation": "An entity has attributes. For example, the entity 'Customer' has attributes like 'Customer name' and 'Customer ID'."
-  },
-  {
-    "id": "csc311_117",
-    "course": "CSC 311",
-    "chapter": "Chapter 2",
-    "text": "The database approach provides a framework for:",
-    "options": [
-      "Hardware development",
-      "Program development",
-      "Network configuration",
-      "Operating system design"
-    ],
-    "correctAnswer": 1,
-    "explanation": "One of the advantages of the database approach is that it provides a framework for program development."
-  },
-  {
-    "id": "csc311_118",
-    "course": "CSC 311",
-    "chapter": "Chapter 2",
-    "text": "Better overall protection of the data is an advantage of:",
-    "options": [
-      "The traditional approach",
-      "The database approach",
-      "The flat file approach",
-      "The manual approach"
-    ],
-    "correctAnswer": 1,
-    "explanation": "Better overall protection of the data is an advantage of the database approach."
-  },
-  {
-    "id": "csc311_119",
-    "course": "CSC 311",
-    "chapter": "Chapter 2",
-    "text": "Shared data and information resources is an advantage of:",
-    "options": [
-      "The traditional approach",
+    id: "csc311_m2_072",
+    course: "CSC 311",
+    chapter: "Chapter 2",
+    text: "In the traditional approach, program and data organized for one application are sometimes incompatible with those organized differently for another application. This is called ______.",
+    options: [
+      "Data integrity failure",
       "Program-data dependence",
-      "The database approach",
-      "Data redundancy"
+      "Data redundancy",
+      "Concurrency error",
     ],
-    "correctAnswer": 2,
-    "explanation": "Shared data and information resources is an advantage of the database approach."
+    correctAnswer: 1,
+    explanation:
+      "Program-data dependence: A situation in which program and data organized for one application are incompatible with programs and data organized differently for another application.",
   },
   {
-    "id": "csc311_120",
-    "course": "CSC 311",
-    "chapter": "Chapter 2",
-    "text": "Which of the following is TRUE about entities and records?",
-    "options": [
-      "Entities and records are completely unrelated",
-      "Each entity instance typically corresponds to a record in a database",
-      "Records cannot store entity data",
-      "Entities are smaller than characters"
+    id: "csc311_m2_073",
+    course: "CSC 311",
+    chapter: "Chapter 2",
+    text: "DBMS selection criteria include Database size, Performance, Integration, Cost, Features, The vendor, and ______.",
+    options: [
+      "Number of current relations",
+      "Number of concurrent users",
+      "Number of hardware switches",
+      "Number of schematic diagrams",
     ],
-    "correctAnswer": 1,
-    "explanation": "In the diagram showing keys and attributes, entities correspond to records in the database. Each instance of an entity is stored as a record."
-  }
+    correctAnswer: 1,
+    explanation:
+      "DBMS Selection Criteria: Database size, Number of concurrent users, Performance, Integration, Features, The vendor, Cost.",
+  },
+  {
+    id: "csc311_m2_074",
+    course: "CSC 311",
+    chapter: "Chapter 2",
+    text: "Which model expands upon the hierarchical database model by allowing a member to have many owners?",
+    options: [
+      "Network data model",
+      "Relational data model",
+      "Spatial data model",
+      "Linear data model",
+    ],
+    correctAnswer: 0,
+    explanation:
+      "Network data model: An expansion of the hierarchical database model with an owner-member relationship in which a member may have many owners.",
+  },
+  {
+    id: "csc311_m2_075",
+    course: "CSC 311",
+    chapter: "Chapter 2",
+    text: "Data modeling done at the level of the entire organization is called ______.",
+    options: [
+      "Macro data modeling",
+      "Global data modeling",
+      "Enterprise data modeling",
+      "Hierarchical data modeling",
+    ],
+    correctAnswer: 2,
+    explanation:
+      "Enterprise data modeling: Data modeling done at the level of the entire organization.",
+  },
+  {
+    id: "csc311_m2_076",
+    course: "CSC 311",
+    chapter: "Chapter 2",
+    text: "A Data Dictionary is a detailed description of all data used in the database.",
+    options: ["False", "Maybe", "True", "I don't know"],
+    correctAnswer: 2,
+    explanation:
+      "True. Data Dictionary: A detailed description of all data used in the database.",
+  },
+  {
+    id: "csc311_m2_077",
+    course: "CSC 311",
+    chapter: "Chapter 2",
+    text: "According to the Data Dictionary example, PARTNO is a data element described as ______.",
+    options: [
+      "INVENTORY PART NUMER",
+      "PERSONNEL ID",
+      "PROJECT CODE",
+      "CUSTOMER NUMBER",
+    ],
+    correctAnswer: 0,
+    explanation:
+      "Data Dictionary example: DATA ELEMENT NAME: PARTNO, DESCRIPTION: INVENTORY PART NUMER.",
+  },
+  {
+    id: "csc311_m2_078",
+    course: "CSC 311",
+    chapter: "Chapter 2",
+    text: "The abbreviation for Open Database Connectivity is ______.",
+    options: ["OBDC", "ODBC", "ORDBMS", "OLAP"],
+    correctAnswer: 1,
+    explanation: "Open database connectivity (ODBC).",
+  },
+  {
+    id: "csc311_m2_079",
+    course: "CSC 311",
+    chapter: "Chapter 2",
+    text: "The data extraction and cleanup process directly feed data into the ______.",
+    options: [
+      "Flat files",
+      "Data dictionary",
+      "Data warehouse",
+      "Spatial database",
+    ],
+    correctAnswer: 2,
+    explanation:
+      "Based on the schematic: Data extraction process -> Data cleanup process -> Data warehouse.",
+  },
+  {
+    id: "csc311_m2_080",
+    course: "CSC 311",
+    chapter: "Chapter 2",
+    text: "Flat files and Spreadsheets can serve as inputs for a data extraction process into a data warehouse.",
+    options: ["False", "I don't know", "Maybe", "True"],
+    correctAnswer: 3,
+    explanation:
+      "True. The schematic shows Relational databases, Hierarchical databases, Network databases, Flat files, and Spreadsheets all feeding into the Data extraction process.",
+  },
+  {
+    id: "csc311_m2_081",
+    course: "CSC 311",
+    chapter: "Chapter 2",
+    text: "Which of the following is NOT an application of Data Mining?",
+    options: [
+      "Fraud detection",
+      "Market segmentation",
+      "Relational projection",
+      "Direct marketing",
+    ],
+    correctAnswer: 2,
+    explanation:
+      "Data mining applications include: Market segmentation, Customer queries, Fraud detection, Direct marketing, Market basket analysis, Trend analysis. Relational projection is a database terminology operation, not a data mining application.",
+  },
+  {
+    id: "csc311_m2_082",
+    course: "CSC 311",
+    chapter: "Chapter 2",
+    text: "Fraud detection is an application of data mining.",
+    options: ["Maybe", "True", "False", "I don't know"],
+    correctAnswer: 1,
+    explanation: "True. Data mining applications: ... Fraud detection ...",
+  },
+  {
+    id: "csc311_m2_083",
+    course: "CSC 311",
+    chapter: "Chapter 2",
+    text: "Designing a Customer Data Warehouse requires you to measure ______.",
+    options: ["ER properties", "hardware heat", "results", "spatial data"],
+    correctAnswer: 2,
+    explanation: "Designing a Customer Data Warehouse: ... Measure results.",
+  },
+  {
+    id: "csc311_m2_084",
+    course: "CSC 311",
+    chapter: "Chapter 2",
+    text: "A characteristic of an entity, or something the entity is identified by, is an ______.",
+    options: ["Attribute", "Algorithm", "Array", "Access path"],
+    correctAnswer: 0,
+    explanation:
+      "Attribute: A characteristic of an entity; something the entity is identified by.",
+  },
+  {
+    id: "csc311_m2_085",
+    course: "CSC 311",
+    chapter: "Chapter 2",
+    text: "In the example '005-10-6321 Johns Francine 10-7-65', the 'Johns' part represents a ______.",
+    options: ["Key", "File", "Field", "Database"],
+    correctAnswer: 2,
+    explanation: "It represents a 'Last name field' within a Record.",
+  },
+  {
+    id: "csc311_m2_086",
+    course: "CSC 311",
+    chapter: "Chapter 2",
+    text: "A situation where summary totals are carried in the data records rather than calculated from elemental data is an example of ______.",
+    options: [
+      "Program-data dependence",
+      "Data mining",
+      "Planned data redundancy",
+      "Concurrency control",
+    ],
+    correctAnswer: 2,
+    explanation:
+      "Planned data redundancy... Summary totals are carried in the data records rather than calculated from elemental data.",
+  },
+  {
+    id: "csc311_m2_087",
+    course: "CSC 311",
+    chapter: "Chapter 2",
+    text: "A DBMS capable of manipulating audio, video, and graphical data is known as an ______.",
+    options: ["ORDBMS", "ODBC", "OLAP", "ER Model"],
+    correctAnswer: 0,
+    explanation:
+      "Object-relational database management system (ORDBMS): A DBMS capable of manipulating audio, video, and graphical data.",
+  },
+  {
+    id: "csc311_m2_088",
+    course: "CSC 311",
+    chapter: "Chapter 2",
+    text: "Spatial data technology is completely unable to handle queries relating to physical locations.",
+    options: ["True", "Maybe", "I don't know", "False"],
+    correctAnswer: 3,
+    explanation:
+      "False. Spatial data technology: Use of an object-relational database to store and access data according to the location it describes and to permit spatial queries and analysis.",
+  },
+  {
+    id: "csc311_m2_089",
+    course: "CSC 311",
+    chapter: "Chapter 2",
+    text: "If multiple application programs access a shared pool of related data rather than using separate files, this is utilizing the ______.",
+    options: [
+      "Traditional Approach",
+      "Database Approach",
+      "Schema-only Approach",
+      "Offline Approach",
+    ],
+    correctAnswer: 1,
+    explanation:
+      "The database approach... A pool of related data is shared by multiple application programs.",
+  },
+  {
+    id: "csc311_m2_090",
+    course: "CSC 311",
+    chapter: "Chapter 2",
+    text: "In the context of the DDL description example, `SCHEMA NAME IS XXXX` is followed by specifying the ______.",
+    options: ["AUTHOR", "SUBROUTINE", "HARDWARE", "INTERFACE"],
+    correctAnswer: 0,
+    explanation:
+      "SCHEMA DESCRIPTION: SCHEMA NAME IS XXXX, AUTHOR XXXX, DATE XXXX.",
+  },
+  {
+    id: "csc311_m2_091",
+    course: "CSC 311",
+    chapter: "Chapter 2",
+    text: "A data mart is essentially a ______ of a data warehouse.",
+    options: ["parent", "subset", "hardware component", "logical access path"],
+    correctAnswer: 1,
+    explanation:
+      "Data mart: A subset of a data warehouse for small and medium-size businesses or departments within larger companies.",
+  },
+  {
+    id: "csc311_m2_092",
+    course: "CSC 311",
+    chapter: "Chapter 2",
+    text: "In the context of SQL, 'drop/delete objects' is a function of the ______.",
+    options: ["DML", "DCL", "DDL", "TCL"],
+    correctAnswer: 2,
+    explanation:
+      "Functions [of DDL]: create database objects, alter database structures, drop/delete objects...",
+  },
+  {
+    id: "csc311_m2_093",
+    course: "CSC 311",
+    chapter: "Chapter 2",
+    text: "The abbreviation SQL stands for ______.",
+    options: [
+      "Sequential Query Language",
+      "Structured Query Language",
+      "Standard Query Logic",
+      "System Query Link",
+    ],
+    correctAnswer: 1,
+    explanation:
+      "Structured Query Language (SQL): It is a standard language used to create, manage and manipulate relational database.",
+  },
+  {
+    id: "csc311_m2_094",
+    course: "CSC 311",
+    chapter: "Chapter 2",
+    text: "When building a Customer Data Warehouse, after developing a plan, the next mentioned step is to ______.",
+    options: [
+      "Choose the hardware only",
+      "Hire an external agency",
+      "Measure results",
+      "Delete old data files",
+    ],
+    correctAnswer: 2,
+    explanation:
+      "Designing a Customer Data Warehouse... Develop a plan, Measure results.",
+  },
+  {
+    id: "csc311_m2_095",
+    course: "CSC 311",
+    chapter: "Chapter 2",
+    text: "Trend analysis is a recognized application of data mining.",
+    options: ["Maybe", "False", "I don't know", "True"],
+    correctAnswer: 3,
+    explanation: "True. Data mining applications: ... Trend analysis.",
+  },
 ];
 
 export default csc311Chapter2;

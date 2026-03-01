@@ -54,17 +54,21 @@ export interface ExamConfig {
 export function isQuestionV2(
   q: Question | QuestionV2 | ShuffledQuestion,
 ): q is QuestionV2 | ShuffledQuestion {
-  return "correctAnswer" in q && typeof q.correctAnswer === "number";
+  return (
+    q != null && "correctAnswer" in q && typeof q.correctAnswer === "number"
+  );
 }
 
 export function isQuestionV1(
   q: Question | QuestionV2 | ShuffledQuestion,
 ): q is Question {
-  return "correctOptionId" in q && typeof q.correctOptionId === "string";
+  return (
+    q != null && "correctOptionId" in q && typeof q.correctOptionId === "string"
+  );
 }
 
 export function isShuffledQuestion(
   q: QuestionV2 | ShuffledQuestion,
 ): q is ShuffledQuestion {
-  return "displayOptions" in q && "displayCorrectAnswer" in q;
+  return q != null && "displayOptions" in q && "displayCorrectAnswer" in q;
 }

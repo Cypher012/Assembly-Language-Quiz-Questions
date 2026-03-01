@@ -99,26 +99,6 @@ export default function ChapterSelect({
             Choose a specific chapter to focus on, or take the full quiz with
             all chapters.
           </p>
-          {course.code === "CSC311" && (
-            <div className="mt-4 inline-flex items-center px-4 py-2 bg-amber-100 dark:bg-amber-900/30 border border-amber-300 dark:border-amber-700 rounded-lg">
-              <svg
-                className="w-4 h-4 mr-2 text-amber-600 dark:text-amber-400"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-                />
-              </svg>
-              <p className="text-amber-700 dark:text-amber-300 text-sm font-medium">
-                More modules to be added soon
-              </p>
-            </div>
-          )}
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
