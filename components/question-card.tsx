@@ -5,6 +5,9 @@ import { isQuestionV2, isShuffledQuestion } from "@/lib/quiz-types";
 import OptionButton from "./option-button";
 import FeedbackPanel from "./feedback-panel";
 import { Button } from "@/components/ui/button";
+import ReactMarkdown from "react-markdown";
+import rehypeHighlight from "rehype-highlight";
+import "highlight.js/styles/github-dark.css";
 
 interface QuestionCardProps {
   question: Question | QuestionV2 | ShuffledQuestion; // Support all question types
@@ -38,9 +41,28 @@ export default function QuestionCard({
       <div className="bg-white dark:bg-slate-800 rounded-xl shadow-xl p-6 sm:p-8 border border-slate-200 dark:border-slate-700">
         {/* Question Text */}
         <div className="mb-8">
-          <h2 className="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white text-balance">
-            {question.text}
-          </h2>
+          <div className="prose prose-sm dark:prose-invert max-w-none text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white text-balance">
+            <ReactMarkdown
+              rehypePlugins={[rehypeHighlight]}
+              components={{
+                code: ({ node, className, children, ...props }) => (
+                  <code
+                    className={`${className} text-xs sm:text-sm`}
+                    {...props}
+                  >
+                    {children}
+                  </code>
+                ),
+                pre: ({ node, children, ...props }) => (
+                  <pre className="text-xs sm:text-sm" {...props}>
+                    {children}
+                  </pre>
+                ),
+              }}
+            >
+              {question.text}
+            </ReactMarkdown>
+          </div>
           {question.chapter && (
             <p className="text-sm text-slate-500 dark:text-slate-400 mt-2">
               {question.chapter}

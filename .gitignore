@@ -10,6 +10,8 @@
 # production
 /build
 
+/.claude
+
 # debug
 npm-debug.log*
 yarn-debug.log*
