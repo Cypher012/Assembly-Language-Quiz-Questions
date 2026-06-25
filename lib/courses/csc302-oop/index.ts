@@ -16,7 +16,7 @@ export const csc302OOPCourse: Course = {
   chapters: [
     {
       id: "Chapter 1",
-      label: "CSC 302 (first slide)",
+      label: "Intro",
       description: "Java Fundamentals & Core Concepts",
     },
     {
