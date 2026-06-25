@@ -1,650 +1,1034 @@
 import { QuestionV2 } from "@/lib/quiz-types";
 
 const csc302Module1: QuestionV2[] = [
+  // --- INTRODUCTION & KEY FEATURES ---
   {
     id: "csc302_ch1_001",
     course: "CSC 302",
     chapter: "Chapter 1",
-    text: "Who developed the Java programming language originally in 1995?",
+    text: "Who originally developed the Java programming language in 1995?",
     options: [
       "Sun Microsystems",
-      "Microsoft Corporation",
       "Oracle Corporation",
-      "IBM Systems",
+      "Microsoft",
+      "Apple Inc.",
     ],
     correctAnswer: 0,
     explanation:
-      "The slides state that Java was developed by Sun Microsystems in 1995 and was later acquired by Oracle Corporation in 2010.",
+      "According to the slides, Java was originally developed by Sun Microsystems in 1995 before being acquired by Oracle Corporation in 2010.",
   },
   {
     id: "csc302_ch1_002",
     course: "CSC 302",
     chapter: "Chapter 1",
-    text: "Java is designed to be a platform-independent language, allowing developers to write code once and run it anywhere on any system with a compatible JVM.",
+    text: "Java programs are compiled into bytecode, which runs on any device equipped with a Java Virtual Machine (JVM).",
     options: ["True", "False", "Maybe", "I don't know"],
     correctAnswer: 0,
     explanation:
-      "The slides explicitly describe Java as platform-independent, meaning a developer can write code once and run it anywhere.",
+      "Java's platform independence is achieved because its compiled bytecode can run on any device that has a JVM installed.",
   },
   {
     id: "csc302_ch1_003",
     course: "CSC 302",
     chapter: "Chapter 1",
-    text: "Why is Java considered a secure language according to its key features?",
-    options: [
-      "It requires biometric authentication for code execution",
-      "It uses encrypted network connections by default",
-      "It removes explicit pointers and has automatic garbage collection",
-      "It compiles directly to native operating system machine code",
-    ],
-    correctAnswer: 2,
+    text: "Which core feature of Java describes its strong memory management and automatic garbage collection capabilities?",
+    options: ["Robust", "Secure", "Multithreaded", "Platform Independent"],
+    correctAnswer: 0,
     explanation:
-      'The source material lists "Simple & Secure" as a key feature, specifically noting that Java has no pointers and uses automatic garbage collection to enhance security.',
+      "Java is considered robust primarily due to its strong memory management, exception handling, and automatic garbage collection.",
   },
   {
     id: "csc302_ch1_004",
     course: "CSC 302",
     chapter: "Chapter 1",
-    text: "Which component is responsible for executing Java bytecode line by line?",
-    options: [
-      "Java Development Kit",
-      "Java Virtual Machine",
-      "Java Runtime Environment",
-      "Java Application Programming Interface",
-    ],
-    correctAnswer: 1,
+    text: "Which feature allows a Java program to perform multiple tasks concurrently within the same application?",
+    options: ["Multithreaded", "Object-Oriented", "Robust", "Secure"],
+    correctAnswer: 0,
     explanation:
-      "The slides define the JVM as the Java Virtual Machine, which is responsible for executing compiled bytecode line by line on any device.",
+      "The multithreaded feature of Java allows concurrent execution of two or more parts of a program for maximum utilization of the CPU.",
   },
+
+  // --- OOP CONCEPTS ---
   {
     id: "csc302_ch1_005",
     course: "CSC 302",
     chapter: "Chapter 1",
-    text: 'The concept of "Write Once, Run Anywhere" (WORA) refers to which fundamental Java feature?',
-    options: [
-      "Platform Independence",
-      "Object-Oriented Design",
-      "Robust Memory Management",
-      "Automatic Garbage Collection",
-    ],
+    text: "Which object-oriented concept involves bundling data and methods while restricting direct external access to the object's components?",
+    options: ["Encapsulation", "Polymorphism", "Inheritance", "Abstraction"],
     correctAnswer: 0,
     explanation:
-      "The concept of writing code once and running it anywhere defines Java's platform independence, enabling execution on any device with a JVM.",
-  },
-  {
-    id: "csc302_ch2_006",
-    course: "CSC 302",
-    chapter: "Chapter 1",
-    text: "Which environment component contains the compiler and the development tools needed to write Java programs?",
-    options: [
-      "Java Runtime Environment",
-      "Java Virtual Machine",
-      "Java Development Kit",
-      "Java Standard Library",
-    ],
-    correctAnswer: 2,
-    explanation:
-      "According to the environment setup slides, the Java Development Kit (JDK) is the suite that contains the compiler and necessary development tools.",
-  },
-  {
-    id: "csc302_ch2_007",
-    course: "CSC 302",
-    chapter: "Chapter 1",
-    text: "What is the primary purpose of the Java Runtime Environment (JRE)?",
-    options: [
-      "It provides the compiler needed to convert source code to bytecode",
-      "It acts as an integrated development environment for writing code",
-      "It generates the HTML documentation for Java code",
-      "It provides the libraries and JVM needed to run Java applications",
-    ],
-    correctAnswer: 3,
-    explanation:
-      "The slides clearly state that the JRE provides the libraries and the Java Virtual Machine required to execute Java applications.",
-  },
-  {
-    id: "csc302_ch2_008",
-    course: "CSC 302",
-    chapter: "Chapter 1",
-    text: "The Java Runtime Environment (JRE) is sufficient to run compiled Java applications, whereas the Java Development Kit (JDK) is required to compile and develop code.",
-    options: ["True", "False", "Maybe", "I don't know"],
-    correctAnswer: 0,
-    explanation:
-      "The slides indicate that the JRE is sufficient to run applications. The JDK is only required if the user intends to compile and develop code.",
-  },
-  {
-    id: "csc302_ch2_009",
-    course: "CSC 302",
-    chapter: "Chapter 1",
-    text: 'Given the following code:\n\n```java\npublic class Main {\n  public static void main(String[] args) {\n    System.out.println("Hello World");\n  }\n}\n```\n\nWhich component is responsible for converting this source code into bytecode?',
-    options: [
-      "The interpreter inside the JRE",
-      "The compiler inside the JDK",
-      "The garbage collector inside the JVM",
-      "The standard class library",
-    ],
-    correctAnswer: 1,
-    explanation:
-      "The slides explain that the JDK contains the compiler tools responsible for converting written Java source code into executable bytecode.",
-  },
-  {
-    id: "csc302_ch1_025",
-    course: "CSC 302",
-    chapter: "Chapter 1",
-    text: "Which of the following represents a primitive data type in Java?",
-    options: ["Scanner", "boolean", "String", "Object"],
-    correctAnswer: 1,
-    explanation:
-      "The document explicitly lists boolean, int, double, and char as examples of primitive data types in Java.",
-  },
-  {
-    id: "csc302_ch1_026",
-    course: "CSC 302",
-    chapter: "Chapter 1",
-    text: "In Java, complex structures such as Strings, Arrays, and Classes are classified as primitive data types.",
-    options: ["True", "False", "Maybe", "I don't know"],
-    correctAnswer: 1,
-    explanation:
-      "The slides classify Strings, Arrays, and Classes as reference data types, which are entirely distinct from primitive data types.",
-  },
-  {
-    id: "csc302_ch1_027",
-    course: "CSC 302",
-    chapter: "Chapter 1",
-    text: 'Java is described as a "strongly typed" language. What does this mean for developers declaring variables?',
-    options: [
-      "Variables must have a defined data type before use",
-      "Variables can change their underlying type during execution",
-      "Variables are assigned types dynamically at runtime",
-      "Variables must always be initialized with string values",
-    ],
-    correctAnswer: 0,
-    explanation:
-      "Being strongly typed means variables require a specific and explicit data type declaration before they can be utilized in the program.",
+      "Encapsulation is the OOP principle of bundling data and methods while restricting direct external access to the object's internal state.",
   },
   {
     id: "csc302_ch1_006",
     course: "CSC 302",
     chapter: "Chapter 1",
-    text: "Given the following code:\n\n```java\nint a = 10;\nint b = 3;\nSystem.out.println(a % b);\n```\n\nWhat is the output of this code snippet?",
-    options: ["0", "3", "1", "3.33"],
-    correctAnswer: 2,
+    text: "What is the OOP mechanism where a new class acquires the properties and behaviors of an existing class?",
+    options: ["Inheritance", "Encapsulation", "Polymorphism", "Abstraction"],
+    correctAnswer: 0,
     explanation:
-      "The modulo operator (%) returns the remainder of a division. Ten divided by three leaves a remainder of one, as demonstrated in the arithmetic operators section.",
+      "Inheritance promotes code reusability by allowing one class to inherit the fields and methods of another class.",
   },
   {
     id: "csc302_ch1_007",
     course: "CSC 302",
     chapter: "Chapter 1",
-    text: "Which relational operator is used to evaluate if two values are unequal?",
-    options: ["<>", "=!", "==", "!="],
-    correctAnswer: 3,
+    text: "Polymorphism allows a Java object to take on many forms, enabling a single action to be performed in different ways.",
+    options: ["True", "False", "Maybe", "I don't know"],
+    correctAnswer: 0,
     explanation:
-      "The slides explicitly list `!=` as the standard relational operator utilized in Java to check if two values are unequal.",
+      "Polymorphism literally means 'many forms' and allows objects of different classes to be treated as objects of a common superclass.",
   },
   {
     id: "csc302_ch1_008",
     course: "CSC 302",
     chapter: "Chapter 1",
-    text: "Which logical operator requires both provided conditions to be true in order to evaluate to true?",
-    options: ["||", "&&", "!", "=="],
-    correctAnswer: 1,
+    text: "Which OOP concept focuses on hiding the complex implementation details of a system and only exposing the essential features to the user?",
+    options: ["Abstraction", "Encapsulation", "Inheritance", "Polymorphism"],
+    correctAnswer: 0,
     explanation:
-      "The `&&` operator is the logical AND operator. The operators overview specifies that it requires both conditions to be true.",
+      "Abstraction simplifies complex reality by modeling classes appropriate to the problem and hiding internal implementation details.",
   },
   {
     id: "csc302_ch1_009",
     course: "CSC 302",
     chapter: "Chapter 1",
-    text: "The do-while loop is structurally distinguished by guaranteeing that the loop body will be executed at least once before evaluating its loop condition.",
-    options: ["True", "False", "Maybe", "I don't know"],
+    text: "Which keyword is utilized in Java to establish an inheritance relationship where a child class inherits from a parent class?",
+    options: ["extends", "implements", "inherits", "super"],
     correctAnswer: 0,
     explanation:
-      "The control flow slides distinguish the do-while loop by its fundamental behavior of executing the loop body at least once before evaluating the loop condition.",
+      "The 'extends' keyword is strictly used in a class declaration to specify that the new class is a derived child of an existing parent class.",
   },
+
+  // --- ENVIRONMENT SETUP & IDES ---
   {
     id: "csc302_ch1_010",
     course: "CSC 302",
     chapter: "Chapter 1",
-    text: 'Given the following code:\n\n```java\nint x = 5;\nif (x > 10) {\n  System.out.println("A");\n} else if (x == 5) {\n  System.out.println("B");\n} else {\n  System.out.println("C");\n}\n```\n\nWhat is printed when this program runs?',
-    options: ["A", "C", "Nothing is printed", "B"],
-    correctAnswer: 3,
+    text: "Which Java environment component provides the tools required for application development, such as the compiler?",
+    options: [
+      "Java Development Kit (JDK)",
+      "Java Runtime Environment (JRE)",
+      "Java Virtual Machine (JVM)",
+      "Java Application Programming Interface (API)",
+    ],
+    correctAnswer: 0,
     explanation:
-      "The execution evaluates `x > 10` as false, skips to the `else if` condition `x == 5` which evaluates as true, executing the print statement for B.",
+      "The Java Development Kit (JDK) contains the necessary tools for development, including the compiler (javac), distinguishing it from the JRE.",
   },
   {
     id: "csc302_ch1_011",
     course: "CSC 302",
     chapter: "Chapter 1",
-    text: "Which control flow statement is specifically designed to execute a block of code repeatedly as long as a condition remains true?",
+    text: "What is the primary role of the Java Virtual Machine (JVM) in the execution process?",
     options: [
-      "while loop",
-      "switch statement",
-      "if-else block",
-      "try-catch block",
+      "It executes the compiled bytecode",
+      "It writes the source code",
+      "It compiles Java source code to bytecode",
+      "It provides the development libraries",
     ],
     correctAnswer: 0,
     explanation:
-      "The while loop is explicitly categorized in the control flow section as the construct used to repeatedly execute code blocks while a condition is valid.",
+      "The JVM is the engine that actually executes the compiled bytecode line by line on the host operating system.",
   },
   {
     id: "csc302_ch1_012",
     course: "CSC 302",
     chapter: "Chapter 1",
-    text: "When is a switch statement typically preferred over utilizing multiple if-else statements?",
+    text: "Which of the following software applications is recognized as a popular Integrated Development Environment (IDE) specifically designed for Java development?",
     options: [
-      "When evaluating a single variable against multiple exact values",
-      "When checking complex boolean expressions and logical operators",
-      "When iterating sequentially over elements in an array",
-      "When handling unforeseen runtime exceptions",
+      "IntelliJ IDEA",
+      "Safari",
+      "Windows File Explorer",
+      "Adobe Photoshop",
     ],
     correctAnswer: 0,
     explanation:
-      "The switch statement is presented in the control flow material as an optimal alternative to multiple if-else statements for evaluating specific variable values.",
+      "IntelliJ IDEA, along with Eclipse and NetBeans, is a fully-featured Integrated Development Environment (IDE) explicitly built for writing Java.",
   },
+
+  // --- BASICS, DATA TYPES & COMMENTS ---
   {
     id: "csc302_ch1_013",
     course: "CSC 302",
     chapter: "Chapter 1",
-    text: 'Given the following code:\n\n```java\nfor (int i = 0; i < 3; i++) {\n  System.out.print(i + " ");\n}\n```\n\nWhat is the output of this loop?',
-    options: ["1 2 3 ", "0 1 2 ", "0 1 2 3 ", "1 2 "],
-    correctAnswer: 1,
+    text: "What is the correct signature for the main method that serves as the entry point for a Java application?",
+    options: [
+      "public static void main(String[] args)",
+      "public void main(String[] args)",
+      "static public main(String args)",
+      "public static int main(String[] args)",
+    ],
+    correctAnswer: 0,
     explanation:
-      'The loop initializes at 0 and increments until it reaches 2. It prints each value followed by a space, successfully outputting "0 1 2 ".',
+      "The execution of any Java program strictly begins from the `public static void main(String[] args)` method.",
   },
   {
     id: "csc302_ch1_014",
     course: "CSC 302",
     chapter: "Chapter 1",
-    text: "Once an array has been instantiated in Java, its capacity can be dynamically expanded or altered to hold more elements.",
+    text: "Primitive data types in Java store a reference to an object's memory location rather than the actual raw value.",
     options: ["True", "False", "Maybe", "I don't know"],
     correctAnswer: 1,
     explanation:
-      "The slides define an array as a fixed-size collection of elements, meaning its capacity cannot be altered once instantiated.",
+      "Primitive data types (like int and boolean) store raw values directly. Non-primitive types (like String) store memory references.",
   },
   {
     id: "csc302_ch1_015",
     course: "CSC 302",
     chapter: "Chapter 1",
-    text: "What is the numeric index assigned to the very first element in a Java array?",
-    options: ["1", "-1", "It depends on the array length", "0"],
-    correctAnswer: 3,
+    text: "Which of the following is considered a non-primitive data type in Java?",
+    options: ["String", "int", "boolean", "char"],
+    correctAnswer: 0,
     explanation:
-      "Java arrays are explicitly described as being zero-indexed in the arrays section, meaning the first element is always accessed at index 0.",
+      "Strings are objects in Java, making them non-primitive data types, whereas int, boolean, and char are primitive types.",
   },
   {
     id: "csc302_ch1_016",
     course: "CSC 302",
     chapter: "Chapter 1",
-    text: "Given the following code:\n\n```java\npublic static int multiply(int a, int b) {\n  return a * b;\n}\npublic static void main(String[] args) {\n  System.out.println(multiply(4, 5));\n}\n```\n\nWhat happens when this program runs?",
-    options: [
-      "It results in a compilation error",
-      "It prints an undefined value",
-      "It prints 20",
-      "It prints multiply(4, 5)",
-    ],
-    correctAnswer: 2,
+    text: "Which syntax is utilized to correctly construct a documentation comment, also known as Javadoc, in a Java source file?",
+    options: ["/** ... */", "/* ... */", "// ...", "<!-- ... -->"],
+    correctAnswer: 0,
     explanation:
-      "The main method calls the `multiply` method passing the arguments 4 and 5. The method calculates 20, returns it, and the print statement outputs it.",
+      "Javadoc comments begin with /** and end with */, allowing automated tools to extract documentation directly from the source code.",
   },
   {
     id: "csc302_ch1_017",
     course: "CSC 302",
     chapter: "Chapter 1",
-    text: "What is the specific purpose of the return type declared in a method signature?",
-    options: [
-      "It specifies the type of value the method sends back to the caller",
-      "It defines the names of the parameters the method accepts",
-      "It indicates the visibility level of the method",
-      "It dictates the memory location where the method is stored",
-    ],
+    text: "The boolean primitive data type exclusively stores either true or false values.",
+    options: ["True", "False", "Maybe", "I don't know"],
     correctAnswer: 0,
     explanation:
-      "The method section outlines that every method requires a return type to formally define the kind of data it will return upon successful execution.",
+      "In Java, the boolean data type represents one bit of information and can only ever evaluate to the strict literals true or false.",
   },
+
+  // --- OPERATORS ---
   {
     id: "csc302_ch1_018",
     course: "CSC 302",
     chapter: "Chapter 1",
-    text: "Given the following code:\n\n```java\nint[] scores = new int[5];\nscores[0] = 85;\nSystem.out.println(scores.length);\n```\n\nWhat is printed by this code?",
-    options: ["1", "85", "0", "5"],
-    correctAnswer: 3,
+    text: "What mathematical calculation is performed by the modulo operator (%) in Java?",
+    options: [
+      "It returns the remainder leftover after a division operation",
+      "It computes statistical percentages of integer sets",
+      "It performs division while dropping any remainders",
+      "It calculates the absolute positive value of an integer",
+    ],
+    correctAnswer: 0,
     explanation:
-      "The `length` property of an array returns its total allocated size upon creation, which here is 5, regardless of how many items are manually populated.",
+      "The modulo operator accurately calculates the integer remainder that is left over after dividing the left-hand operand by the right-hand operand.",
   },
   {
     id: "csc302_ch1_019",
     course: "CSC 302",
     chapter: "Chapter 1",
-    text: "Which category of exceptions is verified by the compiler at compile-time?",
-    options: [
-      "Unchecked exceptions",
-      "Checked exceptions",
-      "Runtime exceptions",
-      "Logic errors",
-    ],
-    correctAnswer: 1,
+    text: "Which relational operator is utilized to verify if two primitive values are not equal to each other in Java?",
+    options: ["!=", "==", "<>", "!=="],
+    correctAnswer: 0,
     explanation:
-      "The exception handling slides firmly define checked exceptions as those that are enforced and actively verified by the compiler at compile-time.",
+      "The `!=` operator evaluates to true if the operand on the left is not equal to the operand on the right.",
   },
   {
     id: "csc302_ch1_020",
     course: "CSC 302",
     chapter: "Chapter 1",
-    text: "In Java's exception handling hierarchy, a NullPointerException is classified as a checked exception that must be declared or caught at compile-time.",
-    options: ["True", "False", "Maybe", "I don't know"],
-    correctAnswer: 1,
+    text: `Given the following code:
+
+\`\`\`java
+int a = 5;
+int b = 10;
+if (a > 3 && b < 20) {
+  System.out.println("Valid");
+} else {
+  System.out.println("Invalid");
+}
+\`\`\`
+
+What is the output of this program?`,
+    options: ["Valid", "Invalid", "Compile error", "Runtime error"],
+    correctAnswer: 0,
     explanation:
-      "The text explicitly lists NullPointerException as a classic example of an unchecked (runtime) exception, not a checked one.",
+      "The logical AND operator (&&) returns true because both conditional checks (5 > 3) and (10 < 20) evaluate to true.",
   },
   {
     id: "csc302_ch1_021",
     course: "CSC 302",
     chapter: "Chapter 1",
-    text: "What is the primary operational purpose of the `finally` block in exception handling?",
-    options: [
-      "To execute guaranteed cleanup code after a try block completes",
-      "To catch multiple exception types simultaneously",
-      "To throw a custom exception back to the caller",
-      "To terminate the program safely without throwing errors",
-    ],
+    text: "The logical OR operator (||) evaluates to true if at least one of the provided operands evaluates to true.",
+    options: ["True", "False", "Maybe", "I don't know"],
     correctAnswer: 0,
     explanation:
-      "The `finally` keyword introduces a block that executes guaranteed cleanup code, independent of whether exceptions were thrown or caught during execution.",
+      "The logical OR operator strictly requires only one operand to be true for the entire expression to return true.",
   },
   {
     id: "csc302_ch1_022",
     course: "CSC 302",
     chapter: "Chapter 1",
-    text: 'Given the following code:\n\n```java\ntry {\n  int result = 10 / 0;\n} catch (ArithmeticException e) {\n  System.out.println("Error caught");\n} finally {\n  System.out.println("Done");\n}\n```\n\nWhat is the output of this code snippet?',
-    options: [
-      "Only Error caught",
-      "Only Done",
-      "Error caught followed by Done",
-      "The program crashes without output",
-    ],
-    correctAnswer: 2,
+    text: `Given the following code:
+
+\`\`\`java
+boolean isValid = true;
+boolean result = !isValid;
+System.out.println(result);
+\`\`\`
+
+What does this program print?`,
+    options: ["false", "true", "null", "A compiler error"],
+    correctAnswer: 0,
     explanation:
-      'Dividing by zero instantly triggers the `ArithmeticException` catch block printing "Error caught". This is immediately followed by the `finally` block executing and printing "Done".',
+      "The logical NOT operator (!) perfectly inverts the value of a boolean expression, turning true into false.",
   },
   {
     id: "csc302_ch1_023",
     course: "CSC 302",
     chapter: "Chapter 1",
-    text: "Which keyword must be appended to a method signature to indicate that executing it might result in an exception being thrown to the caller?",
-    options: ["throws", "throw", "catch", "finally"],
+    text: `Given the following code:
+
+\`\`\`java
+int score = 10;
+score += 5;
+score -= 2;
+System.out.println(score);
+\`\`\`
+
+What is the final printed output?`,
+    options: ["13", "10", "15", "8"],
     correctAnswer: 0,
     explanation:
-      "The `throws` keyword is used in a method's signature to declare that the method might result in a specific exception being passed up to the caller.",
+      "The compound assignment += adds 5 to the initial 10 (making 15). The -= operator then subtracts 2, leaving exactly 13.",
   },
+
+  // --- CONTROL FLOW ---
   {
     id: "csc302_ch1_024",
     course: "CSC 302",
     chapter: "Chapter 1",
-    text: "The Java compiler strictly enforces that all unchecked (runtime) exceptions must be explicitly caught or declared using a throws clause.",
+    text: `Given the following code:
+
+\`\`\`java
+int x = 1;
+switch (x) {
+  case 1:
+    System.out.print("One ");
+  case 2:
+    System.out.print("Two ");
+  case 3:
+    System.out.print("Three ");
+}
+\`\`\`
+
+What is printed when this code snippet executes?`,
+    options: ["One Two Three ", "One ", "Two Three ", "Three "],
+    correctAnswer: 0,
+    explanation:
+      "Because there is no break statement after case 1, execution 'falls through' to case 2 and then case 3, printing all strings sequentially.",
+  },
+  {
+    id: "csc302_ch1_025",
+    course: "CSC 302",
+    chapter: "Chapter 1",
+    text: "Which keyword is utilized within a switch statement to specify a fallback block of code that executes if none of the defined cases match the evaluated variable?",
+    options: ["default", "else", "finally", "catch"],
+    correctAnswer: 0,
+    explanation:
+      "The 'default' keyword acts as the catch-all execution path in a switch block if no prior case statement evaluates to true.",
+  },
+  {
+    id: "csc302_ch1_026",
+    course: "CSC 302",
+    chapter: "Chapter 1",
+    text: "A do-while loop in Java executes its code block at least once, regardless of whether the initial condition evaluates to true or false.",
+    options: ["True", "False", "Maybe", "I don't know"],
+    correctAnswer: 0,
+    explanation:
+      "The do-while loop fundamentally evaluates its controlling condition after executing the code block, guaranteeing a minimum of one execution.",
+  },
+  {
+    id: "csc302_ch1_027",
+    course: "CSC 302",
+    chapter: "Chapter 1",
+    text: "What effect does the continue keyword have when triggered inside the body of a standard for loop?",
+    options: [
+      "It skips the remainder of the current iteration and jumps to the next loop evaluation",
+      "It immediately terminates the entire loop permanently",
+      "It restarts the loop entirely from the first element",
+      "It forces the application to return entirely from the current method",
+    ],
+    correctAnswer: 0,
+    explanation:
+      "The continue keyword instantly bypasses all subsequent lines in the loop body for that iteration and proceeds to the next iteration step.",
+  },
+  {
+    id: "csc302_ch1_028",
+    course: "CSC 302",
+    chapter: "Chapter 1",
+    text: `Given the following code:
+
+\`\`\`java
+for (int i = 0; i < 5; i++) {
+  if (i == 3) break;
+  System.out.print(i);
+}
+\`\`\`
+
+What is printed to the console?`,
+    options: ["012", "0123", "0124", "123"],
+    correctAnswer: 0,
+    explanation:
+      "The loop successfully prints 0, 1, and 2. When i becomes 3, the break statement is triggered and immediately terminates the loop entirely.",
+  },
+
+  // --- ARRAYS ---
+  {
+    id: "csc302_ch1_029",
+    course: "CSC 302",
+    chapter: "Chapter 1",
+    text: "How is a two-dimensional array of integers properly declared in Java?",
+    options: [
+      "int[][] matrix;",
+      "int[2] matrix;",
+      "int matrix[][];",
+      "int[][] matrix = new int[];",
+    ],
+    correctAnswer: 0,
+    explanation:
+      "A two-dimensional array is declared using two consecutive sets of square brackets following the data type, such as int[][] or double[][].",
+  },
+  {
+    id: "csc302_ch1_030",
+    course: "CSC 302",
+    chapter: "Chapter 1",
+    text: `Given the following code:
+
+\`\`\`java
+int[] numbers = {10, 20, 30};
+System.out.println(numbers[3]);
+\`\`\`
+
+What happens when this code is executed?`,
+    options: [
+      "An ArrayIndexOutOfBoundsException is thrown",
+      "The number 30 is printed",
+      "The number 0 is printed",
+      "A compile-time error prevents execution",
+    ],
+    correctAnswer: 0,
+    explanation:
+      "Arrays in Java are zero-indexed. An array of size 3 has valid indices 0, 1, and 2. Accessing index 3 directly causes an out-of-bounds runtime exception.",
+  },
+  {
+    id: "csc302_ch1_031",
+    course: "CSC 302",
+    chapter: "Chapter 1",
+    text: "Once a standard Java array is created and initialized, its physical size can be dynamically expanded to hold more elements.",
     options: ["True", "False", "Maybe", "I don't know"],
     correctAnswer: 1,
     explanation:
-      "The slides differentiate unchecked (runtime) exceptions by noting they are not checked at compile-time. Explicit handling is therefore not strictly enforced by the compiler.",
+      "Standard Java arrays have a strictly fixed length. Once instantiated, their size cannot be changed; dynamic resizing requires collections like ArrayList.",
   },
   {
-    id: "csc302_ch7_032",
+    id: "csc302_ch1_032",
     course: "CSC 302",
     chapter: "Chapter 1",
-    text: "Which class is the primary standard tool used for retrieving user input directly from the console?",
+    text: "Which property directly provides the total number of elements allocated within a standard one-dimensional Java array?",
+    options: ["length", "size()", "count", "capacity()"],
+    correctAnswer: 0,
+    explanation:
+      "The `.length` property directly returns the fixed memory size allocated to an array immediately upon its creation.",
+  },
+  {
+    id: "csc302_ch1_033",
+    course: "CSC 302",
+    chapter: "Chapter 1",
+    text: `Given the following code:
+
+\`\`\`java
+int[] data = new int[3];
+System.out.println(data[1]);
+\`\`\`
+
+What is strictly printed to the console?`,
+    options: ["0", "null", "An error occurs", "3"],
+    correctAnswer: 0,
+    explanation:
+      "When an integer array is initialized using the 'new' keyword without explicit values, Java automatically populates all indices with the default value of 0.",
+  },
+
+  // --- METHODS ---
+  {
+    id: "csc302_ch1_034",
+    course: "CSC 302",
+    chapter: "Chapter 1",
+    text: "Method overloading in Java requires multiple methods within the same class to share the same name while differing in what specific aspect?",
     options: [
-      "java.io.Console",
-      "java.lang.System",
+      "Their parameter lists",
+      "Their return data types",
+      "Their visibility modifiers",
+      "Their generic type bounds",
+    ],
+    correctAnswer: 0,
+    explanation:
+      "Method overloading occurs when methods share the exact same identifier but differ in the number, types, or order of their parameters.",
+  },
+  {
+    id: "csc302_ch1_035",
+    course: "CSC 302",
+    chapter: "Chapter 1",
+    text: "What comprises the signature of a method in Java, which the compiler uses to distinguish between overloaded method definitions?",
+    options: [
+      "The method name and its parameter list",
+      "The method name and its return type",
+      "The parameter list and the return type",
+      "The access modifier and the method name",
+    ],
+    correctAnswer: 0,
+    explanation:
+      "A Java method signature uniquely consists of the method's name and the exact sequence of parameter types in their declared order.",
+  },
+  {
+    id: "csc302_ch1_036",
+    course: "CSC 302",
+    chapter: "Chapter 1",
+    text: `Given the following code:
+
+\`\`\`java
+public int multiply(int a, int b) {
+  return a * b;
+}
+\`\`\`
+
+What role does the 'int' keyword play right before the method name?`,
+    options: [
+      "It specifies the data type of the value the method will return",
+      "It declares a local variable for the method block",
+      "It restricts the method from being overridden",
+      "It casts the parameters to integers",
+    ],
+    correctAnswer: 0,
+    explanation:
+      "The type declaration before the method name indicates the specific return type of the value that the method is expected to pass back to its caller.",
+  },
+  {
+    id: "csc302_ch1_037",
+    course: "CSC 302",
+    chapter: "Chapter 1",
+    text: "What specific return type must be declared for a method that performs internal logic but does not return any data payload to its caller?",
+    options: ["void", "null", "empty", "static"],
+    correctAnswer: 0,
+    explanation:
+      "The 'void' keyword explicitly signifies that the method will finish its execution without returning any value whatsoever.",
+  },
+  {
+    id: "csc302_ch1_038",
+    course: "CSC 302",
+    chapter: "Chapter 1",
+    text: "The return type of a method alone determines whether the method can be successfully overloaded in a Java class.",
+    options: ["True", "False", "Maybe", "I don't know"],
+    correctAnswer: 1,
+    explanation:
+      "Overloaded methods must strictly differ in their parameter lists. Attempting to overload by changing only the return type creates a compile-time error.",
+  },
+
+  // --- EXCEPTION HANDLING ---
+  {
+    id: "csc302_ch1_039",
+    course: "CSC 302",
+    chapter: "Chapter 1",
+    text: "What is the primary operational purpose of the finally block within Java exception handling?",
+    options: [
+      "To execute critical code regardless of whether an exception occurs",
+      "To specify a fallback exception handler",
+      "To explicitly throw a new exception to the calling method",
+      "To restart the try block execution from the beginning",
+    ],
+    correctAnswer: 0,
+    explanation:
+      "The finally block executes crucial cleanup code, such as closing open file resources, and runs reliably whether an exception was thrown or caught.",
+  },
+  {
+    id: "csc302_ch1_040",
+    course: "CSC 302",
+    chapter: "Chapter 1",
+    text: "Which keyword is placed in a method signature to indicate that the method might propagate a specific type of exception to its caller?",
+    options: ["throws", "throw", "catch", "try"],
+    correctAnswer: 0,
+    explanation:
+      "The `throws` keyword is utilized in the method declaration to warn that the method might throw exceptions that the caller is obligated to handle.",
+  },
+  {
+    id: "csc302_ch1_041",
+    course: "CSC 302",
+    chapter: "Chapter 1",
+    text: `Given the following code:
+
+\`\`\`java
+try {
+  int result = 10 / 0;
+  System.out.print("A");
+} catch (ArithmeticException e) {
+  System.out.print("B");
+} finally {
+  System.out.print("C");
+}
+\`\`\`
+
+What is printed when this program runs?`,
+    options: ["BC", "A", "AC", "ABC"],
+    correctAnswer: 0,
+    explanation:
+      "The division by zero immediately triggers the catch block, printing 'B'. The finally block is guaranteed to execute afterwards, printing 'C'.",
+  },
+  {
+    id: "csc302_ch1_042",
+    course: "CSC 302",
+    chapter: "Chapter 1",
+    text: "How do developers explicitly trigger an exception from within the logic of a custom Java method?",
+    options: [
+      "By using the throw keyword followed by an exception object",
+      "By appending the throws keyword to the method signature",
+      "By catching an error inside a final block",
+      "By invoking the Runtime.error() command",
+    ],
+    correctAnswer: 0,
+    explanation:
+      "The `throw` keyword is used to manually instantiate and launch an exception object at the exact moment a logical validation fails.",
+  },
+  {
+    id: "csc302_ch1_043",
+    course: "CSC 302",
+    chapter: "Chapter 1",
+    text: "Checked exceptions are verified by the Java compiler at compile-time to ensure that the developer has provided a proper handling mechanism.",
+    options: ["True", "False", "Maybe", "I don't know"],
+    correctAnswer: 0,
+    explanation:
+      "The compiler rigidly enforces checked exceptions; code will fail to compile unless these exceptions are wrapped in a try-catch block or declared in the method signature.",
+  },
+  {
+    id: "csc302_ch1_044",
+    course: "CSC 302",
+    chapter: "Chapter 1",
+    text: "Unchecked exceptions, such as NullPointerException, only occur during the execution phase and are not strictly verified by the compiler.",
+    options: ["True", "False", "Maybe", "I don't know"],
+    correctAnswer: 0,
+    explanation:
+      "Unchecked exceptions inherit from RuntimeException and logically occur during the runtime phase without triggering mandatory compiler checks beforehand.",
+  },
+
+  // --- USER INPUT & CONSOLE OUTPUT ---
+  {
+    id: "csc302_ch1_045",
+    course: "CSC 302",
+    chapter: "Chapter 1",
+    text: "Which package must be imported to successfully utilize the standard Scanner class for reading console input?",
+    options: [
       "java.util.Scanner",
-      "java.util.Input",
+      "java.io.Scanner",
+      "java.net.Scanner",
+      "java.lang.Scanner",
     ],
-    correctAnswer: 2,
-    explanation:
-      "The user input chapter formally identifies the `java.util.Scanner` class as the designated and primary tool used for retrieving input from the user via the console.",
-  },
-  {
-    id: "csc302_ch7_033",
-    course: "CSC 302",
-    chapter: "Chapter 1",
-    text: "Which method belonging to the Scanner class is appropriate for reading an entire line of text input?",
-    options: ["nextLine()", "next()", "nextString()", "readLine()"],
     correctAnswer: 0,
     explanation:
-      "The `Scanner` class utilizes the `nextLine()` method specifically to read and capture an entire line of text input from the console buffer.",
+      "The Scanner class is officially located within the java.util utility package and must be explicitly imported to read input streams.",
   },
   {
-    id: "csc302_ch7_034",
+    id: "csc302_ch1_046",
     course: "CSC 302",
     chapter: "Chapter 1",
-    text: 'Given the following code:\n\n```java\nSystem.out.print("Hello");\nSystem.out.println("World");\n```\n\nHow will the output appear on the console?',
-    options: [
-      "Hello on the first line and World on the second line",
-      "HelloWorld on the same line",
-      "WorldHello on the same line",
-      "Hello and World separated by a tab space",
-    ],
-    correctAnswer: 1,
-    explanation:
-      '`print()` outputs without adding a new line, so "Hello" is immediately followed by "World" on the same line before `println()` moves the cursor downwards.',
-  },
-  {
-    id: "csc302_ch7_035",
-    course: "CSC 302",
-    chapter: "Chapter 1",
-    text: "Which standard output method should a developer use for generating formatted string output in Java?",
-    options: [
-      "System.out.println()",
-      "System.out.print()",
-      "System.out.formatOut()",
-      "System.out.printf()",
-    ],
-    correctAnswer: 3,
-    explanation:
-      "The console output section distinctly lists `System.out.printf()` as the correct method to utilize for producing formatted string output.",
-  },
-  {
-    id: "csc302_ch8_036",
-    course: "CSC 302",
-    chapter: "Chapter 1",
-    text: "Which collection interface strictly stores elements in an ordered sequence and explicitly allows duplicate values?",
-    options: ["List", "Set", "Map", "Tree"],
+    text: "Which format specifier is utilized within the System.out.printf method to correctly output a floating-point decimal number?",
+    options: ["%f", "%d", "%s", "%c"],
     correctAnswer: 0,
     explanation:
-      "The Java Collections Framework section defines the `List` interface as a collection that maintains elements in an ordered sequence and permits duplicate entries.",
+      "In Java console output formatting, `%f` is explicitly used for floating-point values, while `%d` is strictly reserved for integer values.",
   },
   {
-    id: "csc302_ch8_037",
+    id: "csc302_ch1_047",
     course: "CSC 302",
     chapter: "Chapter 1",
-    text: "Unlike key-value pair layouts, the Map interface in Java is designed to store elements as an unordered, single-value list.",
+    text: "When reading console input with the Scanner class, what issue arises when chaining a call to nextLine() immediately after nextInt()?",
+    options: [
+      "The scanner consumes the leftover newline character instead of waiting for user input",
+      "The compiler throws a strict type mismatch error",
+      "The program erroneously requests integer input twice",
+      "The internal buffer clears automatically leading to data truncation",
+    ],
+    correctAnswer: 0,
+    explanation:
+      "The `nextInt()` method reads the number but leaves the trailing newline character in the buffer, causing the subsequent `nextLine()` to instantly read an empty string.",
+  },
+  {
+    id: "csc302_ch1_048",
+    course: "CSC 302",
+    chapter: "Chapter 1",
+    text: `Given the following code:
+
+\`\`\`java
+double price = 12.3456;
+System.out.printf("Cost: %.2f", price);
+\`\`\`
+
+What is the expected output?`,
+    options: ["Cost: 12.35", "Cost: 12.34", "Cost: 12.3456", "Cost: %.2f"],
+    correctAnswer: 0,
+    explanation:
+      "The `%.2f` format specifier explicitly limits the floating-point output to two decimal places, which correctly rounds the trailing digits.",
+  },
+  {
+    id: "csc302_ch1_049",
+    course: "CSC 302",
+    chapter: "Chapter 1",
+    text: "Which format specifier is utilized within System.out.printf to output an entire string of characters?",
+    options: ["%s", "%c", "%f", "%d"],
+    correctAnswer: 0,
+    explanation:
+      "The `%s` specifier targets String variables, whereas `%c` handles a single primitive character.",
+  },
+
+  // --- COLLECTIONS FRAMEWORK ---
+  {
+    id: "csc302_ch1_050",
+    course: "CSC 302",
+    chapter: "Chapter 1",
+    text: "Within the Java Collections Framework, which interface represents an ordered collection that naturally permits duplicate elements?",
+    options: ["List", "Set", "Map", "Queue"],
+    correctAnswer: 0,
+    explanation:
+      "The List interface represents a sequentially ordered collection that allows duplicate elements, unlike Sets which strictly require element uniqueness.",
+  },
+  {
+    id: "csc302_ch1_051",
+    course: "CSC 302",
+    chapter: "Chapter 1",
+    text: "Which Collection class ensures that all its entries remain sorted according to their natural ordering while strictly prohibiting duplicate values?",
+    options: ["TreeSet", "HashSet", "TreeMap", "ArrayList"],
+    correctAnswer: 0,
+    explanation:
+      "The TreeSet class implements the Set interface to prevent duplicates and internally structures the elements according to their natural sorting order.",
+  },
+  {
+    id: "csc302_ch1_052",
+    course: "CSC 302",
+    chapter: "Chapter 1",
+    text: "The Set interface in the Java Collections Framework allows multiple identical duplicate elements to be logically stored.",
     options: ["True", "False", "Maybe", "I don't know"],
     correctAnswer: 1,
     explanation:
-      "The slides clarify that the Map interface distinctly stores data in key-value pairs (like HashMap), differentiating it from single-element collections.",
+      "By definition, a Set is a collection that cannot contain duplicate elements, logically modeling the mathematical set abstraction.",
   },
   {
-    id: "csc302_ch8_038",
+    id: "csc302_ch1_053",
     course: "CSC 302",
     chapter: "Chapter 1",
-    text: "If a developer needs a collection that automatically guarantees absolute uniqueness among its stored elements, which collection type should they implement?",
-    options: ["List", "Set", "Array", "ArrayList"],
-    correctAnswer: 1,
-    explanation:
-      "A `Set` is defined fundamentally in the collections section as an unordered collection that enforces uniqueness by automatically preventing duplicate elements.",
-  },
-  {
-    id: "csc302_ch8_039",
-    course: "CSC 302",
-    chapter: "Chapter 1",
-    text: "Which of the following classes is a standard concrete implementation of the Map interface?",
-    options: ["HashMap", "HashSet", "LinkedList", "ArrayList"],
+    text: "Which Collection implementation guarantees fast lookups for key-value pairs without maintaining any predictable iteration order?",
+    options: ["HashMap", "TreeMap", "ArrayList", "LinkedList"],
     correctAnswer: 0,
     explanation:
-      "The source material identifies `HashMap` and `TreeMap` as the concrete class implementations provided for utilizing the Map interface.",
+      "A HashMap stores objects in key-value pairs via hash codes, enabling rapid retrieval but resulting in a completely unpredictable traversal order.",
   },
   {
-    id: "csc302_ch8_040",
+    id: "csc302_ch1_054",
     course: "CSC 302",
     chapter: "Chapter 1",
-    text: "Under the Java Collections Framework, a HashSet is an implementation of the Set interface that maintains an unordered collection of unique elements.",
+    text: "When a design requires frequent insertions and deletions at the midpoint of a collection, which structure generally offers optimal performance?",
+    options: ["LinkedList", "ArrayList", "Vector", "Array"],
+    correctAnswer: 0,
+    explanation:
+      "A LinkedList offers highly efficient insertions and deletions in the middle of a list because it only requires updating localized node pointers.",
+  },
+  {
+    id: "csc302_ch1_055",
+    course: "CSC 302",
+    chapter: "Chapter 1",
+    text: "The Map interface strictly stores elements as individual, mathematically unique scalar values.",
+    options: ["True", "False", "Maybe", "I don't know"],
+    correctAnswer: 1,
+    explanation:
+      "The Map interface specifically maps unique keys to values, forming key-value pairs, rather than storing single scalar values like a Set.",
+  },
+  {
+    id: "csc302_ch1_056",
+    course: "CSC 302",
+    chapter: "Chapter 1",
+    text: "Which Collection class represents a Set that relies on hash codes and completely lacks any internal sorting or predictable iteration order?",
+    options: ["HashSet", "TreeSet", "ArrayList", "LinkedList"],
+    correctAnswer: 0,
+    explanation:
+      "A HashSet prohibits duplicate values but provides no guarantee regarding the iteration order of the elements within.",
+  },
+
+  // --- LAMBDA EXPRESSIONS & POLYMORPHISM (CODE) ---
+  {
+    id: "csc302_ch1_057",
+    course: "CSC 302",
+    chapter: "Chapter 1",
+    text: "What is the primary syntactical benefit of implementing lambda expressions in a Java application?",
+    options: [
+      "They provide a clear and concise way to represent single-method functional interfaces",
+      "They automatically manage system memory usage",
+      "They replace all forms of classical class inheritance",
+      "They accelerate the compiler's parsing phase",
+    ],
+    correctAnswer: 0,
+    explanation:
+      "Lambda expressions streamline code by providing a very concise syntax directly for implementing single-method functional interfaces.",
+  },
+  {
+    id: "csc302_ch1_058",
+    course: "CSC 302",
+    chapter: "Chapter 1",
+    text: `Given the following code using a functional interface:
+
+\`\`\`java
+interface MathOp {
+  int operate(int a, int b);
+}
+public class Main {
+  public static void main(String[] args) {
+    MathOp add = (x, y) -> x + y;
+    System.out.println(add.operate(5, 3));
+  }
+}
+\`\`\`
+
+What does this code output?`,
+    options: ["8", "x + y", "53", "A compiler error"],
+    correctAnswer: 0,
+    explanation:
+      "The lambda expression concisely implements the functional interface by defining the operate method to simply return the arithmetic sum of the parameters.",
+  },
+  {
+    id: "csc302_ch1_059",
+    course: "CSC 302",
+    chapter: "Chapter 1",
+    text: "Lambda expressions were officially introduced to the Java language in the release of Java 8.",
     options: ["True", "False", "Maybe", "I don't know"],
     correctAnswer: 0,
     explanation:
-      "Under the Set interface details, HashSet is prominently highlighted as a collection implementation that maintains an unordered list of unique elements.",
+      "Java 8 marked a significant language evolution by introducing lambda expressions to natively support functional programming concepts.",
   },
   {
-    id: "csc302_ch9_041",
+    id: "csc302_ch1_060",
     course: "CSC 302",
     chapter: "Chapter 1",
-    text: "In which version of Java were Lambda expressions officially introduced?",
-    options: ["Java 5", "Java 8", "Java 11", "Java 17"],
-    correctAnswer: 1,
-    explanation:
-      "The Lambda Expressions slide specifically notes that this powerful feature, introducing anonymous methods, was introduced in Java 8.",
-  },
-  {
-    id: "csc302_ch9_042",
-    course: "CSC 302",
-    chapter: "Chapter 1",
-    text: "What is the primary syntax structure used to define a Lambda expression in Java?",
-    options: [
-      "(parameters) -> expression",
-      "parameters => expression",
-      "{parameters} -> expression",
-      "function(parameters) { expression }",
-    ],
+    text: `Given the following code illustrating polymorphism:
+
+\`\`\`java
+class Animal {
+  void sound() { System.out.print("Roar"); }
+}
+class Dog extends Animal {
+  void sound() { System.out.print("Bark"); }
+}
+public class Main {
+  public static void main(String[] args) {
+    Animal a = new Dog();
+    a.sound();
+  }
+}
+\`\`\`
+
+What is printed to the console?`,
+    options: ["Bark", "Roar", "A compiler error", "RoarBark"],
     correctAnswer: 0,
     explanation:
-      "The explicit syntax structure provided in the material for formulating a lambda expression is `(parameters) -> expression`.",
+      "Because the object is instantiated as a Dog, the overridden sound() method inside the Dog subclass executes despite the reference variable being of type Animal.",
   },
+
+  // --- STRINGS ---
   {
-    id: "csc302_ch9_043",
+    id: "csc302_ch1_061",
     course: "CSC 302",
     chapter: "Chapter 1",
-    text: "Lambda expressions are most commonly used in conjunction with which type of interface?",
-    options: [
-      "Functional interfaces",
-      "Marker interfaces",
-      "Serializable interfaces",
-      "Collection interfaces",
-    ],
-    correctAnswer: 0,
-    explanation:
-      "The lambda expressions slide notes that they represent anonymous methods that are often utilized alongside functional interfaces like Runnable or Callable.",
-  },
-  {
-    id: "csc302_ch10_044",
-    course: "CSC 302",
-    chapter: "Chapter 1",
-    text: "In Java, instantiated objects of the String class possess which critical characteristic?",
-    options: [
-      "They are primitive data types",
-      "They can dynamically resize without creating new objects",
-      "They are immutable",
-      "They are strongly typed numeric variables",
-    ],
-    correctAnswer: 2,
-    explanation:
-      "The Java Strings section emphasizes that string objects are immutable, meaning their internal sequence of characters cannot be changed once initialized.",
-  },
-  {
-    id: "csc302_ch10_045",
-    course: "CSC 302",
-    chapter: "Chapter 1",
-    text: "If an algorithm requires performing frequent modifications to a character sequence, which class is more efficient to use than String?",
-    options: ["StringBuilder", "StringBuffer", "CharArray", "StringModifier"],
-    correctAnswer: 0,
-    explanation:
-      "For scenarios requiring mutable sequences of characters and frequent modifications, the slides recommend using the `StringBuilder` class.",
-  },
-  {
-    id: "csc302_ch10_046",
-    course: "CSC 302",
-    chapter: "Chapter 1",
-    text: 'Given the following code:\n\n```java\nString s = "Java";\nSystem.out.println(s.charAt(1));\n```\n\nWhat is the output of this code snippet?',
-    options: ["J", "a", "v", "The code causes a runtime error"],
-    correctAnswer: 1,
-    explanation:
-      "Because strings and arrays are zero-indexed, calling `charAt(1)` on the word \"Java\" returns the second character in the sequence, which is 'a'.",
-  },
-  {
-    id: "csc302_ch10_047",
-    course: "CSC 302",
-    chapter: "Chapter 1",
-    text: "Which String method is used specifically to compare the content of two strings while ignoring any differences in casing?",
-    options: [
-      "equals()",
-      "equalsIgnoreCase()",
-      "compareToIgnoreCase()",
-      "isEqualTo()",
-    ],
-    correctAnswer: 1,
-    explanation:
-      "The slides list `equalsIgnoreCase()` alongside `equals()` as the method deployed specifically to evaluate string equivalence regardless of upper or lower casing.",
-  },
-  {
-    id: "csc302_ch11_048",
-    course: "CSC 302",
-    chapter: "Chapter 1",
-    text: "According to the modern best practices mentioned in the slides, which package should be favored for file handling?",
-    options: ["java.io", "java.file.system", "java.lang.io", "java.nio.file"],
-    correctAnswer: 3,
-    explanation:
-      "The modern best practice outlined in the file handling slides advises favoring the `java.nio.file` package for all modern file handling code development.",
-  },
-  {
-    id: "csc302_ch11_049",
-    course: "CSC 302",
-    chapter: "Chapter 1",
-    text: "What is a significant advantage of using the try-with-resources statement when handling files?",
-    options: [
-      "It ensures unchecked exceptions are caught and logged automatically",
-      "It automatically encrypts the file contents upon saving",
-      "It bypasses the need for the java.io package entirely",
-      "It automatically closes resources to prevent memory leaks",
-    ],
-    correctAnswer: 3,
-    explanation:
-      "The best practices section highlights the try-with-resources statement because it provides automatic closure for file resources, enforcing safe memory management.",
-  },
-  {
-    id: "csc302_ch11_050",
-    course: "CSC 302",
-    chapter: "Chapter 1",
-    text: "In Java file operations, the standard method utilized to verify whether a target file actually exists on the disk is file.exists().",
+    text: "In Java, instances of the standard String class are immutable, meaning their character content cannot be changed once created.",
     options: ["True", "False", "Maybe", "I don't know"],
     correctAnswer: 0,
     explanation:
-      "The file handling operations table explicitly includes `file.exists()` as the standard method utilized to verify if a file exists.",
+      "Java Strings are strictly immutable. Any operation that appears to modify a String actually produces a completely new independent String object.",
   },
   {
-    id: "csc302_ch11_051",
+    id: "csc302_ch1_062",
     course: "CSC 302",
     chapter: "Chapter 1",
-    text: 'Given the following code:\n\n```java\nPath path = Paths.get("data.txt");\nif (Files.exists(path)) {\n  System.out.println("Found");\n}\n```\n\nWhich modern Java package provides the functional classes used in this snippet?',
+    text: "When an algorithm requires continuous and frequent modifications to a sequence of characters, which class mitigates excessive object creation?",
+    options: ["StringBuilder", "String", "Character", "CharSequence"],
+    correctAnswer: 0,
+    explanation:
+      "StringBuilder provides a mutable sequence of characters, drastically reducing the memory overhead compared to constantly recreating standard Strings.",
+  },
+  {
+    id: "csc302_ch1_063",
+    course: "CSC 302",
+    chapter: "Chapter 1",
+    text: `Given the following code:
+
+\`\`\`java
+String word = "Programming";
+System.out.println(word.substring(0, 3));
+\`\`\`
+
+What is the expected output?`,
+    options: ["Pro", "Prog", "ram", "ing"],
+    correctAnswer: 0,
+    explanation:
+      "The `substring(int beginIndex, int endIndex)` method extracts characters starting from beginIndex inclusively up to endIndex exclusively.",
+  },
+  {
+    id: "csc302_ch1_064",
+    course: "CSC 302",
+    chapter: "Chapter 1",
+    text: "Which sequence of methods accurately removes trailing whitespace and then determines the length of a String object?",
     options: [
-      "java.io",
+      "text.trim().length()",
+      "text.stripSpaces().size()",
+      "text.clean().count()",
+      'text.replace(" ", "").length()',
+    ],
+    correctAnswer: 0,
+    explanation:
+      "The `trim()` method dynamically eliminates leading and trailing whitespace. The `length()` method subsequently counts the characters of the resulting String.",
+  },
+  {
+    id: "csc302_ch1_065",
+    course: "CSC 302",
+    chapter: "Chapter 1",
+    text: `Given the following code:
+
+\`\`\`java
+String str = "Hello";
+System.out.print(str.charAt(1));
+\`\`\`
+
+What single character is printed?`,
+    options: ["e", "H", "l", "o"],
+    correctAnswer: 0,
+    explanation:
+      "Strings act like zero-indexed character arrays in this context. The character located at index 1 is 'e'.",
+  },
+  {
+    id: "csc302_ch1_066",
+    course: "CSC 302",
+    chapter: "Chapter 1",
+    text: "Which method must be heavily utilized to accurately compare the actual character sequence content of two String objects?",
+    options: ["equals()", "compareContent()", "matches()", "=="],
+    correctAnswer: 0,
+    explanation:
+      "The equals() method reliably compares the internal character values of Strings, whereas the == operator dangerously compares memory references.",
+  },
+  {
+    id: "csc302_ch1_067",
+    course: "CSC 302",
+    chapter: "Chapter 1",
+    text: `Given the following code:
+
+\`\`\`java
+String greeting = "hi";
+greeting.toUpperCase();
+System.out.print(greeting);
+\`\`\`
+
+What is correctly printed?`,
+    options: ["hi", "HI", "Hi", "A compiler error occurs"],
+    correctAnswer: 0,
+    explanation:
+      "Because Strings are absolutely immutable, calling toUpperCase() creates a new String but does not alter the original 'greeting' variable since the result is not reassigned.",
+  },
+
+  // --- FILE HANDLING ---
+  {
+    id: "csc302_ch1_068",
+    course: "CSC 302",
+    chapter: "Chapter 1",
+    text: "Which modern Java package is explicitly recommended in the slides as the best practice for new file handling code today?",
+    options: [
       "java.nio.file",
-      "java.util.stream",
-      "java.lang.system",
+      "java.io.streams",
+      "java.util.files",
+      "java.net.sockets",
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation:
-      "The `Files` and `Paths` classes are part of the `java.nio.file` package, highlighted as the modern standard for locating and interacting with files.",
+      "The slides state as a strict rule of thumb: If you are writing new code today, use `java.nio.file` unless you have a specific reason to use legacy streams.",
   },
   {
-    id: "csc302_ch11_052",
+    id: "csc302_ch1_069",
     course: "CSC 302",
     chapter: "Chapter 1",
-    text: "When performing operations on large files, which classes provide better performance according to the slides?",
+    text: "What modern Java control structure automatically manages the closing of file streams, eliminating the strict need for an explicit finally block?",
     options: [
-      "FileWriter and FileReader",
-      "FileInputStream and FileOutputStream",
-      "BufferedWriter and BufferedReader",
-      "Scanner and Printer",
+      "try-with-resources",
+      "auto-close blocks",
+      "managed-try statements",
+      "finally-implied structures",
     ],
-    correctAnswer: 2,
+    correctAnswer: 0,
     explanation:
-      "The file handling best practices explicitly state that using `BufferedWriter` and `BufferedReader` yields better runtime performance when working with large files.",
+      "The try-with-resources statement ensures that every resource declared within its initialization parenthesis is automatically and safely closed.",
+  },
+  {
+    id: "csc302_ch1_070",
+    course: "CSC 302",
+    chapter: "Chapter 1",
+    text: "Which input stream class is highly recommended to significantly boost performance when reading bulk text from large files?",
+    options: ["BufferedReader", "FileReader", "FileInputStream", "Scanner"],
+    correctAnswer: 0,
+    explanation:
+      "Using BufferedReader elegantly wraps standard file readers with an in-memory buffer, drastically reducing the total number of expensive disk read operations.",
+  },
+  {
+    id: "csc302_ch1_071",
+    course: "CSC 302",
+    chapter: "Chapter 1",
+    text: "Which method systematically checks whether a referenced file currently exists on the disk before an application attempts to interact with it?",
+    options: [
+      "file.exists()",
+      "file.isPresent()",
+      "file.check()",
+      "file.hasData()",
+    ],
+    correctAnswer: 0,
+    explanation:
+      "The `exists()` method of the File class accurately queries the file system to verify if the file pointed to by the object is physically present.",
+  },
+  {
+    id: "csc302_ch1_072",
+    course: "CSC 302",
+    chapter: "Chapter 1",
+    text: "According to the best practices slide, it is optional to close resources like FileReaders if you are only safely reading data.",
+    options: ["True", "False", "Maybe", "I don't know"],
+    correctAnswer: 1,
+    explanation:
+      "The best practices slide explicitly dictates that developers must 'Always close resources or use try-with-resources' to strictly prevent memory and file lock leaks.",
+  },
+  {
+    id: "csc302_ch1_073",
+    course: "CSC 302",
+    chapter: "Chapter 1",
+    text: "Which specific method of the java.io.File class is systematically called to physically generate a new, empty file on the hard drive?",
+    options: ["createNewFile()", "makeFile()", "generate()", "buildFile()"],
+    correctAnswer: 0,
+    explanation:
+      "The createNewFile() method atomically creates a new, empty file if and only if a file with this name does not yet exist.",
+  },
+  {
+    id: "csc302_ch1_074",
+    course: "CSC 302",
+    chapter: "Chapter 1",
+    text: "The delete() method permanently removes the file or directory referenced by the associated File object from the file system.",
+    options: ["True", "False", "Maybe", "I don't know"],
+    correctAnswer: 0,
+    explanation:
+      "Calling delete() on a valid File object systematically removes it from the file system. If the object is a directory, it must be empty.",
+  },
+  {
+    id: "csc302_ch1_075",
+    course: "CSC 302",
+    chapter: "Chapter 1",
+    text: "Which type of stream is strictly utilized by standard Java classes to perform raw byte-level input operations?",
+    options: ["FileInputStream", "FileReader", "StringReader", "ByteScanner"],
+    correctAnswer: 0,
+    explanation:
+      "FileInputStream securely reads raw bytes from a file, whereas FileReader reads streams of human-readable characters.",
   },
 ];
 
