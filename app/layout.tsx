@@ -3,11 +3,16 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
-
+ 
 const _geist = Geist({ subsets: ["latin"] });
 const _geistMono = Geist_Mono({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
+
+  metadataBase: new URL(
+    process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000"
+  ),
+
   title: "QuizSpark - Interactive Course Quizzes",
   description:
     "Interactive MCQ quizzes for university courses including Assembly Language Programming, Data Structures and Algorithms, Information Systems, Computer Appreciation, and more.",
@@ -21,8 +26,8 @@ export const metadata: Metadata = {
     images: [
       {
         url: "/opengraph-image.png",
-        width: 1280,
-        height: 640,
+        width: 1200,
+        height: 630,
         alt: "QuizSpark - Smart Quizzing for Modern Students",
       },
     ],
