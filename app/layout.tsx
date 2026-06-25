@@ -23,14 +23,6 @@ export const metadata: Metadata = {
     title: "QuizSpark - Interactive Course Quizzes",
     description:
       "Smart quizzing for modern students. Randomized MCQs, instant feedback, and score tracking across multiple university courses.",
-    images: [
-      {
-        url: "/opengraph-image.png",
-        width: 1200,
-        height: 630,
-        alt: "QuizSpark - Smart Quizzing for Modern Students",
-      },
-    ],
     type: "website",
   },
   twitter: {
@@ -38,7 +30,6 @@ export const metadata: Metadata = {
     title: "QuizSpark - Interactive Course Quizzes",
     description:
       "Smart quizzing for modern students. Randomized MCQs, instant feedback, and score tracking across multiple university courses.",
-    images: ["/opengraph-image.png"],
   },
 };
 
