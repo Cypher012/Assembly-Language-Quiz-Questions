@@ -1,5 +1,14 @@
 import { Question, QuestionV2 } from "./quiz-types";
 
+// Import course data
+// import { cpe301AssemblyCourse } from "./courses/cpe301-assembly";
+// import { csc311InfoSystemsCourse } from "./courses/csc311-info-systems";
+// import { csc307NumericalComputationCourse } from "./courses/csc307-numerical-computation";
+// import { csc221ComputerAppreciation } from "./courses/csc221-computer-appreciation";
+// import { csc315DSACourse } from "./courses/csc315-dsa";
+import { csc302OOPCourse } from "./courses/csc302-oop";
+import { csc304BusinessProgCourse } from "./courses/csc304-bcp";
+
 export interface Chapter {
   id: string;
   label: string;
@@ -17,19 +26,13 @@ export interface Course {
   quizType?: "standard" | "tokenized";
 }
 
-// Import course data
-import { cpe301AssemblyCourse } from "./courses/cpe301-assembly";
-import { csc311InfoSystemsCourse } from "./courses/csc311-info-systems";
-import { csc307NumericalComputationCourse } from "./courses/csc307-numerical-computation";
-import { csc221ComputerAppreciation } from "./courses/csc221-computer-appreciation";
-import { csc315DSACourse } from "./courses/csc315-dsa";
-import { csc302OOPCourse } from "./courses/csc302-oop";
-
 // ============================================
 // TOGGLE COURSES HERE - Just comment/uncomment lines to show/hide courses
 // ============================================
 export const courses: Course[] = [
   csc302OOPCourse,
+  csc304BusinessProgCourse,
+
   // cpe301AssemblyCourse,
   // csc315DSACourse,
   // csc311InfoSystemsCourse,
@@ -40,6 +43,8 @@ export const courses: Course[] = [
 // All available courses (master list - for settings UI)
 export const allCourses: Course[] = [
   csc302OOPCourse,
+  csc304BusinessProgCourse,
+
   // cpe301AssemblyCourse,
   // csc315DSACourse,
   // csc311InfoSystemsCourse,
