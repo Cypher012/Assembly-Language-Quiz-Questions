@@ -842,7 +842,7 @@ const csc302Module3: QuestionV2[] = [
     ],
     correctAnswer: 1,
     explanation:
-      "ALGOL introduced nested block structures (begin...end) and lexical scoping of variables — foundational syntax concepts that nearly all modern languages inherit.",
+      "ALGOL introduced nested block structures (begin...end) and lexical scoping of variables foundational syntax concepts that nearly all modern languages inherit.",
   },
 
   // ─── C LANGUAGE ────────────────────────────────────────────────────────────
@@ -989,7 +989,7 @@ const csc302Module3: QuestionV2[] = [
     text: "What is the 'Gorilla-Banana Problem' as described by Joe Armstrong, the creator of Erlang?",
     options: [
       "The difficulty of running Erlang on non-Unix systems",
-      "Inheriting unnecessary context — you wanted a banana but got the gorilla holding it and the entire jungle",
+      "Inheriting unnecessary context you wanted a banana but got the gorilla holding it and the entire jungle",
       "A concurrency bug where two actors both try to consume the same message",
       "A memory leak caused by deeply nested object hierarchies",
     ],
@@ -1010,7 +1010,7 @@ const csc302Module3: QuestionV2[] = [
     ],
     correctAnswer: 1,
     explanation:
-      "The modern engineering consensus, as stated in the lecture, is to prefer Composition over Inheritance — assembling behaviour from components rather than extending base classes, avoiding fragile deep hierarchies.",
+      "The modern engineering consensus, as stated in the lecture, is to prefer Composition over Inheritance assembling behaviour from components rather than extending base classes, avoiding fragile deep hierarchies.",
   },
 
   // ─── LISP ──────────────────────────────────────────────────────────────────
@@ -1131,7 +1131,7 @@ const csc302Module3: QuestionV2[] = [
     ],
     correctAnswer: 1,
     explanation:
-      "Monads solve the challenge of how a purely functional language with no side effects handles real-world operations like database writes, file I/O, and user input — by wrapping values and chaining computations while keeping side effects cleanly isolated.",
+      "Monads solve the challenge of how a purely functional language with no side effects handles real-world operations like database writes, file I/O, and user input by wrapping values and chaining computations while keeping side effects cleanly isolated.",
   },
   {
     id: "csc302_ch3_082",
@@ -1167,13 +1167,13 @@ const csc302Module3: QuestionV2[] = [
     text: "What is the key feature of the Hindley-Milner type system used in languages like Haskell and OCaml?",
     options: [
       "Dynamic typing with runtime type checks",
-      "Type Inference — the compiler deduces types without explicit declarations",
+      "Type Inference the compiler deduces types without explicit declarations",
       "Mandatory type annotations on every variable",
       "A single universal type for all values",
     ],
     correctAnswer: 1,
     explanation:
-      "The key feature of the Hindley-Milner type system is Type Inference — the compiler can mathematically deduce the most general type for every expression without requiring the programmer to write explicit type annotations.",
+      "The key feature of the Hindley-Milner type system is Type Inference the compiler can mathematically deduce the most general type for every expression without requiring the programmer to write explicit type annotations.",
   },
   {
     id: "csc302_ch3_085",
@@ -1269,7 +1269,7 @@ const csc302Module3: QuestionV2[] = [
     ],
     correctAnswer: 2,
     explanation:
-      "Ericsson's AXD301 switch, written in Erlang, achieved a legendary uptime rating of 99.9999999% — nine 9s — over several years, demonstrating the extraordinary fault-tolerance of the Actor Model and 'Let it Crash' philosophy.",
+      "Ericsson's AXD301 switch, written in Erlang, achieved a legendary uptime rating of 99.9999999% nine 9s over several years, demonstrating the extraordinary fault-tolerance of the Actor Model and 'Let it Crash' philosophy.",
   },
   {
     id: "csc302_ch3_091",
@@ -1284,7 +1284,7 @@ const csc302Module3: QuestionV2[] = [
     ],
     correctAnswer: 1,
     explanation:
-      "In Erlang, actors are arranged in Supervision Trees — hierarchies where specialized supervisor actors monitor worker actors. If a worker crashes, the supervisor automatically restarts it in a known clean state.",
+      "In Erlang, actors are arranged in Supervision Trees hierarchies where specialized supervisor actors monitor worker actors. If a worker crashes, the supervisor automatically restarts it in a known clean state.",
   },
   {
     id: "csc302_ch3_092",
@@ -1293,7 +1293,7 @@ const csc302Module3: QuestionV2[] = [
     text: "What is the core idea behind Erlang's 'Let it Crash' philosophy?",
     options: [
       "Write programs with no error handling to maximize execution speed",
-      "Don't try to handle fatal failures defensively — let the actor crash and have a supervisor restart it cleanly",
+      "Don't try to handle fatal failures defensively let the actor crash and have a supervisor restart it cleanly",
       "Allow memory leaks to accumulate and crash the system periodically for cleanup",
       "Use exceptions to propagate errors up the entire call stack",
     ],
@@ -1383,7 +1383,7 @@ const csc302Module3: QuestionV2[] = [
     ],
     correctAnswer: 1,
     explanation:
-      "Urban Müller created Brainfuck in 1993 with the goal of writing the smallest possible compiler — one that compiled to less than 200 bytes of Amiga machine code — using only 8 instruction characters.",
+      "Urban Müller created Brainfuck in 1993 with the goal of writing the smallest possible compiler one that compiled to less than 200 bytes of Amiga machine code using only 8 instruction characters.",
   },
 
   // ─── INTERCAL ──────────────────────────────────────────────────────────────
@@ -1394,7 +1394,7 @@ const csc302Module3: QuestionV2[] = [
     text: "What unique 'politeness' requirement does the INTERCAL programming language impose on programmers?",
     options: [
       "All variable names must be respectful words",
-      "The keyword PLEASE must be used frequently — too little is 'unpolite', too much is 'overly pleading'",
+      "The keyword PLEASE must be used frequently too little is 'unpolite', too much is 'overly pleading'",
       "Comments must be written as formal letters",
       "Every function must include a thank-you statement at the end",
     ],
@@ -1447,7 +1447,7 @@ const csc302Module3: QuestionV2[] = [
     ],
     correctAnswer: 1,
     explanation:
-      "Chef (by David Morgan-Mar) is unique because programs read exactly like culinary recipes — variables are ingredients, mixing bowls serve as processing stacks — and a valid Chef program can actually be cooked and eaten as a real dish!",
+      "Chef (by David Morgan-Mar) is unique because programs read exactly like culinary recipes variables are ingredients, mixing bowls serve as processing stacks and a valid Chef program can actually be cooked and eaten as a real dish!",
   },
 
   // ─── SCALA ─────────────────────────────────────────────────────────────────
@@ -1473,7 +1473,7 @@ const csc302Module3: QuestionV2[] = [
     text: "What powerful synthesis does Scala achieve that distinguishes it from both pure Java and pure Haskell?",
     options: [
       "It combines logic programming with concurrent actor systems",
-      "Every value is an object AND every function is a first-class value — merging pure OOP with pure functional design",
+      "Every value is an object AND every function is a first-class value merging pure OOP with pure functional design",
       "It eliminates the need for a virtual machine by compiling to native code",
       "It uses lazy evaluation alongside mandatory garbage collection",
     ],
@@ -1511,7 +1511,7 @@ const csc302Module3: QuestionV2[] = [
     ],
     correctAnswer: 2,
     explanation:
-      "SQL is an External DSL — a standalone language with its own custom parser and interpreter, not embedded within another language's syntax. Gradle in Groovy and Rails routes in Ruby are examples of Internal DSLs.",
+      "SQL is an External DSL a standalone language with its own custom parser and interpreter, not embedded within another language's syntax. Gradle in Groovy and Rails routes in Ruby are examples of Internal DSLs.",
   },
 
   // ─── QUANTUM COMPUTING ─────────────────────────────────────────────────────
@@ -1553,7 +1553,7 @@ const csc302Module3: QuestionV2[] = [
     options: ["Nibbles", "Qubits", "Trits", "Quantum Gates"],
     correctAnswer: 1,
     explanation:
-      "In quantum computing, Qubits replace standard binary bits. Unlike classical bits (0 or 1), qubits can exist in superposition — representing both 0 and 1 simultaneously until measured.",
+      "In quantum computing, Qubits replace standard binary bits. Unlike classical bits (0 or 1), qubits can exist in superposition representing both 0 and 1 simultaneously until measured.",
   },
 
   // ─── AI ERA PARADIGM SHIFT ─────────────────────────────────────────────────
@@ -1570,7 +1570,7 @@ const csc302Module3: QuestionV2[] = [
     ],
     correctAnswer: 1,
     explanation:
-      "The lecture states that in the AI era, the primary developer paradigm shifts from syntactic execution to architectural oversight and validation — programmers transition from writing raw code to designing systems, specifying parameters, and evaluating generated code.",
+      "The lecture states that in the AI era, the primary developer paradigm shifts from syntactic execution to architectural oversight and validation programmers transition from writing raw code to designing systems, specifying parameters, and evaluating generated code.",
   },
 ];
 
