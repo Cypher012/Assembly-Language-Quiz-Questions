@@ -3,6 +3,7 @@ import { QuestionV2 } from "../../quiz-types";
 import csc304Chapter1 from "./chapter-1";
 import csc304Chapter2 from "./chapter-2";
 import csc304Chapter3 from "./chapter-3";
+import csc304Chapter4 from "./chapter-4";
 
 export const csc304BusinessProgCourse: Course = {
   id: "csc304-business-programming",
@@ -29,8 +30,19 @@ export const csc304BusinessProgCourse: Course = {
       description:
         "Understand the fundamentals of file maintenance including file types, keys, update operations, and the roles of utility and support software.",
     },
+    {
+      id: "Chapter 4",
+      label: "Introduction to Operating Systems",
+      description:
+        "Learn the basics of operating systems, their core functions, the kernel, and system goals.",
+    },
   ],
   getQuestions: (): QuestionV2[] => {
-    return [...csc304Chapter1, ...csc304Chapter2, ...csc304Chapter3];
+    return [
+      ...csc304Chapter1,
+      ...csc304Chapter2,
+      ...csc304Chapter3,
+      ...csc304Chapter4,
+    ];
   },
 };
