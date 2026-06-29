@@ -26,7 +26,7 @@ export const csc304BusinessProgCourse: Course = {
     },
     {
       id: "Chapter 3",
-      label: "File Maintenance",
+      label: "File Maintenance & File Systems",
       description:
         "Understand the fundamentals of file maintenance including file types, keys, update operations, and the roles of utility and support software.",
     },
