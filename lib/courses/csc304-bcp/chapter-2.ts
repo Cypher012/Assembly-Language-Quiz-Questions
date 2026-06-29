@@ -815,11 +815,16 @@ const csc304Chapter2: QuestionV2[] = [
     id: "csc304_ch2_064",
     course: "CSC 304",
     chapter: "Chapter 2",
-    text: "In the dictionary example provided in the notes, if the Key is 'Name', what is the corresponding value given?",
-    options: ["Customer", "Ade", "Dictionary", "Tunde"],
-    correctAnswer: 1,
+    text: "In a dictionary data structure, what does a key represent?",
+    options: [
+      "A unique identifier used to access a value",
+      "The position of an element in an array",
+      "A duplicate copy of a value",
+      "The size of the dictionary",
+    ],
+    correctAnswer: 0,
     explanation:
-      "The notes provide a specific example of a dictionary structure. The text reads 'The Key can be customer name... Name: Ade', making 'Ade' the value.",
+      "A key is a unique identifier used to retrieve its corresponding value in a dictionary. Each key maps to a specific value.",
   },
   {
     id: "csc304_ch2_065",
