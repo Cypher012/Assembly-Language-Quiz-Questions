@@ -23,6 +23,7 @@ interface ProgressHeaderProps {
   examEndTime?: number | null;
   onTimeUp?: () => void;
   onExitExam?: () => void;
+  showExitButton?: boolean;
 }
 
 export default function ProgressHeader({
@@ -32,6 +33,7 @@ export default function ProgressHeader({
   examEndTime,
   onTimeUp,
   onExitExam,
+  showExitButton,
 }: ProgressHeaderProps) {
   const progress = (current / total) * 100;
   const [secondsLeft, setSecondsLeft] = useState<number>(() => {
@@ -57,6 +59,8 @@ export default function ProgressHeader({
     return () => clearInterval(interval);
   }, [examEndTime, onTimeUp]);
 
+  const showExit = (!!examEndTime && !!onExitExam) || !!showExitButton;
+
   return (
     <div className="space-y-4">
       <div className="flex items-center justify-between">
@@ -70,7 +74,7 @@ export default function ProgressHeader({
         </div>
 
         <div className="flex items-center gap-3">
-          {examEndTime && onExitExam && (
+          {showExit && onExitExam && (
             <AlertDialog>
               <AlertDialogTrigger asChild>
                 <button className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium text-red-400 border border-red-500/30 bg-red-500/10 hover:bg-red-500/20 hover:text-red-300 transition-all duration-150">
@@ -109,10 +113,10 @@ export default function ProgressHeader({
                   </div>
                   <AlertDialogHeader>
                     <AlertDialogTitle className="text-white text-lg font-semibold mb-1">
-                      Exit exam?
+                      Exit {examEndTime ? "exam" : "quiz"}?
                     </AlertDialogTitle>
                     <AlertDialogDescription className="text-slate-400 text-sm leading-relaxed">
-                      Your progress will be lost and the exam will be cancelled.
+                      Your progress will be lost and the {examEndTime ? "exam" : "quiz"} will be cancelled.
                       This cannot be undone.
                     </AlertDialogDescription>
                   </AlertDialogHeader>
@@ -125,7 +129,7 @@ export default function ProgressHeader({
                     onClick={onExitExam}
                     className="flex-1 h-10 bg-red-600 hover:bg-red-500 text-white border-0 rounded-xl text-sm font-medium transition-all"
                   >
-                    Exit exam
+                    Exit {examEndTime ? "exam" : "quiz"}
                   </AlertDialogAction>
                 </div>
               </AlertDialogContent>

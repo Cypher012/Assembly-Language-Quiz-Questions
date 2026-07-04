@@ -407,7 +407,8 @@ export default function QuizContainer() {
           score={score}
           examEndTime={examEndTime}
           onTimeUp={handleAutoSubmit}
-          onExitExam={isExamMode ? handleBackToChapters : undefined}
+          onExitExam={handleBackToChapters}
+          showExitButton={true}
         />
 
         <QuestionCard

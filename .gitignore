@@ -36,3 +36,4 @@ next-env.d.ts
 pnpm-workspace.yaml
 
 play.py
+cbt_question_prompt.md
