@@ -37,3 +37,4 @@ pnpm-workspace.yaml
 
 play.py
 cbt_question_prompt.md
+lib/courses/csc312-system-analysis/fixed_questions.py

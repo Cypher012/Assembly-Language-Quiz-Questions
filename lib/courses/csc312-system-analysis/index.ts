@@ -1,7 +1,7 @@
 import { Course } from "../../courses";
 import { QuestionV2 } from "../../quiz-types";
 import csc312Lecture12 from "./lecture-1-2";
-import csc312Lecture3 from "./lecture-3";
+import csc312Lecture3 from "./lecture-3-fixed";
 import csc312Lecture4 from "./lecture-4";
 
 export const csc312Course: Course = {
