@@ -531,20 +531,20 @@ const csc312Letcure3: QuestionV2[] = [
     course: "CSC 312",
     chapter: "Chapter 2",
     text: "What percentage of software maintenance costs is typically allocated to Adaptive Maintenance according to the course statistics?",
-    options: ["25%", "20%", "50%", "5%"],
+    options: ["25%", "20%", "40%", "15%"],
     correctAnswer: 0,
     explanation:
-      "The maintenance cost breakdown slide lists Adaptive Maintenance at exactly 25%.\n\n20% is the cost breakdown allocated to Corrective Maintenance (bug fixing).\n\n50% is the cost breakdown allocated to Perfective Maintenance (enhancements).\n\n5% is the cost breakdown allocated to Preventive Maintenance (early cleanup).",
+      "The maintenance cost breakdown slide lists Adaptive Maintenance at exactly 25%.\n\n20% is the cost breakdown allocated to Corrective Maintenance (bug fixing).\n\n40% is the cost breakdown allocated to Perfective Maintenance (enhancements).\n\n15% is the cost breakdown allocated to Preventive Maintenance (early cleanup).",
   },
   {
     id: "csc312_ch2_040",
     course: "CSC 312",
     chapter: "Chapter 2",
     text: "According to the course slides, what percentage of the total software maintenance cost is spent on Corrective Maintenance?",
-    options: ["20%", "25%", "50%", "5%"],
+    options: ["20%", "25%", "40%", "15%"],
     correctAnswer: 0,
     explanation:
-      "The Maintenance Cost Breakdown section states that Corrective Maintenance accounts for exactly 20% of the maintenance budget.\n\n25% is the budget percentage spent on Adaptive Maintenance (modifying for environment changes).\n\n50% is the budget percentage spent on Perfective Maintenance (adding new requested features).\n\n5% is the budget percentage spent on Preventive Maintenance (preventing future defects).",
+      "The Maintenance Cost Breakdown section states that Corrective Maintenance accounts for exactly 20% of the maintenance budget.\n\n25% is the budget percentage spent on Adaptive Maintenance (modifying for environment changes).\n\n40% is the budget percentage spent on Perfective Maintenance (adding new requested features).\n\n15% is the budget percentage spent on Preventive Maintenance (preventing future defects).",
   },
   {
     id: "csc312_ch2_041",
