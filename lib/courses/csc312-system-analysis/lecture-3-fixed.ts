@@ -1,6 +1,6 @@
 import { QuestionV2 } from "@/lib/quiz-types";
 
-const csc312Letcure3: QuestionV2[] = [
+const csc312Lecture3Combined: QuestionV2[] = [
   {
     id: "csc312_ch2_001",
     course: "CSC 312",
@@ -544,7 +544,7 @@ const csc312Letcure3: QuestionV2[] = [
     options: ["20%", "25%", "40%", "15%"],
     correctAnswer: 0,
     explanation:
-      "The Maintenance Cost Breakdown section states that Corrective Maintenance accounts for exactly 20% of the maintenance budget.\n\n25% is the budget percentage spent on Adaptive Maintenance (modifying for environment changes).\n\n40% is the budget percentage spent on Perfective Maintenance (adding new requested features).\n\n15% is the budget percentage spent on Preventive Maintenance (preventing future defects).",
+      "The Maintenance Cost Breakdown section states that Corrective Maintenance accounts for exactly 20% of the maintenance budget.\n\n25% is the budget percentage spent on Adaptive Maintenance (modifying for environment changes).\n\n50% is the budget percentage spent on Perfective Maintenance (adding new requested features).\n\n5% is the budget percentage spent on Preventive Maintenance (preventing future defects).",
   },
   {
     id: "csc312_ch2_041",
@@ -790,36 +790,6 @@ const csc312Letcure3: QuestionV2[] = [
     id: "csc312_ch2_058",
     course: "CSC 312",
     chapter: "Chapter 2",
-    text: "Which deployment strategy utilizes two identical active/passive production environments to allow instantaneous switching of users with low risk?",
-    options: [
-      "Blue-Green Deployment",
-      "Big Bang (Direct Cutover)",
-      "Phased Rollout",
-      "Canary Deployment",
-    ],
-    correctAnswer: 0,
-    explanation:
-      "The Deployment Strategies slide outlines Blue-Green Deployment as a low-risk strategy featuring two identical environments, where the new version is tested on the passive server and then traffic is switched.\n\nBig Bang is a high-risk instant replacement strategy with no redundant active server setup.\n\nPhased Rollout is a medium-risk strategy involving progressive, departmental launches.\n\nCanary Deployment is a very low-risk strategy of releasing to a very small subset of users first.",
-  },
-  {
-    id: "csc312_ch2_059",
-    course: "CSC 312",
-    chapter: "Chapter 2",
-    text: "A software firm deploys a new update to exactly 1% of its active users to monitor server logs and check for errors before a full release. What is this strategy?",
-    options: [
-      "Canary Deployment",
-      "Big Bang (Direct Cutover)",
-      "Phased Rollout",
-      "Blue-Green Deployment",
-    ],
-    correctAnswer: 0,
-    explanation:
-      "The Deployment Strategies slide outlines Canary Deployment as a very low-risk deployment where software is progressive launched to a minor subset of users to verify safety.\n\nBig Bang represents the instant full switchover carry high-risk.\n\nPhased Rollout represents gradual modular or regional launches.\n\nBlue-Green Deployment represents routing active traffic between two identical production environments.",
-  },
-  {
-    id: "csc312_ch2_060",
-    course: "CSC 312",
-    chapter: "Chapter 2",
     text: "Arrange the four deployment strategies from Lecture 3 in order of operational risk, from the highest risk to the lowest risk.",
     options: [
       "Big Bang → Phased Rollout → Blue-Green → Canary",
@@ -832,7 +802,7 @@ const csc312Letcure3: QuestionV2[] = [
       "According to the deployment strategy hierarchy slide, the risk order from highest to lowest is: Big Bang (High) → Phased Rollout (Medium) → Blue-Green (Low) → Canary (Very Low).\n\nCanary to Big Bang lists the strategies from lowest risk to highest risk.\n\nBig Bang to Phased Rollout in option 3 incorrectly positions Canary as higher risk than Blue-Green.\n\nOption 4 incorrectly lists Phased Rollout as higher risk than Big Bang.",
   },
   {
-    id: "csc312_ch2_061",
+    id: "csc312_ch2_059",
     course: "CSC 312",
     chapter: "Chapter 2",
     text: "A software engineer is documenting the classes, method definitions, database keys, and technical system schemas for a new app. This represents what?",
@@ -847,7 +817,7 @@ const csc312Letcure3: QuestionV2[] = [
       "The documentation slides specify that System Documentation contains design documents, UML diagrams, source code comments, and database dictionaries.\n\nUser/Operator Documentation contains user-facing files like installation manuals and online help systems.\n\nProject Plan is an administrative scheduling document generated in Phase 1 (Planning).\n\nBusiness Requirements Document represents the business processes mapped during Phase 2 (Analysis).",
   },
   {
-    id: "csc312_ch2_062",
+    id: "csc312_ch2_060",
     course: "CSC 312",
     chapter: "Chapter 2",
     text: "Which of the following is a key deliverable of the Testing & Integration phase of the Systems Development Life Cycle?",
@@ -862,17 +832,7 @@ const csc312Letcure3: QuestionV2[] = [
       "According to the SDLC Phase Deliverables, Testing & Integration yields test plans, execution scripts, bug lists, and verification logs.\n\nProject Charter and Feasibility Study are key deliverables of Phase 1 (Planning).\n\nUML Design Specification Document is a key deliverable of Phase 3 (Design).\n\nUser Requirements Specification is a key deliverable of Phase 2 (Analysis).",
   },
   {
-    id: "csc312_ch2_063",
-    course: "CSC 312",
-    chapter: "Chapter 2",
-    text: "According to the maintenance cost breakdown, perfective maintenance is the most expensive type of maintenance, accounting for approximately 40% of the total cost.",
-    options: ["True", "False", "Maybe", "I don't know"],
-    correctAnswer: 0,
-    explanation:
-      "The Maintenance Cost Breakdown slide outlines that Perfective Maintenance (adding features, enhancing code, optimizing database) takes up exactly 40% of the total maintenance budget.",
-  },
-  {
-    id: "csc312_ch2_064",
+    id: "csc312_ch2_061",
     course: "CSC 312",
     chapter: "Chapter 2",
     text: "During system development, checking whether the hardware servers can handle 10,000 concurrent requests within 1 second represents an assessment of what?",
@@ -887,7 +847,7 @@ const csc312Letcure3: QuestionV2[] = [
       "The Feasibility section defines Technical Feasibility as checking whether the existing hardware, technologies, and system performance capabilities can support the requirements.\n\nEconomic Feasibility covers budgets, software licenses, and cost justification.\n\nOperational Feasibility covers user training, workflow fit, and corporate acceptance.\n\nLegal Feasibility covers regulatory compliance and intellectual property issues.",
   },
   {
-    id: "csc312_ch2_065",
+    id: "csc312_ch2_062",
     course: "CSC 312",
     chapter: "Chapter 2",
     text: "A systems analyst is verifying if there are any conflicts with software licensing laws or vendor contracts before acquiring a third-party framework. This is what?",
@@ -902,7 +862,7 @@ const csc312Letcure3: QuestionV2[] = [
       "The Feasibility slides define Legal Feasibility as checking for compliance with government laws, copyright patents, software licensing terms, and contractual bounds.\n\nTechnical Feasibility evaluates hardware capabilities and developer coding skills.\n\nEconomic Feasibility evaluates setup costs, budgets, and operational savings.\n\nSchedule Feasibility evaluates project delivery timelines and deadliness.",
   },
   {
-    id: "csc312_ch2_066",
+    id: "csc312_ch2_063",
     course: "CSC 312",
     chapter: "Chapter 2",
     text: "A project team is checking whether a database integration can be realistically coded, tested, and deployed before the university portal opens in 6 weeks. This is what?",
@@ -917,22 +877,7 @@ const csc312Letcure3: QuestionV2[] = [
       "The Feasibility section outlines Schedule Feasibility as assessing whether the project can be realistically developed and launched within the stated timeline limits.\n\nTechnical Feasibility evaluates developer programming experience and technology compatibility.\n\nOperational Feasibility evaluates user support and department workflow integration.\n\nLegal Feasibility evaluates law compliance, regulatory rules, and copyrights.",
   },
   {
-    id: "csc312_ch2_067",
-    course: "CSC 312",
-    chapter: "Chapter 2",
-    text: "According to the course slides, what is the key structural feature of the V-Model methodology?",
-    options: [
-      "Parallel development and testing phases",
-      "Iterative sprints with continuous customer feedback",
-      "Sequential phases with no overlapping activities",
-      "Risk-driven cycles with four repeating quadrants",
-    ],
-    correctAnswer: 0,
-    explanation:
-      "The V-Model slide defines its structure as featuring parallel development and testing phases, with early test planning.\n\nIterative sprints with continuous customer feedback describe the Agile methodology.\n\nSequential phases with no overlapping activities describe the traditional Waterfall model.\n\nRisk-driven cycles with four repeating quadrants describe the Spiral model.",
-  },
-  {
-    id: "csc312_ch2_068",
+    id: "csc312_ch2_064",
     course: "CSC 312",
     chapter: "Chapter 2",
     text: "In the V-Model described in the course slides, which testing phase is mapped directly to the Requirements phase?",
@@ -947,7 +892,7 @@ const csc312Letcure3: QuestionV2[] = [
       "The V-Model diagram in the slides shows a symmetrical structure where the Requirements phase is mapped directly to Acceptance Testing.\n\nSystem Testing is mapped to the Design phase in the V-Model.\n\nUnit Testing is mapped to the Coding phase in the V-Model.\n\nIntegration Testing is not mentioned in the V-Model section of the slides.",
   },
   {
-    id: "csc312_ch2_069",
+    id: "csc312_ch2_065",
     course: "CSC 312",
     chapter: "Chapter 2",
     text: "How does the V-Model differ from the traditional Waterfall model according to the course slides?",
@@ -962,37 +907,7 @@ const csc312Letcure3: QuestionV2[] = [
       "The Methodologies section defines the V-Model as an extension of the Waterfall model that maps development directly to testing in a parallel structure, unlike the purely sequential Waterfall approach.\n\nIterative sprints describe the Agile methodology.\n\nThe V-Model does not eliminate the design phase; it retains it and maps it to system testing.\n\nPrototyping is a separate RAD category, not the focus of the V-Model.",
   },
   {
-    id: "csc312_ch2_070",
-    course: "CSC 312",
-    chapter: "Chapter 2",
-    text: "What is a key feature of the V-Model methodology as highlighted in the course slides?",
-    options: [
-      "Early test planning",
-      "Late documentation",
-      "No feasibility study",
-      "Continuous customer collaboration",
-    ],
-    correctAnswer: 0,
-    explanation:
-      "The V-Model slide explicitly lists 'Early test planning' as a key feature of this methodology.\n\nLate documentation is not a feature of the V-Model; the slides do not suggest documentation is delayed.\n\nFeasibility studies are part of the Planning phase and are not eliminated in the V-Model.\n\nContinuous customer collaboration is a core value of Agile, not the V-Model.",
-  },
-  {
-    id: "csc312_ch2_071",
-    course: "CSC 312",
-    chapter: "Chapter 2",
-    text: "According to Agile core values, what is valued over following a plan?",
-    options: [
-      "Contract negotiation",
-      "Responding to change",
-      "All of the above",
-      "None of the above",
-    ],
-    correctAnswer: 1,
-    explanation:
-      "The Agile Core Values slide states: 'Responding to change over following a plan.' Contract negotiation is valued less than customer collaboration, making Option 2 the correct specific choice.",
-  },
-  {
-    id: "csc312_ch2_072",
+    id: "csc312_ch2_066",
     course: "CSC 312",
     chapter: "Chapter 2",
     text: "A system element has low cohesion when its constituent code statements perform a wide variety of completely unrelated business functions. This violates which metric?",
@@ -1002,7 +917,7 @@ const csc312Letcure3: QuestionV2[] = [
       "Cohesion measures the strength of functional association within a single module. If a module performs multiple unrelated functions, it has poor (low) cohesion.\n\nCoupling measures the degree of interdependence between separate modules, not internal functional association.\n\nModularity is the overall architectural style of dividing systems, not the specific internal functional strength metric.\n\nEncapsulation is the bundling of data and methods in OOP, which does not directly represent the functional cohesion metric.",
   },
   {
-    id: "csc312_ch2_073",
+    id: "csc312_ch2_067",
     course: "CSC 312",
     chapter: "Chapter 2",
     text: "A developer modifies a billing module, which unexpectedly breaks the checkout module because they share a global variable. This problem indicates a failure in what?",
@@ -1012,22 +927,7 @@ const csc312Letcure3: QuestionV2[] = [
       "This scenario shows a high level of interdependence between modules, which represents high (bad) coupling. The design failed because coupling was not kept low.\n\nCohesion describes the internal focus of a single module, not how changes in one module affect another.\n\nModularity is the broad concept of splitting a system, not the specific metric for module interdependence.\n\nPolymorphism is an object-oriented programming concept (many forms), not a module coupling metric.",
   },
   {
-    id: "csc312_ch2_074",
-    course: "CSC 312",
-    chapter: "Chapter 2",
-    text: "What level of system design focuses on the physical integration of systems, network topologies, and high-level database architecture?",
-    options: [
-      "High-Level Design (Architectural)",
-      "Low-Level Design (Detailed)",
-      "Logical Requirements Level",
-      "Analytical Modeling Level",
-    ],
-    correctAnswer: 0,
-    explanation:
-      "According to the design slides, High-Level Design (Architectural) handles the macro-level structure including network topologies, module integration, and database systems.\n\nLow-Level Design (Detailed) handles detailed algorithms, class variables, and screen formats.\n\nLogical Requirements Level is a requirements mapping phase, not a level of physical system design.\n\nAnalytical Modeling Level occurs during Phase 2 (Analysis) to model current business flows, not to specify architecture.",
-  },
-  {
-    id: "csc312_ch2_075",
+    id: "csc312_ch2_068",
     course: "CSC 312",
     chapter: "Chapter 2",
     text: "User documentation includes source code comments, database schemas, and UML models designed primarily for developers and maintainers.",
@@ -1037,37 +937,7 @@ const csc312Letcure3: QuestionV2[] = [
       "User documentation consists of user manuals, quick-start guides, and help files for end-users, whereas source code comments, database schemas, and UML models belong to System Documentation.",
   },
   {
-    id: "csc312_ch2_076",
-    course: "CSC 312",
-    chapter: "Chapter 2",
-    text: "A software development team writes unit test scripts for every class and runs a linter tool to verify variable naming conventions. What category of documentation is being updated?",
-    options: [
-      "System Documentation",
-      "User/Operator Documentation",
-      "Operational Quick-Start Documentation",
-      "Corporate Feasibility Documentation",
-    ],
-    correctAnswer: 0,
-    explanation:
-      "The documentation slides specify that System Documentation includes source code comments, class details, tests, and database schemas intended for technical maintainers.\n\nUser/Operator Documentation includes manuals, installation instructions, and help menus for end-users.\n\nOperational Quick-Start Documentation is a subset of User Documentation, not technical development logs.\n\nCorporate Feasibility Documentation consists of project charters and viability studies generated in Phase 1 (Planning).",
-  },
-  {
-    id: "csc312_ch2_077",
-    course: "CSC 312",
-    chapter: "Chapter 2",
-    text: "Which of the following is an example of an artifact that would be classified under User/Operator Documentation in systems development?",
-    options: [
-      "An installation manual and quick reference guide",
-      "A UML class diagram detailing inheritance hierarchies",
-      "A database schema definition file containing SQL scripts",
-      "A source code file with extensive comments explaining an algorithm",
-    ],
-    correctAnswer: 0,
-    explanation:
-      "Installation manuals, online help files, and quick reference guides are designed for end-users, classifying them under User/Operator Documentation.\n\nUML class diagrams are intended for developers and belong to System Documentation.\n\nDatabase schema definitions are technical artifacts that belong to System Documentation.\n\nSource code files and code comments belong to System Documentation.",
-  },
-  {
-    id: "csc312_ch2_078",
+    id: "csc312_ch2_069",
     course: "CSC 312",
     chapter: "Chapter 2",
     text: "A systems development team is preparing a user manual and an online FAQ page for a newly built e-learning portal. What type of documentation are they producing?",
@@ -1082,7 +952,7 @@ const csc312Letcure3: QuestionV2[] = [
       "The course slides define User/Operator Documentation as manuals, online help pages, and quick-start sheets designed for the end-user.\n\nSystem Documentation refers to class blueprints, database schemas, and developer source code comments.\n\nLogical Structural Documentation represents design-phase logical architectures, not user-facing materials.\n\nAnalytical Requirements Documentation represents user requirements specifications gathered in Phase 2 (Analysis).",
   },
   {
-    id: "csc312_ch2_079",
+    id: "csc312_ch2_070",
     course: "CSC 312",
     chapter: "Chapter 2",
     text: "Which deployment strategy has the lowest operational risk because it limits initial release to a tiny, isolated subset of live users?",
@@ -1097,7 +967,7 @@ const csc312Letcure3: QuestionV2[] = [
       "According to the Deployment Strategies slide, Canary Deployment has the absolute lowest operational risk because the update is pushed to only a minor percentage of users first.\n\nBlue-Green Deployment has low risk, but exposes the entire traffic swap at once rather than a progressive minor percentage.\n\nPhased Rollout has medium risk, involving wider department-by-department or module-by-module rollouts.\n\nBig Bang has the highest risk, instantly switching all users to the new system.",
   },
   {
-    id: "csc312_ch2_080",
+    id: "csc312_ch2_071",
     course: "CSC 312",
     chapter: "Chapter 2",
     text: "A systems analyst is assessing operational feasibility and wants to know: 'Will it be used?' Which of the following activities directly helps answer this question?",
@@ -1112,7 +982,7 @@ const csc312Letcure3: QuestionV2[] = [
       "Operational feasibility evaluates if the organization will support the system and if staff will integrate it into their work (asking 'Will it be used?').\n\nDatabase benchmarks on the server evaluate technical feasibility.\n\nCalculating return on investment and setup budgets evaluates economic feasibility.\n\nAuditing license agreements and contract compliance evaluates legal feasibility.",
   },
   {
-    id: "csc312_ch2_081",
+    id: "csc312_ch2_072",
     course: "CSC 312",
     chapter: "Chapter 2",
     text: "A development team is assessing technical feasibility. Which question is the team trying to answer?",
@@ -1127,22 +997,7 @@ const csc312Letcure3: QuestionV2[] = [
       "The Feasibility section states that Technical Feasibility answers the question: 'Is it technically possible?' by evaluating technical assets, code skills, and resources.\n\nEconomic Feasibility answers: 'Is it financially viable?' by evaluating budget limits.\n\nOperational Feasibility answers: 'Will it be used?' by evaluating user workflow adoption.\n\nLegal Feasibility answers if the system complies with laws and licensing regulations.",
   },
   {
-    id: "csc312_ch2_082",
-    course: "CSC 312",
-    chapter: "Chapter 2",
-    text: "In the context of the SDLC, which of the following is a primary task of Phase 2 (Analysis)?",
-    options: [
-      "Conducting domain and requirements analysis to model system features",
-      "Designing physical database schemas and server networking setups",
-      "Writing clean program code and setting up production databases",
-      "Executing verification test scripts to find calculation errors",
-    ],
-    correctAnswer: 0,
-    explanation:
-      "The course slides state that Phase 2 (Analysis) focuses on requirements analysis, data gathering, and business process modeling.\n\nDesigning database schemas and networking setups is the primary task of Phase 3 (Design).\n\nWriting clean program code and database setup is the primary task of Phase 4 (Implementation).\n\nExecuting test scripts to find errors is the primary task of Phase 5 (Testing & Integration).",
-  },
-  {
-    id: "csc312_ch2_083",
+    id: "csc312_ch2_073",
     course: "CSC 312",
     chapter: "Chapter 2",
     text: "Which of the following are classified as Management/Higher Level systems?",
@@ -1157,7 +1012,7 @@ const csc312Letcure3: QuestionV2[] = [
       "The System Levels slide groups Management Information Systems (MIS), Decision Support Systems (DSS), and Expert Systems (ES) under the Management/Higher Level category. Thus, 'All of the above' is the correct choice.",
   },
   {
-    id: "csc312_ch2_084",
+    id: "csc312_ch2_074",
     course: "CSC 312",
     chapter: "Chapter 2",
     text: "Which of the following describes the core characteristic of the Waterfall model as detailed in the course slides?",
@@ -1172,7 +1027,7 @@ const csc312Letcure3: QuestionV2[] = [
       "According to the Methodologies section, the Waterfall model is a sequential, highly structured approach with linear phases.\n\nAgile is iterative and collaborative, valuing individuals and active customer feedback over plans.\n\nSpiral is risk-driven and iterative, utilizing repeating quadrant cycles.\n\nPrototyping involves building quick models to clarify user needs.",
   },
   {
-    id: "csc312_ch2_085",
+    id: "csc312_ch2_075",
     course: "CSC 312",
     chapter: "Chapter 2",
     text: "What major limitation of the traditional Waterfall approach is highlighted in Module 1 Lecture 3?",
@@ -1187,22 +1042,7 @@ const csc312Letcure3: QuestionV2[] = [
       "The Waterfall model slide states that its high rigidity is a significant disadvantage, making it very difficult and costly to make changes once a phase is complete.\n\nWaterfall does feature testing phases, typically occurring after implementation is complete.\n\nWaterfall does not require automated code-generation tools; that describes Rapid Application Development (RAD).\n\nWaterfall is a highly document-heavy approach, meaning it does not prevent documentation or budgeting.",
   },
   {
-    id: "csc312_ch2_086",
-    course: "CSC 312",
-    chapter: "Chapter 2",
-    text: "Which systems development methodology is structured around short, iterative sprints to allow maximum flexibility and continuous customer feedback?",
-    options: [
-      "Agile Methodology",
-      "Waterfall Model",
-      "V-Model",
-      "Structured Analysis",
-    ],
-    correctAnswer: 0,
-    explanation:
-      "The Methodologies section defines Agile as an iterative, flexible approach centered around short sprints and highly collaborative user feedback loops.\n\nWaterfall is a linear, sequential model that lacks short iterative sprints.\n\nV-Model is a sequential, verification-centric model that pairs development and testing sequentially, not in agile sprints.\n\nStructured Analysis is a formal process-modeling approach, not an iterative project framework.",
-  },
-  {
-    id: "csc312_ch2_087",
+    id: "csc312_ch2_076",
     course: "CSC 312",
     chapter: "Chapter 2",
     text: "A university IT department is building a student portal and wants parallel testing to run concurrently with development. Which methodology is designed for this?",
@@ -1217,7 +1057,7 @@ const csc312Letcure3: QuestionV2[] = [
       "The Methodologies slide defines the V-Model as featuring parallel development and testing phases, where verification is mapped directly to validation.\n\nWaterfall Model runs testing only after coding is complete, not in parallel phases.\n\nStructured Design is a process-modeling approach using structure charts, not a parallel testing framework.\n\nBig Bang Deployment is a high-risk installation strategy, not a software development methodology.",
   },
   {
-    id: "csc312_ch2_088",
+    id: "csc312_ch2_077",
     course: "CSC 312",
     chapter: "Chapter 2",
     text: "Under the V-Model parallel testing structure, which testing phase is mapped directly to the coding phase?",
@@ -1232,7 +1072,7 @@ const csc312Letcure3: QuestionV2[] = [
       "According to the V-Model mapping slides, Unit Testing is mapped directly to the coding phase to validate individual code modules.\n\nIntegration Testing is mapped to detailed system design to validate module connections.\n\nSystem Testing is mapped to high-level architectural design to validate full system interactions.\n\nAcceptance Testing is mapped to requirements analysis to validate user expectations.",
   },
   {
-    id: "csc312_ch2_089",
+    id: "csc312_ch2_078",
     course: "CSC 312",
     chapter: "Chapter 2",
     text: "Blue-Green deployment is a low-risk strategy that involves maintaining two identical production environments, only one of which is active at any time.",
@@ -1242,7 +1082,7 @@ const csc312Letcure3: QuestionV2[] = [
       "The Deployment Strategies slide states that Blue-Green is a low-risk strategy featuring two identical active/passive production environments. Traffic is switched instantly to the passive server once updates are verified.",
   },
   {
-    id: "csc312_ch2_090",
+    id: "csc312_ch2_079",
     course: "CSC 312",
     chapter: "Chapter 2",
     text: "Under the V-Model parallel testing structure, the High-Level (Architectural) Design phase is validated by which testing phase?",
@@ -1257,37 +1097,7 @@ const csc312Letcure3: QuestionV2[] = [
       "The V-Model mapping slides state that High-Level (Architectural) Design is validated by System Testing, which checks the entire integrated system against high-level specs.\n\nUnit Testing validates individual code blocks written during the low-level coding phase.\n\nIntegration Testing validates detailed module connections drafted during the Detailed Design phase.\n\nAcceptance Testing validates the user requirements gathered during the Requirements phase.",
   },
   {
-    id: "csc312_ch2_091",
-    course: "CSC 312",
-    chapter: "Chapter 2",
-    text: "In system design, which level focuses on creating class diagrams, algorithm pseudocode, and precise database tables?",
-    options: [
-      "Low-Level Design (Detailed)",
-      "High-Level Design (Architectural)",
-      "Preliminary System Study",
-      "Feasibility Analysis",
-    ],
-    correctAnswer: 0,
-    explanation:
-      "The Two Levels of Design slide states that Low-Level Design (Detailed) handles class diagrams, algorithm pseudocode, and detailed database table specifications.\n\nHigh-Level Design (Architectural) is concerned with broad system structures, major components, and communication protocols.\n\nPreliminary System Study is an early investigation conducted during the Planning phase to evaluate project viability.\n\nFeasibility Analysis is a planning activity focused on technical, economic, and operational viability.",
-  },
-  {
-    id: "csc312_ch2_092",
-    course: "CSC 312",
-    chapter: "Chapter 2",
-    text: "Under the V-Model parallel testing structure, the initial Requirements phase is validated by which testing phase?",
-    options: [
-      "Acceptance Testing",
-      "Unit Testing",
-      "Integration Testing",
-      "System Testing",
-    ],
-    correctAnswer: 0,
-    explanation:
-      "According to the V-Model mapping, the Requirements phase is validated during the final Acceptance Testing phase with the end-users.\n\nUnit Testing maps directly to the low-level coding phase.\n\nIntegration Testing maps directly to the Detailed Design phase.\n\nSystem Testing maps directly to the High-Level (Architectural) Design phase.",
-  },
-  {
-    id: "csc312_ch2_093",
+    id: "csc312_ch2_080",
     course: "CSC 312",
     chapter: "Chapter 2",
     text: "An organization is updating its system to run on a new version of the Linux operating system. This update is classified as what?",
@@ -1302,7 +1112,7 @@ const csc312Letcure3: QuestionV2[] = [
       "The Maintenance section defines Adaptive Maintenance as modifying the system to operate in a changing technical environment, such as a new OS or server platform.\n\nCorrective Maintenance is focused on fixing active bugs, defects, and code errors reported by users.\n\nPerfective Maintenance is focused on enhancing existing features or adding new user-requested features.\n\nPreventive Maintenance is focused on refactoring code or cleanup to prevent potential future failures.",
   },
   {
-    id: "csc312_ch2_094",
+    id: "csc312_ch2_081",
     course: "CSC 312",
     chapter: "Chapter 2",
     text: "A software developer refactors a complex, hard-to-read function to improve maintainability and prevent future software bugs. What type of maintenance is this?",
@@ -1317,7 +1127,7 @@ const csc312Letcure3: QuestionV2[] = [
       "The Maintenance slides define Preventive Maintenance as making changes to prevent future system failures, improve code structures, or refactor complex algorithms before bugs manifest.\n\nCorrective Maintenance is fixing existing active bugs that users have already encountered.\n\nAdaptive Maintenance is modifying software to run on a new server or OS platform.\n\nPerfective Maintenance is adding new user features or optimizing calculation speed.",
   },
   {
-    id: "csc312_ch2_095",
+    id: "csc312_ch2_082",
     course: "CSC 312",
     chapter: "Chapter 2",
     text: "A systems analyst is requested by university management to add a GPA calculation feature to the existing portal. What maintenance type does this represent?",
@@ -1332,17 +1142,7 @@ const csc312Letcure3: QuestionV2[] = [
       "The Maintenance slides define Perfective Maintenance as adding new features, improving system performance, or enhancing existing services to increase user satisfaction.\n\nCorrective Maintenance is focused on fixing software bugs and error crashes.\n\nAdaptive Maintenance is focused on adapting systems to run in new external environments (new OS, new servers).\n\nPreventive Maintenance is focused on early technical refactoring to prevent future bugs.",
   },
   {
-    id: "csc312_ch2_096",
-    course: "CSC 312",
-    chapter: "Chapter 2",
-    text: "In system design, what metric measures how single-purpose, focused, and functionally unified the statements inside a single module are?",
-    options: ["Cohesion", "Coupling", "Modularity", "Encapsulation"],
-    correctAnswer: 0,
-    explanation:
-      "Cohesion is the measure of the strength of functional association of elements within a single module (should be high).\n\nCoupling measures the degree of interdependence between different software modules (should be low).\n\nModularity is the broad concept of partitioning a system, not the specific functional focus metric.\n\nEncapsulation is an object-oriented programming concept, not a module-level design cohesion metric.",
-  },
-  {
-    id: "csc312_ch2_097",
+    id: "csc312_ch2_083",
     course: "CSC 312",
     chapter: "Chapter 2",
     text: "Which of the following maintenance categories has a cost allocation of exactly 75% according to the maintenance cost breakdown?",
@@ -1357,92 +1157,7 @@ const csc312Letcure3: QuestionV2[] = [
       "According to the Maintenance Cost Breakdown slide, Perfective is 50%, Adaptive is 25%, Corrective is 20%, and Preventive is 5%. None of these categories have a cost allocation of exactly 75%, making 'None of the above' the correct choice.",
   },
   {
-    id: "csc312_ch2_098",
-    course: "CSC 312",
-    chapter: "Chapter 2",
-    text: "If a systems development team aims to build a robust, maintainable, and easily modifiable system, which combination of design metrics should they prioritize?",
-    options: [
-      "Low coupling and high cohesion",
-      "High coupling and low cohesion",
-      "Low coupling and low cohesion",
-      "High coupling and high cohesion",
-    ],
-    correctAnswer: 0,
-    explanation:
-      "The Design Quality Metrics slide states that highly maintainable systems must have low coupling (minimal module interdependence) and high cohesion (highly focused modules).\n\nHigh coupling and low cohesion describes a fragile system where changing one module breaks many others.\n\nLow coupling and low cohesion is incorrect because cohesion must be kept high to ensure modules are focused and single-purpose.\n\nHigh coupling and high cohesion is incorrect because high coupling makes systems extremely difficult to modify.",
-  },
-  {
-    id: "csc312_ch2_099",
-    course: "CSC 312",
-    chapter: "Chapter 2",
-    text: "What term is used in systems development to describe the overall architectural layout, database structures, and module integration pathways?",
-    options: [
-      "High-Level Design (Architectural)",
-      "Low-Level Design (Detailed)",
-      "Logical Requirements Model",
-      "Analytical Workflow Design",
-    ],
-    correctAnswer: 0,
-    explanation:
-      "According to the Levels of Design section, High-Level Design (Architectural) focuses on the broad architectural layout, module integration, and database choices.\n\nLow-Level Design (Detailed) focuses on the detailed algorithms, precise user interface fields, and logic inside modules.\n\nLogical Requirements Model represents process modeling in Phase 2 (Analysis), not design layouts.\n\nAnalytical Workflow Design is an analysis-phase term, not a level of physical system design.",
-  },
-  {
-    id: "csc312_ch2_100",
-    course: "CSC 312",
-    chapter: "Chapter 2",
-    text: "An analyst is detailing the precise algorithms, database field types, and user form fields for a registration system. This work is part of what?",
-    options: [
-      "Low-Level Design (Detailed)",
-      "High-Level Design (Architectural)",
-      "Feasibility Assessment",
-      "Logical Requirements Analysis",
-    ],
-    correctAnswer: 0,
-    explanation:
-      "The design levels slides outline Low-Level Design (Detailed) as focusing on detailed logic, specific algorithms, and exact field specifications.\n\nHigh-Level Design (Architectural) handles the macro overall structure, major modules, and high-level database choices.\n\nFeasibility Assessment is a planning activity (Phase 1) focused on determining project viability.\n\nLogical Requirements Analysis is an analysis activity (Phase 2) focused on understanding requirements.",
-  },
-  {
-    id: "csc312_ch2_101",
-    course: "CSC 312",
-    chapter: "Chapter 2",
-    text: "In Agile software development, contract negotiation is highly prioritized over customer collaboration throughout the project life cycle.",
-    options: ["True", "False", "Maybe", "I don't know"],
-    correctAnswer: 1,
-    explanation:
-      "The Agile Core Values slide states that Agile values 'Customer collaboration over contract negotiation,' meaning contract negotiation is deprioritized in favor of active, ongoing client relationships.",
-  },
-  {
-    id: "csc312_ch2_102",
-    course: "CSC 312",
-    chapter: "Chapter 2",
-    text: "Which of the following describes the key characteristic of Big Bang deployment as detailed in Module 1 Lecture 3?",
-    options: [
-      "High-risk strategy where the old system is shut down and the new system is immediately activated",
-      "Medium-risk strategy where the new system is deployed progressive module-by-module",
-      "Low-risk strategy where two identical active/passive production environments are maintained",
-      "Very low-risk strategy where the new update is launched to only a minor percentage of users",
-    ],
-    correctAnswer: 0,
-    explanation:
-      "The Deployment Strategies slide states that Big Bang (Direct Cutover) is a high-risk strategy that involves shutting down the old system and instantly starting the new one.\n\nPhased Rollout is the medium-risk strategy involving progressive, departmental or modular releases.\n\nBlue-Green is the low-risk strategy involving two identical active/passive production servers.\n\nCanary is the very low-risk strategy involving releasing the update to a minor percentage of users first.",
-  },
-  {
-    id: "csc312_ch2_103",
-    course: "CSC 312",
-    chapter: "Chapter 2",
-    text: "Which deployment strategy has medium operational risk because it introduces the new system progressive across different departments or branches over time?",
-    options: [
-      "Phased Rollout",
-      "Big Bang (Direct Cutover)",
-      "Blue-Green Deployment",
-      "Canary Deployment",
-    ],
-    correctAnswer: 0,
-    explanation:
-      "The Deployment Strategies section outlines Phased Rollout as a medium-risk strategy where the launch occurs in gradual phases (regional or modular).\n\nBig Bang is a high-risk instant direct cutover strategy.\n\nBlue-Green Deployment is a low-risk strategy of routing traffic between two identical production environments.\n\nCanary Deployment is a very low-risk strategy of releasing to a tiny fraction of active users first.",
-  },
-  {
-    id: "csc312_ch2_104",
+    id: "csc312_ch2_084",
     course: "CSC 312",
     chapter: "Chapter 2",
     text: "An organization is deploying a portal update by routing active user traffic between two identical production servers to ensure zero downtime. This is what?",
@@ -1457,95 +1172,790 @@ const csc312Letcure3: QuestionV2[] = [
       "The Deployment Strategies slide outlines Blue-Green Deployment as a low-risk approach that utilizes two identical active/passive production environments to switch traffic.\n\nBig Bang is a high-risk strategy where the old system is completely replaced with no redundancy.\n\nPhased Rollout is a medium-risk strategy where software is launched progressive by department.\n\nCanary Deployment is a very low-risk strategy where software is launched to only a tiny subset of users first.",
   },
   {
-    id: "csc312_ch2_105",
+    id: "csc312_ch2_085",
     course: "CSC 312",
     chapter: "Chapter 2",
-    text: "A web company rolls out a new interface to exactly 5% of its user base to verify stability before releasing it to the general public. What is this?",
+    text: "Which project team member is primarily responsible for identifying the business value that a new information system will accumulate?",
     options: [
-      "Canary Deployment",
-      "Big Bang (Direct Cutover)",
-      "Phased Rollout",
-      "Blue-Green Deployment",
+      "Business analyst",
+      "Systems analyst",
+      "Infrastructure analyst",
+      "Project manager",
     ],
     correctAnswer: 0,
     explanation:
-      "The Deployment Strategies slide states that Canary Deployment is a very low-risk strategy where the update is pushed to a small subset of users to test for errors.\n\nBig Bang is a high-risk strategy where all users are switched to the new system simultaneously.\n\nPhased Rollout is a medium-risk strategy involving progressive, departmental or regional launches.\n\nBlue-Green Deployment is a low-risk strategy of routing active traffic between two identical production environments.",
+      "According to the team roles, the business analyst focuses on the business issues surrounding the system, which includes identifying its business value.\n\nThe systems analyst focuses on information systems issues, looking at how the system interacts with the business and detailing the system design.\n\nThe infrastructure analyst focuses on technical issues, including hardware, software, networks, and integration.\n\nThe project manager focus is on project management issues such as budget, time, and team coordination.",
+  },
+  {
+    id: "csc312_ch2_086",
+    course: "CSC 312",
+    chapter: "Chapter 2",
+    text: "Which analyst role focuses on technical issues such as databases, networks, hardware, and system integration?",
+    options: [
+      "Business analyst",
+      "Systems analyst",
+      "Infrastructure analyst",
+      "Change management analyst",
+    ],
+    correctAnswer: 2,
+    explanation:
+      "The infrastructure analyst is responsible for the technical infrastructure of the project, ensuring the database, hardware, and networks operate seamlessly together.\n\nThe business analyst focuses on the business processes and organizational value.\n\nThe systems analyst translates business needs into specific system designs and interfaces.\n\nThe change management analyst focuses on the human element, user training, and adoption policies.",
+  },
+  {
+    id: "csc312_ch2_087",
+    course: "CSC 312",
+    chapter: "Chapter 2",
+    text: "A system deployment requires user training, resistance management, and alignment with organizational policy. Which role handles these tasks?",
+    options: [
+      "Business analyst",
+      "Infrastructure analyst",
+      "Change management analyst",
+      "Project manager",
+    ],
+    correctAnswer: 2,
+    explanation:
+      "The change management analyst is responsible for the people and management issues surrounding system installation, ensuring user adoption and training run smoothly.\n\nThe business analyst deals with identifying business value and modeling organizational workflows.\n\nThe infrastructure analyst deals with networks, physical servers, and databases.\n\nThe project manager oversees overall planning, budgeting, and project execution.",
+  },
+  {
+    id: "csc312_ch2_088",
+    course: "CSC 312",
+    chapter: "Chapter 2",
+    text: "What skill category allows a systems analyst to solve complex problems and analyze requirements effectively?",
+    options: [
+      "Ethical skills",
+      "Analytical skills",
+      "Interpersonal skills",
+      "Management skills",
+    ],
+    correctAnswer: 1,
+    explanation:
+      "Analytical skills enable the analyst to understand organizational problems, decompose processes, and correctly design logical software requirements.\n\nEthical skills ensure honesty, professional integrity, and respect for intellectual property.\n\nInterpersonal skills are needed for active communication, presentation, and written documentation with stakeholders.\n\nManagement skills are required to control resources, assess risk, and direct project tasks.",
+  },
+  {
+    id: "csc312_ch2_089",
+    course: "CSC 312",
+    chapter: "Chapter 2",
+    text: "Which phase of the Systems Development Life Cycle is primarily concerned with answering why a system should be built?",
+    options: ["Planning", "Analysis", "Design", "Implementation"],
+    correctAnswer: 0,
+    explanation:
+      "The Planning phase determines why the system should be built, defining the initial business value and project boundaries.\n\nThe Analysis phase answers who will use the system, what it will do, and where and when it will be used.\n\nThe Design phase answers how the system will operate in terms of hardware, software, and network infrastructure.\n\nThe Implementation phase is when the system is actually constructed and installed.",
+  },
+  {
+    id: "csc312_ch2_090",
+    course: "CSC 312",
+    chapter: "Chapter 2",
+    text: "Which of the following is a key step within the Analysis phase of the SDLC?",
+    options: [
+      "Developing the installation strategy",
+      "Gathering the functional and non-functional requirements",
+      "Designing the database and file specifications",
+      "Drafting the program design documents",
+    ],
+    correctAnswer: 1,
+    explanation:
+      "Requirements gathering is a core step in the Analysis phase, where the team uses techniques like interviews or surveys to understand the system needs.\n\nInstallation strategy development is part of the Implementation phase.\n\nDatabase and file specifications design is part of the Design phase.\n\nProgram design is also a step within the Design phase.",
+  },
+  {
+    id: "csc312_ch2_091",
+    course: "CSC 312",
+    chapter: "Chapter 2",
+    text: "What is the purpose of analyzing the current system, often referred to as the as-is system?",
+    options: [
+      "To configure the development servers and production databases",
+      "To identify problems and establish a baseline for the new to-be system",
+      "To train users before the final implementation phase",
+      "To calculate the final salvage value of decommissioned hardware",
+    ],
+    correctAnswer: 1,
+    explanation:
+      "The analysis strategy begins by studying the as-is system to identify its flaws and guide the design of the improved to-be system.\n\nConfiguring servers belongs to the Implementation phase.\n\nTraining users occurs during the conversion and installation stage of the Implementation phase.\n\nCalculating salvage value is an accounting process and not the primary driver of studying the as-is system.",
+  },
+  {
+    id: "csc312_ch2_092",
+    course: "CSC 312",
+    chapter: "Chapter 2",
+    text: "What document compiles the analysis strategy, requirements statements, and system models into a single package for approval?",
+    options: [
+      "System request",
+      "System proposal",
+      "System specification",
+      "Project plan",
+    ],
+    correctAnswer: 1,
+    explanation:
+      "The system proposal is the primary deliverable of the Analysis phase, presenting findings and recommendations to the steering committee.\n\nThe system request is the initial proposal document submitted to start a project.\n\nThe system specification details how the system will be built and is produced in the Design phase.\n\nThe project plan dictates the schedules, tasks, and resources allocated during Planning.",
+  },
+  {
+    id: "csc312_ch2_093",
+    course: "CSC 312",
+    chapter: "Chapter 2",
+    text: "Which of the following decisions is typically made during the Design Strategy step of the Design phase?",
+    options: [
+      "Determining the project budget and staffing levels",
+      "Deciding whether to build, buy, or outsource the system",
+      "Selecting the direct or parallel installation cutover style",
+      "Establishing the post-implementation support plan",
+    ],
+    correctAnswer: 1,
+    explanation:
+      "The design strategy step determines whether the software will be developed in-house, purchased as a packaged solution, or outsourced.\n\nDetermining budget and staffing occurs in the Planning phase.\n\nSelecting installation style is part of the Implementation phase.\n\nEstablishing the support plan is also handled during the Implementation phase.",
+  },
+  {
+    id: "csc312_ch2_094",
+    course: "CSC 312",
+    chapter: "Chapter 2",
+    text: "What SDLC phase produces the System Specification deliverable?",
+    options: ["Planning", "Analysis", "Design", "Implementation"],
+    correctAnswer: 2,
+    explanation:
+      "The Design phase outputs the system specification, which contains the database designs, physical models, interface layouts, and program specifications.\n\nThe Planning phase outputs the project plan.\n\nThe Analysis phase outputs the system proposal.\n\nThe Implementation phase outputs the fully installed system and support guidelines.",
+  },
+  {
+    id: "csc312_ch2_095",
+    course: "CSC 312",
+    chapter: "Chapter 2",
+    text: "Which step of the Implementation phase involves coding, unit testing, and integration testing of software components?",
+    options: [
+      "System construction",
+      "System installation",
+      "Support plan design",
+      "Feasibility analysis",
+    ],
+    correctAnswer: 0,
+    explanation:
+      "System construction is the step where programmers write the actual code and perform the necessary tests to ensure the components operate correctly.\n\nSystem installation deals with the deployment, data migration, and conversion to the new platform.\n\nSupport plan design establishes the mechanisms for post-deployment review and maintenance.\n\nFeasibility analysis is performed during project initiation in the Planning phase.",
+  },
+  {
+    id: "csc312_ch2_096",
+    course: "CSC 312",
+    chapter: "Chapter 2",
+    text: "What does a technical feasibility analysis primarily attempt to answer?",
+    options: [
+      "Should we build the system?",
+      "Can we build the system?",
+      "If we build it, will they come?",
+      "How much profit will the system generate?",
+    ],
+    correctAnswer: 1,
+    explanation:
+      "Technical feasibility focuses on the technological constraints and capabilities, asking whether the organization can actually construct the system.\n\n'Should we build it?' is the core question of economic feasibility.\n\n'If we build it, will they come?' is the primary concern of organizational feasibility.\n\nProfit generation is a purely economic financial metric studied during cost-benefit analysis.",
+  },
+  {
+    id: "csc312_ch2_097",
+    course: "CSC 312",
+    chapter: "Chapter 2",
+    text: "Which of the following is a primary risk factor evaluated during a technical feasibility assessment?",
+    options: [
+      "The net present value of the expected project cash flows",
+      "Familiarity with the technology or software development platform",
+      "The level of support from senior executive stakeholders",
+      "The alignment of the project with the corporate strategy",
+    ],
+    correctAnswer: 1,
+    explanation:
+      "Familiarity with technology is a major technical feasibility risk; using unfamiliar platforms increases the likelihood of delay or project failure.\n\nNet present value is an economic feasibility metric.\n\nStakeholder support is an organizational feasibility factor.\n\nCorporate strategy alignment is also evaluated under organizational feasibility.",
+  },
+  {
+    id: "csc312_ch2_098",
+    course: "CSC 312",
+    chapter: "Chapter 2",
+    text: "How does project size impact the risk profile of technical feasibility?",
+    options: [
+      "Larger projects are inherently less risky because they receive more funding",
+      "Larger projects have higher risk because they are harder to manage and coordinate",
+      "Project size has no relationship with technical risk parameters",
+      "Smaller projects are riskier because they lack executive-level visibility",
+    ],
+    correctAnswer: 1,
+    explanation:
+      "Larger projects carry significantly higher technical risk due to the sheer complexity of coordinating more people, integration points, and resources.\n\nFunding does not automatically mitigate the coordination and technical integration risks of massive systems.\n\nSize is a critical technical feasibility risk factor directly listed in system development theory.\n\nSmaller projects are typically easier to track, adapt, and complete, making them less technically risky.",
+  },
+  {
+    id: "csc312_ch2_099",
+    course: "CSC 312",
+    chapter: "Chapter 2",
+    text: "What question does economic feasibility seek to answer?",
+    options: [
+      "Can we build this system with our current engineers?",
+      "Should we build this system?",
+      "Are the end-users capable of using this interface?",
+      "Will the system fit into our current server racks?",
+    ],
+    correctAnswer: 1,
+    explanation:
+      "Economic feasibility determines if the financial benefits justify the development costs, answering whether the organization should invest in it.\n\nEngineering capability is a technical feasibility issue.\n\nEnd-user capability and training are organizational feasibility issues.\n\nServer rack compatibility is a technical/infrastructure feasibility issue.",
+  },
+  {
+    id: "csc312_ch2_100",
+    course: "CSC 312",
+    chapter: "Chapter 2",
+    text: "Which of the following is classified as a development cost in an economic feasibility study?",
+    options: [
+      "Annual software licensing and renewal fees",
+      "One-time programmer salaries and training costs",
+      "Monthly hardware hosting and electricity expenses",
+      "Ongoing system maintenance and technical support",
+    ],
+    correctAnswer: 1,
+    explanation:
+      "Development costs are one-time expenses occurred during the creation of the system, which includes the salaries of the team and initial training.\n\nAnnual licensing fees are operational, recurring costs.\n\nMonthly hosting expenses are recurring operational costs.\n\nOngoing maintenance is a recurring operational expense.",
+  },
+  {
+    id: "csc312_ch2_101",
+    course: "CSC 312",
+    chapter: "Chapter 2",
+    text: "Which of the following is classified as an operational cost in a cost-benefit analysis?",
+    options: [
+      "Purchase price of the server hardware at project launch",
+      "System installation and data conversion consultant fees",
+      "Ongoing software licensing fees and web hosting costs",
+      "Initial training courses for the system development team",
+    ],
+    correctAnswer: 2,
+    explanation:
+      "Operational costs are recurring expenses required to keep the system running after it is deployed, such as hosting and licensing.\n\nHardware purchase at launch is a one-time development cost.\n\nConsultant fees for initial data conversion are a one-time development cost.\n\nInitial team training is a one-time development cost.",
+  },
+  {
+    id: "csc312_ch2_102",
+    course: "CSC 312",
+    chapter: "Chapter 2",
+    text: "What is an example of a tangible benefit in economic feasibility?",
+    options: [
+      "An increase in overall customer satisfaction ratings",
+      "A twenty percent reduction in order processing times",
+      "Enhanced brand recognition within the target market",
+      "Better strategic decision-making capabilities for executives",
+    ],
+    correctAnswer: 1,
+    explanation:
+      "Tangible benefits can be directly measured and quantified in terms of money or time, such as a concrete percentage reduction in processing times.\n\nCustomer satisfaction is an intangible benefit because it is hard to measure with precise financial metrics.\n\nBrand recognition is an intangible benefit.\n\nBetter executive decision-making is valuable but hard to quantify financially, making it intangible.",
+  },
+  {
+    id: "csc312_ch2_103",
+    course: "CSC 312",
+    chapter: "Chapter 2",
+    text: "What is an example of an intangible benefit in a cost-benefit analysis?",
+    options: [
+      "A reduction in the number of operational staff required",
+      "Improved prestige and corporate image among customers",
+      "An annual savings of fifty thousand dollars on licensing",
+      "An increase of five percent in raw product sales",
+    ],
+    correctAnswer: 1,
+    explanation:
+      "Corporate image and prestige are qualitative, intangible benefits that cannot be easily measured in raw dollar values.\n\nStaff reduction can be directly quantified by multiplying the cut headcount by salary, making it tangible.\n\nAnnual savings of fifty thousand dollars is a direct, quantifiable tangible benefit.\n\nAn increase in sales is a quantifiable tangible benefit.",
+  },
+  {
+    id: "csc312_ch2_104",
+    course: "CSC 312",
+    chapter: "Chapter 2",
+    text: "What financial metric represents the point in time where the cumulative benefits of a system equal the cumulative costs?",
+    options: [
+      "Net Present Value",
+      "Break-even point",
+      "Return on Investment",
+      "Internal Rate of Return",
+    ],
+    correctAnswer: 1,
+    explanation:
+      "The break-even point (or payback period) represents the exact time when the system has paid for its development and operational costs through its benefits.\n\nNet Present Value measures the present-day value of all cash inflows and outflows over time.\n\nReturn on Investment calculates the ratio of net benefits to total costs.\n\nInternal Rate of Return is the discount rate that makes the net present value of all cash flows equal to zero.",
+  },
+  {
+    id: "csc312_ch2_105",
+    course: "CSC 312",
+    chapter: "Chapter 2",
+    text: "Which key stakeholder in organizational feasibility is described as the high-level executive who sponsors the project, provides resources, and advocates for its success?",
+    options: [
+      "System user",
+      "Organizational manager",
+      "Project champion",
+      "Systems analyst",
+    ],
+    correctAnswer: 2,
+    explanation:
+      "The champion is an executive-level sponsor who initiates the project, secures the funding, and actively promotes the project within the organization.\n\nSystem users are the individuals who will interact with the system on a daily operational level.\n\nOrganizational managers allocate operational budgets and encourage their subordinates to adopt the system.\n\nThe systems analyst is a technical team member who designs the software specifications.",
   },
   {
     id: "csc312_ch2_106",
     course: "CSC 312",
     chapter: "Chapter 2",
-    text: "In system hierarchy, Office Automation Systems (OAS) and Knowledge Work Systems (KWS) are positioned at which level?",
+    text: "What risk is introduced if system users are not included or considered in the organizational feasibility analysis?",
     options: [
-      "Knowledge Level",
-      "Operational Level",
-      "Management/Higher Level",
-      "Strategic Level",
+      "The database query execution plans will fail",
+      "The software might face severe user resistance and eventual abandonment",
+      "The project will immediately violate technical network security protocols",
+      "The cash flow calculations will become mathematically invalid",
     ],
-    correctAnswer: 0,
+    correctAnswer: 1,
     explanation:
-      "The System Levels slide outlines the Knowledge Level as containing OAS and KWS.\n\nOperational Level is the bottom tier containing Transaction Processing Systems (TPS).\n\nManagement/Higher Level is the third tier containing MIS, DSS, and ES.\n\nStrategic Level is the top tier containing Executive Support Systems (ESS).",
+      "If end-users are ignored, the system may not match their daily workflow, leading to widespread resistance, workarounds, or total abandonment of the system.\n\nDatabase query compilation is unaffected by organizational behavior.\n\nNetwork security protocols are technical matters independent of user feedback.\n\nCash flow calculations are mathematical tools and are not invalidated by user opinions.",
   },
   {
     id: "csc312_ch2_107",
     course: "CSC 312",
     chapter: "Chapter 2",
-    text: "According to the system hierarchy classifications, which of the following is positioned at the top-most Strategic Level?",
+    text: "What is a methodology in the context of system development?",
     options: [
-      "Executive Support System (ESS)",
-      "Transaction Processing System (TPS)",
-      "Office Automation System (OAS)",
-      "Decision Support System (DSS)",
+      "A specific programming language compiler or interpreter",
+      "A formalized approach to implementing the System Development Life Cycle",
+      "A hardware testing tool used to measure database response times",
+      "An organizational policy handbook detailing employee benefits",
     ],
-    correctAnswer: 0,
+    correctAnswer: 1,
     explanation:
-      "The System Levels slide outlines the Strategic Level at the top, containing Executive Support Systems (ESS) and GDSS.\n\nTransaction Processing System (TPS) is at the Operational Level at the bottom.\n\nOffice Automation System (OAS) is at the Knowledge Level.\n\nDecision Support System (DSS) is at the Management/Higher Level.",
+      "A methodology is a structured, formalized approach to executing the SDLC, consisting of distinct steps, deliverables, and standard techniques.\n\nMethodologies are abstract frameworks, not software tools like compilers.\n\nHardware testing tools are physical or digital utility programs.\n\nEmployee benefit manuals are HR policy documents unrelated to software engineering lifecycles.",
   },
   {
     id: "csc312_ch2_108",
     course: "CSC 312",
     chapter: "Chapter 2",
-    text: "What type of system is grouped under the Management/Higher Level in system hierarchy, alongside Decision Support Systems (DSS)?",
+    text: "Which major design methodology family is characterized by a highly sequential, document-centric approach where one phase must finish before the next begins?",
     options: [
-      "Management Information System (MIS)",
-      "Transaction Processing System (TPS)",
-      "Knowledge Work System (KWS)",
-      "Executive Support System (ESS)",
+      "Agile Development",
+      "Structured Design",
+      "Rapid Application Development",
+      "Extreme Programming",
     ],
-    correctAnswer: 0,
+    correctAnswer: 1,
     explanation:
-      "The System Levels slide groups Management Information Systems (MIS) and Expert Systems (ES) with DSS under the Management/Higher Level.\n\nTransaction Processing System (TPS) is at the bottom Operational Level.\n\nKnowledge Work System (KWS) is at the Knowledge Level.\n\nExecutive Support System (ESS) is at the Strategic Level.",
+      "Structured Design methodologies, such as Waterfall, emphasize step-by-step progress with high documentation levels before proceeding sequentially.\n\nAgile Development focuses on rapid iterations, working software, and minimized up-front documentation.\n\nRapid Application Development emphasizes speed and continuous prototyping over strict sequential phases.\n\nExtreme Programming is a subset of Agile that relies on continuous user feedback and fast release cycles.",
   },
   {
     id: "csc312_ch2_109",
     course: "CSC 312",
     chapter: "Chapter 2",
-    text: "According to the system hierarchy slides, where does the Group Decision Support System (GDSS) reside?",
+    text: "What is a major disadvantage of the classic Waterfall methodology?",
     options: [
-      "Strategic Level",
-      "Operational Level",
-      "Knowledge Level",
-      "Management/Higher Level",
+      "It completely lacks any formal planning or architectural design phases",
+      "A long time elapses between the initial analysis and the delivery of working software",
+      "It requires a highly self-organizing team that rejects documentation",
+      "It can only be used on very small, low-budget software projects",
     ],
-    correctAnswer: 0,
+    correctAnswer: 1,
     explanation:
-      "The System Levels slide places GDSS and Executive Support Systems (ESS) at the top-most Strategic Level.\n\nOperational Level contains Transaction Processing Systems (TPS).\n\nKnowledge Level contains Office Automation Systems (OAS) and Knowledge Work Systems (KWS).\n\nManagement/Higher Level contains Management Information Systems (MIS) and Decision Support Systems (DSS).",
+      "In Waterfall, the system is not delivered until the final implementation phase. This means users may wait months or years before seeing any functional software.\n\nWaterfall has extensive and highly formal planning and design phases.\n\nWaterfall is a document-heavy, management-led approach, the opposite of self-organizing team dynamics.\n\nWaterfall is historically applied to very large, complex, and highly regulated projects.",
   },
   {
     id: "csc312_ch2_110",
     course: "CSC 312",
     chapter: "Chapter 2",
-    text: "A development team is checking if a system complies with government regulations on security. This represents which feasibility check?",
+    text: "Which methodology attempts to address the long timelines of Waterfall by performing the design and implementation phases concurrently across multiple subprojects?",
     options: [
-      "Legal Feasibility",
-      "Technical Feasibility",
-      "Economic Feasibility",
-      "Operational Feasibility",
+      "Waterfall method",
+      "Parallel development",
+      "System prototyping",
+      "Scrum",
+    ],
+    correctAnswer: 1,
+    explanation:
+      "Parallel development splits the overall project into separate subprojects that are designed and implemented simultaneously, shortening the total schedule.\n\nThe Waterfall method performs all activities in a single, sequential line.\n\nSystem prototyping builds a single, working mockup that is continuously refined.\n\nScrum organizes development into uniform 2 to 4 week sprints.",
+  },
+  {
+    id: "csc312_ch2_111",
+    course: "CSC 312",
+    chapter: "Chapter 2",
+    text: "Which RAD methodology breaks down the system requirements into a series of versions, where each version is sequentially analyzed, designed, and implemented?",
+    options: [
+      "Parallel development",
+      "Phased development",
+      "Throwaway prototyping",
+      "Extreme programming",
+    ],
+    correctAnswer: 1,
+    explanation:
+      "Phased development delivers the system in a series of versions. Version 1 contains the core features, and successive versions add more features as they are completed.\n\nParallel development works on subprojects concurrently, but delivers a single unified system at the end.\n\nThrowaway prototyping builds mockups purely to explore ideas and then discards them.\n\nExtreme programming uses continuous iterations of unit testing and pair programming.",
+  },
+  {
+    id: "csc312_ch2_112",
+    course: "CSC 312",
+    chapter: "Chapter 2",
+    text: "What is a key benefit of using the Phased Development methodology?",
+    options: [
+      "The system is built perfectly the first time, preventing future modification",
+      "Users get a functional, basic version of the system quickly",
+      "It requires no user training or documentation whatsoever",
+      "It completely eliminates the risk of technical architectural errors",
+    ],
+    correctAnswer: 1,
+    explanation:
+      "Phased development delivers Version 1 of the system rapidly, allowing users to interact with and benefit from core features while subsequent versions are being coded.\n\nPhased development expects the system to change and grow over time, so it is not 'built once and never touched'.\n\nUsers still require training and documentation for each released version.\n\nArchitectural risks can still occur if the foundational design cannot support the features added in later phases.",
+  },
+  {
+    id: "csc312_ch2_113",
+    course: "CSC 312",
+    chapter: "Chapter 2",
+    text: "Which methodology merges analysis, design, and implementation into a single concurrent cycle to build a working, interactive mockup that is repeatedly refined?",
+    options: [
+      "Waterfall development",
+      "System prototyping",
+      "Throwaway prototyping",
+      "Parallel development",
+    ],
+    correctAnswer: 1,
+    explanation:
+      "System prototyping involves a rapid, continuous cycle of analysis, design, and coding to build a simple working version of the system that is refined based on user feedback.\n\nWaterfall keeps these phases completely separate and sequential.\n\nThrowaway prototyping builds mockups to answer questions but discards them rather than evolving them into the final product.\n\nParallel development splits the system into subprojects without continuous circular prototyping.",
+  },
+  {
+    id: "csc312_ch2_114",
+    course: "CSC 312",
+    chapter: "Chapter 2",
+    text: "What risk is highly associated with System Prototyping?",
+    options: [
+      "The project will take twice as long to show any working model to stakeholders",
+      "The project may suffer from feature creep as users continually ask for new additions",
+      "The development team will spend too much time writing formal design documents",
+      "The prototype will be discarded entirely, wasting all coding effort",
+    ],
+    correctAnswer: 1,
+    explanation:
+      "Since users can see and interact with the prototype, they often suggest a constant stream of new features, which can lead to uncontrolled project expansion.\n\nSystem prototyping shows working models to stakeholders very quickly.\n\nSystem prototyping is criticized for lack of documentation and analytical discipline, not too much of it.\n\nDiscarding the prototype is a feature of Throwaway Prototyping, not System Prototyping.",
+  },
+  {
+    id: "csc312_ch2_115",
+    course: "CSC 312",
+    chapter: "Chapter 2",
+    text: "Which methodology utilizes design prototypes to explore user interface options or technical challenges, only to discard them once the requirements are understood?",
+    options: [
+      "Waterfall method",
+      "System prototyping",
+      "Throwaway prototyping",
+      "Phased development",
+    ],
+    correctAnswer: 2,
+    explanation:
+      "Throwaway prototyping builds mockups solely to gather requirements and test ideas. Once the needs are clarified, the prototype is discarded, and the real system is built from scratch.\n\nWaterfall does not use iterative prototyping mockups.\n\nSystem prototyping refines and builds upon the prototype until it becomes the final operational system.\n\nPhased development deploys stable, working versions directly into production.",
+  },
+  {
+    id: "csc312_ch2_116",
+    course: "CSC 312",
+    chapter: "Chapter 2",
+    text: "What is an advantage of Throwaway Prototyping over System Prototyping?",
+    options: [
+      "It is much faster because the team does not have to rebuild the system from scratch",
+      "It produces a highly stable and well-architected final system",
+      "It requires zero documentation or analysis phases",
+      "It allows developers to skip testing during the implementation phase",
+    ],
+    correctAnswer: 1,
+    explanation:
+      "Because the final system is built from scratch using clean, well-thought-out architectural patterns, it is typically much more stable and robust than an evolved prototype.\n\nThrowaway prototyping is slower than system prototyping because the code must be rewritten for the final product.\n\nIt still requires analysis to synthesize the lessons learned from the discarded prototype.\n\nTesting is still highly critical during the construction of the final product.",
+  },
+  {
+    id: "csc312_ch2_117",
+    course: "CSC 312",
+    chapter: "Chapter 2",
+    text: "Which core philosophy drives Agile Development methodologies?",
+    options: [
+      "Maximizing the amount of up-front documentation before writing any code",
+      "Focusing on rapid delivery of working software through iterative cycles",
+      "Enforcing strict hierarchical management and eliminating analyst roles",
+      "Restricting software changes once the design phase is completed",
+    ],
+    correctAnswer: 1,
+    explanation:
+      "Agile values working software, collaborative partnerships, and responding to change over comprehensive up-front documentation.\n\nAgile minimizes up-front documentation in favor of continuous iterative delivery.\n\nAgile values self-organizing teams, but still relies on analysts to understand user stories and requirements.\n\nAgile actively welcomes requirements changes, even late in the development cycle.",
+  },
+  {
+    id: "csc312_ch2_118",
+    course: "CSC 312",
+    chapter: "Chapter 2",
+    text: "Which environment is most suitable for the Extreme Programming methodology?",
+    options: [
+      "A large-scale project with hundreds of developers and highly stable requirements",
+      "A small-scale project with a tight-knit team and highly volatile requirements",
+      "A multi-year, highly regulated defense contract requiring complete up-front documentation",
+      "An outsource model where developers have zero contact with business stakeholders",
+    ],
+    correctAnswer: 1,
+    explanation:
+      "XP shines on small-scale projects with small, co-located teams and requirements that change rapidly, as its practices are designed for quick feedback.\n\nXP does not scale easily to massive, multi-team projects with hundreds of developers.\n\nHighly regulated projects with fixed up-front documentation are better suited to Waterfall or structured approaches.\n\nXP requires continuous stakeholder and customer involvement to succeed.",
+  },
+  {
+    id: "csc312_ch2_119",
+    course: "CSC 312",
+    chapter: "Chapter 2",
+    text: "If a project has unclear user requirements, which methodology is the most appropriate choice?",
+    options: [
+      "Waterfall method",
+      "System prototyping",
+      "Parallel development",
+      "Structured Design",
+    ],
+    correctAnswer: 1,
+    explanation:
+      "System prototyping allows users to interact with a working model of the system, helping them define and clarify their requirements as they see the system evolve.\n\nWaterfall requires highly stable and clear requirements at the start because changing them later is costly.\n\nParallel development also requires clear initial requirements so the system can be partitioned into subprojects.\n\nStructured design models generally struggle with highly volatile or unclear requirements.",
+  },
+  {
+    id: "csc312_ch2_120",
+    course: "CSC 312",
+    chapter: "Chapter 2",
+    text: "Which methodology is best suited if a project has clear requirements, familiar technology, and a need for high reliability, but schedule time is not critical?",
+    options: [
+      "Waterfall method",
+      "System prototyping",
+      "Extreme programming",
+      "Agile Development",
     ],
     correctAnswer: 0,
     explanation:
-      "The feasibility slides state that Legal Feasibility is concerned with identifying compliance risks with state regulations, intellectual property laws, and contracts.\n\nTechnical Feasibility measures technology availability, server capacities, and programmer skills.\n\nEconomic Feasibility measures financial budgets, savings, and cost-benefit analyses.\n\nOperational Feasibility measures organizational resistance and user support.",
+      "Waterfall works well when requirements are well understood, technology is familiar, and reliability is key, as the extensive documentation ensures a systematic design.\n\nSystem prototyping is designed for unclear requirements and is less focused on formal, reliable architecture.\n\nExtreme programming is designed for rapidly changing requirements and short timelines.\n\nAgile development is built to handle change, which is unnecessary if the requirements are completely stable.",
+  },
+  {
+    id: "csc312_ch2_121",
+    course: "CSC 312",
+    chapter: "Chapter 2",
+    text: "A systems analyst must respect intellectual property and be honest and trustworthy. Which skill category does this represent?",
+    options: [
+      "Technical skills",
+      "Business skills",
+      "Ethical skills",
+      "Interpersonal skills",
+    ],
+    correctAnswer: 2,
+    explanation:
+      "Ethical skills are essential for maintaining professional integrity, respecting copyrights/patents, and being a trustworthy partner to stakeholders.\n\nTechnical skills involve understanding computing infrastructure, networks, and coding concepts.\n\nBusiness skills involve understanding how organizations function and generate revenue.\n\nInterpersonal skills cover communication, presentation, and team collaboration.",
+  },
+  {
+    id: "csc312_ch2_122",
+    course: "CSC 312",
+    chapter: "Chapter 2",
+    text: "What is the primary purpose of the System Request document?",
+    options: [
+      "To document the complete source code and database schemas",
+      "To initiate a system project by outlining the business need and expected value",
+      "To summarize the post-implementation review and user feedback",
+      "To list the test cases and bugs found during system construction",
+    ],
+    correctAnswer: 1,
+    explanation:
+      "A system request is a formal document that initiates a project, summarizing the business reason for the system and the expected benefits.\n\nDatabase schemas are documented in the system specification during the Design phase.\n\nPost-implementation review is summarized in the support plan or system summary at the end of the lifecycle.\n\nTest cases are documented during the system construction step of the Implementation phase.",
+  },
+  {
+    id: "csc312_ch2_123",
+    course: "CSC 312",
+    chapter: "Chapter 2",
+    text: "Which of the following is a key element typically included in a System Request?",
+    options: [
+      "The physical SQL database schema creation scripts",
+      "The project sponsor, business need, and system requirements",
+      "The names and salaries of the programmers on the team",
+      "The complete sequence of unit test cases",
+    ],
+    correctAnswer: 1,
+    explanation:
+      "The system request contains key high-level information, including the project sponsor, the business need, business requirements, and the business value.\n\nSQL scripts are created much later during the Design phase.\n\nTeam salaries and staffing assignments are detailed in the project plan, not the initial system request.\n\nUnit test cases are written during the construction step of the Implementation phase.",
+  },
+  {
+    id: "csc312_ch2_124",
+    course: "CSC 312",
+    chapter: "Chapter 2",
+    text: "What is the role of the Steering Committee regarding a System Request?",
+    options: [
+      "To write the source code for the requested software features",
+      "To review the request and decide whether to approve the project",
+      "To conduct individual interviews with every single system user",
+      "To install the database servers in the server room",
+    ],
+    correctAnswer: 1,
+    explanation:
+      "The steering committee or approval committee reviews the system request and the feasibility analysis to decide whether to fund and initiate the project.\n\nSteering committees do not write code; that is the task of the programmers.\n\nConducting interviews is the job of the systems analyst during the Analysis phase.\n\nInstalling database servers is performed by infrastructure analysts or systems administrators.",
+  },
+  {
+    id: "csc312_ch2_125",
+    course: "CSC 312",
+    chapter: "Chapter 2",
+    text: "What is the main difference between System Prototyping and Throwaway Prototyping?",
+    options: [
+      "System prototyping uses visual designs, while throwaway uses command-line interfaces",
+      "System prototyping evolves the mockup into the final system, while throwaway discards it",
+      "System prototyping is only used for databases, while throwaway is only used for networks",
+      "System prototyping takes much longer to show a mockup to the users",
+    ],
+    correctAnswer: 1,
+    explanation:
+      "In system prototyping, the prototype is continuously refined and eventually deployed as the final system. In throwaway prototyping, the prototype is built to learn requirements and then discarded.\n\nBoth use whatever UI style is appropriate for the system being modeled.\n\nBoth can model any aspect of a system, not just databases or networks.\n\nSystem prototyping and throwaway prototyping both present mockups to users very quickly.",
+  },
+  {
+    id: "csc312_ch2_126",
+    course: "CSC 312",
+    chapter: "Chapter 2",
+    text: "In systems development, what is the 'to-be' system?",
+    options: [
+      "The old legacy system that needs to be retired",
+      "The newly designed information system that will be implemented",
+      "The system prototype that was discarded during the analysis phase",
+      "The documentation standard used by the systems analyst",
+    ],
+    correctAnswer: 1,
+    explanation:
+      "The 'to-be' system is the proposed new system designed to resolve the issues identified in the 'as-is' system.\n\nThe legacy system to be retired is the 'as-is' system.\n\nA discarded prototype is a throwaway design asset.\n\nDocumentation standards are rules for writing reports, not a target system design.",
+  },
+  {
+    id: "csc312_ch2_127",
+    course: "CSC 312",
+    chapter: "Chapter 2",
+    text: "What does a compatibility risk assessment evaluate under technical feasibility?",
+    options: [
+      "Whether the project champion will approve the final financial budget",
+      "How well the new system will integrate with the existing technology stack",
+      "Whether the users will resist using the new software interface",
+      "How many monthly licenses the organization must purchase",
+    ],
+    correctAnswer: 1,
+    explanation:
+      "Compatibility risk looks at how easily the new software will communicate and exchange data with the organization's existing systems.\n\nProject champion approvals are part of organizational feasibility.\n\nUser resistance is an organizational feasibility risk.\n\nLicense purchasing calculations are part of economic feasibility.",
+  },
+  {
+    id: "csc312_ch2_128",
+    course: "CSC 312",
+    chapter: "Chapter 2",
+    text: "Which role is primarily responsible for ensuring that a newly deployed system is adopted by its intended users?",
+    options: [
+      "Infrastructure analyst",
+      "Change management analyst",
+      "Database administrator",
+      "Lead software developer",
+    ],
+    correctAnswer: 1,
+    explanation:
+      "The change management analyst focuses on user adoption, managing training, and helping the organization adapt to the changes introduced by the new system.\n\nThe infrastructure analyst focuses on databases, hardware, and network integration.\n\nThe database administrator is responsible for database design, security, and optimization.\n\nThe lead software developer focuses on writing clean, functional code according to the system specifications.",
+  },
+  {
+    id: "csc312_ch2_129",
+    course: "CSC 312",
+    chapter: "Chapter 2",
+    text: "In system development methodologies, what is 'feature creep'?",
+    options: [
+      "A security bug that allows unauthorized access to the database",
+      "The uncontrolled growth of system requirements as the project progresses",
+      "The gradual physical degradation of server hardware components",
+      "A technique used to optimize the speed of SQL queries",
+    ],
+    correctAnswer: 1,
+    explanation:
+      "Feature creep occurs when new requirements are continuously added to a project without proper control, extending the schedule and budget.\n\nFeature creep is a scope management issue, not a software security bug.\n\nPhysical degradation of hardware is a hardware maintenance concern.\n\nQuery optimization is a database performance technique.",
+  },
+  {
+    id: "csc312_ch2_130",
+    course: "CSC 312",
+    chapter: "Chapter 2",
+    text: "The change management analyst focuses primarily on the hardware, networks, and database integration issues of a system project.",
+    options: ["True", "False", "Maybe", "I don't know"],
+    correctAnswer: 1,
+    explanation:
+      "The change management analyst focuses on the people and management issues, while the infrastructure analyst focuses on the technical hardware, database, and network issues.",
+  },
+  {
+    id: "csc312_ch2_131",
+    course: "CSC 312",
+    chapter: "Chapter 2",
+    text: "Economic feasibility uses financial metrics like Net Present Value and Return on Investment to determine if a system should be built.",
+    options: ["True", "False", "Maybe", "I don't know"],
+    correctAnswer: 0,
+    explanation:
+      "Economic feasibility conducts a cost-benefit analysis, utilizing NPV, ROI, and break-even points to evaluate the financial viability of the system.",
+  },
+  {
+    id: "csc312_ch2_132",
+    course: "CSC 312",
+    chapter: "Chapter 2",
+    text: "An intangible benefit is a gain that can be easily measured and given a precise financial value in a cost-benefit analysis.",
+    options: ["True", "False", "Maybe", "I don't know"],
+    correctAnswer: 1,
+    explanation:
+      "A tangible benefit is easily measured and given a financial value. An intangible benefit is qualitative and difficult to quantify, such as improved company prestige.",
+  },
+  {
+    id: "csc312_ch2_133",
+    course: "CSC 312",
+    chapter: "Chapter 2",
+    text: "Under organizational feasibility, the champion is a high-level executive who sponsors the project, secures resources, and promotes its success.",
+    options: ["True", "False", "Maybe", "I don't know"],
+    correctAnswer: 0,
+    explanation:
+      "The champion provides crucial leadership, high-level advocacy, and financial sponsorship to overcome organizational resistance and ensure project alignment.",
+  },
+  {
+    id: "csc312_ch2_134",
+    course: "CSC 312",
+    chapter: "Chapter 2",
+    text: "The Waterfall methodology is highly flexible and makes it easy to add or modify system requirements in the late stages of development.",
+    options: ["True", "False", "Maybe", "I don't know"],
+    correctAnswer: 1,
+    explanation:
+      "The Waterfall methodology is sequential and rigid. Making changes late in the lifecycle is extremely difficult and expensive because earlier phases must be reopened.",
+  },
+  {
+    id: "csc312_ch2_135",
+    course: "CSC 312",
+    chapter: "Chapter 2",
+    text: "In Extreme Programming, pair programming is a core practice where two developers work together at the same computer to write and review code.",
+    options: ["True", "False", "Maybe", "I don't know"],
+    correctAnswer: 0,
+    explanation:
+      "Pair programming is a fundamental XP practice designed to improve software quality, catch errors early, and facilitate knowledge sharing among developers.",
+  },
+  {
+    id: "csc312_ch2_136",
+    course: "CSC 312",
+    chapter: "Chapter 2",
+    text: "Which of the following is an input or activity handled during the Planning phase of the SDLC?",
+    options: [
+      "Developing the initial system request document",
+      "Writing physical SQL database creation scripts",
+      "All of the above",
+      "None of the above",
+    ],
+    correctAnswer: 0,
+    explanation:
+      "The system request is developed during project initiation in the Planning phase to outline the business need and value. Writing SQL scripts is a detailed activity in the Design phase, so All of the above is incorrect.",
+  },
+  {
+    id: "csc312_ch2_137",
+    course: "CSC 312",
+    chapter: "Chapter 2",
+    text: "Which of the following is a primary risk factor evaluated during a technical feasibility analysis?",
+    options: [
+      "The development team's familiarity with the proposed technology stack",
+      "The physical size and resource requirements of the project",
+      "All of the above",
+      "None of the above",
+    ],
+    correctAnswer: 2,
+    explanation:
+      "Technical feasibility evaluates risk factors including familiarity with the application, familiarity with the technology, project size, and compatibility with existing infrastructure. Both options are correct, making All of the above the right choice.",
+  },
+  {
+    id: "csc312_ch2_138",
+    course: "CSC 312",
+    chapter: "Chapter 2",
+    text: "Which stakeholder group is evaluated during an organizational feasibility study to ensure system adoption?",
+    options: [
+      "The external competitors operating within the same market segment",
+      "The system users who will interact with the software daily",
+      "All of the above",
+      "None of the above",
+    ],
+    correctAnswer: 1,
+    explanation:
+      "System users are critical internal stakeholders whose daily interaction dictates the system's success. External competitors are not internal stakeholders evaluated under organizational feasibility.",
+  },
+  {
+    id: "csc312_ch2_139",
+    course: "CSC 312",
+    chapter: "Chapter 2",
+    text: "Which of the following is a core step during the Analysis phase of the SDLC?",
+    options: [
+      "Designing physical user interface layouts and database schemas",
+      "Writing and executing unit test cases during system construction",
+      "All of the above",
+      "None of the above",
+    ],
+    correctAnswer: 3,
+    explanation:
+      "Designing interface layouts and database schemas belongs to the Design phase. Writing and executing unit tests belongs to the Implementation phase. Since neither is an Analysis phase step, None of the above is correct.",
   },
 ];
 
-export default csc312Letcure3;
+export default csc312Lecture3Combined;

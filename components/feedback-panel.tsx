@@ -1,6 +1,7 @@
 "use client"
 
 import { CheckCircle, XCircle } from "lucide-react"
+import ReactMarkdown from "react-markdown"
 
 interface FeedbackPanelProps {
   isCorrect: boolean
@@ -33,14 +34,14 @@ export default function FeedbackPanel({ isCorrect, explanation }: FeedbackPanelP
             {isCorrect ? "Correct!" : "Incorrect"}
           </h3>
           {explanation && (
-            <p
+            <div
               className={cn(
-                "text-sm",
+                "text-sm prose dark:prose-invert max-w-none",
                 isCorrect ? "text-green-800 dark:text-green-200" : "text-red-800 dark:text-red-200",
               )}
             >
-              {explanation}
-            </p>
+              <ReactMarkdown>{explanation}</ReactMarkdown>
+            </div>
           )}
         </div>
       </div>
