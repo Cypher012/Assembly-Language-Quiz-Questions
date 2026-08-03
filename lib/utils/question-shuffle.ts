@@ -1,4 +1,5 @@
 import { QuestionV2, ShuffledQuestion } from "../quiz-types";
+import { shuffleArray } from "./shuffle";
 
 /**
  * Shuffles the options of a single question while tracking the correct answer.
@@ -8,14 +9,11 @@ import { QuestionV2, ShuffledQuestion } from "../quiz-types";
  * @returns A shuffled question with displayOptions (A-D) and displayCorrectAnswer
  */
 export function shuffleQuestion(question: QuestionV2): ShuffledQuestion {
-  // Get the text of the correct answer before shuffling
-  const correctText = question.options[question.correctAnswer];
-
-  // Create a shuffled copy of the options
-  const shuffled = [...question.options].sort(() => Math.random() - 0.5);
-
-  // Find the new index of the correct answer after shuffling
-  const newIndex = shuffled.indexOf(correctText);
+  // Shuffle indices rather than option text so duplicate option strings
+  // (e.g. "hi" / "Hi") can't be mislocated by value-based lookup.
+  const shuffledIndices = shuffleArray(question.options.map((_, i) => i));
+  const shuffled = shuffledIndices.map((i) => question.options[i]);
+  const newIndex = shuffledIndices.indexOf(question.correctAnswer);
 
   return {
     ...question,
@@ -42,10 +40,5 @@ export function shuffleQuestion(question: QuestionV2): ShuffledQuestion {
  * @returns Array of shuffled questions in random order
  */
 export function shuffleQuestions(questions: QuestionV2[]): ShuffledQuestion[] {
-  const shuffled = [...questions];
-  for (let i = shuffled.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
-  }
-  return shuffled.map(shuffleQuestion);
+  return shuffleArray(questions).map(shuffleQuestion);
 }

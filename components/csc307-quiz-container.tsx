@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { cn } from "@/lib/utils";
+import { shuffleArray } from "@/lib/utils/shuffle";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Progress } from "@/components/ui/progress";
@@ -28,6 +29,9 @@ import {
   Star,
 } from "lucide-react";
 
+const FOCUS_RING =
+  "outline-none focus-visible:ring-[3px] focus-visible:ring-ring/50 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-900";
+
 interface CSC307QuizContainerProps {
   chapter: string | null;
   onBackToChapters: () => void;
@@ -39,15 +43,6 @@ interface QuestionScore {
   level: MasteryLevel;
   score: number;
   total: number;
-}
-
-function shuffleArray<T>(array: T[]): T[] {
-  const shuffled = [...array];
-  for (let i = shuffled.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
-  }
-  return shuffled;
 }
 
 export default function CSC307QuizContainer({
@@ -118,15 +113,21 @@ export default function CSC307QuizContainer({
   };
 
   const handleQuestionComplete = (score: number, total: number) => {
-    setScores((prev) => [
-      ...prev,
-      {
-        questionId: currentQuestion.id,
-        level: currentLevel,
-        score,
-        total,
-      },
-    ]);
+    const entry: QuestionScore = {
+      questionId: currentQuestion.id,
+      level: currentLevel,
+      score,
+      total,
+    };
+    setScores((prev) => {
+      const existingIndex = prev.findIndex(
+        (s) => s.questionId === entry.questionId,
+      );
+      if (existingIndex === -1) return [...prev, entry];
+      const next = [...prev];
+      next[existingIndex] = entry;
+      return next;
+    });
   };
 
   const handleNextQuestion = () => {
@@ -234,6 +235,7 @@ export default function CSC307QuizContainer({
                 "p-6 rounded-xl border-2 border-slate-600 bg-slate-800/50 text-left",
                 "hover:border-green-500 hover:bg-slate-800 transition-all duration-200",
                 "group",
+                FOCUS_RING,
               )}
             >
               <div className="flex items-center gap-3 mb-4">
@@ -263,6 +265,7 @@ export default function CSC307QuizContainer({
                 "p-6 rounded-xl border-2 border-slate-600 bg-slate-800/50 text-left",
                 "hover:border-blue-500 hover:bg-slate-800 transition-all duration-200",
                 "group",
+                FOCUS_RING,
               )}
             >
               <div className="flex items-center gap-3 mb-4">
@@ -285,11 +288,16 @@ export default function CSC307QuizContainer({
 
             {/* Test Mode */}
             <button
-              onClick={() => handleSelectMode("test", 1)}
+              onClick={() =>
+                document
+                  .getElementById("test-mode-level-picker")
+                  ?.scrollIntoView({ behavior: "smooth", block: "center" })
+              }
               className={cn(
                 "p-6 rounded-xl border-2 border-slate-600 bg-slate-800/50 text-left",
                 "hover:border-orange-500 hover:bg-slate-800 transition-all duration-200",
                 "group",
+                FOCUS_RING,
               )}
             >
               <div className="flex items-center gap-3 mb-4">
@@ -299,8 +307,8 @@ export default function CSC307QuizContainer({
                 <h3 className="text-xl font-bold text-white">Test Mode</h3>
               </div>
               <p className="text-slate-400 mb-4">
-                Choose a level and test all questions at that difficulty.
-                Challenge yourself!
+                Choose a level below and test all questions at that
+                difficulty. Challenge yourself!
               </p>
               <div className="flex gap-2 flex-wrap">
                 <Badge className="bg-orange-100 text-orange-800">
@@ -313,7 +321,10 @@ export default function CSC307QuizContainer({
 
           {/* Level Selection for Test Mode */}
           {mode === null && (
-            <div className="bg-slate-800/50 rounded-xl p-6 border border-slate-700">
+            <div
+              id="test-mode-level-picker"
+              className="bg-slate-800/50 rounded-xl p-6 border border-slate-700"
+            >
               <h3 className="text-lg font-semibold text-white mb-4">
                 Quick Test - Select Level:
               </h3>
@@ -325,6 +336,7 @@ export default function CSC307QuizContainer({
                     className={cn(
                       "p-4 rounded-lg border-2 transition-all",
                       "hover:scale-105",
+                      FOCUS_RING,
                       lvl === 1 &&
                         "border-green-500 bg-green-500/10 hover:bg-green-500/20",
                       lvl === 2 &&
@@ -378,18 +390,18 @@ export default function CSC307QuizContainer({
     return (
       <div className="min-h-screen bg-gradient-to-b from-slate-900 via-slate-800 to-slate-900 p-4 sm:p-6 lg:p-8">
         <div className="max-w-3xl mx-auto">
-          <div className="bg-white dark:bg-slate-800 rounded-xl shadow-xl p-8 border border-slate-200 dark:border-slate-700 mb-8 animate-in fade-in duration-500">
+          <div className="bg-white rounded-2xl shadow-xl p-8 border border-slate-200 mb-8 animate-in fade-in duration-500">
             <div className="text-center mb-8">
               <Trophy className="w-16 h-16 mx-auto mb-4 text-yellow-500" />
-              <h1 className="text-4xl sm:text-5xl font-bold text-slate-900 dark:text-white mb-2">
-                Quiz Complete!
+              <h1 className="text-4xl sm:text-5xl font-bold text-slate-900 mb-2">
+                {mode === "review" ? "Review Complete!" : "Quiz Complete!"}
               </h1>
               <p
                 className={cn(
                   "text-2xl font-semibold",
                   percentage >= 70
-                    ? "text-green-600 dark:text-green-400"
-                    : "text-orange-600 dark:text-orange-400",
+                    ? "text-green-600"
+                    : "text-orange-600",
                 )}
               >
                 {getPerformanceMessage()}
@@ -397,27 +409,27 @@ export default function CSC307QuizContainer({
             </div>
 
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 mb-8">
-              <div className="bg-slate-50 dark:bg-slate-700 rounded-lg p-4 text-center">
-                <p className="text-sm text-slate-600 dark:text-slate-400 mb-1">
+              <div className="bg-slate-50 rounded-lg p-4 text-center">
+                <p className="text-sm text-slate-600 mb-1">
                   Blanks Correct
                 </p>
-                <p className="text-3xl font-bold text-slate-900 dark:text-white">
+                <p className="text-3xl font-bold text-slate-900">
                   {totalScore}/{totalPossible}
                 </p>
               </div>
-              <div className="bg-slate-50 dark:bg-slate-700 rounded-lg p-4 text-center">
-                <p className="text-sm text-slate-600 dark:text-slate-400 mb-1">
+              <div className="bg-slate-50 rounded-lg p-4 text-center">
+                <p className="text-sm text-slate-600 mb-1">
                   Percentage
                 </p>
-                <p className="text-3xl font-bold text-slate-900 dark:text-white">
+                <p className="text-3xl font-bold text-slate-900">
                   {percentage}%
                 </p>
               </div>
-              <div className="bg-slate-50 dark:bg-slate-700 rounded-lg p-4 text-center col-span-2 sm:col-span-1">
-                <p className="text-sm text-slate-600 dark:text-slate-400 mb-1">
+              <div className="bg-slate-50 rounded-lg p-4 text-center col-span-2 sm:col-span-1">
+                <p className="text-sm text-slate-600 mb-1">
                   Questions
                 </p>
-                <p className="text-3xl font-bold text-green-600 dark:text-green-400">
+                <p className="text-3xl font-bold text-green-600">
                   {scores.length}
                 </p>
               </div>
@@ -425,7 +437,7 @@ export default function CSC307QuizContainer({
 
             {/* Per-question breakdown */}
             <div className="mb-8">
-              <h3 className="text-lg font-semibold text-slate-900 dark:text-white mb-4">
+              <h3 className="text-lg font-semibold text-slate-900 mb-4">
                 Question Breakdown
               </h3>
               <div className="space-y-3">
@@ -436,17 +448,17 @@ export default function CSC307QuizContainer({
                   return (
                     <div
                       key={`${s.questionId}-${i}`}
-                      className="flex items-center gap-4 p-3 bg-slate-50 dark:bg-slate-700 rounded-lg"
+                      className="flex items-center gap-4 p-3 bg-slate-50 rounded-lg"
                     >
-                      <span className="text-sm font-medium text-slate-500 dark:text-slate-400 w-8">
+                      <span className="text-sm font-medium text-slate-500 w-8">
                         Q{i + 1}
                       </span>
                       <div className="flex-1">
                         <div className="flex items-center gap-2 mb-1">
-                          <p className="text-sm font-medium text-slate-900 dark:text-white">
+                          <p className="text-sm font-medium text-slate-900">
                             {q?.term}
                             {q?.yoruba && (
-                              <span className="ml-1 text-purple-600 dark:text-purple-400">
+                              <span className="ml-1 text-purple-600">
                                 ({q.yoruba})
                               </span>
                             )}
@@ -466,8 +478,8 @@ export default function CSC307QuizContainer({
                         className={cn(
                           "text-sm font-semibold",
                           qPercent >= 70
-                            ? "text-green-600 dark:text-green-400"
-                            : "text-orange-600 dark:text-orange-400",
+                            ? "text-green-600"
+                            : "text-orange-600",
                         )}
                       >
                         {s.score}/{s.total}
@@ -484,7 +496,7 @@ export default function CSC307QuizContainer({
                 className="flex-1 h-11 text-base font-semibold"
               >
                 <RotateCcw className="w-4 h-4 mr-2" />
-                Try Again
+                Restart Quiz
               </Button>
               <Button
                 onClick={handleChangeMode}
@@ -499,7 +511,7 @@ export default function CSC307QuizContainer({
                 className="flex-1 h-11 text-base font-semibold"
               >
                 <ChevronLeft className="w-4 h-4 mr-2" />
-                All Courses
+                Back to Courses
               </Button>
             </div>
           </div>
@@ -511,7 +523,7 @@ export default function CSC307QuizContainer({
   // Quiz in progress
   return (
     <div className="min-h-screen bg-gradient-to-b from-slate-900 via-slate-800 to-slate-900 p-4 sm:p-6 lg:p-8 pb-20">
-      <div className="max-w-3xl mx-auto">
+      <div className="max-w-2xl mx-auto">
         {/* Header */}
         <div className="space-y-4 mb-4">
           <div className="flex items-center justify-between">
@@ -590,7 +602,7 @@ export default function CSC307QuizContainer({
       >
         {/* Collapsed view */}
         <div className="px-4 py-2">
-          <div className="max-w-3xl mx-auto flex items-center justify-between">
+          <div className="max-w-2xl mx-auto flex items-center justify-between">
             <div className="flex items-center gap-4 text-sm">
               <span className="text-slate-400">
                 Question{" "}
@@ -616,7 +628,7 @@ export default function CSC307QuizContainer({
               onTouchStart={(e) => {
                 e.stopPropagation();
               }}
-              className="flex items-center gap-1 text-sm text-blue-400 hover:text-blue-300 transition-colors"
+              className={`flex items-center gap-1 text-sm text-blue-400 hover:text-blue-300 transition-colors rounded ${FOCUS_RING}`}
               style={{ touchAction: "manipulation" }}
             >
               {isNavigatorExpanded ? (
@@ -639,7 +651,7 @@ export default function CSC307QuizContainer({
             onTouchStart={(e) => e.stopPropagation()}
             onTouchMove={(e) => e.stopPropagation()}
           >
-            <div className="max-w-3xl mx-auto pt-3">
+            <div className="max-w-2xl mx-auto pt-3">
               <div
                 className="max-h-32 overflow-y-auto overscroll-contain"
                 style={{
@@ -669,6 +681,7 @@ export default function CSC307QuizContainer({
                           "relative w-8 h-8 sm:w-7 sm:h-7 rounded text-xs font-medium transition-all duration-200",
                           "flex items-center justify-center",
                           "active:scale-95 cursor-pointer",
+                          FOCUS_RING,
                           isCurrent && "ring-2 ring-blue-500",
                           answered &&
                             isPerfect === true &&

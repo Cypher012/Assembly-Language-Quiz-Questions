@@ -15,6 +15,10 @@ import {
   AlertDialogTrigger,
 } from "@/components/ui/alert-dialog";
 import { Button } from "@/components/ui/button";
+import { LogOut, AlertTriangle } from "lucide-react";
+
+const FOCUS_RING =
+  "outline-none focus-visible:ring-[3px] focus-visible:ring-ring/50 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-900";
 
 interface ProgressHeaderProps {
   current: number;
@@ -77,39 +81,17 @@ export default function ProgressHeader({
           {showExit && onExitExam && (
             <AlertDialog>
               <AlertDialogTrigger asChild>
-                <button className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium text-red-400 border border-red-500/30 bg-red-500/10 hover:bg-red-500/20 hover:text-red-300 transition-all duration-150">
-                  <svg
-                    className="w-3.5 h-3.5"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"
-                    />
-                  </svg>
+                <button
+                  className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium text-red-400 border border-red-500/30 bg-red-500/10 hover:bg-red-500/20 hover:text-red-300 transition-all duration-200 ${FOCUS_RING}`}
+                >
+                  <LogOut className="w-3.5 h-3.5" />
                   Exit
                 </button>
               </AlertDialogTrigger>
               <AlertDialogContent className="bg-slate-900 border border-slate-700 text-white rounded-2xl shadow-2xl p-0 overflow-hidden max-w-sm">
                 <div className="p-6">
                   <div className="w-12 h-12 rounded-2xl bg-red-500/15 flex items-center justify-center mb-4">
-                    <svg
-                      className="w-6 h-6 text-red-400"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"
-                      />
-                    </svg>
+                    <AlertTriangle className="w-6 h-6 text-red-400" />
                   </div>
                   <AlertDialogHeader>
                     <AlertDialogTitle className="text-white text-lg font-semibold mb-1">

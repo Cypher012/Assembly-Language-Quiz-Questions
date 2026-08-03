@@ -3,6 +3,9 @@
 import type { Option } from "@/lib/quiz-types";
 import { cn } from "@/lib/utils";
 
+const FOCUS_RING =
+  "outline-none focus-visible:ring-[3px] focus-visible:ring-ring/50 focus-visible:ring-offset-2 focus-visible:ring-offset-white";
+
 interface OptionButtonProps {
   option: Option | string; // Support both old object format and new string format
   optionLabel?: "A" | "B" | "C" | "D"; // For displaying A/B/C/D labels with shuffled questions
@@ -27,24 +30,24 @@ export default function OptionButton({
   const displayLabel =
     optionLabel || (typeof option === "object" ? option.id.toUpperCase() : "");
   let bgColor =
-    "bg-slate-50 dark:bg-slate-700 hover:bg-slate-100 dark:hover:bg-slate-600";
-  let borderColor = "border-slate-300 dark:border-slate-600";
-  let textColor = "text-slate-900 dark:text-white";
+    "bg-slate-50 hover:bg-slate-100";
+  let borderColor = "border-slate-300";
+  let textColor = "text-slate-900";
 
   if (isRevealed) {
     if (isCorrect) {
-      bgColor = "bg-green-50 dark:bg-green-900/30";
-      borderColor = "border-green-500 dark:border-green-600";
-      textColor = "text-slate-900 dark:text-white";
+      bgColor = "bg-green-50";
+      borderColor = "border-green-500";
+      textColor = "text-slate-900";
     } else if (isSelected && !isCorrect) {
-      bgColor = "bg-red-50 dark:bg-red-900/30";
-      borderColor = "border-red-500 dark:border-red-600";
-      textColor = "text-slate-900 dark:text-white";
+      bgColor = "bg-red-50";
+      borderColor = "border-red-500";
+      textColor = "text-slate-900";
     }
   } else if (isSelected) {
-    bgColor = "bg-blue-50 dark:bg-blue-900/30";
-    borderColor = "border-blue-500 dark:border-blue-600";
-    textColor = "text-slate-900 dark:text-white";
+    bgColor = "bg-blue-50";
+    borderColor = "border-blue-500";
+    textColor = "text-slate-900";
   }
 
   return (
@@ -56,6 +59,7 @@ export default function OptionButton({
         "font-medium text-lg",
         "disabled:cursor-not-allowed",
         !isDisabled && "cursor-pointer",
+        FOCUS_RING,
         bgColor,
         borderColor,
         textColor,
@@ -71,7 +75,7 @@ export default function OptionButton({
                 ? "bg-red-500 border-red-500"
                 : isSelected
                   ? "bg-blue-500 border-blue-500"
-                  : "border-slate-400 dark:border-slate-500",
+                  : "border-slate-400",
           )}
         >
           {(isRevealed || isSelected) && (
@@ -90,7 +94,7 @@ export default function OptionButton({
           )}
         </div>
         {displayLabel && (
-          <span className="font-bold text-sm text-slate-500 dark:text-slate-400">
+          <span className="font-bold text-sm text-slate-500">
             {displayLabel}.
           </span>
         )}

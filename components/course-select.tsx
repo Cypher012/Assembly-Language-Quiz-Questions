@@ -1,6 +1,10 @@
 "use client";
 
 import { Course } from "@/lib/courses";
+import { ChevronRight } from "lucide-react";
+
+const FOCUS_RING =
+  "outline-none focus-visible:ring-[3px] focus-visible:ring-ring/50 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-900";
 
 interface CourseSelectProps {
   courses: Course[];
@@ -28,37 +32,23 @@ export default function CourseSelect({
             <button
               key={course.id}
               onClick={() => onSelectCourse(course.id)}
-              className="p-6 bg-white dark:bg-slate-800 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-200 hover:scale-[1.02] text-left group"
+              className={`p-6 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-200 hover:scale-[1.02] text-left group ${FOCUS_RING}`}
             >
               <div className="flex flex-col h-full">
                 <div className="flex items-start justify-between mb-3">
-                  <span className="px-3 py-1 text-xs font-medium bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 rounded-full">
+                  <span className="px-3 py-1 text-xs font-medium bg-blue-100 text-blue-700 rounded-full">
                     {course.code}
                   </span>
-                  <div className="text-slate-400 group-hover:text-blue-500 transition-colors">
-                    <svg
-                      className="w-5 h-5"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M9 5l7 7-7 7"
-                      />
-                    </svg>
-                  </div>
+                  <ChevronRight className="w-5 h-5 text-slate-500 group-hover:text-blue-500 transition-colors flex-shrink-0" />
                 </div>
-                <h2 className="text-xl font-semibold text-slate-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors mb-2">
+                <h2 className="text-xl font-semibold text-slate-900 group-hover:text-blue-600 transition-colors mb-2">
                   {course.name}
                 </h2>
-                <p className="text-slate-500 dark:text-slate-400 text-sm flex-grow">
+                <p className="text-slate-500 text-sm flex-grow line-clamp-3">
                   {course.description}
                 </p>
-                <div className="mt-4 pt-4 border-t border-slate-200 dark:border-slate-700">
-                  <span className="text-xs text-slate-400">
+                <div className="mt-4 pt-4 border-t border-slate-200">
+                  <span className="text-xs text-slate-500">
                     {course.chapters.length}{" "}
                     {course.chapters.length === 1 ? "chapter" : "chapters"}{" "}
                     available

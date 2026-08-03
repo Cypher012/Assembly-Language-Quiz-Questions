@@ -9,6 +9,7 @@ import {
   isQuestionV2,
 } from "@/lib/quiz-types";
 import { shuffleQuestions } from "@/lib/utils/question-shuffle";
+import { shuffleArray } from "@/lib/utils/shuffle";
 import {
   getEnabledCourses,
   getCourseById,
@@ -17,6 +18,7 @@ import {
   Course,
 } from "@/lib/courses";
 import { saveExamState, loadExamState, clearExamState } from "@/lib/exam-state";
+import { Spinner } from "@/components/ui/spinner";
 import QuestionCard from "./question-card";
 import ProgressHeader from "./progress-header";
 import ResultSummary from "./result-summary";
@@ -31,15 +33,6 @@ interface UserAnswer {
   questionId: string;
   selectedOptionId: string;
   isCorrect: boolean;
-}
-
-function shuffleArray<T>(array: T[]): T[] {
-  const shuffled = [...array];
-  for (let i = shuffled.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
-  }
-  return shuffled;
 }
 
 export default function QuizContainer() {
@@ -376,7 +369,8 @@ export default function QuizContainer() {
   if (!isReady) {
     return (
       <div className="min-h-screen bg-gradient-to-b from-slate-900 via-slate-800 to-slate-900 p-4 sm:p-6 lg:p-8">
-        <div className="max-w-2xl mx-auto flex items-center justify-center min-h-[50vh]">
+        <div className="max-w-2xl mx-auto flex flex-col items-center justify-center gap-3 min-h-[50vh]">
+          <Spinner className="size-6 text-white" />
           <div className="text-white text-lg">Loading quiz...</div>
         </div>
       </div>

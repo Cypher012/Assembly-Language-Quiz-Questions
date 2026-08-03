@@ -26,6 +26,9 @@ import {
   RefreshCw,
 } from "lucide-react";
 
+const FOCUS_RING =
+  "outline-none focus-visible:ring-[3px] focus-visible:ring-ring/50 focus-visible:ring-offset-2 focus-visible:ring-offset-white";
+
 interface TokenizedAnswerCardProps {
   question: CSC307Question;
   mode: CSC307QuizMode;
@@ -361,7 +364,7 @@ export default function TokenizedAnswerCard({
       return (
         <span
           key={tokenIndex}
-          className="inline-flex items-center px-1.5 py-0.5 rounded bg-purple-100 dark:bg-purple-900/40 text-purple-800 dark:text-purple-200 font-semibold"
+          className="inline-flex items-center px-1.5 py-0.5 rounded bg-purple-100 text-purple-800 font-semibold"
         >
           {token.text}
         </span>
@@ -378,11 +381,11 @@ export default function TokenizedAnswerCard({
             className={cn(
               "inline-flex items-center px-1 py-0.5 rounded font-medium",
               blankState.isCorrect === true &&
-                "bg-green-100 text-green-800 dark:bg-green-900/40 dark:text-green-200",
+                "bg-green-100 text-green-800",
               blankState.isCorrect === false &&
-                "bg-red-100 text-red-800 dark:bg-red-900/40 dark:text-red-200",
+                "bg-red-100 text-red-800",
               blankState.isCorrect === null &&
-                "bg-blue-100 text-blue-800 dark:bg-blue-900/40 dark:text-blue-200",
+                "bg-blue-100 text-blue-800",
             )}
           >
             {token.text}
@@ -390,7 +393,7 @@ export default function TokenizedAnswerCard({
         );
       }
       return (
-        <span key={tokenIndex} className="text-slate-700 dark:text-slate-300">
+        <span key={tokenIndex} className="text-slate-700">
           {token.text}
         </span>
       );
@@ -413,8 +416,8 @@ export default function TokenizedAnswerCard({
               className={cn(
                 "inline-flex items-center gap-1 px-2 py-1 rounded border-2",
                 blankState.isCorrect
-                  ? "bg-green-50 dark:bg-green-900/30 border-green-400 text-green-800 dark:text-green-200"
-                  : "bg-red-50 dark:bg-red-900/30 border-red-400 text-red-800 dark:text-red-200",
+                  ? "bg-green-50 border-green-400 text-green-800"
+                  : "bg-red-50 border-red-400 text-red-800",
               )}
             >
               {blankState.isCorrect ? (
@@ -445,11 +448,12 @@ export default function TokenizedAnswerCard({
           className={cn(
             "inline-flex items-center justify-center my-1 px-3 py-1 rounded border-2 border-dashed transition-all",
             "min-w-[80px] text-sm font-medium",
+            FOCUS_RING,
             blankState.isActive
-              ? "border-blue-500 bg-blue-50 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 ring-2 ring-blue-300"
+              ? "border-blue-500 bg-blue-50 text-blue-700 ring-2 ring-blue-300"
               : blankState.userAnswer
-                ? "border-slate-400 bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-300"
-                : "border-slate-300 bg-slate-50 dark:bg-slate-800 text-slate-400 dark:text-slate-500 hover:border-blue-400 hover:bg-blue-50 dark:hover:bg-blue-900/20",
+                ? "border-slate-400 bg-slate-100 text-slate-700"
+                : "border-slate-300 bg-slate-50 text-slate-500 hover:border-blue-400 hover:bg-blue-50",
           )}
           style={{
             minWidth: `${Math.max(Math.min(token.text.length * 8, 250), 80)}px`,
@@ -473,9 +477,9 @@ export default function TokenizedAnswerCard({
       <span
         key={tokenIndex}
         className={cn(
-          "text-slate-700 dark:text-slate-300",
+          "text-slate-700",
           wasCompletedBefore &&
-            "bg-green-50 dark:bg-green-900/20 px-0.5 rounded",
+            "bg-green-50 px-0.5 rounded",
         )}
       >
         {token.text}
@@ -489,20 +493,20 @@ export default function TokenizedAnswerCard({
 
   return (
     <div className="mt-6 animate-in fade-in slide-in-from-bottom-2 duration-500">
-      <div className="bg-white dark:bg-slate-800 rounded-xl shadow-xl p-6 sm:p-8 border border-slate-200 dark:border-slate-700">
+      <div className="bg-white rounded-2xl shadow-xl p-6 sm:p-8 border border-slate-200">
         {/* Question Header */}
         <div className="mb-6">
           <div className="flex items-start justify-between gap-4 mb-3">
             <div>
-              <h2 className="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white">
+              <h2 className="text-2xl sm:text-3xl font-bold text-slate-900">
                 {question.term}
                 {question.yoruba && (
-                  <span className="ml-2 text-lg font-normal text-purple-600 dark:text-purple-400">
+                  <span className="ml-2 text-lg font-normal text-purple-600">
                     ({question.yoruba})
                   </span>
                 )}
               </h2>
-              <p className="text-slate-600 dark:text-slate-400 mt-1">
+              <p className="text-slate-600 mt-1">
                 {question.question}
               </p>
             </div>
@@ -533,7 +537,7 @@ export default function TokenizedAnswerCard({
           </div>
 
           {/* Level Description */}
-          <p className="text-sm text-slate-500 dark:text-slate-400 italic">
+          <p className="text-sm text-slate-500 italic">
             {getLevelDescription(level)}
             {rotationGroups.length > 1 && !isCompleted && (
               <span className="ml-2 text-blue-500">
@@ -548,7 +552,7 @@ export default function TokenizedAnswerCard({
         {mode !== "review" && currentBlanks > 0 && (
           <div className="mb-6">
             <div className="flex items-center justify-between text-sm mb-2">
-              <span className="text-slate-600 dark:text-slate-400">
+              <span className="text-slate-600">
                 {checkedCount === 0
                   ? `${currentBlanks} blanks - Click any to answer`
                   : `Checked: ${checkedCount}/${currentBlanks} | Correct: ${correctCount}`}
@@ -571,7 +575,7 @@ export default function TokenizedAnswerCard({
                 </span>
               )}
             </div>
-            <div className="h-2 bg-slate-200 dark:bg-slate-700 rounded-full overflow-hidden">
+            <div className="h-2 bg-slate-200 rounded-full overflow-hidden">
               <div
                 className={cn(
                   "h-full transition-all duration-500",
@@ -588,7 +592,7 @@ export default function TokenizedAnswerCard({
             {rotationGroups.length > 1 && (
               <div className="mt-2 flex items-center gap-2">
                 <span className="text-xs text-slate-500">Overall:</span>
-                <div className="flex-1 h-1.5 bg-slate-200 dark:bg-slate-700 rounded-full overflow-hidden">
+                <div className="flex-1 h-1.5 bg-slate-200 rounded-full overflow-hidden">
                   <div
                     className="h-full bg-purple-500 transition-all duration-500"
                     style={{
@@ -606,7 +610,7 @@ export default function TokenizedAnswerCard({
         )}
 
         {/* Answer Area */}
-        <div className="p-4 bg-slate-50 dark:bg-slate-900/50 rounded-lg border border-slate-200 dark:border-slate-700 mb-6">
+        <div className="p-4 bg-slate-50 rounded-lg border border-slate-200 mb-6">
           <p className="text-lg leading-loose">
             {question.tokens.map((_, index) => renderToken(index))}
           </p>
@@ -614,15 +618,15 @@ export default function TokenizedAnswerCard({
 
         {/* Active Blank Input Area */}
         {activeBlank && !showFullAnswer && (
-          <div className="mb-6 p-4 bg-blue-50 dark:bg-blue-900/20 rounded-lg border-2 border-blue-300 dark:border-blue-700">
+          <div className="mb-6 p-4 bg-blue-50 rounded-lg border-2 border-blue-300">
             <div className="flex items-center gap-2 mb-3">
               <Badge
                 variant="outline"
-                className="text-blue-700 dark:text-blue-300 border-blue-400"
+                className="text-blue-700 border-blue-400"
               >
                 Blank {activeBlankIndex !== null ? activeBlankIndex + 1 : ""}
               </Badge>
-              <span className="text-sm text-blue-600 dark:text-blue-400">
+              <span className="text-sm text-blue-600">
                 Type your answer below
               </span>
             </div>
@@ -644,7 +648,7 @@ export default function TokenizedAnswerCard({
                   }
                 }}
                 placeholder="Type your answer..."
-                className="flex-1 h-11 text-base border-blue-300 focus:border-blue-500"
+                className="flex-1 h-11 text-base border-blue-300"
                 autoFocus
               />
               <Button
@@ -656,7 +660,7 @@ export default function TokenizedAnswerCard({
                 Check
               </Button>
             </div>
-            <p className="text-xs text-blue-500 dark:text-blue-400 mt-2">
+            <p className="text-xs text-blue-500 mt-2">
               Press Enter to check, Escape to cancel
             </p>
           </div>
@@ -664,8 +668,8 @@ export default function TokenizedAnswerCard({
 
         {/* Key Points (shown after full completion or in review mode) */}
         {(isCompleted || mode === "review") && (
-          <div className="mb-6 p-4 bg-blue-50 dark:bg-blue-900/20 rounded-lg border border-blue-200 dark:border-blue-800">
-            <h4 className="font-semibold text-blue-900 dark:text-blue-100 mb-2 flex items-center gap-2">
+          <div className="mb-6 p-4 bg-blue-50 rounded-lg border border-blue-200">
+            <h4 className="font-semibold text-blue-900 mb-2 flex items-center gap-2">
               <Sparkles className="w-4 h-4" />
               Key Points:
             </h4>
@@ -673,7 +677,7 @@ export default function TokenizedAnswerCard({
               {question.keyPoints.map((point, i) => (
                 <li
                   key={i}
-                  className="text-blue-800 dark:text-blue-200 text-sm"
+                  className="text-blue-800 text-sm"
                 >
                   {point}
                 </li>
@@ -684,14 +688,14 @@ export default function TokenizedAnswerCard({
 
         {/* Rotation Complete Feedback */}
         {rotationComplete && !isCompleted && hasMoreRotations && (
-          <div className="mb-6 p-4 bg-blue-50 dark:bg-blue-900/20 rounded-lg border border-blue-200 dark:border-blue-800">
+          <div className="mb-6 p-4 bg-blue-50 rounded-lg border border-blue-200">
             <div className="flex items-center gap-2">
-              <RefreshCw className="w-6 h-6 text-blue-600 dark:text-blue-400" />
-              <span className="font-semibold text-blue-900 dark:text-blue-100">
+              <RefreshCw className="w-6 h-6 text-blue-600" />
+              <span className="font-semibold text-blue-900">
                 Round {currentRotation + 1} Complete! Ready for the next round.
               </span>
             </div>
-            <p className="text-sm text-blue-700 dark:text-blue-300 mt-2">
+            <p className="text-sm text-blue-700 mt-2">
               Now the text you just learned will be shown, and you&apos;ll fill
               in the parts that were visible before.
             </p>
@@ -700,19 +704,19 @@ export default function TokenizedAnswerCard({
 
         {/* Full Completion Feedback */}
         {isCompleted && (
-          <div className="mb-6 p-4 bg-green-50 dark:bg-green-900/20 rounded-lg border border-green-200 dark:border-green-800">
+          <div className="mb-6 p-4 bg-green-50 rounded-lg border border-green-200">
             <div className="flex items-center gap-2">
-              <CheckCircle className="w-6 h-6 text-green-600 dark:text-green-400" />
-              <span className="font-semibold text-green-900 dark:text-green-100">
+              <CheckCircle className="w-6 h-6 text-green-600" />
+              <span className="font-semibold text-green-900">
                 Complete Mastery! All {rotationGroups.length} rounds finished.
               </span>
             </div>
-            <p className="text-sm text-green-700 dark:text-green-300 mt-2">
+            <p className="text-sm text-green-700 mt-2">
               Total: {totalScore + correctCount}/
               {totalBlanksAnswered + currentBlanks} blanks correct
             </p>
             {level < 4 && (
-              <p className="text-sm text-green-700 dark:text-green-300 mt-1">
+              <p className="text-sm text-green-700 mt-1">
                 Ready to try Level {level + 1}?
               </p>
             )}
@@ -720,7 +724,7 @@ export default function TokenizedAnswerCard({
         )}
 
         {/* Action Buttons */}
-        <div className="flex flex-wrap gap-3 pt-6 border-t border-slate-200 dark:border-slate-700">
+        <div className="flex flex-wrap gap-3 pt-6 border-t border-slate-200">
           {mode !== "review" && !allChecked && checkedCount < currentBlanks && (
             <Button
               onClick={handleCheckAllRemaining}

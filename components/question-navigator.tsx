@@ -4,6 +4,9 @@ import { useState, useEffect } from "react";
 import { cn } from "@/lib/utils";
 import { ChevronUp, ChevronDown } from "lucide-react";
 
+const FOCUS_RING =
+  "outline-none focus-visible:ring-[3px] focus-visible:ring-ring/50 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-900";
+
 interface UserAnswer {
   questionId: string;
   selectedOptionId: string;
@@ -94,7 +97,7 @@ export default function QuestionNavigator({
             onTouchStart={(e) => {
               e.stopPropagation();
             }}
-            className="flex items-center gap-1 text-sm text-blue-400 hover:text-blue-300 transition-colors"
+            className={`flex items-center gap-1 text-sm text-blue-400 hover:text-blue-300 transition-colors rounded ${FOCUS_RING}`}
             style={{ touchAction: "manipulation" }}
           >
             {isExpanded ? (
@@ -151,6 +154,7 @@ export default function QuestionNavigator({
                         "relative w-8 h-8 sm:w-7 sm:h-7 rounded text-xs font-medium transition-all duration-200",
                         "flex items-center justify-center",
                         "active:scale-95",
+                        FOCUS_RING,
                         isCurrent && "ring-2 ring-blue-500",
                         answered &&
                           status === true &&

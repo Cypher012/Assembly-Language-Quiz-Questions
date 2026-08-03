@@ -38,10 +38,10 @@ export default function QuestionCard({
 
   return (
     <div className="mt-8 animate-in fade-in slide-in-from-bottom-2 duration-500">
-      <div className="bg-white dark:bg-slate-800 rounded-xl shadow-xl p-6 sm:p-8 border border-slate-200 dark:border-slate-700">
+      <div className="bg-white rounded-2xl shadow-xl p-6 sm:p-8 border border-slate-200">
         {/* Question Text */}
         <div className="mb-8">
-          <div className="prose prose-sm dark:prose-invert max-w-none text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white text-balance">
+          <div className="prose prose-sm max-w-none text-2xl sm:text-3xl font-bold text-slate-900 text-balance">
             <ReactMarkdown
               rehypePlugins={[rehypeHighlight]}
               components={{
@@ -64,7 +64,7 @@ export default function QuestionCard({
             </ReactMarkdown>
           </div>
           {question.chapter && (
-            <p className="text-sm text-slate-500 dark:text-slate-400 mt-2">
+            <p className="text-sm text-slate-500 mt-2">
               {question.chapter}
             </p>
           )}
@@ -132,7 +132,7 @@ export default function QuestionCard({
         )}
 
         {/* Action Buttons */}
-        <div className="flex gap-3 pt-6 border-t border-slate-200 dark:border-slate-700">
+        <div className="flex gap-3 pt-6 border-t border-slate-200">
           {!isRevealed ? (
             <Button
               onClick={onConfirmAnswer}

@@ -5,6 +5,10 @@ import type { Question, QuestionV2, ShuffledQuestion } from "@/lib/quiz-types";
 import { isQuestionV2, isShuffledQuestion } from "@/lib/quiz-types";
 import { Button } from "@/components/ui/button";
 import { ChevronDown } from "lucide-react";
+import { cn } from "@/lib/utils";
+
+const FOCUS_RING =
+  "outline-none focus-visible:ring-[3px] focus-visible:ring-ring/50 focus-visible:ring-offset-2 focus-visible:ring-offset-white";
 
 interface UserAnswer {
   questionId: string;
@@ -34,7 +38,7 @@ export default function ResultSummary({
   onBackToCourses,
 }: ResultSummaryProps) {
   const [expandedId, setExpandedId] = useState<string | null>(null);
-  const percentage = Math.round((score / total) * 100);
+  const percentage = total > 0 ? Math.round((score / total) * 100) : 0;
   const passed = percentage >= 70;
 
   const getPerformanceMessage = () => {
@@ -50,17 +54,15 @@ export default function ResultSummary({
     <div className="min-h-screen bg-gradient-to-b from-slate-900 via-slate-800 to-slate-900 p-4 sm:p-6 lg:p-8">
       <div className="max-w-3xl mx-auto">
         {/* Summary Card */}
-        <div className="bg-white dark:bg-slate-800 rounded-xl shadow-xl p-8 border border-slate-200 dark:border-slate-700 mb-8 animate-in fade-in duration-500">
+        <div className="bg-white rounded-2xl shadow-xl p-8 border border-slate-200 mb-8 animate-in fade-in duration-500">
           <div className="text-center mb-8">
-            <h1 className="text-4xl sm:text-5xl font-bold text-slate-900 dark:text-white mb-2">
+            <h1 className="text-4xl sm:text-5xl font-bold text-slate-900 mb-2">
               {isExamMode ? "Practice Exam Complete!" : "Quiz Complete!"}
             </h1>
             <p
               className={cn(
                 "text-2xl font-semibold",
-                passed
-                  ? "text-green-600 dark:text-green-400"
-                  : "text-orange-600 dark:text-orange-400",
+                passed ? "text-green-600" : "text-orange-600",
               )}
             >
               {getPerformanceMessage()}
@@ -68,29 +70,21 @@ export default function ResultSummary({
           </div>
 
           <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 mb-8">
-            <div className="bg-slate-50 dark:bg-slate-700 rounded-lg p-4 text-center">
-              <p className="text-sm text-slate-600 dark:text-slate-400 mb-1">
-                Score
-              </p>
-              <p className="text-3xl font-bold text-slate-900 dark:text-white">
+            <div className="bg-slate-50 rounded-lg p-4 text-center">
+              <p className="text-sm text-slate-600 mb-1">Score</p>
+              <p className="text-3xl font-bold text-slate-900">
                 {score}/{total}
               </p>
             </div>
-            <div className="bg-slate-50 dark:bg-slate-700 rounded-lg p-4 text-center">
-              <p className="text-sm text-slate-600 dark:text-slate-400 mb-1">
-                Percentage
-              </p>
-              <p className="text-3xl font-bold text-slate-900 dark:text-white">
+            <div className="bg-slate-50 rounded-lg p-4 text-center">
+              <p className="text-sm text-slate-600 mb-1">Percentage</p>
+              <p className="text-3xl font-bold text-slate-900">
                 {percentage}%
               </p>
             </div>
-            <div className="bg-slate-50 dark:bg-slate-700 rounded-lg p-4 text-center col-span-2 sm:col-span-1">
-              <p className="text-sm text-slate-600 dark:text-slate-400 mb-1">
-                Correct
-              </p>
-              <p className="text-3xl font-bold text-green-600 dark:text-green-400">
-                {score}
-              </p>
+            <div className="bg-slate-50 rounded-lg p-4 text-center col-span-2 sm:col-span-1">
+              <p className="text-sm text-slate-600 mb-1">Correct</p>
+              <p className="text-3xl font-bold text-green-600">{score}</p>
             </div>
           </div>
 
@@ -118,7 +112,7 @@ export default function ResultSummary({
                 variant="outline"
                 className="flex-1 h-11 text-base font-semibold"
               >
-                Change Course
+                Back to Courses
               </Button>
             )}
           </div>
@@ -165,7 +159,7 @@ export default function ResultSummary({
             return (
               <div
                 key={answer.questionId}
-                className="bg-white dark:bg-slate-800 rounded-lg border border-slate-200 dark:border-slate-700 overflow-hidden transition-all duration-200"
+                className="bg-white rounded-lg border border-slate-200 overflow-hidden transition-all duration-200"
               >
                 <button
                   onClick={() =>
@@ -175,32 +169,35 @@ export default function ResultSummary({
                         : answer.questionId,
                     )
                   }
-                  className="w-full p-4 text-left hover:bg-slate-50 dark:hover:bg-slate-700/50 transition-colors"
+                  className={cn(
+                    "w-full p-4 text-left hover:bg-slate-50 transition-colors",
+                    FOCUS_RING,
+                  )}
                 >
                   <div className="flex items-start justify-between gap-4">
                     <div className="flex-1">
                       <div className="flex items-center gap-2 mb-2">
-                        <span className="text-sm font-semibold text-slate-500 dark:text-slate-400">
+                        <span className="text-sm font-semibold text-slate-500">
                           Q{index + 1}
                         </span>
                         <span
                           className={cn(
                             "inline-flex items-center px-2 py-1 rounded-full text-xs font-semibold",
                             answer.isCorrect
-                              ? "bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400"
-                              : "bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-400",
+                              ? "bg-green-100 text-green-700"
+                              : "bg-red-100 text-red-700",
                           )}
                         >
                           {answer.isCorrect ? "✓ Correct" : "✗ Wrong"}
                         </span>
                       </div>
-                      <p className="text-slate-900 dark:text-white font-medium">
+                      <p className="text-slate-900 font-medium">
                         {question.text}
                       </p>
                     </div>
                     <ChevronDown
                       className={cn(
-                        "w-5 h-5 text-slate-400 transition-transform flex-shrink-0",
+                        "w-5 h-5 text-slate-500 transition-transform flex-shrink-0",
                         expandedId === answer.questionId && "rotate-180",
                       )}
                     />
@@ -208,17 +205,17 @@ export default function ResultSummary({
                 </button>
 
                 {expandedId === answer.questionId && (
-                  <div className="border-t border-slate-200 dark:border-slate-700 p-4 bg-slate-50 dark:bg-slate-700/30 space-y-3">
+                  <div className="border-t border-slate-200 p-4 bg-slate-50 space-y-3">
                     <div>
-                      <p className="text-xs font-semibold text-slate-600 dark:text-slate-400 uppercase mb-2">
+                      <p className="text-xs font-semibold text-slate-600 uppercase mb-2">
                         Your Answer
                       </p>
                       <p
                         className={cn(
                           "text-sm p-3 rounded border-2",
                           answer.isCorrect
-                            ? "bg-green-50 dark:bg-green-900/20 border-green-300 dark:border-green-700 text-green-900 dark:text-green-100"
-                            : "bg-red-50 dark:bg-red-900/20 border-red-300 dark:border-red-700 text-red-900 dark:text-red-100",
+                            ? "bg-green-50 border-green-300 text-green-900"
+                            : "bg-red-50 border-red-300 text-red-900",
                         )}
                       >
                         {selectedOptionText}
@@ -227,10 +224,10 @@ export default function ResultSummary({
 
                     {!answer.isCorrect && (
                       <div>
-                        <p className="text-xs font-semibold text-slate-600 dark:text-slate-400 uppercase mb-2">
+                        <p className="text-xs font-semibold text-slate-600 uppercase mb-2">
                           Correct Answer
                         </p>
-                        <p className="text-sm p-3 rounded border-2 bg-green-50 dark:bg-green-900/20 border-green-300 dark:border-green-700 text-green-900 dark:text-green-100">
+                        <p className="text-sm p-3 rounded border-2 bg-green-50 border-green-300 text-green-900">
                           {correctOptionText}
                         </p>
                       </div>
@@ -238,10 +235,10 @@ export default function ResultSummary({
 
                     {question.explanation && (
                       <div>
-                        <p className="text-xs font-semibold text-slate-600 dark:text-slate-400 uppercase mb-2">
+                        <p className="text-xs font-semibold text-slate-600 uppercase mb-2">
                           Explanation
                         </p>
-                        <p className="text-sm text-slate-700 dark:text-slate-300">
+                        <p className="text-sm text-slate-700">
                           {question.explanation}
                         </p>
                       </div>
@@ -256,5 +253,3 @@ export default function ResultSummary({
     </div>
   );
 }
-
-import { cn } from "@/lib/utils";
