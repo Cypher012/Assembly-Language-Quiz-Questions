@@ -8,7 +8,7 @@ import {
   type ExamConfig,
   isQuestionV2,
 } from "@/lib/quiz-types";
-import { shuffleQuestions } from "@/lib/utils/question-shuffle";
+import { shuffleQuestions, orderQuestions } from "@/lib/utils/question-shuffle";
 import { shuffleArray } from "@/lib/utils/shuffle";
 import {
   getEnabledCourses,
@@ -34,6 +34,18 @@ interface UserAnswer {
   isCorrect: boolean;
 }
 
+// Orders a filtered question set for display, respecting the shuffle
+// choice made in the "Shuffle the questions?" prompt before a topic starts.
+function processQuestions(
+  filtered: (Question | QuestionV2)[],
+  shuffle: boolean,
+): (Question | QuestionV2 | ShuffledQuestion)[] {
+  if (filtered.every(isQuestionV2)) {
+    return orderQuestions(filtered as QuestionV2[], shuffle);
+  }
+  return shuffle ? shuffleArray(filtered) : filtered;
+}
+
 export default function QuizContainer() {
   // Course and chapter selection state
   const [selectedCourse, setSelectedCourse] = useState<Course | null>(null);
@@ -44,6 +56,7 @@ export default function QuizContainer() {
     null,
   );
   const [enabledCourses, setEnabledCourses] = useState<Course[]>([]);
+  const [shufflePreference, setShufflePreference] = useState(true);
 
   // Quiz state
   const [questions, setQuestions] = useState<
@@ -90,35 +103,28 @@ export default function QuizContainer() {
     }
   };
 
-  const handleSelectChapter = (chapter: string | null) => {
+  const handleSelectChapter = (chapter: string | null, shuffle: boolean) => {
     if (!selectedCourse) return;
 
     setSelectedChapter(chapter);
+    setShufflePreference(shuffle);
     const courseQuestions = selectedCourse.getQuestions();
     const filtered = filterByChapter(courseQuestions, chapter);
 
-    // Check if all questions are V2 format, if so shuffle them
-    const processedQuestions = filtered.every(isQuestionV2)
-      ? shuffleQuestions(filtered as QuestionV2[])
-      : shuffleArray(filtered);
-
-    setQuestions(processedQuestions);
+    setQuestions(processQuestions(filtered, shuffle));
     setIsReady(true);
   };
 
-  const handleSelectCustomChapters = (chapters: string[]) => {
+  const handleSelectCustomChapters = (chapters: string[], shuffle: boolean) => {
     if (!selectedCourse) return;
 
     setSelectedChapter(null);
     setSelectedChapters(chapters);
+    setShufflePreference(shuffle);
     const courseQuestions = selectedCourse.getQuestions();
     const filtered = filterByChapters(courseQuestions, chapters);
 
-    const processedQuestions = filtered.every(isQuestionV2)
-      ? shuffleQuestions(filtered as QuestionV2[])
-      : shuffleArray(filtered);
-
-    setQuestions(processedQuestions);
+    setQuestions(processQuestions(filtered, shuffle));
     setIsReady(true);
   };
 
@@ -276,12 +282,8 @@ export default function QuizContainer() {
       ? filterByChapters(courseQuestions, selectedChapters)
       : filterByChapter(courseQuestions, selectedChapter ?? null);
 
-    // Check if all questions are V2 format, if so shuffle them (new shuffle each restart)
-    const processedQuestions = filtered.every(isQuestionV2)
-      ? shuffleQuestions(filtered as QuestionV2[])
-      : shuffleArray(filtered);
-
-    setQuestions(processedQuestions);
+    // Reuses the shuffle preference chosen when this topic was started
+    setQuestions(processQuestions(filtered, shufflePreference));
     setCurrentIndex(0);
     setSelectedOption(null);
     setState("idle");

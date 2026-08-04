@@ -5,6 +5,7 @@ import { Course, filterByChapter } from "@/lib/courses";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Button } from "@/components/ui/button";
 import PracticeExamModal from "./practice-exam-modal";
+import ShufflePromptModal from "./shuffle-prompt-modal";
 import type { ExamConfig } from "@/lib/quiz-types";
 import {
   ChevronLeft,
@@ -19,11 +20,15 @@ const FOCUS_RING =
 
 interface ChapterSelectProps {
   course: Course;
-  onSelectChapter: (chapter: string | null) => void;
-  onSelectCustomChapters: (chapters: string[]) => void;
+  onSelectChapter: (chapter: string | null, shuffle: boolean) => void;
+  onSelectCustomChapters: (chapters: string[], shuffle: boolean) => void;
   onStartExam: (config: ExamConfig) => void;
   onBackToCourses: () => void;
 }
+
+type PendingSelection =
+  | { kind: "chapter"; chapterId: string | null }
+  | { kind: "custom"; chapters: string[] };
 
 export default function ChapterSelect({
   course,
@@ -35,6 +40,8 @@ export default function ChapterSelect({
   const [isCustomMode, setIsCustomMode] = useState(false);
   const [selectedChapters, setSelectedChapters] = useState<string[]>([]);
   const [isExamModalOpen, setIsExamModalOpen] = useState(false);
+  const [pendingSelection, setPendingSelection] =
+    useState<PendingSelection | null>(null);
 
   const allChapterIds = course.chapters.map((c) => c.id);
 
@@ -70,15 +77,30 @@ export default function ChapterSelect({
     }
   };
 
+  const requestStart = (selection: PendingSelection) => {
+    setPendingSelection(selection);
+  };
+
+  const handleShuffleChoice = (shuffle: boolean) => {
+    const selection = pendingSelection;
+    setPendingSelection(null);
+    if (!selection) return;
+    if (selection.kind === "chapter") {
+      onSelectChapter(selection.chapterId, shuffle);
+    } else {
+      onSelectCustomChapters(selection.chapters, shuffle);
+    }
+  };
+
   const handleStartCustomQuiz = () => {
     if (selectedChapters.length === 0) return;
 
     if (selectedChapters.length === allChapterIds.length) {
-      onSelectChapter(null);
+      requestStart({ kind: "chapter", chapterId: null });
     } else if (selectedChapters.length === 1) {
-      onSelectChapter(selectedChapters[0]);
+      requestStart({ kind: "chapter", chapterId: selectedChapters[0] });
     } else {
-      onSelectCustomChapters(selectedChapters);
+      requestStart({ kind: "custom", chapters: selectedChapters });
     }
   };
 
@@ -116,7 +138,10 @@ export default function ChapterSelect({
             return (
               <button
                 key={chapter.id}
-                onClick={() => !isEmpty && onSelectChapter(chapter.id)}
+                onClick={() =>
+                  !isEmpty &&
+                  requestStart({ kind: "chapter", chapterId: chapter.id })
+                }
                 disabled={isEmpty}
                 className={`paper-surface rounded-md shadow-[0_10px_24px_-10px_rgba(15,20,17,0.55)] hover:shadow-[0_16px_32px_-10px_rgba(15,20,17,0.6)] hover:-translate-y-0.5 transition-all duration-200 text-left group pl-14 pr-5 py-5 sm:pl-16 sm:pr-6 sm:py-6 disabled:opacity-60 disabled:hover:shadow-[0_10px_24px_-10px_rgba(15,20,17,0.55)] disabled:hover:translate-y-0 disabled:cursor-not-allowed ${FOCUS_RING}`}
               >
@@ -146,7 +171,7 @@ export default function ChapterSelect({
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           {/* All Chapters option */}
           <button
-            onClick={() => onSelectChapter(null)}
+            onClick={() => requestStart({ kind: "chapter", chapterId: null })}
             className={`paper-surface rounded-md shadow-[0_10px_24px_-10px_rgba(15,20,17,0.55)] hover:shadow-[0_16px_32px_-10px_rgba(15,20,17,0.6)] hover:-translate-y-0.5 transition-all duration-200 text-left group pl-14 pr-5 py-5 sm:pl-16 sm:pr-6 sm:py-6 ${FOCUS_RING}`}
           >
             <div className="flex items-center justify-between gap-3">
@@ -272,6 +297,14 @@ export default function ChapterSelect({
         onOpenChange={setIsExamModalOpen}
         course={course}
         onStartExam={onStartExam}
+      />
+
+      <ShufflePromptModal
+        open={pendingSelection !== null}
+        onOpenChange={(open) => {
+          if (!open) setPendingSelection(null);
+        }}
+        onChoose={handleShuffleChoice}
       />
     </div>
   );

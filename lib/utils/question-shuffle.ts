@@ -42,3 +42,18 @@ export function shuffleQuestion(question: QuestionV2): ShuffledQuestion {
 export function shuffleQuestions(questions: QuestionV2[]): ShuffledQuestion[] {
   return shuffleArray(questions).map(shuffleQuestion);
 }
+
+/**
+ * Converts an array of questions to display form. Answer options are always
+ * shuffled per question -- that's what stops position memorization and isn't
+ * optional. `shuffle` only controls whether the *question order* is also
+ * randomized, or left in the order they were written -- the toggle behind
+ * the "Shuffle the questions?" prompt shown before a topic starts.
+ */
+export function orderQuestions(
+  questions: QuestionV2[],
+  shuffle: boolean,
+): ShuffledQuestion[] {
+  const ordered = shuffle ? shuffleArray(questions) : questions;
+  return ordered.map(shuffleQuestion);
+}
