@@ -2,6 +2,7 @@ import { Course } from "../../courses";
 import { QuestionV2 } from "../../quiz-types";
 import csc304Chapter1Questions from "./csc304_ch1_data_and_data_processing";
 import csc304Chapter2Questions from "./csc304_ch2_file_manipulation_sorting_searching";
+import csc304Chapter3Questions from "./csc304_ch3_merging_file_maintenance_data_structures";
 
 export const csc304BusinessProgrammingCourse: Course = {
   id: "csc304-business-commercial-programming",
@@ -22,9 +23,19 @@ export const csc304BusinessProgrammingCourse: Course = {
       description:
         "Files and file manipulation techniques, linear and binary search, merging, and the Merge-Sort, Bubble-Sort, Selection-Sort, and Insertion-Sort algorithms.",
     },
+    {
+      id: "Chapter 3",
+      label: "Merging, File Maintenance & Data Structures",
+      description:
+        "Concatenation and sorted merging, file/record/field fundamentals, file organisation methods, file maintenance and OS-level operations, the File Management System, and core data structures.",
+    },
   ],
   getQuestions: (): QuestionV2[] => {
-    return [...csc304Chapter1Questions, ...csc304Chapter2Questions];
+    return [
+      ...csc304Chapter1Questions,
+      ...csc304Chapter2Questions,
+      ...csc304Chapter3Questions,
+    ];
   },
 };
 
