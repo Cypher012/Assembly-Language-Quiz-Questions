@@ -38,35 +38,18 @@ export default function QuestionCard({
 
   return (
     <div className="mt-8 animate-in fade-in slide-in-from-bottom-2 duration-500">
-      <div className="bg-white rounded-2xl shadow-xl p-6 sm:p-8 border border-slate-200">
+      <div className="paper-surface rounded-md shadow-2xl p-6 sm:p-8 pl-16 sm:pl-20 border-2 border-board">
         {/* Question Text */}
         <div className="mb-8">
-          <div className="prose prose-sm max-w-none text-2xl sm:text-3xl font-bold text-slate-900 text-balance">
-            <ReactMarkdown
-              rehypePlugins={[rehypeHighlight]}
-              components={{
-                code: ({ node, className, children, ...props }) => (
-                  <code
-                    className={`${className} text-xs sm:text-sm`}
-                    {...props}
-                  >
-                    {children}
-                  </code>
-                ),
-                pre: ({ node, children, ...props }) => (
-                  <pre className="text-xs sm:text-sm" {...props}>
-                    {children}
-                  </pre>
-                ),
-              }}
-            >
+          <div className="max-w-none text-xl sm:text-2xl font-bold text-paper-ink text-balance [&_code]:text-xs [&_code]:sm:text-sm [&_pre]:text-xs [&_pre]:sm:text-sm [&_pre]:my-3 [&_p]:mb-2">
+            <ReactMarkdown rehypePlugins={[rehypeHighlight]}>
               {question.text}
             </ReactMarkdown>
           </div>
           {question.chapter && (
-            <p className="text-sm text-slate-500 mt-2">
+            <span className="inline-block mt-3 text-xs font-bold text-rule-red">
               {question.chapter}
-            </p>
+            </span>
           )}
         </div>
 
@@ -132,19 +115,19 @@ export default function QuestionCard({
         )}
 
         {/* Action Buttons */}
-        <div className="flex gap-3 pt-6 border-t border-slate-200">
+        <div className="flex gap-3 pt-6 border-t border-paper-line">
           {!isRevealed ? (
             <Button
               onClick={onConfirmAnswer}
               disabled={!selectedOption}
-              className="flex-1 h-10 sm:h-11 text-base font-semibold transition-all duration-200"
+              className="flex-1 h-10 sm:h-11 text-base font-bold transition-all duration-200"
             >
               Confirm Answer
             </Button>
           ) : (
             <Button
               onClick={onNextQuestion}
-              className="flex-1 h-10 sm:h-11 text-base font-semibold transition-all duration-200"
+              className="flex-1 h-10 sm:h-11 text-base font-bold transition-all duration-200"
             >
               {isLastQuestion ? "See Results" : "Next Question"}
             </Button>

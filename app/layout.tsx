@@ -1,11 +1,15 @@
 import type React from "react";
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Inter, Permanent_Marker } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
- 
-const _geist = Geist({ subsets: ["latin"] });
-const _geistMono = Geist_Mono({ subsets: ["latin"] });
+
+const body = Inter({ subsets: ["latin"], variable: "--font-body" });
+const chalk = Permanent_Marker({
+  subsets: ["latin"],
+  weight: "400",
+  variable: "--font-chalk",
+});
 
 export const metadata: Metadata = {
 
@@ -33,6 +37,26 @@ export const metadata: Metadata = {
   },
 };
 
+const DIRECTION_CONTRACT = `
+THESIS: The classroom is the interface -- chalkboard for structure and time,
+exercise-book paper for where you answer -- refusing the generic rounded-card
+SaaS quiz dashboard every AI-built app defaults to.
+OWN-WORLD: Chalkboard slate-green (#1F2E28) chrome, chalk-white hand-lettered
+display type; ruled exercise-book cream (#F6F1E3) content surfaces, workhorse
+body face; chalk-yellow (#E3B431) primary, chalk-coral (#CF6349) wrong,
+chalk-sage (#5C9E79) correct. Board = chrome, paper = content, never mixed.
+STORY: A student opens it between classes, instantly reads "class is in
+session," picks a course, and drills questions on paper-textured cards under
+a chalk timer -- feels like the real classroom, not corporate ed-tech.
+FIRST VIEWPORT: Course-select: chalkboard header band (course code
+hand-chalked, underline stroke) above a grid of exercise-book-paper course
+cards, ruled like jotter pages, hand-titled.
+FORM: Chalkboard & Exercise Book -- candidate 7/7, Nigerian lecture-hall
+material list, seed key 5d79a384.
+FINISH: unreviewed and undocumented is unfinished; this build ends with the
+finish review, the verdict, and DESIGN.md.
+`;
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -40,7 +64,16 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`font-sans antialiased`}>
+      <body
+        className={`${body.variable} ${chalk.variable} font-sans antialiased`}
+      >
+        <div
+          style={{ display: "none" }}
+          suppressHydrationWarning
+          dangerouslySetInnerHTML={{
+            __html: `<!--${DIRECTION_CONTRACT}-->`,
+          }}
+        />
         {children}
         <Analytics />
       </body>

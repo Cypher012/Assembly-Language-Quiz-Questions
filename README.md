@@ -14,7 +14,6 @@ A modern, interactive quiz application built for university students to study an
 - **Question navigator** — jump to any previously answered question from the bottom panel
 - **Course visibility settings** — enable or disable courses from the settings panel (persisted in localStorage)
 - **Dark mode** — dark-first UI with light mode support via `next-themes`
-- **Tokenized quiz mode** — progressive mastery system for definition-heavy courses (CSC307)
 
 ---
 
@@ -26,7 +25,6 @@ A modern, interactive quiz application built for university students to study an
 | CSC311  | Introduction to Information Systems | 5    |
 | CSC221  | Computer Appreciation           | 7        |
 | CSC315  | Data Structures and Algorithms  | 2        |
-| CSC307  | Numerical Computations I        | 1 (tokenized mastery mode) |
 
 ---
 
@@ -59,8 +57,7 @@ interactive-quiz-application/
 │   ├── result-summary.tsx      # End-of-quiz results
 │   ├── progress-header.tsx     # Score + progress bar
 │   ├── question-navigator.tsx  # Bottom question jump panel
-│   ├── course-settings.tsx     # Enable/disable courses
-│   └── csc307-quiz-container.tsx # Tokenized mastery quiz (CSC307)
+│   └── course-settings.tsx     # Enable/disable courses
 ├── lib/
 │   ├── courses.ts              # Course registry + toggle helpers
 │   ├── quiz-types.ts           # QuestionV2, ShuffledQuestion types
@@ -70,8 +67,7 @@ interactive-quiz-application/
 │       ├── cpe301-assembly/    # CPE301 question bank
 │       ├── csc311-info-systems/# CSC311 question bank
 │       ├── csc221-computer-appreciation/ # CSC221 question bank (ch1–7)
-│       ├── csc315-dsa/             # CSC315 question bank (Lecturers 1, 3)
-│       └── csc307-numerical-computation/ # CSC307 tokenized question bank
+│       └── csc315-dsa/             # CSC315 question bank (Lecturers 1, 3)
 ```
 
 ---
@@ -133,4 +129,4 @@ Each question follows the `QuestionV2` shape:
 
 ## License
 
-Private — for personal academic use.
+Public — for personal academic use.

@@ -14,22 +14,26 @@ export default function ExamTimer({ secondsLeft }: ExamTimerProps) {
 
   return (
     <div
-      className={`flex flex-col items-end bg-slate-700/50 backdrop-blur rounded-lg p-3 sm:p-4 border ${
+      className={`flex flex-col items-end board-surface rounded-md px-3 py-2 sm:px-4 sm:py-3 border-2 ${
         isRed
-          ? "border-red-500 animate-pulse"
+          ? "border-chalk-coral animate-pulse"
           : isAmber
-            ? "border-amber-500"
-            : "border-slate-600"
+            ? "border-chalk-yellow"
+            : "border-board-line"
       }`}
     >
       <p
-        className={`text-xs mb-1 ${isRed ? "text-red-400" : isAmber ? "text-amber-400" : "text-slate-300"}`}
+        className={`text-[10px] uppercase tracking-wide mb-0.5 ${isRed ? "text-chalk-coral" : isAmber ? "text-chalk-yellow" : "text-board-ink-muted"}`}
       >
         Time Left
       </p>
       <p
-        className={`text-2xl sm:text-3xl font-bold font-mono ${
-          isRed ? "text-red-400" : isAmber ? "text-amber-400" : "text-white"
+        className={`text-2xl sm:text-3xl font-bold font-mono tabular-nums ${
+          isRed
+            ? "text-chalk-coral"
+            : isAmber
+              ? "text-chalk-yellow"
+              : "text-board-ink"
         }`}
       >
         {display}

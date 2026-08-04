@@ -4,7 +4,7 @@ import { Course } from "@/lib/courses";
 import { ChevronRight } from "lucide-react";
 
 const FOCUS_RING =
-  "outline-none focus-visible:ring-[3px] focus-visible:ring-ring/50 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-900";
+  "outline-none focus-visible:ring-[3px] focus-visible:ring-chalk-yellow/70 focus-visible:ring-offset-2 focus-visible:ring-offset-board";
 
 interface CourseSelectProps {
   courses: Course[];
@@ -16,39 +16,53 @@ export default function CourseSelect({
   onSelectCourse,
 }: CourseSelectProps) {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-slate-900 via-slate-800 to-slate-900 p-4 sm:p-6 lg:p-8">
+    <div className="min-h-screen board-surface p-4 sm:p-6 lg:p-8">
       <div className="max-w-7xl mx-auto flex flex-col min-h-[calc(100vh-2rem)] sm:min-h-[calc(100vh-3rem)] lg:min-h-[calc(100vh-4rem)]">
-        <div className="text-center mb-8">
-          <h1 className="text-3xl sm:text-4xl font-bold text-white mb-4">
+        <div className="flex items-center gap-2 mb-8 sm:mb-10">
+          <span className="font-display text-xl text-chalk-yellow -rotate-2 inline-block">
+            QuizSpark
+          </span>
+          <span className="text-board-ink-muted text-sm">
+            &mdash; practice, together
+          </span>
+        </div>
+
+        <div className="text-center mb-10 sm:mb-12">
+          <h1 className="font-display text-4xl sm:text-5xl text-board-ink chalk-underline mb-4">
             Select Your Course
           </h1>
-          <p className="text-slate-400">
-            Choose a course to start practicing with interactive quizzes.
+          <p className="text-board-ink-muted max-w-md mx-auto">
+            Pick a course and start practicing with real questions from your
+            own lecture material.
           </p>
         </div>
 
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {courses.map((course) => (
+        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          {courses.map((course, i) => (
             <button
               key={course.id}
               onClick={() => onSelectCourse(course.id)}
-              className={`p-6 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-200 hover:scale-[1.02] text-left group ${FOCUS_RING}`}
+              className={`paper-surface rounded-md shadow-[0_10px_24px_-10px_rgba(15,20,17,0.55)] hover:shadow-[0_16px_32px_-10px_rgba(15,20,17,0.6)] hover:-translate-y-0.5 transition-all duration-200 text-left group pl-14 pr-5 py-5 sm:pl-16 sm:pr-6 sm:py-6 ${FOCUS_RING}`}
             >
               <div className="flex flex-col h-full">
                 <div className="flex items-start justify-between mb-3">
-                  <span className="px-3 py-1 text-xs font-medium bg-blue-100 text-blue-700 rounded-full">
+                  <span
+                    className={`inline-flex items-center px-2.5 py-1 text-[11px] font-bold tracking-wide bg-chalk-yellow text-chalk-yellow-ink rounded-sm ${
+                      i % 2 === 0 ? "-rotate-1" : "rotate-1"
+                    }`}
+                  >
                     {course.code}
                   </span>
-                  <ChevronRight className="w-5 h-5 text-slate-500 group-hover:text-blue-500 transition-colors flex-shrink-0" />
+                  <ChevronRight className="w-5 h-5 text-paper-ink-muted group-hover:text-rule-red group-hover:translate-x-0.5 transition-all flex-shrink-0" />
                 </div>
-                <h2 className="text-xl font-semibold text-slate-900 group-hover:text-blue-600 transition-colors mb-2">
+                <h2 className="text-lg font-bold text-paper-ink mb-2 leading-snug">
                   {course.name}
                 </h2>
-                <p className="text-slate-500 text-sm flex-grow line-clamp-3">
+                <p className="text-paper-ink-muted text-sm flex-grow line-clamp-3">
                   {course.description}
                 </p>
-                <div className="mt-4 pt-4 border-t border-slate-200">
-                  <span className="text-xs text-slate-500">
+                <div className="mt-4 pt-3 border-t border-paper-line">
+                  <span className="text-xs text-paper-ink-muted font-medium">
                     {course.chapters.length}{" "}
                     {course.chapters.length === 1 ? "chapter" : "chapters"}{" "}
                     available
@@ -59,7 +73,7 @@ export default function CourseSelect({
           ))}
         </div>
 
-        <p className="text-center mt-auto pt-8 text-slate-400 ">
+        <p className="text-center mt-auto pt-10 text-board-ink-muted text-sm">
           Crafted by Cipher 💻 ❤️
         </p>
       </div>

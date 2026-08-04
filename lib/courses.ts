@@ -3,7 +3,6 @@ import { Question, QuestionV2 } from "./quiz-types";
 // Import course data
 // import { cpe301AssemblyCourse } from "./courses/cpe301-assembly";
 // import { csc311InfoSystemsCourse } from "./courses/csc311-info-systems";
-// import { csc307NumericalComputationCourse } from "./courses/csc307-numerical-computation";
 // import { csc221ComputerAppreciation } from "./courses/csc221-computer-appreciation";
 // import { csc315DSACourse } from "./courses/csc315-dsa";
 import { csc302OOPCourse } from "./courses/csc302-oop";
@@ -25,8 +24,6 @@ export interface Course {
   description: string;
   chapters: Chapter[];
   getQuestions: () => Question[] | QuestionV2[]; // Support both old and new formats
-  // Flag to indicate special quiz type (tokenized for CSC307)
-  quizType?: "standard" | "tokenized";
 }
 
 // ============================================
@@ -43,7 +40,6 @@ export const courses: Course[] = [
   // csc315DSACourse,
   // csc311InfoSystemsCourse,
   // csc221ComputerAppreciation,
-  // { ...csc307NumericalComputationCourse, quizType: "tokenized" }, // Uncomment to enable CSC307
 ];
 
 // All available courses (master list - for settings UI)
@@ -58,7 +54,6 @@ export const allCourses: Course[] = [
   // csc315DSACourse,
   // csc311InfoSystemsCourse,
   // csc221ComputerAppreciation,
-  // { ...csc307NumericalComputationCourse, quizType: "tokenized" },
 ];
 
 // Default enabled state for courses
@@ -72,7 +67,6 @@ export const defaultEnabledCourses: Record<string, boolean> = {
 //   "csc315-dsa": true,
 //   "csc311-info-systems": true,
 //   "csc221-computer-appreciation": true,
-//   "csc307-numerical-computation": false,
 // };
 
 // LocalStorage key for course visibility settings

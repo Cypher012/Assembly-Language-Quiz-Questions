@@ -8,7 +8,7 @@ import { ChevronDown } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const FOCUS_RING =
-  "outline-none focus-visible:ring-[3px] focus-visible:ring-ring/50 focus-visible:ring-offset-2 focus-visible:ring-offset-white";
+  "outline-none focus-visible:ring-[3px] focus-visible:ring-chalk-yellow/70 focus-visible:ring-offset-2 focus-visible:ring-offset-paper";
 
 interface UserAnswer {
   questionId: string;
@@ -51,18 +51,31 @@ export default function ResultSummary({
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-slate-900 via-slate-800 to-slate-900 p-4 sm:p-6 lg:p-8">
+    <div className="min-h-screen board-surface p-4 sm:p-6 lg:p-8">
       <div className="max-w-3xl mx-auto">
-        {/* Summary Card */}
-        <div className="bg-white rounded-2xl shadow-xl p-8 border border-slate-200 mb-8 animate-in fade-in duration-500">
-          <div className="text-center mb-8">
-            <h1 className="text-4xl sm:text-5xl font-bold text-slate-900 mb-2">
+        {/* Summary Card — the graded paper handed back */}
+        <div className="paper-surface rounded-md shadow-2xl p-6 sm:p-8 pl-16 sm:pl-20 border-2 border-board mb-8 animate-in fade-in duration-500 relative overflow-hidden">
+          <div
+            className={cn(
+              "absolute top-4 right-4 sm:top-6 sm:right-8 w-20 h-20 sm:w-24 sm:h-24 rounded-full border-4 flex flex-col items-center justify-center rotate-6",
+              passed
+                ? "border-chalk-sage text-chalk-sage"
+                : "border-chalk-coral text-chalk-coral",
+            )}
+          >
+            <span className="font-display text-2xl sm:text-3xl leading-none">
+              {percentage}%
+            </span>
+          </div>
+
+          <div className="mb-8 max-w-[calc(100%-6rem)] sm:max-w-[calc(100%-8rem)]">
+            <h1 className="font-display text-3xl sm:text-4xl text-paper-ink chalk-underline mb-3">
               {isExamMode ? "Practice Exam Complete!" : "Quiz Complete!"}
             </h1>
             <p
               className={cn(
-                "text-2xl font-semibold",
-                passed ? "text-green-600" : "text-orange-600",
+                "text-xl font-bold",
+                passed ? "text-chalk-sage-ink" : "text-chalk-coral-ink",
               )}
             >
               {getPerformanceMessage()}
@@ -70,21 +83,23 @@ export default function ResultSummary({
           </div>
 
           <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 mb-8">
-            <div className="bg-slate-50 rounded-lg p-4 text-center">
-              <p className="text-sm text-slate-600 mb-1">Score</p>
-              <p className="text-3xl font-bold text-slate-900">
+            <div className="bg-paper-2 rounded-md p-4 text-center border border-paper-line">
+              <p className="text-sm text-paper-ink-muted mb-1">Score</p>
+              <p className="text-3xl font-bold font-mono tabular-nums text-paper-ink">
                 {score}/{total}
               </p>
             </div>
-            <div className="bg-slate-50 rounded-lg p-4 text-center">
-              <p className="text-sm text-slate-600 mb-1">Percentage</p>
-              <p className="text-3xl font-bold text-slate-900">
+            <div className="bg-paper-2 rounded-md p-4 text-center border border-paper-line">
+              <p className="text-sm text-paper-ink-muted mb-1">Percentage</p>
+              <p className="text-3xl font-bold font-mono tabular-nums text-paper-ink">
                 {percentage}%
               </p>
             </div>
-            <div className="bg-slate-50 rounded-lg p-4 text-center col-span-2 sm:col-span-1">
-              <p className="text-sm text-slate-600 mb-1">Correct</p>
-              <p className="text-3xl font-bold text-green-600">{score}</p>
+            <div className="bg-paper-2 rounded-md p-4 text-center col-span-2 sm:col-span-1 border border-paper-line">
+              <p className="text-sm text-paper-ink-muted mb-1">Correct</p>
+              <p className="text-3xl font-bold font-mono tabular-nums text-chalk-sage-ink">
+                {score}
+              </p>
             </div>
           </div>
 
@@ -92,7 +107,7 @@ export default function ResultSummary({
             {!isExamMode && (
               <Button
                 onClick={onRestart}
-                className="flex-1 h-11 text-base font-semibold"
+                className="flex-1 h-11 text-base font-bold rounded-md"
               >
                 Restart Quiz
               </Button>
@@ -101,7 +116,7 @@ export default function ResultSummary({
               <Button
                 onClick={onBackToChapters}
                 variant="outline"
-                className="flex-1 h-11 text-base font-semibold"
+                className="flex-1 h-11 text-base font-bold rounded-md bg-paper border-2 border-board text-paper-ink hover:bg-paper-2"
               >
                 Change Chapter
               </Button>
@@ -110,7 +125,7 @@ export default function ResultSummary({
               <Button
                 onClick={onBackToCourses}
                 variant="outline"
-                className="flex-1 h-11 text-base font-semibold"
+                className="flex-1 h-11 text-base font-bold rounded-md bg-paper border-2 border-board text-paper-ink hover:bg-paper-2"
               >
                 Back to Courses
               </Button>
@@ -120,7 +135,7 @@ export default function ResultSummary({
 
         {/* Review Section */}
         <div className="space-y-4">
-          <h2 className="text-2xl font-bold text-white mb-4">
+          <h2 className="font-display text-2xl text-board-ink chalk-underline inline-block mb-4">
             Review Your Answers
           </h2>
 
@@ -159,7 +174,10 @@ export default function ResultSummary({
             return (
               <div
                 key={answer.questionId}
-                className="bg-white rounded-lg border border-slate-200 overflow-hidden transition-all duration-200"
+                className={cn(
+                  "paper-surface rounded-md border-2 overflow-hidden transition-all duration-200 pl-14 sm:pl-16",
+                  answer.isCorrect ? "border-chalk-sage/50" : "border-chalk-coral/50",
+                )}
               >
                 <button
                   onClick={() =>
@@ -170,34 +188,34 @@ export default function ResultSummary({
                     )
                   }
                   className={cn(
-                    "w-full p-4 text-left hover:bg-slate-50 transition-colors",
+                    "w-full p-4 pl-2 text-left hover:bg-paper-2/60 transition-colors",
                     FOCUS_RING,
                   )}
                 >
                   <div className="flex items-start justify-between gap-4">
                     <div className="flex-1">
                       <div className="flex items-center gap-2 mb-2">
-                        <span className="text-sm font-semibold text-slate-500">
+                        <span className="text-sm font-bold text-rule-red">
                           Q{index + 1}
                         </span>
                         <span
                           className={cn(
-                            "inline-flex items-center px-2 py-1 rounded-full text-xs font-semibold",
+                            "inline-flex items-center px-2 py-1 rounded-sm text-xs font-bold",
                             answer.isCorrect
-                              ? "bg-green-100 text-green-700"
-                              : "bg-red-100 text-red-700",
+                              ? "bg-chalk-sage/15 text-chalk-sage-ink"
+                              : "bg-chalk-coral/15 text-chalk-coral-ink",
                           )}
                         >
                           {answer.isCorrect ? "✓ Correct" : "✗ Wrong"}
                         </span>
                       </div>
-                      <p className="text-slate-900 font-medium">
+                      <p className="text-paper-ink font-medium">
                         {question.text}
                       </p>
                     </div>
                     <ChevronDown
                       className={cn(
-                        "w-5 h-5 text-slate-500 transition-transform flex-shrink-0",
+                        "w-5 h-5 text-paper-ink-muted transition-transform flex-shrink-0",
                         expandedId === answer.questionId && "rotate-180",
                       )}
                     />
@@ -205,17 +223,17 @@ export default function ResultSummary({
                 </button>
 
                 {expandedId === answer.questionId && (
-                  <div className="border-t border-slate-200 p-4 bg-slate-50 space-y-3">
+                  <div className="border-t border-paper-line p-4 pl-2 bg-paper-2/50 space-y-3">
                     <div>
-                      <p className="text-xs font-semibold text-slate-600 uppercase mb-2">
+                      <p className="text-xs font-bold text-paper-ink-muted uppercase mb-2">
                         Your Answer
                       </p>
                       <p
                         className={cn(
-                          "text-sm p-3 rounded border-2",
+                          "text-sm p-3 rounded-md border-2",
                           answer.isCorrect
-                            ? "bg-green-50 border-green-300 text-green-900"
-                            : "bg-red-50 border-red-300 text-red-900",
+                            ? "bg-chalk-sage/10 border-chalk-sage text-chalk-sage-ink"
+                            : "bg-chalk-coral/10 border-chalk-coral text-chalk-coral-ink",
                         )}
                       >
                         {selectedOptionText}
@@ -224,10 +242,10 @@ export default function ResultSummary({
 
                     {!answer.isCorrect && (
                       <div>
-                        <p className="text-xs font-semibold text-slate-600 uppercase mb-2">
+                        <p className="text-xs font-bold text-paper-ink-muted uppercase mb-2">
                           Correct Answer
                         </p>
-                        <p className="text-sm p-3 rounded border-2 bg-green-50 border-green-300 text-green-900">
+                        <p className="text-sm p-3 rounded-md border-2 bg-chalk-sage/10 border-chalk-sage text-chalk-sage-ink">
                           {correctOptionText}
                         </p>
                       </div>
@@ -235,10 +253,10 @@ export default function ResultSummary({
 
                     {question.explanation && (
                       <div>
-                        <p className="text-xs font-semibold text-slate-600 uppercase mb-2">
+                        <p className="text-xs font-bold text-paper-ink-muted uppercase mb-2">
                           Explanation
                         </p>
-                        <p className="text-sm text-slate-700">
+                        <p className="text-sm text-paper-ink-muted">
                           {question.explanation}
                         </p>
                       </div>

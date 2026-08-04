@@ -2,9 +2,10 @@
 
 import type { Option } from "@/lib/quiz-types";
 import { cn } from "@/lib/utils";
+import { Check, X } from "lucide-react";
 
 const FOCUS_RING =
-  "outline-none focus-visible:ring-[3px] focus-visible:ring-ring/50 focus-visible:ring-offset-2 focus-visible:ring-offset-white";
+  "outline-none focus-visible:ring-[3px] focus-visible:ring-chalk-yellow/70 focus-visible:ring-offset-2 focus-visible:ring-offset-paper";
 
 interface OptionButtonProps {
   option: Option | string; // Support both old object format and new string format
@@ -29,25 +30,26 @@ export default function OptionButton({
   const optionText = typeof option === "string" ? option : option.text;
   const displayLabel =
     optionLabel || (typeof option === "object" ? option.id.toUpperCase() : "");
-  let bgColor =
-    "bg-slate-50 hover:bg-slate-100";
-  let borderColor = "border-slate-300";
-  let textColor = "text-slate-900";
 
-  if (isRevealed) {
-    if (isCorrect) {
-      bgColor = "bg-green-50";
-      borderColor = "border-green-500";
-      textColor = "text-slate-900";
-    } else if (isSelected && !isCorrect) {
-      bgColor = "bg-red-50";
-      borderColor = "border-red-500";
-      textColor = "text-slate-900";
-    }
+  const isWrongSelected = isRevealed && isSelected && !isCorrect;
+  const isRightAnswer = isRevealed && isCorrect;
+
+  let borderColor = "border-paper-line";
+  let bgColor = "bg-paper hover:bg-paper-2";
+  let markerClasses = "border-paper-ink-muted text-paper-ink-muted";
+
+  if (isRightAnswer) {
+    borderColor = "border-chalk-sage";
+    bgColor = "bg-chalk-sage/10";
+    markerClasses = "bg-chalk-sage border-chalk-sage text-white";
+  } else if (isWrongSelected) {
+    borderColor = "border-chalk-coral";
+    bgColor = "bg-chalk-coral/10";
+    markerClasses = "bg-chalk-coral border-chalk-coral text-white";
   } else if (isSelected) {
-    bgColor = "bg-blue-50";
-    borderColor = "border-blue-500";
-    textColor = "text-slate-900";
+    borderColor = "border-chalk-yellow";
+    bgColor = "bg-chalk-yellow/15";
+    markerClasses = "bg-chalk-yellow border-chalk-yellow text-chalk-yellow-ink";
   }
 
   return (
@@ -55,49 +57,30 @@ export default function OptionButton({
       onClick={onClick}
       disabled={isDisabled}
       className={cn(
-        "w-full p-4 text-left rounded-lg border-2 transition-all duration-200",
-        "font-medium text-lg",
+        "w-full p-4 text-left rounded-md border-2 transition-all duration-200",
+        "font-medium text-base sm:text-lg text-paper-ink",
         "disabled:cursor-not-allowed",
         !isDisabled && "cursor-pointer",
         FOCUS_RING,
         bgColor,
         borderColor,
-        textColor,
       )}
     >
       <div className="flex items-center gap-3">
         <div
           className={cn(
-            "w-6 h-6 rounded-full border-2 flex items-center justify-center flex-shrink-0",
-            isRevealed && isCorrect
-              ? "bg-green-500 border-green-500"
-              : isRevealed && isSelected && !isCorrect
-                ? "bg-red-500 border-red-500"
-                : isSelected
-                  ? "bg-blue-500 border-blue-500"
-                  : "border-slate-400",
+            "w-8 h-8 rounded-full border-2 flex items-center justify-center flex-shrink-0 font-bold text-sm transition-colors",
+            markerClasses,
           )}
         >
-          {(isRevealed || isSelected) && (
-            <div
-              className={cn(
-                "w-2 h-2 rounded-full",
-                isRevealed && isCorrect
-                  ? "bg-white"
-                  : isRevealed && isSelected && !isCorrect
-                    ? "bg-white"
-                    : isSelected
-                      ? "bg-white"
-                      : "",
-              )}
-            />
+          {isRightAnswer ? (
+            <Check className="w-4 h-4" strokeWidth={3} />
+          ) : isWrongSelected ? (
+            <X className="w-4 h-4" strokeWidth={3} />
+          ) : (
+            displayLabel
           )}
         </div>
-        {displayLabel && (
-          <span className="font-bold text-sm text-slate-500">
-            {displayLabel}.
-          </span>
-        )}
         <span>{optionText}</span>
       </div>
     </button>

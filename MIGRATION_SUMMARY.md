@@ -114,7 +114,6 @@ After:
 - [ ] Verify explanations display
 - [ ] Test quiz restart (should shuffle again)
 - [ ] Test result summary display
-- [ ] Verify CSC307 (tokenized) still works
 
 ## Rollback Instructions
 

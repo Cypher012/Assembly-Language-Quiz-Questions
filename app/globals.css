@@ -1,82 +1,98 @@
 @import 'tailwindcss';
 @import 'tw-animate-css';
 
-@custom-variant dark (&:is(.dark *));
+/*
+  QuizSpark — Chalkboard & Exercise Book
+  The lecture hall itself as the interface. Chalkboard chrome carries
+  structure and time; ruled exercise-book paper carries content and
+  answers. The two never mix on one surface.
+*/
 
 :root {
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.145 0 0);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.205 0 0);
-  --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.97 0 0);
-  --secondary-foreground: oklch(0.205 0 0);
-  --muted: oklch(0.97 0 0);
-  --muted-foreground: oklch(0.556 0 0);
-  --accent: oklch(0.97 0 0);
-  --accent-foreground: oklch(0.205 0 0);
-  --destructive: oklch(0.577 0.245 27.325);
-  --destructive-foreground: oklch(0.577 0.245 27.325);
-  --border: oklch(0.922 0 0);
-  --input: oklch(0.922 0 0);
-  --ring: oklch(0.708 0 0);
-  --chart-1: oklch(0.646 0.222 41.116);
-  --chart-2: oklch(0.6 0.118 184.704);
-  --chart-3: oklch(0.398 0.07 227.392);
-  --chart-4: oklch(0.828 0.189 84.429);
-  --chart-5: oklch(0.769 0.188 70.08);
-  --radius: 0.625rem;
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.145 0 0);
-  --sidebar-primary: oklch(0.205 0 0);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.97 0 0);
-  --sidebar-accent-foreground: oklch(0.205 0 0);
-  --sidebar-border: oklch(0.922 0 0);
-  --sidebar-ring: oklch(0.708 0 0);
-}
+  /* Board — chalkboard chrome (page background, nav, timers) */
+  --board: #1f2e28;
+  --board-2: #24352e;
+  --board-ink: #f2efe4;
+  --board-ink-muted: #a9b8ae;
+  --board-line: #3c4d44;
 
-.dark {
-  --background: oklch(0.145 0 0);
-  --foreground: oklch(0.985 0 0);
-  --card: oklch(0.145 0 0);
-  --card-foreground: oklch(0.985 0 0);
-  --popover: oklch(0.145 0 0);
-  --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(0.985 0 0);
-  --primary-foreground: oklch(0.205 0 0);
-  --secondary: oklch(0.269 0 0);
-  --secondary-foreground: oklch(0.985 0 0);
-  --muted: oklch(0.269 0 0);
-  --muted-foreground: oklch(0.708 0 0);
-  --accent: oklch(0.269 0 0);
-  --accent-foreground: oklch(0.985 0 0);
-  --destructive: oklch(0.396 0.141 25.723);
-  --destructive-foreground: oklch(0.637 0.237 25.331);
-  --border: oklch(0.269 0 0);
-  --input: oklch(0.269 0 0);
-  --ring: oklch(0.439 0 0);
-  --chart-1: oklch(0.488 0.243 264.376);
-  --chart-2: oklch(0.696 0.17 162.48);
-  --chart-3: oklch(0.769 0.188 70.08);
-  --chart-4: oklch(0.627 0.265 303.9);
-  --chart-5: oklch(0.645 0.246 16.439);
-  --sidebar: oklch(0.205 0 0);
-  --sidebar-foreground: oklch(0.985 0 0);
-  --sidebar-primary: oklch(0.488 0.243 264.376);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.269 0 0);
-  --sidebar-accent-foreground: oklch(0.985 0 0);
-  --sidebar-border: oklch(0.269 0 0);
-  --sidebar-ring: oklch(0.439 0 0);
+  /* Paper — ruled exercise-book surfaces (cards, content, forms) */
+  --paper: #f6f1e3;
+  --paper-2: #efe7d2;
+  --paper-ink: #2b241c;
+  --paper-ink-muted: #756a58;
+  --paper-line: #ddd0ac;
+  --rule-blue: #9fb8d4;
+  --rule-red: #bd5445;
+
+  /* Chalk accents */
+  --chalk-yellow: #e3b431;
+  --chalk-yellow-ink: #241d0d;
+  --chalk-sage: #5c9e79;
+  --chalk-sage-ink: #0f2419;
+  --chalk-coral: #cf6349;
+  --chalk-coral-ink: #2a0f09;
+  /* Lightened coral for small/bold text on dark board surfaces --
+     plain --chalk-coral only clears ~3.7:1 on --board, below AA for text. */
+  --chalk-coral-bright: #e08872;
+
+  --background: var(--board);
+  --foreground: var(--board-ink);
+  --card: var(--paper);
+  --card-foreground: var(--paper-ink);
+  --popover: var(--paper);
+  --popover-foreground: var(--paper-ink);
+  --primary: var(--chalk-yellow);
+  --primary-foreground: var(--chalk-yellow-ink);
+  --secondary: var(--paper-2);
+  --secondary-foreground: var(--paper-ink);
+  --muted: var(--paper-2);
+  --muted-foreground: var(--paper-ink-muted);
+  --accent: var(--paper-2);
+  --accent-foreground: var(--paper-ink);
+  --destructive: var(--chalk-coral);
+  --destructive-foreground: #fbf1ec;
+  --border: var(--paper-line);
+  --input: var(--paper-line);
+  --ring: var(--chalk-yellow);
+  --chart-1: var(--chalk-yellow);
+  --chart-2: var(--chalk-sage);
+  --chart-3: var(--rule-blue);
+  --chart-4: var(--chalk-coral);
+  --chart-5: var(--paper-ink-muted);
+  --radius: 0.375rem;
+  --sidebar: var(--board);
+  --sidebar-foreground: var(--board-ink);
+  --sidebar-primary: var(--chalk-yellow);
+  --sidebar-primary-foreground: var(--chalk-yellow-ink);
+  --sidebar-accent: var(--board-2);
+  --sidebar-accent-foreground: var(--board-ink);
+  --sidebar-border: var(--board-line);
+  --sidebar-ring: var(--chalk-yellow);
 }
 
 @theme inline {
-  --font-sans: 'Geist', 'Geist Fallback';
-  --font-mono: 'Geist Mono', 'Geist Mono Fallback';
+  --font-sans: var(--font-body), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-chalk), 'Segoe Print', cursive;
+  --color-board: var(--board);
+  --color-board-2: var(--board-2);
+  --color-board-ink: var(--board-ink);
+  --color-board-ink-muted: var(--board-ink-muted);
+  --color-board-line: var(--board-line);
+  --color-paper: var(--paper);
+  --color-paper-2: var(--paper-2);
+  --color-paper-ink: var(--paper-ink);
+  --color-paper-ink-muted: var(--paper-ink-muted);
+  --color-paper-line: var(--paper-line);
+  --color-rule-blue: var(--rule-blue);
+  --color-rule-red: var(--rule-red);
+  --color-chalk-yellow: var(--chalk-yellow);
+  --color-chalk-yellow-ink: var(--chalk-yellow-ink);
+  --color-chalk-sage: var(--chalk-sage);
+  --color-chalk-sage-ink: var(--chalk-sage-ink);
+  --color-chalk-coral: var(--chalk-coral);
+  --color-chalk-coral-ink: var(--chalk-coral-ink);
+  --color-chalk-coral-bright: var(--chalk-coral-bright);
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
@@ -121,5 +137,83 @@
   }
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+@layer components {
+  /* Chalkboard chrome surface: page backgrounds, headers, nav bars */
+  .board-surface {
+    background-color: var(--board);
+    background-image:
+      radial-gradient(rgba(242, 239, 228, 0.035) 1px, transparent 1px),
+      radial-gradient(rgba(242, 239, 228, 0.02) 1px, transparent 1px),
+      linear-gradient(180deg, var(--board) 0%, var(--board-2) 100%);
+    background-size:
+      3px 3px,
+      7px 7px,
+      100% 100%;
+    background-position:
+      0 0,
+      2px 3px,
+      0 0;
+  }
+
+  /* Ruled exercise-book paper: cards, content surfaces, forms */
+  .paper-surface {
+    background-color: var(--paper);
+    background-image:
+      linear-gradient(var(--rule-red) 0 100%),
+      repeating-linear-gradient(
+        to bottom,
+        transparent 0px,
+        transparent 27px,
+        rgba(159, 184, 212, 0.32) 27px,
+        rgba(159, 184, 212, 0.32) 28px
+      );
+    background-repeat: no-repeat, repeat-y;
+    background-size:
+      2px 100%,
+      100% 28px;
+    background-position:
+      40px 0,
+      0 6px;
+  }
+
+  .paper-surface-plain {
+    background-color: var(--paper);
+  }
+
+  /* Hand-chalked underline stroke, place on a relatively-positioned heading */
+  .chalk-underline {
+    position: relative;
+    display: inline-block;
+  }
+  .chalk-underline::after {
+    content: '';
+    position: absolute;
+    left: -3%;
+    right: -5%;
+    bottom: -0.1em;
+    height: 0.13em;
+    background: currentColor;
+    opacity: 0.8;
+    border-radius: 999px;
+    transform: rotate(-0.5deg);
+  }
+
+  /* Chalk dust grain overlay for dark chalk-accent fills */
+  .chalk-grain {
+    position: relative;
+    isolation: isolate;
+  }
+  .chalk-grain::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background-image: radial-gradient(rgba(255, 255, 255, 0.14) 1px, transparent 1px);
+    background-size: 3px 3px;
+    mix-blend-mode: overlay;
+    border-radius: inherit;
   }
 }

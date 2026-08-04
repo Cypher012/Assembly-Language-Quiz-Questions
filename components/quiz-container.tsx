@@ -25,7 +25,6 @@ import ResultSummary from "./result-summary";
 import ChapterSelect from "./chapter-select";
 import CourseSelect from "./course-select";
 import QuestionNavigator from "./question-navigator";
-import CSC307QuizContainer from "./csc307-quiz-container";
 
 type QuizState = "idle" | "answered" | "revealed" | "next" | "complete";
 
@@ -342,17 +341,6 @@ export default function QuizContainer() {
     );
   }
 
-  // Handle CSC307 tokenized quiz separately
-  if (selectedCourse.quizType === "tokenized") {
-    return (
-      <CSC307QuizContainer
-        chapter={selectedChapter ?? null}
-        onBackToChapters={handleBackToChapters}
-        onBackToCourses={handleBackToCourses}
-      />
-    );
-  }
-
   // Show chapter selection if no chapter selected yet
   if (selectedChapter === undefined) {
     return (
@@ -368,10 +356,10 @@ export default function QuizContainer() {
 
   if (!isReady) {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-slate-900 via-slate-800 to-slate-900 p-4 sm:p-6 lg:p-8">
+      <div className="min-h-screen board-surface p-4 sm:p-6 lg:p-8">
         <div className="max-w-2xl mx-auto flex flex-col items-center justify-center gap-3 min-h-[50vh]">
-          <Spinner className="size-6 text-white" />
-          <div className="text-white text-lg">Loading quiz...</div>
+          <Spinner className="size-6 text-chalk-yellow" />
+          <div className="text-board-ink text-lg">Loading quiz...</div>
         </div>
       </div>
     );
@@ -393,7 +381,7 @@ export default function QuizContainer() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-slate-900 via-slate-800 to-slate-900 p-4 sm:p-6 lg:p-8 pb-20">
+    <div className="min-h-screen board-surface p-4 sm:p-6 lg:p-8 pb-20">
       <div className="max-w-2xl mx-auto">
         <ProgressHeader
           current={currentIndex + 1}
