@@ -32,8 +32,8 @@ export default function CourseSelect({
             Select Your Course
           </h1>
           <p className="text-board-ink-muted max-w-md mx-auto">
-            Pick a course and start practicing with real questions from your
-            own lecture material.
+            Pick a course and start practicing with real questions from your own
+            lecture material.
           </p>
         </div>
 
@@ -72,10 +72,6 @@ export default function CourseSelect({
             </button>
           ))}
         </div>
-
-        <p className="text-center mt-auto pt-10 text-board-ink-muted text-sm">
-          Crafted by Cipher 💻 ❤️
-        </p>
       </div>
     </div>
   );

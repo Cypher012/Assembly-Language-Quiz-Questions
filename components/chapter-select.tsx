@@ -265,10 +265,6 @@ export default function ChapterSelect({
             <Clock className="w-6 h-6 text-chalk-yellow group-hover:rotate-12 transition-transform flex-shrink-0" />
           </div>
         </button>
-
-        <p className="text-center mt-auto pt-8 text-board-ink-muted text-sm">
-          Crafted by Cipher 💻 ❤️
-        </p>
       </div>
 
       <PracticeExamModal
