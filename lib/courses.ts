@@ -6,7 +6,7 @@ import { Question, QuestionV2 } from "./quiz-types";
 // import { csc221ComputerAppreciation } from "./courses/csc221-computer-appreciation";
 // import { csc315DSACourse } from "./courses/csc315-dsa";
 import { csc302OOPCourse } from "./courses/csc302-oop";
-import { csc304BusinessProgCourse } from "./courses/csc304-bcp";
+import { csc304BusinessProgrammingCourse } from "./courses/csc304-bcp";
 import { cpe310AgentBasedCourse } from "./courses/cpe310-agent-based";
 import { csc306HciCourse } from "./courses/csc306-hci";
 import { csc312Course } from "./courses/csc312-system-analysis";
@@ -30,25 +30,11 @@ export interface Course {
 // TOGGLE COURSES HERE - Just comment/uncomment lines to show/hide courses
 // ============================================
 export const courses: Course[] = [
-  csc302OOPCourse,
-  csc304BusinessProgCourse,
-  cpe310AgentBasedCourse,
   csc306HciCourse,
-  csc312Course,
-
-  // cpe301AssemblyCourse,
-  // csc315DSACourse,
-  // csc311InfoSystemsCourse,
-  // csc221ComputerAppreciation,
-];
-
-// All available courses (master list - for settings UI)
-export const allCourses: Course[] = [
-  csc302OOPCourse,
-  csc304BusinessProgCourse,
-  cpe310AgentBasedCourse,
-  csc306HciCourse,
-  csc312Course,
+  csc304BusinessProgrammingCourse,
+  // csc302OOPCourse,
+  // cpe310AgentBasedCourse,
+  // csc312Course,
 
   // cpe301AssemblyCourse,
   // csc315DSACourse,
@@ -60,14 +46,6 @@ export const allCourses: Course[] = [
 export const defaultEnabledCourses: Record<string, boolean> = {
   "csc302-oop": true,
 };
-
-//  export const defaultEnabledCourses: Record<string, boolean> = {
-//   "csc302-oop": true,
-//   "cpe301-assembly": true,
-//   "csc315-dsa": true,
-//   "csc311-info-systems": true,
-//   "csc221-computer-appreciation": true,
-// };
 
 // LocalStorage key for course visibility settings
 export const COURSE_VISIBILITY_KEY = "quiz-app-course-visibility";
@@ -121,8 +99,7 @@ export function filterByChapter(
     return questions;
   }
   return questions.filter((q) => q.chapter === chapter) as
-    | Question[]
-    | QuestionV2[];
+    Question[] | QuestionV2[];
 }
 
 export function filterByChapters(
@@ -131,6 +108,5 @@ export function filterByChapters(
 ): Question[] | QuestionV2[] {
   const chapterSet = new Set(chapters);
   return questions.filter((q) => chapterSet.has(q.chapter ?? "")) as
-    | Question[]
-    | QuestionV2[];
+    Question[] | QuestionV2[];
 }
