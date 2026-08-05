@@ -335,9 +335,7 @@ const csc304Chapter5Questions: QuestionV2[] = [
       "None of these"
     ],
     correctAnswer: 2,
-    explanation: "The ISACA section lists IS Auditing Standards as 16 mandatory requirements and IS Auditing Guidelines as 39 guidelines for applying those standards, so both named items are real ISACA publications, making all of these the correct choice.
-
-Since both specific options are supported by the source, neither can be selected alone, and none of these is ruled out because at least one option is true."
+    explanation: "The ISACA section lists IS Auditing Standards as 16 mandatory requirements and IS Auditing Guidelines as 39 guidelines for applying those standards, so both named items are real ISACA publications, making all of these the correct choice.\n\nSince both specific options are supported by the source, neither can be selected alone, and none of these is ruled out because at least one option is true."
   },
   {
     id: "csc304_ch5_025",
