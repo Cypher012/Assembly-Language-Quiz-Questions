@@ -3,6 +3,7 @@ import { QuestionV2 } from "../../quiz-types";
 import csc304Chapter1Questions from "./csc304_ch1_data_and_data_processing";
 import csc304Chapter2Questions from "./csc304_ch2_file_manipulation_sorting_searching";
 import csc304Chapter3Questions from "./csc304_ch3_merging_file_maintenance_data_structures";
+import csc304Chapter4Questions from "./csc304_ch4_os_introduction";
 
 export const csc304BusinessProgrammingCourse: Course = {
   id: "csc304-business-commercial-programming",
@@ -29,12 +30,19 @@ export const csc304BusinessProgrammingCourse: Course = {
       description:
         "Concatenation and sorted merging, file/record/field fundamentals, file organisation methods, file maintenance and OS-level operations, the File Management System, and core data structures.",
     },
+    {
+      id: "Chapter 4",
+      label: "Introduction to Operating Systems",
+      description:
+        "The OS's role and functions, the hardware/system/application program layers, CLI vs GUI, the Kernel and Shell, OS goals, common operating systems, and factors for choosing an OS.",
+    },
   ],
   getQuestions: (): QuestionV2[] => {
     return [
       ...csc304Chapter1Questions,
       ...csc304Chapter2Questions,
       ...csc304Chapter3Questions,
+      ...csc304Chapter4Questions,
     ];
   },
 };
