@@ -25,6 +25,7 @@ import ResultSummary from "./result-summary";
 import ChapterSelect from "./chapter-select";
 import CourseSelect from "./course-select";
 import QuestionNavigator from "./question-navigator";
+import KeyboardShortcutsModal from "./keyboard-shortcuts-modal";
 
 type QuizState = "idle" | "answered" | "revealed" | "next" | "complete";
 
@@ -72,6 +73,9 @@ export default function QuizContainer() {
   // Exam mode state
   const [isExamMode, setIsExamMode] = useState(false);
   const [examEndTime, setExamEndTime] = useState<number | null>(null);
+
+  // Desktop keyboard shortcuts help panel
+  const [isShortcutsModalOpen, setIsShortcutsModalOpen] = useState(false);
 
   // Load enabled courses on mount; also restore any persisted exam
   useEffect(() => {
@@ -333,6 +337,92 @@ export default function QuizContainer() {
     }
   };
 
+  // Desktop keyboard shortcuts -- only act while actively answering a
+  // question (not on course/chapter select, loading, or results screens).
+  const isOnLiveQuizScreen =
+    !!selectedCourse && selectedChapter !== undefined && isReady && state !== "complete";
+
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.ctrlKey || e.metaKey || e.altKey) return;
+
+      const target = e.target as HTMLElement | null;
+      if (
+        target &&
+        (target.tagName === "INPUT" ||
+          target.tagName === "TEXTAREA" ||
+          target.isContentEditable)
+      ) {
+        return;
+      }
+
+      // A modal is open (e.g. Exit confirmation, shortcuts panel itself) --
+      // let it handle its own keys instead of double-firing quiz actions.
+      if (
+        document.querySelector(
+          '[role="dialog"][data-state="open"], [role="alertdialog"][data-state="open"]',
+        )
+      ) {
+        return;
+      }
+
+      if (e.key === "?") {
+        e.preventDefault();
+        setIsShortcutsModalOpen((prev) => !prev);
+        return;
+      }
+
+      if (!isOnLiveQuizScreen) return;
+
+      const optionMap: Record<string, string> = {
+        "1": "A",
+        "2": "B",
+        "3": "C",
+        "4": "D",
+        a: "A",
+        b: "B",
+        c: "C",
+        d: "D",
+      };
+      const mappedOption = optionMap[e.key.toLowerCase()];
+
+      if (mappedOption && !isAnswered) {
+        e.preventDefault();
+        handleSelectOption(mappedOption);
+        return;
+      }
+
+      if (e.key === "Enter") {
+        e.preventDefault();
+        if (isRevealed) {
+          handleNextQuestion();
+        } else {
+          handleConfirmAnswer();
+        }
+        return;
+      }
+
+      if (e.key === "ArrowRight") {
+        if (isRevealed) {
+          e.preventDefault();
+          handleNextQuestion();
+        }
+        return;
+      }
+
+      if (e.key === "ArrowLeft") {
+        if (currentIndex > 0) {
+          e.preventDefault();
+          handleNavigateToQuestion(currentIndex - 1);
+        }
+        return;
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  });
+
   // Show course selection if no course selected yet
   if (!selectedCourse) {
     return (
@@ -393,6 +483,7 @@ export default function QuizContainer() {
           onTimeUp={handleAutoSubmit}
           onExitExam={handleBackToChapters}
           showExitButton={true}
+          onShowShortcuts={() => setIsShortcutsModalOpen(true)}
         />
 
         <QuestionCard
@@ -412,6 +503,11 @@ export default function QuizContainer() {
         userAnswers={userAnswers}
         questionIds={questions.map((q) => q.id)}
         onNavigate={handleNavigateToQuestion}
+      />
+
+      <KeyboardShortcutsModal
+        open={isShortcutsModalOpen}
+        onOpenChange={setIsShortcutsModalOpen}
       />
     </div>
   );

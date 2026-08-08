@@ -15,7 +15,7 @@ import {
   AlertDialogTrigger,
 } from "@/components/ui/alert-dialog";
 import { Button } from "@/components/ui/button";
-import { LogOut, AlertTriangle } from "lucide-react";
+import { LogOut, AlertTriangle, Keyboard } from "lucide-react";
 
 const FOCUS_RING =
   "outline-none focus-visible:ring-[3px] focus-visible:ring-chalk-yellow/70 focus-visible:ring-offset-2 focus-visible:ring-offset-board";
@@ -28,6 +28,7 @@ interface ProgressHeaderProps {
   onTimeUp?: () => void;
   onExitExam?: () => void;
   showExitButton?: boolean;
+  onShowShortcuts?: () => void;
 }
 
 export default function ProgressHeader({
@@ -38,6 +39,7 @@ export default function ProgressHeader({
   onTimeUp,
   onExitExam,
   showExitButton,
+  onShowShortcuts,
 }: ProgressHeaderProps) {
   const progress = (current / total) * 100;
   const [secondsLeft, setSecondsLeft] = useState<number>(() => {
@@ -78,6 +80,16 @@ export default function ProgressHeader({
         </div>
 
         <div className="flex items-center gap-3">
+          {onShowShortcuts && (
+            <button
+              onClick={onShowShortcuts}
+              title="Keyboard shortcuts (?)"
+              aria-label="Keyboard shortcuts"
+              className={`hidden md:flex items-center justify-center w-8 h-8 rounded-md text-board-ink-muted border border-board-line hover:text-chalk-yellow hover:border-chalk-yellow/50 transition-all duration-200 ${FOCUS_RING}`}
+            >
+              <Keyboard className="w-4 h-4" />
+            </button>
+          )}
           {showExit && onExitExam && (
             <AlertDialog>
               <AlertDialogTrigger asChild>
