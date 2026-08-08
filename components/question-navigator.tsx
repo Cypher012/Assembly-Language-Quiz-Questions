@@ -7,6 +7,19 @@ import { ChevronUp, ChevronDown } from "lucide-react";
 const FOCUS_RING =
   "outline-none focus-visible:ring-[3px] focus-visible:ring-chalk-yellow/70 focus-visible:ring-offset-2 focus-visible:ring-offset-board";
 
+// Fades from chalk-sage (green, 70%+) to chalk-coral (red, below 40%) in five
+// steps rather than a hard cutoff at 70%.
+function getPercentageColor(percentage: number): string {
+  if (percentage >= 70) return "var(--chalk-sage)";
+  if (percentage >= 60)
+    return "color-mix(in oklch, var(--chalk-sage) 70%, var(--chalk-coral) 30%)";
+  if (percentage >= 50)
+    return "color-mix(in oklch, var(--chalk-sage) 50%, var(--chalk-coral) 50%)";
+  if (percentage >= 40)
+    return "color-mix(in oklch, var(--chalk-sage) 30%, var(--chalk-coral) 70%)";
+  return "var(--chalk-coral)";
+}
+
 interface UserAnswer {
   questionId: string;
   selectedOptionId: string;
@@ -55,6 +68,8 @@ export default function QuestionNavigator({
 
   const answeredCount = userAnswers.length;
   const correctCount = userAnswers.filter((a) => a.isCorrect).length;
+  const passPercentage =
+    answeredCount > 0 ? Math.round((correctCount / answeredCount) * 100) : null;
 
   return (
     <div
@@ -89,6 +104,14 @@ export default function QuestionNavigator({
             <span className="text-chalk-coral font-bold whitespace-nowrap">
               {answeredCount - correctCount} ✗
             </span>
+            {passPercentage !== null && (
+              <span
+                className="font-bold whitespace-nowrap"
+                style={{ color: getPercentageColor(passPercentage) }}
+              >
+                {passPercentage}%
+              </span>
+            )}
           </div>
           <button
             onClick={(e) => {
