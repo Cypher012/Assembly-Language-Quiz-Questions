@@ -22,6 +22,9 @@ interface ResultSummaryProps {
   userAnswers: UserAnswer[];
   questions: (Question | QuestionV2 | ShuffledQuestion)[];
   isExamMode?: boolean;
+  courseCode?: string;
+  courseName?: string;
+  chapterLabel?: string;
   onRestart: () => void;
   onBackToChapters?: () => void;
   onBackToCourses?: () => void;
@@ -33,6 +36,9 @@ export default function ResultSummary({
   userAnswers,
   questions,
   isExamMode = false,
+  courseCode,
+  courseName,
+  chapterLabel,
   onRestart,
   onBackToChapters,
   onBackToCourses,
@@ -69,6 +75,19 @@ export default function ResultSummary({
           </div>
 
           <div className="mb-8 max-w-[calc(100%-6rem)] sm:max-w-[calc(100%-8rem)]">
+            {(courseCode || courseName) && (
+              <div className="flex items-center gap-2 flex-wrap mb-2">
+                {courseCode && (
+                  <span className="inline-flex items-center px-2 py-0.5 text-[11px] font-bold tracking-wide bg-chalk-yellow text-chalk-yellow-ink rounded-sm -rotate-1">
+                    {courseCode}
+                  </span>
+                )}
+                <span className="text-sm text-paper-ink-muted truncate">
+                  {courseName}
+                  {chapterLabel ? ` — ${chapterLabel}` : ""}
+                </span>
+              </div>
+            )}
             <h1 className="font-display text-3xl sm:text-4xl text-paper-ink chalk-underline mb-3">
               {isExamMode ? "Practice Exam Complete!" : "Quiz Complete!"}
             </h1>

@@ -218,6 +218,30 @@ export default function QuizContainer() {
   const isAnswered = state !== "idle";
   const isRevealed = state === "revealed" || state === "complete";
 
+  // Human-readable label for which chapter(s) this run covers, shown on the
+  // results screen. selectedChapters (multi-chapter custom quiz or practice
+  // exam) takes precedence over selectedChapter (single chapter or "All").
+  const chapterLabel = (() => {
+    if (!selectedCourse) return undefined;
+    if (selectedChapters && selectedChapters.length > 0) {
+      if (selectedChapters.length === selectedCourse.chapters.length) {
+        return "All Chapters";
+      }
+      const labels = selectedChapters
+        .map((id) => selectedCourse.chapters.find((c) => c.id === id)?.label)
+        .filter((label): label is string => !!label);
+      return labels.length <= 2 ? labels.join(" & ") : `${labels.length} chapters`;
+    }
+    if (selectedChapter === null) return "All Chapters";
+    if (selectedChapter) {
+      return (
+        selectedCourse.chapters.find((c) => c.id === selectedChapter)?.label ??
+        selectedChapter
+      );
+    }
+    return undefined;
+  })();
+
   const handleSelectOption = (optionId: string) => {
     if (!isAnswered) {
       setSelectedOption(optionId);
@@ -465,6 +489,9 @@ export default function QuizContainer() {
         userAnswers={userAnswers}
         questions={questions}
         isExamMode={isExamMode}
+        courseCode={selectedCourse?.code}
+        courseName={selectedCourse?.name}
+        chapterLabel={chapterLabel}
         onRestart={handleRestart}
         onBackToChapters={handleBackToChapters}
         onBackToCourses={handleBackToCourses}
