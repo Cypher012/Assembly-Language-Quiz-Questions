@@ -11,7 +11,7 @@ import {
 import { Checkbox } from "@/components/ui/checkbox";
 import { Button } from "@/components/ui/button";
 import type { Course } from "@/lib/courses";
-import type { ExamConfig } from "@/lib/quiz-types";
+import { type ExamConfig, DURATION_OPTIONS } from "@/lib/quiz-types";
 import { filterByChapters } from "@/lib/courses";
 import { Clock } from "lucide-react";
 
@@ -25,7 +25,6 @@ interface PracticeExamModalProps {
   onStartExam: (config: ExamConfig) => void;
 }
 
-const DURATION_OPTIONS = [10, 15, 20, 30, 45, 50, 60];
 const QUESTION_COUNT_OPTIONS = [30, 60, 75, 100, 120, 150];
 
 export default function PracticeExamModal({

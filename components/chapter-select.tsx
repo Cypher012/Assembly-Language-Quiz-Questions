@@ -20,8 +20,16 @@ const FOCUS_RING =
 
 interface ChapterSelectProps {
   course: Course;
-  onSelectChapter: (chapter: string | null, shuffle: boolean) => void;
-  onSelectCustomChapters: (chapters: string[], shuffle: boolean) => void;
+  onSelectChapter: (
+    chapter: string | null,
+    shuffle: boolean,
+    durationMinutes: number | null,
+  ) => void;
+  onSelectCustomChapters: (
+    chapters: string[],
+    shuffle: boolean,
+    durationMinutes: number | null,
+  ) => void;
   onStartExam: (config: ExamConfig) => void;
   onBackToCourses: () => void;
 }
@@ -81,14 +89,14 @@ export default function ChapterSelect({
     setPendingSelection(selection);
   };
 
-  const handleShuffleChoice = (shuffle: boolean) => {
+  const handleStart = (shuffle: boolean, durationMinutes: number | null) => {
     const selection = pendingSelection;
     setPendingSelection(null);
     if (!selection) return;
     if (selection.kind === "chapter") {
-      onSelectChapter(selection.chapterId, shuffle);
+      onSelectChapter(selection.chapterId, shuffle, durationMinutes);
     } else {
-      onSelectCustomChapters(selection.chapters, shuffle);
+      onSelectCustomChapters(selection.chapters, shuffle, durationMinutes);
     }
   };
 
@@ -304,7 +312,7 @@ export default function ChapterSelect({
         onOpenChange={(open) => {
           if (!open) setPendingSelection(null);
         }}
-        onChoose={handleShuffleChoice}
+        onStart={handleStart}
       />
     </div>
   );

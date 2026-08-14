@@ -48,6 +48,10 @@ export interface ExamConfig {
   durationMinutes: number;
 }
 
+// Shared duration chip options -- used by PracticeExamModal (required
+// duration) and ShufflePromptModal (optional timer for a normal quiz).
+export const DURATION_OPTIONS = [10, 15, 20, 30, 45, 50, 60];
+
 // ============================================================
 // TYPE GUARDS
 // ============================================================

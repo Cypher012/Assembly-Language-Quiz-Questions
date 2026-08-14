@@ -15,6 +15,7 @@ export interface PersistedExamState {
   currentIndex: number;
   score: number;
   courseId: string;
+  isExamMode: boolean;
 }
 
 export function saveExamState(state: PersistedExamState): void {

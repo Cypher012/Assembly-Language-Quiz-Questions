@@ -58,6 +58,9 @@ export default function QuizContainer() {
   );
   const [enabledCourses, setEnabledCourses] = useState<Course[]>([]);
   const [shufflePreference, setShufflePreference] = useState(true);
+  const [timerDurationMinutes, setTimerDurationMinutes] = useState<
+    number | null
+  >(null);
 
   // Quiz state
   const [questions, setQuestions] = useState<
@@ -92,7 +95,7 @@ export default function QuizContainer() {
         setCurrentIndex(persisted.currentIndex);
         setScore(persisted.score);
         setExamEndTime(persisted.endTimestamp);
-        setIsExamMode(true);
+        setIsExamMode(persisted.isExamMode);
         setIsReady(true);
       } else {
         clearExamState();
@@ -107,19 +110,57 @@ export default function QuizContainer() {
     }
   };
 
-  const handleSelectChapter = (chapter: string | null, shuffle: boolean) => {
+  // Arms (or clears) the optional timer for a normal chapter/custom quiz --
+  // reuses the same examEndTime/persistence machinery Practice Exam Mode
+  // uses, but leaves isExamMode false so results still read "Quiz Complete!"
+  // and keep the Restart button.
+  const applyTimerChoice = (
+    durationMinutes: number | null,
+    processedQuestions: (Question | QuestionV2 | ShuffledQuestion)[],
+    courseId: string,
+  ) => {
+    setTimerDurationMinutes(durationMinutes);
+    if (durationMinutes === null) {
+      setExamEndTime(null);
+      return;
+    }
+    const endTimestamp = Date.now() + durationMinutes * 60_000;
+    setExamEndTime(endTimestamp);
+    setIsExamMode(false);
+    saveExamState({
+      endTimestamp,
+      questions: processedQuestions as ShuffledQuestion[],
+      userAnswers: [],
+      currentIndex: 0,
+      score: 0,
+      courseId,
+      isExamMode: false,
+    });
+  };
+
+  const handleSelectChapter = (
+    chapter: string | null,
+    shuffle: boolean,
+    durationMinutes: number | null,
+  ) => {
     if (!selectedCourse) return;
 
     setSelectedChapter(chapter);
     setShufflePreference(shuffle);
     const courseQuestions = selectedCourse.getQuestions();
     const filtered = filterByChapter(courseQuestions, chapter);
+    const processedQuestions = processQuestions(filtered, shuffle);
 
-    setQuestions(processQuestions(filtered, shuffle));
+    setQuestions(processedQuestions);
+    applyTimerChoice(durationMinutes, processedQuestions, selectedCourse.id);
     setIsReady(true);
   };
 
-  const handleSelectCustomChapters = (chapters: string[], shuffle: boolean) => {
+  const handleSelectCustomChapters = (
+    chapters: string[],
+    shuffle: boolean,
+    durationMinutes: number | null,
+  ) => {
     if (!selectedCourse) return;
 
     setSelectedChapter(null);
@@ -127,8 +168,10 @@ export default function QuizContainer() {
     setShufflePreference(shuffle);
     const courseQuestions = selectedCourse.getQuestions();
     const filtered = filterByChapters(courseQuestions, chapters);
+    const processedQuestions = processQuestions(filtered, shuffle);
 
-    setQuestions(processQuestions(filtered, shuffle));
+    setQuestions(processedQuestions);
+    applyTimerChoice(durationMinutes, processedQuestions, selectedCourse.id);
     setIsReady(true);
   };
 
@@ -153,6 +196,7 @@ export default function QuizContainer() {
       setState("idle");
       setExamEndTime(endTimestamp);
       setIsExamMode(true);
+      setTimerDurationMinutes(config.durationMinutes);
       setIsReady(true);
 
       saveExamState({
@@ -162,14 +206,16 @@ export default function QuizContainer() {
         currentIndex: 0,
         score: 0,
         courseId: selectedCourse.id,
+        isExamMode: true,
       });
     },
     [selectedCourse],
   );
 
-  // Persist exam state on every relevant change
+  // Persist timer state (Practice Exam Mode or a timed chapter quiz) on
+  // every relevant change, so a refresh mid-run resumes correctly.
   useEffect(() => {
-    if (!isExamMode || !examEndTime || !selectedCourse) return;
+    if (!examEndTime || !selectedCourse) return;
     saveExamState({
       endTimestamp: examEndTime,
       questions: questions as ShuffledQuestion[],
@@ -177,6 +223,7 @@ export default function QuizContainer() {
       currentIndex,
       score,
       courseId: selectedCourse.id,
+      isExamMode,
     });
   }, [
     isExamMode,
@@ -301,9 +348,10 @@ export default function QuizContainer() {
   const handleRestart = () => {
     if (!selectedCourse) return;
 
+    // Restart is only reachable when isExamMode is already false (Practice
+    // Exam results hide this button), so this never re-arms a real exam.
     clearExamState();
     setIsExamMode(false);
-    setExamEndTime(null);
 
     const courseQuestions = selectedCourse.getQuestions();
     const filtered = selectedChapters
@@ -311,7 +359,10 @@ export default function QuizContainer() {
       : filterByChapter(courseQuestions, selectedChapter ?? null);
 
     // Reuses the shuffle preference chosen when this topic was started
-    setQuestions(processQuestions(filtered, shufflePreference));
+    const processedQuestions = processQuestions(filtered, shufflePreference);
+    setQuestions(processedQuestions);
+    // A timed run gets a fresh full-length timer, not silently untimed
+    applyTimerChoice(timerDurationMinutes, processedQuestions, selectedCourse.id);
     setCurrentIndex(0);
     setSelectedOption(null);
     setState("idle");
