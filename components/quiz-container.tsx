@@ -26,6 +26,7 @@ import ChapterSelect from "./chapter-select";
 import CourseSelect from "./course-select";
 import QuestionNavigator from "./question-navigator";
 import KeyboardShortcutsModal from "./keyboard-shortcuts-modal";
+import TimeUpModal from "./time-up-modal";
 
 type QuizState = "idle" | "answered" | "revealed" | "next" | "complete";
 
@@ -79,6 +80,10 @@ export default function QuizContainer() {
 
   // Desktop keyboard shortcuts help panel
   const [isShortcutsModalOpen, setIsShortcutsModalOpen] = useState(false);
+
+  // Shown when a *non*-exam-mode timer (a timed chapter/custom quiz) runs
+  // out, offering to add time or drop the timer instead of force-ending.
+  const [showTimeUpModal, setShowTimeUpModal] = useState(false);
 
   // Load enabled courses on mount; also restore any persisted exam
   useEffect(() => {
@@ -239,6 +244,29 @@ export default function QuizContainer() {
     clearExamState();
     setState("complete");
   }, []);
+
+  // Practice Exam Mode still force-ends when time runs out -- that's the
+  // point of a real timed exam. A timed chapter/custom quiz instead offers
+  // a choice: add more time or drop the timer and keep going untimed.
+  const handleTimeUp = useCallback(() => {
+    if (isExamMode) {
+      handleAutoSubmit();
+    } else {
+      setShowTimeUpModal(true);
+    }
+  }, [isExamMode, handleAutoSubmit]);
+
+  const handleAddTime = (minutes: number) => {
+    setExamEndTime(Date.now() + minutes * 60_000);
+    setShowTimeUpModal(false);
+  };
+
+  const handleRemoveTimer = () => {
+    setExamEndTime(null);
+    setTimerDurationMinutes(null);
+    clearExamState();
+    setShowTimeUpModal(false);
+  };
 
   // Warn user before leaving/refreshing during active quiz
   useEffect(() => {
@@ -558,7 +586,7 @@ export default function QuizContainer() {
           total={questions.length}
           score={score}
           examEndTime={examEndTime}
-          onTimeUp={handleAutoSubmit}
+          onTimeUp={handleTimeUp}
           onExitExam={handleBackToChapters}
           showExitButton={true}
           onShowShortcuts={() => setIsShortcutsModalOpen(true)}
@@ -586,6 +614,12 @@ export default function QuizContainer() {
       <KeyboardShortcutsModal
         open={isShortcutsModalOpen}
         onOpenChange={setIsShortcutsModalOpen}
+      />
+
+      <TimeUpModal
+        open={showTimeUpModal}
+        onAddTime={handleAddTime}
+        onRemoveTimer={handleRemoveTimer}
       />
     </div>
   );

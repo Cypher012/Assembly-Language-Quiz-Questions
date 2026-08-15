@@ -50,10 +50,12 @@ export default function ProgressHeader({
   useEffect(() => {
     if (!examEndTime) return;
 
+    let interval: ReturnType<typeof setInterval>;
     const tick = () => {
       const remaining = Math.ceil((examEndTime - Date.now()) / 1000);
       if (remaining <= 0) {
         setSecondsLeft(0);
+        clearInterval(interval);
         onTimeUp?.();
         return;
       }
@@ -61,7 +63,7 @@ export default function ProgressHeader({
     };
 
     tick(); // run immediately
-    const interval = setInterval(tick, 1000);
+    interval = setInterval(tick, 1000);
     return () => clearInterval(interval);
   }, [examEndTime, onTimeUp]);
 
