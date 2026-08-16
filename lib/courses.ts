@@ -10,6 +10,7 @@ import { csc304BusinessProgrammingCourse } from "./courses/csc304-bcp";
 import { cpe310AgentBasedSystemsCourse } from "./courses/cpe310-agent-based";
 import { csc306HciCourse } from "./courses/csc306-hci";
 import { csc312SystemAnalysisCourse } from "./courses/csc312-system-analysis";
+import { mth302DifferentialEquationsCourse } from "./courses/mth301-differential-equation";
 
 export interface Chapter {
   id: string;
@@ -34,6 +35,7 @@ export const courses: Course[] = [
   csc304BusinessProgrammingCourse,
   csc312SystemAnalysisCourse,
   cpe310AgentBasedSystemsCourse,
+  mth302DifferentialEquationsCourse,
   // csc302OOPCourse,
 
   // cpe301AssemblyCourse,

@@ -2,6 +2,8 @@
 
 import { CheckCircle, XCircle } from "lucide-react";
 import ReactMarkdown from "react-markdown";
+import remarkMath from "remark-math";
+import rehypeKatex from "rehype-katex";
 import { cn } from "@/lib/utils";
 
 interface FeedbackPanelProps {
@@ -39,7 +41,12 @@ export default function FeedbackPanel({
           </h3>
           {explanation && (
             <div className="text-sm text-paper-ink-muted [&_p]:mb-2 [&_p:last-child]:mb-0 [&_code]:bg-paper-2 [&_code]:px-1 [&_code]:rounded-sm [&_code]:text-paper-ink">
-              <ReactMarkdown>{explanation}</ReactMarkdown>
+              <ReactMarkdown
+                remarkPlugins={[remarkMath]}
+                rehypePlugins={[rehypeKatex]}
+              >
+                {explanation}
+              </ReactMarkdown>
             </div>
           )}
         </div>

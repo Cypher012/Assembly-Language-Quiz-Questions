@@ -46,7 +46,8 @@ export const csc312SystemAnalysisCourse: Course = {
     },
     {
       id: "Chapter 6",
-      label: "Lecture 6: Communications Systems - Maintenance, Support & User Involvement",
+      label:
+        "Lecture 6: Communications Systems - Maintenance, Support & User Involvement",
       description:
         "Requirements elicitation technique profiles and trade-offs (interviews, JAD, questionnaires, document analysis, observation), requirements analysis strategies (problem, root-cause, duration), Lewin's model of organizational change, the three postimplementation pillars, Level 1/2 support and problem reports, the six-step change-request lifecycle, the five sources of change requests, project assessment, and the Tune Source case study.",
     },

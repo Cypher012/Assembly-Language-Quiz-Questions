@@ -6,6 +6,9 @@ import { isQuestionV2, isShuffledQuestion } from "@/lib/quiz-types";
 import { Button } from "@/components/ui/button";
 import { ChevronDown } from "lucide-react";
 import { cn } from "@/lib/utils";
+import ReactMarkdown from "react-markdown";
+import remarkMath from "remark-math";
+import rehypeKatex from "rehype-katex";
 
 const FOCUS_RING =
   "outline-none focus-visible:ring-[3px] focus-visible:ring-chalk-yellow/70 focus-visible:ring-offset-2 focus-visible:ring-offset-paper";
@@ -228,9 +231,14 @@ export default function ResultSummary({
                           {answer.isCorrect ? "✓ Correct" : "✗ Wrong"}
                         </span>
                       </div>
-                      <p className="text-paper-ink font-medium">
-                        {question.text}
-                      </p>
+                      <div className="text-paper-ink font-medium [&_p]:m-0">
+                        <ReactMarkdown
+                          remarkPlugins={[remarkMath]}
+                          rehypePlugins={[rehypeKatex]}
+                        >
+                          {question.text}
+                        </ReactMarkdown>
+                      </div>
                     </div>
                     <ChevronDown
                       className={cn(
@@ -247,16 +255,21 @@ export default function ResultSummary({
                       <p className="text-xs font-bold text-paper-ink-muted uppercase mb-2">
                         Your Answer
                       </p>
-                      <p
+                      <div
                         className={cn(
-                          "text-sm p-3 rounded-md border-2",
+                          "text-sm p-3 rounded-md border-2 [&_p]:m-0",
                           answer.isCorrect
                             ? "bg-chalk-sage/10 border-chalk-sage text-chalk-sage-ink"
                             : "bg-chalk-coral/10 border-chalk-coral text-chalk-coral-ink",
                         )}
                       >
-                        {selectedOptionText}
-                      </p>
+                        <ReactMarkdown
+                          remarkPlugins={[remarkMath]}
+                          rehypePlugins={[rehypeKatex]}
+                        >
+                          {selectedOptionText}
+                        </ReactMarkdown>
+                      </div>
                     </div>
 
                     {!answer.isCorrect && (
@@ -264,9 +277,14 @@ export default function ResultSummary({
                         <p className="text-xs font-bold text-paper-ink-muted uppercase mb-2">
                           Correct Answer
                         </p>
-                        <p className="text-sm p-3 rounded-md border-2 bg-chalk-sage/10 border-chalk-sage text-chalk-sage-ink">
-                          {correctOptionText}
-                        </p>
+                        <div className="text-sm p-3 rounded-md border-2 bg-chalk-sage/10 border-chalk-sage text-chalk-sage-ink [&_p]:m-0">
+                          <ReactMarkdown
+                            remarkPlugins={[remarkMath]}
+                            rehypePlugins={[rehypeKatex]}
+                          >
+                            {correctOptionText}
+                          </ReactMarkdown>
+                        </div>
                       </div>
                     )}
 
@@ -275,9 +293,14 @@ export default function ResultSummary({
                         <p className="text-xs font-bold text-paper-ink-muted uppercase mb-2">
                           Explanation
                         </p>
-                        <p className="text-sm text-paper-ink-muted">
-                          {question.explanation}
-                        </p>
+                        <div className="text-sm text-paper-ink-muted [&_p]:m-0">
+                          <ReactMarkdown
+                            remarkPlugins={[remarkMath]}
+                            rehypePlugins={[rehypeKatex]}
+                          >
+                            {question.explanation}
+                          </ReactMarkdown>
+                        </div>
                       </div>
                     )}
                   </div>

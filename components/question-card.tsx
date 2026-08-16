@@ -7,6 +7,8 @@ import FeedbackPanel from "./feedback-panel";
 import { Button } from "@/components/ui/button";
 import ReactMarkdown from "react-markdown";
 import rehypeHighlight from "rehype-highlight";
+import remarkMath from "remark-math";
+import rehypeKatex from "rehype-katex";
 import "highlight.js/styles/github-dark.css";
 
 interface QuestionCardProps {
@@ -42,7 +44,10 @@ export default function QuestionCard({
         {/* Question Text */}
         <div className="mb-8">
           <div className="max-w-none text-xl sm:text-2xl font-bold text-paper-ink text-balance [&_code]:text-xs [&_code]:sm:text-sm [&_pre]:text-xs [&_pre]:sm:text-sm [&_pre]:my-3 [&_p]:mb-2">
-            <ReactMarkdown rehypePlugins={[rehypeHighlight]}>
+            <ReactMarkdown
+              remarkPlugins={[remarkMath]}
+              rehypePlugins={[rehypeHighlight, rehypeKatex]}
+            >
               {question.text}
             </ReactMarkdown>
           </div>

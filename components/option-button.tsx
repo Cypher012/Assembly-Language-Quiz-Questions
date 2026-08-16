@@ -3,6 +3,9 @@
 import type { Option } from "@/lib/quiz-types";
 import { cn } from "@/lib/utils";
 import { Check, X } from "lucide-react";
+import ReactMarkdown from "react-markdown";
+import remarkMath from "remark-math";
+import rehypeKatex from "rehype-katex";
 
 const FOCUS_RING =
   "outline-none focus-visible:ring-[3px] focus-visible:ring-chalk-yellow/70 focus-visible:ring-offset-2 focus-visible:ring-offset-paper";
@@ -81,7 +84,11 @@ export default function OptionButton({
             displayLabel
           )}
         </div>
-        <span>{optionText}</span>
+        <span className="[&_p]:m-0">
+          <ReactMarkdown remarkPlugins={[remarkMath]} rehypePlugins={[rehypeKatex]}>
+            {optionText}
+          </ReactMarkdown>
+        </span>
       </div>
     </button>
   );

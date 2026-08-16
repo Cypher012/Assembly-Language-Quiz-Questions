@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { Inter, Permanent_Marker } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
+import "katex/dist/katex.min.css";
 
 const body = Inter({ subsets: ["latin"], variable: "--font-body" });
 const chalk = Permanent_Marker({
