@@ -156,7 +156,7 @@ export default function ChapterSelect({
                 <div className="flex items-start justify-between gap-3">
                   <div>
                     <span className="text-xs font-bold text-rule-red">
-                      Ch. {i + 1}
+                      Ch. {chapter.id.split(" ")[1]}
                     </span>
                     <h2 className="text-lg font-bold text-paper-ink group-hover:text-rule-red transition-colors leading-snug mt-0.5">
                       {chapter.label}

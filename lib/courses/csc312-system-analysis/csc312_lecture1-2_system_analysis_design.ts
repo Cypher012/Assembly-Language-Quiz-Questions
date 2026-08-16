@@ -2027,20 +2027,6 @@ const csc312Lecture1And2Questions: QuestionV2[] = [
     id: "csc312_ch1_149",
     course: "CSC 312",
     chapter: "Chapter 1",
-    text: "Which of the following pairs is listed in the closing summary as a set of concepts a student should know the difference between?",
-    options: [
-      "Waterfall versus its own advantages",
-      "Systems Analyst versus the word System",
-      "Feedback versus the SDLC",
-      "Functional versus Non-functional requirements"
-    ],
-    correctAnswer: 3,
-    explanation: "The Summary: CBT Exam Focus Points section lists Functional vs Non-functional requirements among the key differences to know, alongside System Analysis vs Design, Logical vs Physical Design, Open vs Closed systems, and Positive vs Negative feedback.\n\nComparing Waterfall to its own advantages is not a distinction listed in the summary; the summary pairs contrasting concepts, not a topic with its own subset.\n\nComparing Systems Analyst to the word System is not one of the difference pairs listed in the summary.\n\nComparing Feedback to the SDLC is not one of the difference pairs listed in the summary."
-  },
-  {
-    id: "csc312_ch1_150",
-    course: "CSC 312",
-    chapter: "Chapter 1",
     text: "Which of the following methodologies is explicitly named in the closing summary's list of major methodologies to know?",
     options: [
       "Agile",
@@ -2052,7 +2038,7 @@ const csc312Lecture1And2Questions: QuestionV2[] = [
     explanation: "The Summary: CBT Exam Focus Points section explicitly lists Waterfall, Agile, Spiral, Prototyping, RAD, and V-Model as the methodologies to know.\n\nExtreme Programming is not named anywhere in the note's list of the six major methodologies.\n\nLean Startup is not named anywhere in the note's list of the six major methodologies.\n\nA Scrum-only Model is not named anywhere in the note; sprints are mentioned only as a concept within Agile."
   },
   {
-    id: "csc312_ch1_151",
+    id: "csc312_ch1_150",
     course: "CSC 312",
     chapter: "Chapter 1",
     text: "Which of the following methodologies is rated with High flexibility and High user involvement in the Comparison of Methodologies table?",
@@ -2066,7 +2052,7 @@ const csc312Lecture1And2Questions: QuestionV2[] = [
     explanation: "The Comparison of Methodologies table rates both Agile and Prototyping as High flexibility with High user involvement, so both named methodologies independently satisfy the claim, making All of these correct. Waterfall and the V-Model are rated Low flexibility with Low user involvement, showing that not every methodology fits this pattern, but Agile and Prototyping both do."
   },
   {
-    id: "csc312_ch1_152",
+    id: "csc312_ch1_151",
     course: "CSC 312",
     chapter: "Chapter 1",
     text: "Which of the following is a phase explicitly listed for the Waterfall Model?",
@@ -2080,7 +2066,7 @@ const csc312Lecture1And2Questions: QuestionV2[] = [
     explanation: "The Waterfall Model Phases are explicitly listed as Requirements Analysis, System Design, Implementation, Testing, Deployment, and Maintenance. A sprint retrospective is an Agile concept and Risk Analysis is a Spiral Model phase; since the note gives an exhaustive phase list for Waterfall that excludes both terms, neither belongs to it, making None of these correct."
   },
   {
-    id: "csc312_ch1_153",
+    id: "csc312_ch1_152",
     course: "CSC 312",
     chapter: "Chapter 1",
     text: "Which of the following is a type of feasibility study?",
@@ -2094,7 +2080,7 @@ const csc312Lecture1And2Questions: QuestionV2[] = [
     explanation: "The Feasibility Study table lists exactly four types: Technical, Economic, Operational, and Legal feasibility. Technical feasibility is explicitly one of them, while astrological feasibility does not appear anywhere in the note and is contradicted by the table's exhaustive list of four named types, so Technical feasibility alone is correct."
   },
   {
-    id: "csc312_ch1_154",
+    id: "csc312_ch1_153",
     course: "CSC 312",
     chapter: "Chapter 1",
     text: "Which of the following is one of the elements of a system?",
@@ -2108,7 +2094,7 @@ const csc312Lecture1And2Questions: QuestionV2[] = [
     explanation: "The Elements of a System section lists Environment, alongside Input and Output, Processor, Control, Feedback, and Boundaries and Interface, as an element of a system. An advertising budget does not appear among these elements anywhere in the note, so only Environment is correct."
   },
   {
-    id: "csc312_ch1_155",
+    id: "csc312_ch1_154",
     course: "CSC 312",
     chapter: "Chapter 1",
     text: "Which of the following is a skill category of a systems analyst?",
@@ -2122,7 +2108,7 @@ const csc312Lecture1And2Questions: QuestionV2[] = [
     explanation: "The Skills of System Analyst section names exactly four categories: Interpersonal, Technical, Analytical, and Management Skills. Management Skills is explicitly one of them, while culinary skills do not appear anywhere among these four named categories, so Management Skills alone is correct."
   },
   {
-    id: "csc312_ch1_156",
+    id: "csc312_ch1_155",
     course: "CSC 312",
     chapter: "Chapter 1",
     text: "Which of the following is a key activity in system design?",
@@ -2136,7 +2122,7 @@ const csc312Lecture1And2Questions: QuestionV2[] = [
     explanation: "The Key Activities in System Design section lists exactly six activities: Architectural, Database, Interface, Process, Security, and Output and Input Design. Both Security Design and Database Design are explicitly named among these six, so All of these is correct."
   },
   {
-    id: "csc312_ch1_157",
+    id: "csc312_ch1_156",
     course: "CSC 312",
     chapter: "Chapter 1",
     text: "Which of the following is listed as a benefit of using Structured Analysis or Object-Oriented Analysis techniques in system analysis?",
@@ -2150,7 +2136,7 @@ const csc312Lecture1And2Questions: QuestionV2[] = [
     explanation: "The Tools and Techniques in System Analysis section describes Structured Analysis as focusing on processes and data flow using DFDs and flowcharts, and Object-Oriented Analysis as focusing on objects and classes using UML diagrams, matching the claim about modeling with processes and data flow, or objects and classes. Eliminating requirements gathered from users is not associated with either technique and is contradicted by the emphasis on requirements gathering as a separate key analysis activity, so the modeling claim alone is correct."
   },
   {
-    id: "csc312_ch1_158",
+    id: "csc312_ch1_157",
     course: "CSC 312",
     chapter: "Chapter 1",
     text: "Which of the following is an advantage shared by both the Prototyping Model and Rapid Application Development (RAD)?",

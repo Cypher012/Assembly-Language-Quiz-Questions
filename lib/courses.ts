@@ -7,7 +7,7 @@ import { Question, QuestionV2 } from "./quiz-types";
 // import { csc315DSACourse } from "./courses/csc315-dsa";
 import { csc302OOPCourse } from "./courses/csc302-oop";
 import { csc304BusinessProgrammingCourse } from "./courses/csc304-bcp";
-import { cpe310AgentBasedCourse } from "./courses/cpe310-agent-based";
+import { cpe310AgentBasedSystemsCourse } from "./courses/cpe310-agent-based";
 import { csc306HciCourse } from "./courses/csc306-hci";
 import { csc312SystemAnalysisCourse } from "./courses/csc312-system-analysis";
 
@@ -33,9 +33,8 @@ export const courses: Course[] = [
   csc306HciCourse,
   csc304BusinessProgrammingCourse,
   csc312SystemAnalysisCourse,
+  cpe310AgentBasedSystemsCourse,
   // csc302OOPCourse,
-  // cpe310AgentBasedCourse,
-  // csc312Course,
 
   // cpe301AssemblyCourse,
   // csc315DSACourse,
