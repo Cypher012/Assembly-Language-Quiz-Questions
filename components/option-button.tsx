@@ -18,6 +18,7 @@ interface OptionButtonProps {
   isRevealed: boolean;
   onClick: () => void;
   isDisabled: boolean;
+  isExamMode?: boolean; // Hide correctness indicators in exam mode
 }
 
 export default function OptionButton({
@@ -28,14 +29,16 @@ export default function OptionButton({
   isRevealed,
   onClick,
   isDisabled,
+  isExamMode = false,
 }: OptionButtonProps) {
   // Extract option text - handles both old (object) and new (string) formats
   const optionText = typeof option === "string" ? option : option.text;
   const displayLabel =
     optionLabel || (typeof option === "object" ? option.id.toUpperCase() : "");
 
-  const isWrongSelected = isRevealed && isSelected && !isCorrect;
-  const isRightAnswer = isRevealed && isCorrect;
+  // In exam mode, never show correctness indicators (no checkmark or X)
+  const isWrongSelected = !isExamMode && isRevealed && isSelected && !isCorrect;
+  const isRightAnswer = !isExamMode && isRevealed && isCorrect;
 
   let borderColor = "border-paper-line";
   let bgColor = "bg-paper hover:bg-paper-2";

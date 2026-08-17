@@ -32,6 +32,7 @@ interface QuestionNavigatorProps {
   userAnswers: UserAnswer[];
   questionIds: string[];
   onNavigate: (index: number) => void;
+  hideCorrectness?: boolean; // Hide correctness info in exam mode
 }
 
 export default function QuestionNavigator({
@@ -40,6 +41,7 @@ export default function QuestionNavigator({
   userAnswers,
   questionIds,
   onNavigate,
+  hideCorrectness = false,
 }: QuestionNavigatorProps) {
   const [isExpanded, setIsExpanded] = useState(false);
 
@@ -83,36 +85,39 @@ export default function QuestionNavigator({
       {/* Collapsed view - always visible */}
       <div className="px-4 py-2">
         <div className="max-w-2xl mx-auto flex items-center justify-between gap-2">
-          <div className="flex items-center gap-2 sm:gap-4 text-xs sm:text-sm min-w-0">
-            <span className="text-board-ink-muted whitespace-nowrap">
-              Q{" "}
-              <span className="text-board-ink font-bold">
-                {currentIndex + 1}
+          {/* Hide score stats in exam mode */}
+          {!hideCorrectness && (
+            <div className="flex items-center gap-2 sm:gap-4 text-xs sm:text-sm min-w-0">
+              <span className="text-board-ink-muted whitespace-nowrap">
+                Q{" "}
+                <span className="text-board-ink font-bold">
+                  {currentIndex + 1}
+                </span>
+                /{totalQuestions}
               </span>
-              /{totalQuestions}
-            </span>
-            <span className="text-board-line hidden sm:inline">|</span>
-            <span className="text-board-ink-muted hidden sm:inline whitespace-nowrap">
-              Answered:{" "}
-              <span className="text-board-ink font-bold">
-                {answeredCount}
+              <span className="text-board-line hidden sm:inline">|</span>
+              <span className="text-board-ink-muted hidden sm:inline whitespace-nowrap">
+                Answered:{" "}
+                <span className="text-board-ink font-bold">
+                  {answeredCount}
+                </span>
               </span>
-            </span>
-            <span className="text-chalk-sage font-bold whitespace-nowrap">
-              {correctCount} ✓
-            </span>
-            <span className="text-chalk-coral font-bold whitespace-nowrap">
-              {answeredCount - correctCount} ✗
-            </span>
-            {passPercentage !== null && (
-              <span
-                className="font-bold whitespace-nowrap"
-                style={{ color: getPercentageColor(passPercentage) }}
-              >
-                {passPercentage}%
+              <span className="text-chalk-sage font-bold whitespace-nowrap">
+                {correctCount} ✓
               </span>
-            )}
-          </div>
+              <span className="text-chalk-coral font-bold whitespace-nowrap">
+                {answeredCount - correctCount} ✗
+              </span>
+              {passPercentage !== null && (
+                <span
+                  className="font-bold whitespace-nowrap"
+                  style={{ color: getPercentageColor(passPercentage) }}
+                >
+                  {passPercentage}%
+                </span>
+              )}
+            </div>
+          )}
           <button
             onClick={(e) => {
               e.preventDefault();
@@ -182,23 +187,30 @@ export default function QuestionNavigator({
                         FOCUS_RING,
                         isCurrent && "ring-2 ring-chalk-yellow",
                         answered &&
+                          !hideCorrectness &&
                           status === true &&
                           "bg-chalk-sage text-white hover:bg-chalk-sage/90 cursor-pointer",
                         answered &&
+                          !hideCorrectness &&
                           status === false &&
                           "bg-chalk-coral text-white hover:bg-chalk-coral/90 cursor-pointer",
+                        answered &&
+                          hideCorrectness &&
+                          "bg-board-2 text-board-ink hover:bg-board-2/80 cursor-pointer",
                         !answered &&
                           "bg-board-2 text-board-ink-muted cursor-not-allowed",
                         isCurrent && !answered && "bg-chalk-yellow/20 text-chalk-yellow",
                       )}
                       style={{ touchAction: "manipulation" }}
                       title={
-                        answered
-                          ? `Question ${index + 1} - ${status ? "Correct" : "Incorrect"}`
-                          : `Question ${index + 1} - Not answered`
+                        hideCorrectness && answered
+                          ? `Question ${index + 1} - Answered`
+                          : answered
+                            ? `Question ${index + 1} - ${status ? "Correct" : "Incorrect"}`
+                            : `Question ${index + 1} - Not answered`
                       }
                     >
-                      {answered ? (
+                      {answered && !hideCorrectness ? (
                         <span className="text-xs font-bold">
                           {status ? "✓" : "✗"}
                         </span>

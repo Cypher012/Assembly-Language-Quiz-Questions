@@ -48,6 +48,18 @@ function processQuestions(
   return shuffle ? shuffleArray(filtered) : filtered;
 }
 
+// Handles both old and new question formats for correctness checking.
+function checkIsCorrect(
+  question: Question | QuestionV2 | ShuffledQuestion,
+  optionId: string,
+): boolean {
+  return isQuestionV2(question) && "displayCorrectAnswer" in question
+    ? optionId === question.displayCorrectAnswer
+    : isQuestionV2(question)
+      ? optionId === String.fromCharCode(65 + question.correctAnswer)
+      : optionId === (question as Question).correctOptionId;
+}
+
 export default function QuizContainer() {
   // Course and chapter selection state
   const [selectedCourse, setSelectedCourse] = useState<Course | null>(null);
@@ -318,22 +330,46 @@ export default function QuizContainer() {
   })();
 
   const handleSelectOption = (optionId: string) => {
-    if (!isAnswered) {
-      setSelectedOption(optionId);
+    // In exam mode, allow changing answer even if already answered
+    if (isAnswered && !isExamMode) return;
+
+    setSelectedOption(optionId);
+
+    // In exam mode, automatically record/update the answer and show "Next Question" button
+    if (isExamMode) {
+      const isCorrect = checkIsCorrect(currentQuestion, optionId);
+      const questionId = currentQuestion.id;
+
+      // Update the answer (remove old one if it exists, add new one)
+      setUserAnswers((prev) => {
+        const filtered = prev.filter((a) => a.questionId !== questionId);
+        return [
+          ...filtered,
+          {
+            questionId,
+            selectedOptionId: optionId,
+            isCorrect,
+          },
+        ];
+      });
+
+      // Recalculate score
+      setScore((prev) => {
+        const oldAnswer = userAnswers.find((a) => a.questionId === questionId);
+        let adjustment = 0;
+        if (oldAnswer?.isCorrect) adjustment -= 1; // Remove old point
+        if (isCorrect) adjustment += 1; // Add new point
+        return Math.max(0, prev + adjustment);
+      });
+
+      setState("revealed");
     }
   };
 
   const handleConfirmAnswer = () => {
     if (!selectedOption) return;
 
-    // Handle both old and new question formats for correctness check
-    const isCorrect =
-      isQuestionV2(currentQuestion) && "displayCorrectAnswer" in currentQuestion
-        ? selectedOption === currentQuestion.displayCorrectAnswer
-        : isQuestionV2(currentQuestion)
-          ? selectedOption ===
-            String.fromCharCode(65 + currentQuestion.correctAnswer)
-          : selectedOption === (currentQuestion as Question).correctOptionId;
+    const isCorrect = checkIsCorrect(currentQuestion, selectedOption);
 
     setUserAnswers((prev) => [
       ...prev,
@@ -348,6 +384,7 @@ export default function QuizContainer() {
       setScore((prev) => prev + 1);
     }
 
+    // Normal mode: show "Next Question" button and feedback (eventually)
     setState("revealed");
   };
 
@@ -436,6 +473,7 @@ export default function QuizContainer() {
     if (previousAnswer) {
       setCurrentIndex(index);
       setSelectedOption(previousAnswer.selectedOptionId);
+      // Set to revealed so "Next Question" button shows, but feedback is hidden in exam mode
       setState("revealed");
     }
   };
@@ -596,6 +634,8 @@ export default function QuizContainer() {
           question={currentQuestion}
           selectedOption={selectedOption}
           isRevealed={isRevealed}
+          isAnswered={isAnswered}
+          isExamMode={isExamMode}
           onSelectOption={handleSelectOption}
           onConfirmAnswer={handleConfirmAnswer}
           onNextQuestion={handleNextQuestion}
@@ -609,6 +649,7 @@ export default function QuizContainer() {
         userAnswers={userAnswers}
         questionIds={questions.map((q) => q.id)}
         onNavigate={handleNavigateToQuestion}
+        hideCorrectness={isExamMode}
       />
 
       <KeyboardShortcutsModal

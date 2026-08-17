@@ -15,6 +15,8 @@ interface QuestionCardProps {
   question: Question | QuestionV2 | ShuffledQuestion; // Support all question types
   selectedOption: string | null;
   isRevealed: boolean;
+  isAnswered: boolean;
+  isExamMode: boolean;
   onSelectOption: (optionId: string) => void;
   onConfirmAnswer: () => void;
   onNextQuestion: () => void;
@@ -25,6 +27,8 @@ export default function QuestionCard({
   question,
   selectedOption,
   isRevealed,
+  isAnswered,
+  isExamMode,
   onSelectOption,
   onConfirmAnswer,
   onNextQuestion,
@@ -71,7 +75,8 @@ export default function QuestionCard({
                   isCorrect={label === question.displayCorrectAnswer}
                   isRevealed={isRevealed}
                   onClick={() => onSelectOption(label)}
-                  isDisabled={isRevealed}
+                  isDisabled={isAnswered && !isExamMode}
+                  isExamMode={isExamMode}
                 />
               ))
             : isQuestionV2(question)
@@ -91,7 +96,8 @@ export default function QuestionCard({
                       isCorrect={index === question.correctAnswer}
                       isRevealed={isRevealed}
                       onClick={() => onSelectOption(label)}
-                      isDisabled={isRevealed}
+                      isDisabled={isAnswered && !isExamMode}
+                      isExamMode={isExamMode}
                     />
                   );
                 })
@@ -106,13 +112,14 @@ export default function QuestionCard({
                     }
                     isRevealed={isRevealed}
                     onClick={() => onSelectOption(option.id)}
-                    isDisabled={isRevealed}
+                    isDisabled={isAnswered && !isExamMode}
+                    isExamMode={isExamMode}
                   />
                 ))}
         </div>
 
-        {/* Feedback Panel */}
-        {isRevealed && (
+        {/* Feedback Panel - only show in normal mode, not in exam mode */}
+        {isRevealed && !isExamMode && (
           <FeedbackPanel
             isCorrect={isCorrect}
             explanation={question.explanation}
@@ -121,7 +128,18 @@ export default function QuestionCard({
 
         {/* Action Buttons */}
         <div className="flex gap-3 pt-6 border-t border-paper-line">
-          {!isRevealed ? (
+          {isExamMode ? (
+            // Exam mode: only show "Next Question" button after selecting an option
+            selectedOption && (
+              <Button
+                onClick={onNextQuestion}
+                className="flex-1 h-10 sm:h-11 text-base font-bold transition-all duration-200"
+              >
+                {isLastQuestion ? "See Results" : "Next Question"}
+              </Button>
+            )
+          ) : !isRevealed ? (
+            // Normal mode: show "Confirm Answer" until answer is confirmed
             <Button
               onClick={onConfirmAnswer}
               disabled={!selectedOption}
@@ -130,6 +148,7 @@ export default function QuestionCard({
               Confirm Answer
             </Button>
           ) : (
+            // Normal mode: show "Next Question" after answer is confirmed
             <Button
               onClick={onNextQuestion}
               className="flex-1 h-10 sm:h-11 text-base font-bold transition-all duration-200"
