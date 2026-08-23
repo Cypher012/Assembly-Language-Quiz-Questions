@@ -275,7 +275,7 @@ const csc308Chapter2Questions: QuestionV2[] = [
     id: "csc308_ch2_020",
     course: "CSC 308",
     chapter: "Chapter 2",
-    text: "Since $x^{0}$ equals 1, Equation 2.1 can be rewritten as Equation 2.5. What are Equations 2.1 and 2.5 together called?",
+    text: "The general polynomial $P_n(x) = \\sum_{i=0}^{n} a_i \\times x^i$ can equivalently be written out term by term as $P_n(x) = a_0 \\times x^0 + a_1 \\times x^1 + a_2 \\times x^2 + \\ldots + a_n \\times x^n$, since $x^0$ equals 1. What is this pair of equivalent forms together called?",
     options: [
       "The Horner's or nested form of polynomial expression",
       "The Computation Process Tree representation",
