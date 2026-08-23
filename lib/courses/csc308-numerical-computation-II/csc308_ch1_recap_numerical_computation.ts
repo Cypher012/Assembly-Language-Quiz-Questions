@@ -142,14 +142,14 @@ const csc308Chapter1Questions: QuestionV2[] = [
     chapter: "Chapter 1",
     text: "Which equation correctly expresses the Temporal aspect of a process?",
     options: [
-      "Temporal aspect = Location + Displacement",
-      "Temporal aspect = State + Transition",
-      "Temporal aspect = Digit + Number",
-      "Temporal aspect = Constant + Fraction",
+      "Temporal aspect = $\\text{Location} + \\text{Displacement}$",
+      "Temporal aspect = $\\text{State} + \\text{Transition}$",
+      "Temporal aspect = $\\text{Digit} + \\text{Number}$",
+      "Temporal aspect = $\\text{Constant} + \\text{Fraction}$",
     ],
     correctAnswer: 1,
     explanation:
-      "Equation 1.1 defines the Temporal aspect of a process as State plus Transition.\n\nLocation plus Displacement is instead Equation 1.4, the definition of the Spatial aspect, not the Temporal one.\n\nDigit plus Number is not a foundational equation given for either aspect of a process.\n\nConstant plus Fraction is not a foundational equation given for either aspect of a process.",
+      "Equation 1.1 defines the Temporal aspect of a process as $\\text{State} + \\text{Transition}$.\n\n$\\text{Location} + \\text{Displacement}$ is instead Equation 1.4, the definition of the Spatial aspect, not the Temporal one.\n\n$\\text{Digit} + \\text{Number}$ is not a foundational equation given for either aspect of a process.\n\n$\\text{Constant} + \\text{Fraction}$ is not a foundational equation given for either aspect of a process.",
   },
   {
     id: "csc308_ch1_011",
@@ -157,14 +157,14 @@ const csc308Chapter1Questions: QuestionV2[] = [
     chapter: "Chapter 1",
     text: "Which equation correctly expresses a Transition?",
     options: [
-      "Transition = Location + Gap",
-      "Transition = Digit times Base",
-      "Transition = State + Interval",
-      "Transition = State(i+1) minus State(i)",
+      "$\\text{Transition} = \\text{Location} + \\text{Gap}$",
+      "$\\text{Transition} = \\text{Digit} \\times \\text{Base}$",
+      "$\\text{Transition} = \\text{State} + \\text{Interval}$",
+      "Transition = $\\text{State}_{i+1} - \\text{State}_i$",
     ],
     correctAnswer: 2,
     explanation:
-      "Equation 1.2 defines Transition as State plus Interval.\n\nLocation plus Gap is instead Equation 1.5, the definition of Displacement, the spatial analog of Transition, not Transition itself.\n\nDigit times Base relates to the later polynomial representation of a Constant, not the definition of Transition.\n\nState(i+1) minus State(i) is instead Equation 1.3, the definition of Interval, not Transition.",
+      "Equation 1.2 defines Transition as $\\text{State} + \\text{Interval}$.\n\n$\\text{Location} + \\text{Gap}$ is instead Equation 1.5, the definition of Displacement, the spatial analog of Transition, not Transition itself.\n\n$\\text{Digit} \\times \\text{Base}$ relates to the later polynomial representation of a Constant, not the definition of Transition.\n\n$\\text{State}_{i+1} - \\text{State}_i$ is instead Equation 1.3, the definition of Interval, not Transition.",
   },
   {
     id: "csc308_ch1_012",
@@ -172,14 +172,14 @@ const csc308Chapter1Questions: QuestionV2[] = [
     chapter: "Chapter 1",
     text: "Which equation correctly defines an Interval?",
     options: [
-      "Interval = Location(i+1) minus Location(i)",
-      "Interval = State plus Transition",
-      "Interval = Digit(i) times Base(i)",
-      "Interval = State(i+1) minus State(i)",
+      "Interval = $\\text{Location}_{i+1} - \\text{Location}_i$",
+      "$\\text{Interval} = \\text{State} + \\text{Transition}$",
+      "Interval = $\\text{Digit}_i \\times \\text{Base}_i$",
+      "$\\text{Interval} = \\text{State}_{i+1} - \\text{State}_i$",
     ],
     correctAnswer: 3,
     explanation:
-      "Equation 1.3 defines an Interval as State(i+1) minus State(i).\n\nLocation(i+1) minus Location(i) is instead Equation 1.6, the definition of a Gap, the spatial analog of Interval, not Interval itself.\n\nState plus Transition is instead Equation 1.1, the definition of the Temporal aspect, not an Interval.\n\nDigit(i) times Base(i) relates to the later polynomial representation of a Constant, not the definition of an Interval.",
+      "Equation 1.3 defines an Interval as $\\text{State}_{i+1} - \\text{State}_i$.\n\n$\\text{Location}_{i+1} - \\text{Location}_i$ is instead Equation 1.6, the definition of a Gap, the spatial analog of Interval, not Interval itself.\n\n$\\text{State} + \\text{Transition}$ is instead Equation 1.1, the definition of the Temporal aspect, not an Interval.\n\n$\\text{Digit}_i \\times \\text{Base}_i$ relates to the later polynomial representation of a Constant, not the definition of an Interval.",
   },
   {
     id: "csc308_ch1_013",
@@ -187,14 +187,14 @@ const csc308Chapter1Questions: QuestionV2[] = [
     chapter: "Chapter 1",
     text: "Which equation correctly expresses a Displacement?",
     options: [
-      "Displacement = Location + Gap",
-      "Displacement = State + Interval",
-      "Displacement = Location(i+1) minus Location(i)",
-      "Displacement = Digit + Base",
+      "$\\text{Displacement} = \\text{Location} + \\text{Gap}$",
+      "$\\text{Displacement} = \\text{State} + \\text{Interval}$",
+      "Displacement = $\\text{Location}_{i+1} - \\text{Location}_i$",
+      "$\\text{Displacement} = \\text{Digit} + \\text{Base}$",
     ],
     correctAnswer: 0,
     explanation:
-      "Equation 1.5 defines Displacement as Location plus Gap.\n\nState plus Interval is instead Equation 1.2, the definition of Transition, the temporal analog of Displacement, not Displacement itself.\n\nLocation(i+1) minus Location(i) is instead Equation 1.6, the definition of a Gap, not Displacement.\n\nDigit plus Base is not a foundational equation given in the source.",
+      "Equation 1.5 defines Displacement as $\\text{Location} + \\text{Gap}$.\n\n$\\text{State} + \\text{Interval}$ is instead Equation 1.2, the definition of Transition, the temporal analog of Displacement, not Displacement itself.\n\n$\\text{Location}_{i+1} - \\text{Location}_i$ is instead Equation 1.6, the definition of a Gap, not Displacement.\n\n$\\text{Digit} + \\text{Base}$ is not a foundational equation given in the source.",
   },
   {
     id: "csc308_ch1_014",
@@ -202,29 +202,29 @@ const csc308Chapter1Questions: QuestionV2[] = [
     chapter: "Chapter 1",
     text: "Which equation correctly defines a Gap?",
     options: [
-      "Gap = State(i+1) minus State(i)",
-      "Gap = Location(i+1) minus Location(i)",
-      "Gap = Location + Displacement",
-      "Gap = Digit(i) times Base(i)",
+      "Gap = $\\text{State}_{i+1} - \\text{State}_i$",
+      "$\\text{Gap} = \\text{Location}_{i+1} - \\text{Location}_i$",
+      "$\\text{Gap} = \\text{Location} + \\text{Displacement}$",
+      "Gap = $\\text{Digit}_i \\times \\text{Base}_i$",
     ],
     correctAnswer: 1,
     explanation:
-      "Equation 1.6 defines a Gap as Location(i+1) minus Location(i).\n\nState(i+1) minus State(i) is instead Equation 1.3, the definition of an Interval, the temporal analog of Gap, not Gap itself.\n\nLocation plus Displacement is instead Equation 1.4, the definition of the Spatial aspect, not a Gap.\n\nDigit(i) times Base(i) relates to the later polynomial representation of a Constant, not the definition of a Gap.",
+      "Equation 1.6 defines a Gap as $\\text{Location}_{i+1} - \\text{Location}_i$.\n\n$\\text{State}_{i+1} - \\text{State}_i$ is instead Equation 1.3, the definition of an Interval, the temporal analog of Gap, not Gap itself.\n\n$\\text{Location} + \\text{Displacement}$ is instead Equation 1.4, the definition of the Spatial aspect, not a Gap.\n\n$\\text{Digit}_i \\times \\text{Base}_i$ relates to the later polynomial representation of a Constant, not the definition of a Gap.",
   },
   {
     id: "csc308_ch1_015",
     course: "CSC 308",
     chapter: "Chapter 1",
-    text: "Which of the following is the correct spatial-aspect analog of the temporal equation 'Transition = State + Interval'?",
+    text: "Which of the following is the correct spatial-aspect analog of the temporal equation 'Transition = $\\text{State} + \\text{Interval}$'?",
     options: [
-      "Gap = Location + Displacement",
-      "Location = Displacement + Gap",
-      "Displacement = Location + Gap",
-      "Transition = Location + Gap",
+      "$\\text{Gap} = \\text{Location} + \\text{Displacement}$",
+      "$\\text{Location} = \\text{Displacement} + \\text{Gap}$",
+      "$\\text{Displacement} = \\text{Location} + \\text{Gap}$",
+      "$\\text{Transition} = \\text{Location} + \\text{Gap}$",
     ],
     correctAnswer: 2,
     explanation:
-      "Displacement = Location + Gap is the spatial-aspect analog of Transition = State + Interval, following the parallel structure between Equations 1.1-1.3 for the temporal aspect and Equations 1.4-1.6 for the spatial aspect.\n\nGap = Location + Displacement reverses the actual roles of Gap and Displacement in the equation, since Gap is instead defined as the difference between two locations, not their sum.\n\nLocation = Displacement + Gap is not one of the six foundational equations given.\n\nTransition = Location + Gap incorrectly mixes a temporal term, Transition, with spatial terms, Location and Gap.",
+      "$\\text{Displacement} = \\text{Location} + \\text{Gap}$ is the spatial-aspect analog of $\\text{Transition} = \\text{State} + \\text{Interval}$, following the parallel structure between Equations 1.1-1.3 for the temporal aspect and Equations 1.4-1.6 for the spatial aspect.\n\n$\\text{Gap} = \\text{Location} + \\text{Displacement}$ reverses the actual roles of Gap and Displacement in the equation, since Gap is instead defined as the difference between two locations, not their sum.\n\n$\\text{Location} = \\text{Displacement} + \\text{Gap}$ is not one of the six foundational equations given.\n\n$\\text{Transition} = \\text{Location} + \\text{Gap}$ incorrectly mixes a temporal term, Transition, with spatial terms, Location and Gap.",
   },
   {
     id: "csc308_ch1_016",
@@ -234,7 +234,7 @@ const csc308Chapter1Questions: QuestionV2[] = [
     options: ["True", "False", "Maybe", "I don't know"],
     correctAnswer: 0,
     explanation:
-      "Equations 1.1-1.3 formalize the Temporal aspect (Temporal aspect = State + Transition; Transition = State + Interval; Interval = State(i+1) - State(i)), and Equations 1.4-1.6 formalize the Spatial aspect, which is explicitly stated to be not in the purview of this course.",
+      "Equations 1.1-1.3 formalize the Temporal aspect (Temporal aspect = $\\text{State} + \\text{Transition}$; Transition = $\\text{State} + \\text{Interval}$; Interval = $\\text{State}_{i+1}$ - $\\text{State}_i$), and Equations 1.4-1.6 formalize the Spatial aspect, which is explicitly stated to be not in the purview of this course.",
   },
   {
     id: "csc308_ch1_017",
@@ -272,14 +272,14 @@ const csc308Chapter1Questions: QuestionV2[] = [
     chapter: "Chapter 1",
     text: "Which of the following is a foundational equation given for the Spatial aspect of a process?",
     options: [
-      "Gap = Location(i+1) minus Location(i)",
-      "Constant Number = sum of Digit(i) times Base to the power i",
-      "All of these",
-      "None of these",
+      "$\\text{Gap} = \\text{Location}_{i+1} - \\text{Location}_i$",
+      "$\\text{Interval} = \\text{State}_{i+1} - \\text{State}_i$",
+      "$\\text{Temporal aspect} = \\text{State} + \\text{Transition}$",
+      "$\\text{Transition} = \\text{State} + \\text{Interval}$",
     ],
     correctAnswer: 0,
     explanation:
-      "Gap = Location(i+1) minus Location(i) is Equation 1.6, one of the three foundational equations given for the Spatial aspect. The Constant Number polynomial equation is instead introduced much later, under the Temporal-aspect hierarchy for Eyo (Constant), not among the Spatial-aspect equations, so only the Gap equation is supported here.",
+      "$\\text{Gap} = \\text{Location}_{i+1} - \\text{Location}_i$ is Equation 1.6, one of the three foundational equations given for the Spatial aspect.\n\n$\\text{Interval} = \\text{State}_{i+1} - \\text{State}_i$ is instead Equation 1.3, the temporal analog of Gap, not a Spatial-aspect equation.\n\n$\\text{Temporal aspect} = \\text{State} + \\text{Transition}$ is instead Equation 1.1, a Temporal-aspect equation, not Spatial.\n\n$\\text{Transition} = \\text{State} + \\text{Interval}$ is instead Equation 1.2, also a Temporal-aspect equation, not Spatial.",
   },
   {
     id: "csc308_ch1_020",
@@ -337,14 +337,14 @@ const csc308Chapter1Questions: QuestionV2[] = [
     chapter: "Chapter 1",
     text: "Which of the following is a property of Regular language rendering of numerical computation?",
     options: [
-      "First-order logic",
-      "One-dimensional structure",
-      "All of these",
-      "None of these",
+      "First-order logic, expressed through a One-dimensional structure",
+      "Second-order logic, expressed through a Two-dimensional structure",
+      "Third-order logic, expressed through a Three-dimensional structure",
+      "No logic order or dimension at all, since Regular language is number-neutral",
     ],
-    correctAnswer: 2,
+    correctAnswer: 0,
     explanation:
-      "Regular language is formulated with First-order logic and expressed through a One-dimensional structure, so both properties are supported, making All of these correct.",
+      "Regular language is formulated with First-order logic and expressed through a One-dimensional structure.\n\nSecond-order logic in a Two-dimensional structure instead describes Context-neutral language, not Regular.\n\nThird-order logic in a Three-dimensional structure instead describes Context-sensitive language, not Regular.\n\nRegular language does have a defined logic order and dimension; it is Zero, not Regular language itself, that is described as number-neutral.",
   },
   {
     id: "csc308_ch1_025",
@@ -437,14 +437,14 @@ const csc308Chapter1Questions: QuestionV2[] = [
     chapter: "Chapter 1",
     text: "Which of the following is given as a lecturer's example of Regular language rendering (Equation 1.7 or 1.8)?",
     options: [
-      "Y = A + B",
-      "5 = 3 + 2",
-      "205 = 2 times 10 squared + 0 times 10 + 5",
+      "$Y = A + B$",
+      "$5 = 3 + 2$",
+      "$205 = 2 \\times 10^{2} + 0 \\times 10^{1} + 5 \\times 10^{0}$",
       "The polynomial expansion of the fraction 0.205",
     ],
     correctAnswer: 1,
     explanation:
-      "5 = 3 + 2 is given as Equation 1.7, a lecturer's example of Regular language rendering, alongside 6 = 3 times 2 as Equation 1.8.\n\nY = A + B is instead given as Equation 1.9, an example of Context-neutral language rendering with variable-terms, not Regular.\n\n205 = 2 times 10 squared + 0 times 10 + 5 is the polynomial expansion of the constant 205, introduced later in the hierarchy section, not one of the Regular language examples 1.7 or 1.8.\n\nThe expansion of 0.205 is the polynomial expansion of a fraction, introduced later under Quantity, not one of the Regular language examples 1.7 or 1.8.",
+      "$5 = 3 + 2$ is given as Equation 1.7, a lecturer's example of Regular language rendering, alongside $6 = 3 \\times 2$ as Equation 1.8.\n\n$Y = A + B$ is instead given as Equation 1.9, an example of Context-neutral language rendering with variable-terms, not Regular.\n\n$205 = 2 \\times 10^{2} + 0 \\times 10^{1} + 5 \\times 10^{0}$ is the polynomial expansion of the constant 205, introduced later in the hierarchy section, not one of the Regular language examples 1.7 or 1.8.\n\nThe expansion of 0.205 is the polynomial expansion of a fraction, introduced later under Quantity, not one of the Regular language examples 1.7 or 1.8.",
   },
   {
     id: "csc308_ch1_032",
@@ -547,14 +547,14 @@ const csc308Chapter1Questions: QuestionV2[] = [
     chapter: "Chapter 1",
     text: "Which of the following is a property of Context-neutral language rendering of numerical computation?",
     options: [
-      "Third-order logic",
-      "One-dimensional structure",
-      "All of these",
-      "None of these",
+      "Second-order logic, expressed through a Two-dimensional structure",
+      "First-order logic, expressed through a One-dimensional structure",
+      "Third-order logic, expressed through a Three-dimensional structure",
+      "No logic order or dimension at all",
     ],
-    correctAnswer: 3,
+    correctAnswer: 0,
     explanation:
-      "Context-neutral language is formulated with Second-order logic in a Two-dimensional structure. Third-order logic instead belongs to Context-sensitive language, and One-dimensional structure instead belongs to Regular language, so neither option is supported and None of these is correct.",
+      "Context-neutral language is formulated with Second-order logic in a Two-dimensional structure.\n\nFirst-order logic in a One-dimensional structure instead describes Regular language, not Context-neutral.\n\nThird-order logic in a Three-dimensional structure instead describes Context-sensitive language, not Context-neutral.\n\nContext-neutral language does have a defined logic order and dimension, Second-order and Two-dimensional, not an absence of either.",
   },
   {
     id: "csc308_ch1_040",
@@ -562,14 +562,14 @@ const csc308Chapter1Questions: QuestionV2[] = [
     chapter: "Chapter 1",
     text: "Which of the following is given as a lecturer's example of Context-neutral language rendering (Equation 1.9 or 1.10)?",
     options: [
-      "5 = 3 + 2",
-      "6 = 3 times 2",
+      "$5 = 3 + 2$",
+      "$6 = 3 \\times 2$",
       "The polynomial expansion of the constant 205",
-      "Y = A + B",
+      "$Y = A + B$",
     ],
     correctAnswer: 3,
     explanation:
-      "Y = A + B is given as Equation 1.9, alongside Y = A times B as Equation 1.10, both lecturer's examples of Context-neutral language rendering using variable-terms Y, A, and B.\n\n5 = 3 + 2 is instead Equation 1.7, an example of Regular language rendering with constant terms, not Context-neutral.\n\n6 = 3 times 2 is instead Equation 1.8, an example of Regular language rendering, not Context-neutral.\n\nThe expansion of 205 is the polynomial expansion of a constant, introduced later in the hierarchy section, not one of the Context-neutral examples 1.9 or 1.10.",
+      "$Y = A + B$ is given as Equation 1.9, alongside $Y = A \\times B$ as Equation 1.10, both lecturer's examples of Context-neutral language rendering using variable-terms Y, A, and B.\n\n$5 = 3 + 2$ is instead Equation 1.7, an example of Regular language rendering with constant terms, not Context-neutral.\n\n$6 = 3 \\times 2$ is instead Equation 1.8, an example of Regular language rendering, not Context-neutral.\n\nThe expansion of 205 is the polynomial expansion of a constant, introduced later in the hierarchy section, not one of the Context-neutral examples 1.9 or 1.10.",
   },
   {
     id: "csc308_ch1_041",
@@ -752,14 +752,14 @@ const csc308Chapter1Questions: QuestionV2[] = [
     chapter: "Chapter 1",
     text: "Which of the following is a property of Context-sensitive language rendering of numerical computation?",
     options: [
-      "Second-order logic",
-      "Third-order logic",
-      "All of these",
-      "None of these",
+      "Third-order logic, expressed through a Three-dimensional structure",
+      "Second-order logic, expressed through a Two-dimensional structure",
+      "First-order logic, expressed through a One-dimensional structure",
+      "No logic order or dimension at all, since Context-sensitive language is purely infinite",
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation:
-      "Context-sensitive language is formulated with Third-order logic, so that option is supported. Second-order logic instead belongs to Context-neutral language, not Context-sensitive, so it is not supported, and since only one of the two specific options is correct, neither All of these nor None of these applies.",
+      "Context-sensitive language is formulated with Third-order logic, expressed through a Three-dimensional structure.\n\nSecond-order logic in a Two-dimensional structure instead describes Context-neutral language, not Context-sensitive.\n\nFirst-order logic in a One-dimensional structure instead describes Regular language, not Context-sensitive.\n\nContext-sensitive language does have a defined logic order and dimension, Third-order and Three-dimensional, despite also involving infinite instances.",
   },
   {
     id: "csc308_ch1_054",
@@ -1005,16 +1005,16 @@ const csc308Chapter1Questions: QuestionV2[] = [
     id: "csc308_ch1_070",
     course: "CSC 308",
     chapter: "Chapter 1",
-    text: "Which of the following is true of Ika (Digits)?",
+    text: "Ika (Digits) form the set of symbols constituting the alphabet of which of the following?",
     options: [
-      "They are primitive, logic-neutral symbols",
-      "There is only one instance of every digit in a numbering scheme's alphabet",
-      "All of these",
-      "None of these",
+      "A numbering scheme",
+      "A writing scheme (Orthography)",
+      "A language instrument's assessment criterion",
+      "The Spatial aspect of a process",
     ],
-    correctAnswer: 2,
+    correctAnswer: 0,
     explanation:
-      "Ika (Digits) are described as primitive, logic-neutral symbols, and there is only one instance of every digit in a numbering scheme's alphabet, so both properties are supported, making All of these correct.",
+      "Ika (Digits) is a set of symbols constituting the Alphabet of a numbering scheme.\n\nA writing scheme's orthography instead has Ite (Letters) as its alphabet, not Ika (Digits).\n\nAssessment criteria are terms like Ijokan, Tito, and Kikun, not the alphabet of a numbering scheme.\n\nThe Spatial aspect of a process is expressed through Names built from Letters, not through Digits, which express the Temporal aspect.",
   },
   {
     id: "csc308_ch1_071",
@@ -1225,7 +1225,7 @@ const csc308Chapter1Questions: QuestionV2[] = [
     id: "csc308_ch1_086",
     course: "CSC 308",
     chapter: "Chapter 1",
-    text: "In the lecturer's example 205 base 10 = 2 times 10 squared + 0 times 10 to the first + 5 times 10 to the zero, how is this interpreted?",
+    text: "In the lecturer's example 205 base 10 = $2 \\times 10^{2} + 0 \\times 10^{1} + 5 \\times 10^{0}$, how is this interpreted?",
     options: [
       "Taking two instances of Hundred, ignoring the instance of Ten, and taking five instances of Units",
       "Taking two instances of Ten, ignoring the instance of Hundred, and taking five instances of Units",
@@ -1395,7 +1395,7 @@ const csc308Chapter1Questions: QuestionV2[] = [
     id: "csc308_ch1_098",
     course: "CSC 308",
     chapter: "Chapter 1",
-    text: "In the lecturer's example 0.205 base 10 = 2 times 10 to the power negative 1 + 0 times 10 to the power negative 2 + 5 times 10 to the power negative 3, how is this interpreted?",
+    text: "In the lecturer's example 0.205 base 10 = $2 \\times 10^{-1} + 0 \\times 10^{-2} + 5 \\times 10^{-3}$, how is this interpreted?",
     options: [
       "Taking two instances of the Hundredth of a Unit Fraction, ignoring the Tenth, and taking five instances of a Thousandth",
       "Taking two instances of Hundred, ignoring Ten, and taking five instances of Units",
@@ -1442,14 +1442,14 @@ const csc308Chapter1Questions: QuestionV2[] = [
     chapter: "Chapter 1",
     text: "Which pair of computations illustrates the scaling contradiction that fractions produce, compared to constants?",
     options: [
-      "5 plus 5 = 10 (larger than the addends), but 0.5 plus 0.5 = 1.0 (also larger than the addends)",
-      "5 minus 5 = 0, and 0.5 minus 0.5 = 0, showing perfect consistency",
-      "5 times 5 = 25 (larger than the multiplicands), but 0.5 times 0.5 = 0.25 (smaller than the multiplicands)",
-      "The square root of 25 is 5, and the square root of 0.25 is 0.05, showing consistent scaling",
+      "$5 + 5 = 10$ (larger than the addends), but $0.5 + 0.5 = 1.0$ (also larger than the addends)",
+      "$5 - 5 = 0$, and $0.5 - 0.5 = 0$, showing perfect consistency",
+      "$5 \\times 5 = 25$ (larger than the multiplicands), but $0.5 \\times 0.5 = 0.25$ (smaller than the multiplicands)",
+      "The $\\sqrt{25}$ is 5, and the $\\sqrt{0.25}$ is 0.05, showing consistent scaling",
     ],
     correctAnswer: 2,
     explanation:
-      "The scaling contradiction is illustrated by 5 times 5 = 25, a result larger than the multiplicands, contrasted with 0.5 times 0.5 = 0.25, a result smaller than the multiplicands; similarly the square root of 25 is 5 but the square root of 0.25 is 0.5, a result larger than the radicand.\n\nAddition, a non-scaling operation, is explicitly described as not producing these contradictions; 5+5 and 0.5+0.5 both behave consistently as expected, unlike the scaling operations of multiplication and division.\n\nSubtraction, also a non-scaling operation, is explicitly described as not producing these contradictions; this example does not illustrate the scaling contradiction discussed in the notes.\n\nThe square root of 0.25 is 0.5, not 0.05; this incorrect value does not represent the actual contradiction described, where the true result, 0.5, is larger than the radicand 0.25.",
+      "The scaling contradiction is illustrated by $5 \\times 5 = 25$, a result larger than the multiplicands, contrasted with $0.5 \\times 0.5 = 0.25$, a result smaller than the multiplicands; similarly the $\\sqrt{25}$ is 5 but the $\\sqrt{0.25}$ is 0.5, a result larger than the radicand.\n\nAddition, a non-scaling operation, is explicitly described as not producing these contradictions; $5+5$ and $0.5+0.5$ both behave consistently as expected, unlike the scaling operations of multiplication and division.\n\nSubtraction, also a non-scaling operation, is explicitly described as not producing these contradictions; this example does not illustrate the scaling contradiction discussed in the notes.\n\nThe $\\sqrt{0.25}$ is 0.5, not 0.05; this incorrect value does not represent the actual contradiction described, where the true result, 0.5, is larger than the radicand 0.25.",
   },
   {
     id: "csc308_ch1_102",
@@ -1464,7 +1464,7 @@ const csc308Chapter1Questions: QuestionV2[] = [
     ],
     correctAnswer: 3,
     explanation:
-      "These logical contradictions are not possible in non-scaling operations, such as Addition and Subtraction; admitting these binary opposites in context-neutral computation would cause inconsistency, which is NOT admissible in a context-neutral explanation, which is precisely why fractions are excluded from Regular (constant-only) computation altogether.\n\nRegular language explicitly does NOT permit fractions at all, due to the binary opposition inherent in fractions, so this cannot be the reason contradictions are considered inadmissible there.\n\nScaling operations, Multiplication and Division, are explicitly within the ambit of Context-neutral language, so they are not forbidden entirely; it is only the specific contradictions they produce with fractions that are discussed.\n\nZero is not described as a requirement for scaling operations to succeed; the discussion concerns contradictions in results, such as 0.5 times 0.5, not the presence or absence of Zero.",
+      "These logical contradictions are not possible in non-scaling operations, such as Addition and Subtraction; admitting these binary opposites in context-neutral computation would cause inconsistency, which is NOT admissible in a context-neutral explanation, which is precisely why fractions are excluded from Regular (constant-only) computation altogether.\n\nRegular language explicitly does NOT permit fractions at all, due to the binary opposition inherent in fractions, so this cannot be the reason contradictions are considered inadmissible there.\n\nScaling operations, Multiplication and Division, are explicitly within the ambit of Context-neutral language, so they are not forbidden entirely; it is only the specific contradictions they produce with fractions that are discussed.\n\nZero is not described as a requirement for scaling operations to succeed; the discussion concerns contradictions in results, such as $0.5 \\times 0.5$, not the presence or absence of Zero.",
   },
   {
     id: "csc308_ch1_103",
@@ -1589,12 +1589,12 @@ const csc308Chapter1Questions: QuestionV2[] = [
     options: [
       "Constantly repeating digits",
       "Randomly repeating variables",
-      "All of these",
-      "None of these",
+      "Finite and terminating digits",
+      "Number-neutral digits",
     ],
     correctAnswer: 0,
     explanation:
-      "The three categories of infinite fraction ascribed to Orin (Quality) are: infinite and constantly repeating digits, infinite and cyclic repeating digits, and infinite and random digits, so constantly repeating digits is correct. 'Randomly repeating variables' is not one of the three named categories, which specifically concern digits, not variables, and does not match any of the three category names, so only constantly repeating digits is supported here.",
+      "The three categories of infinite fraction ascribed to Orin (Quality) are: infinite and constantly repeating digits, infinite and cyclic repeating digits, and infinite and random digits.\n\n'Randomly repeating variables' is not one of the three named categories, which specifically concern digits, not variables.\n\nFinite and terminating digits describes fractions ascribed to Iwon (Quantity), the opposite of the infinite fractions ascribed to Orin.\n\nNumber-neutral digits describes Zero specifically, not a category of infinite fraction.",
   },
   {
     id: "csc308_ch1_112",
@@ -1610,16 +1610,16 @@ const csc308Chapter1Questions: QuestionV2[] = [
     id: "csc308_ch1_113",
     course: "CSC 308",
     chapter: "Chapter 1",
-    text: "Which of the following is true regarding the temporal states of Iwon (Quantity) and Orin (Quality)?",
+    text: "The temporal states of Iwon (Quantity) and Orin (Quality) are both described as irregular, but how do they differ from each other?",
     options: [
-      "Both are described as regular, isolated instances, just like Eyo (Constant)",
-      "Both are described as irregular, though Iwon is rational and Orin is irrational",
-      "All of these",
-      "None of these",
+      "Iwon is rational, simplified through related and connected instances, while Orin is irrational, simplified through interrelated and interconnected instances",
+      "Iwon is irrational and Orin is rational, the reverse of the actual distinction",
+      "Both Iwon and Orin are equally rational, with no distinction between them",
+      "Iwon is regular while Orin is irregular, contradicting the premise that both are irregular",
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation:
-      "Both Iwon and Orin are described as irregular, though Iwon is rational, simplified through related and connected instances, while Orin is irrational, simplified through interrelated and interconnected instances, so only that option is supported. Being regular, isolated instances instead describes Eyo (Constant), not Iwon or Orin, so that option is not supported here.",
+      "Iwon (Quantity) is rational, simplified through related and connected instances, while Orin (Quality) is irrational, simplified through interrelated and interconnected instances, distinguishing the two irregular states from each other.\n\nReversing rational and irrational swaps the actual distinction; it is Iwon that is rational, and Orin that is irrational, not the other way around.\n\nThe notes explicitly distinguish Iwon as rational and Orin as irrational; they are not described as equally rational with no distinction.\n\nBoth Iwon and Orin are described as irregular, unlike Eyo, which is the regular one; describing Iwon as regular would contradict this explicit classification.",
   },
   {
     id: "csc308_ch1_114",
