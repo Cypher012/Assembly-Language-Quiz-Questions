@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { Calculator as CalculatorIcon, X } from "lucide-react";
+import { Calculator as CalculatorIcon, Scaling, X } from "lucide-react";
 
 interface CalculatorModalProps {
   open: boolean;
@@ -10,6 +10,11 @@ interface CalculatorModalProps {
 
 const PANEL_WIDTH = 280;
 const PANEL_MARGIN = 16;
+const SIZE_MIN = 0.75;
+const SIZE_MAX = 1.5;
+
+const clamp = (value: number, min: number, max: number) =>
+  Math.min(Math.max(value, min), max);
 
 const MAX_LENGTH = 40;
 
@@ -112,10 +117,16 @@ export default function CalculatorModal({
   const [position, setPosition] = useState<{ x: number; y: number } | null>(
     null,
   );
+  const [size, setSize] = useState(1);
   const dragState = useRef<{
     pointerId: number;
     offsetX: number;
     offsetY: number;
+  } | null>(null);
+  const resizeState = useRef<{
+    pointerId: number;
+    originX: number;
+    originY: number;
   } | null>(null);
   const panelRef = useRef<HTMLDivElement>(null);
 
@@ -125,8 +136,9 @@ export default function CalculatorModal({
 
   const clampPosition = (x: number, y: number) => {
     const panel = panelRef.current;
-    const width = panel?.offsetWidth ?? PANEL_WIDTH;
-    const height = panel?.offsetHeight ?? 0;
+    const rect = panel?.getBoundingClientRect();
+    const width = rect?.width ?? PANEL_WIDTH * size;
+    const height = rect?.height ?? 0;
     const maxX = window.innerWidth - width - PANEL_MARGIN;
     const maxY = window.innerHeight - height - PANEL_MARGIN;
     return {
@@ -157,6 +169,41 @@ export default function CalculatorModal({
   const handleDragEnd = (e: React.PointerEvent<HTMLDivElement>) => {
     if (dragState.current?.pointerId === e.pointerId) {
       dragState.current = null;
+    }
+  };
+
+  const handleResizeStart = (e: React.PointerEvent<HTMLDivElement>) => {
+    e.stopPropagation();
+    const panel = panelRef.current;
+    if (!panel) return;
+    const rect = panel.getBoundingClientRect();
+    resizeState.current = {
+      pointerId: e.pointerId,
+      originX: rect.left,
+      originY: rect.top,
+    };
+    (e.target as HTMLElement).setPointerCapture(e.pointerId);
+  };
+
+  const handleResizeMove = (e: React.PointerEvent<HTMLDivElement>) => {
+    if (!resizeState.current || resizeState.current.pointerId !== e.pointerId)
+      return;
+    e.stopPropagation();
+    const { originX } = resizeState.current;
+    const nextSize = clamp(
+      (e.clientX - originX) / PANEL_WIDTH,
+      SIZE_MIN,
+      SIZE_MAX,
+    );
+    setSize(nextSize);
+    setPosition((prev) =>
+      prev ? clampPosition(prev.x, prev.y) : prev,
+    );
+  };
+
+  const handleResizeEnd = (e: React.PointerEvent<HTMLDivElement>) => {
+    if (resizeState.current?.pointerId === e.pointerId) {
+      resizeState.current = null;
     }
   };
 
@@ -290,7 +337,11 @@ export default function CalculatorModal({
       className={`fixed z-50 w-[280px] board-surface rounded-md border-2 border-board-line shadow-2xl p-3 ${
         position ? "" : "bottom-4 right-4"
       }`}
-      style={position ? { left: position.x, top: position.y } : undefined}
+      style={{
+        ...(position ? { left: position.x, top: position.y } : undefined),
+        transform: `scale(${size})`,
+        transformOrigin: "top left",
+      }}
       role="dialog"
       aria-label="Calculator"
     >
@@ -405,6 +456,18 @@ export default function CalculatorModal({
         >
           =
         </button>
+      </div>
+
+      <div
+        onPointerDown={handleResizeStart}
+        onPointerMove={handleResizeMove}
+        onPointerUp={handleResizeEnd}
+        onPointerCancel={handleResizeEnd}
+        title="Drag to resize"
+        aria-label="Resize calculator"
+        className="absolute -bottom-1 -right-1 w-6 h-6 flex items-center justify-center cursor-nwse-resize touch-none text-board-ink-muted hover:text-chalk-yellow transition-colors"
+      >
+        <Scaling className="w-3.5 h-3.5" />
       </div>
     </div>
   );
