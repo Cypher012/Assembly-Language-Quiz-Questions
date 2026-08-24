@@ -26,6 +26,7 @@ import ChapterSelect from "./chapter-select";
 import CourseSelect from "./course-select";
 import QuestionNavigator from "./question-navigator";
 import KeyboardShortcutsModal from "./keyboard-shortcuts-modal";
+import CalculatorModal from "./calculator-modal";
 import TimeUpModal from "./time-up-modal";
 
 type QuizState = "idle" | "answered" | "revealed" | "next" | "complete";
@@ -92,6 +93,7 @@ export default function QuizContainer() {
 
   // Desktop keyboard shortcuts help panel
   const [isShortcutsModalOpen, setIsShortcutsModalOpen] = useState(false);
+  const [isCalculatorOpen, setIsCalculatorOpen] = useState(false);
 
   // Shown when a *non*-exam-mode timer (a timed chapter/custom quiz) runs
   // out, offering to add time or drop the timer instead of force-ending.
@@ -628,6 +630,7 @@ export default function QuizContainer() {
           onExitExam={handleBackToChapters}
           showExitButton={true}
           onShowShortcuts={() => setIsShortcutsModalOpen(true)}
+          onShowCalculator={() => setIsCalculatorOpen(true)}
         />
 
         <QuestionCard
@@ -655,6 +658,11 @@ export default function QuizContainer() {
       <KeyboardShortcutsModal
         open={isShortcutsModalOpen}
         onOpenChange={setIsShortcutsModalOpen}
+      />
+
+      <CalculatorModal
+        open={isCalculatorOpen}
+        onOpenChange={setIsCalculatorOpen}
       />
 
       <TimeUpModal
