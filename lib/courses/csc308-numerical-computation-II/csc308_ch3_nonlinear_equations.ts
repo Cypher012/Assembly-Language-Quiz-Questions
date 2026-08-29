@@ -311,7 +311,12 @@ const csc308Chapter3Questions: QuestionV2[] = [
     course: "CSC 308",
     chapter: "Chapter 3",
     text: "If the successive computation of $x_{a_i}$ approaches $x_r$, what is the iteration process said to be doing?",
-    options: ["Diverging from the root", "Oscillating about the root", "Remaining stationary", "Converging to the root"],
+    options: [
+      "Diverging from the root",
+      "Oscillating about the root",
+      "Remaining stationary",
+      "Converging to the root",
+    ],
     correctAnswer: 3,
     explanation:
       "If the successive computation of $x_{a_i}$ approaches $x_r$, the process is said to be converging to the root.\n\nDiverging describes the opposite behaviour, where the computation moves away from the root, not toward it.\n\nOscillating describes the process moving about, probably around a root, without reaching it, not a steady approach toward $x_r$.\n\nRemaining stationary describes the process staying at its initial position, not progressively approaching $x_r$.",
@@ -381,7 +386,12 @@ const csc308Chapter3Questions: QuestionV2[] = [
     course: "CSC 308",
     chapter: "Chapter 3",
     text: "Which iteration behaviour is described as the process 'moving about, probably around a root, but not reaching the root'?",
-    options: ["Oscillation", "Divergence", "Convergence to a wrong root", "Stationary behaviour"],
+    options: [
+      "Oscillation",
+      "Divergence",
+      "Convergence to a wrong root",
+      "Stationary behaviour",
+    ],
     correctAnswer: 0,
     explanation:
       "Oscillation is described as the process moving about, probably around a root, but not reaching the root.\n\nDivergence instead describes the process going away from the root in a run-away manner, not moving about a root.\n\nConvergence to a wrong root describes actually reaching a root, just not the intended one, unlike Oscillation, which never reaches a root at all.\n\nStationary behaviour describes the process remaining in its initial position, not moving about a root.",
@@ -751,7 +761,12 @@ const csc308Chapter3Questions: QuestionV2[] = [
     course: "CSC 308",
     chapter: "Chapter 3",
     text: "In the Regula Falsi method, the computation of the midpoint $m$ is replaced by the computation of which quantity?",
-    options: ["$w$", "$m$ itself, unchanged", "$x_r$ directly", "The machine epsilon"],
+    options: [
+      "$w$",
+      "$m$ itself, unchanged",
+      "$x_r$ directly",
+      "The machine epsilon",
+    ],
     correctAnswer: 0,
     explanation:
       "In the Regula Falsi method, the computation of $m$ is replaced by the computation of $w$.\n\n$m$ itself remains the Bisection method's quantity; Regula Falsi specifically substitutes a different quantity, $w$, in its place.\n\n$w$ is a new estimate of the root, refined iteratively; it is not $x_r$, the true root, computed directly in one step.\n\nThe machine epsilon is a separate floating-point precision concept, not the quantity that replaces $m$ in Regula Falsi.",
@@ -856,7 +871,12 @@ const csc308Chapter3Questions: QuestionV2[] = [
     course: "CSC 308",
     chapter: "Chapter 3",
     text: "How many initial points does a Single Initial Point method require?",
-    options: ["Only one", "Exactly two", "Exactly three", "It varies method by method, with no fixed count"],
+    options: [
+      "Only one",
+      "Exactly two",
+      "Exactly three",
+      "It varies method by method, with no fixed count",
+    ],
     correctAnswer: 0,
     explanation:
       "Single Initial Point methods require the selection of only one initial point, say $x_0$, from which successive values $x_i$ at points $i > 0$ are then computed.\n\nExactly two initial points instead describes the Two Initial Points (or Interval) methods, such as Bisection and Regula Falsi, not Single Initial Point methods.\n\nExactly three initial points is not the requirement of any method discussed in this material.\n\nSingle Initial Point methods are specifically named for their shared property of requiring just one starting value, not a varying count.",
@@ -1186,7 +1206,12 @@ const csc308Chapter3Questions: QuestionV2[] = [
     course: "CSC 308",
     chapter: "Chapter 3",
     text: "In the Fixed-Point form $x = g(x)$, what is $g(x)$ called?",
-    options: ["The absolute error", "The machine epsilon", "The weighted average", "An iteration function"],
+    options: [
+      "The absolute error",
+      "The machine epsilon",
+      "The weighted average",
+      "An iteration function",
+    ],
     correctAnswer: 3,
     explanation:
       "The function $g(x)$ is called an iteration function.\n\nThe absolute error is instead the quantity $x_a$ from $|x_r - x_e| = x_a$, a separate concept from the iteration function $g(x)$.\n\nThe machine epsilon is a floating-point precision quantity, not the name given to $g(x)$.\n\nThe weighted average is the Regula Falsi quantity $w$, not the Fixed-Point iteration function $g(x)$.",
@@ -1331,7 +1356,12 @@ const csc308Chapter3Questions: QuestionV2[] = [
     course: "CSC 308",
     chapter: "Chapter 3",
     text: "Given the iteration function $g(x) = \\cos(x)$ and an initial value $x_0 = 0.0$, what is $x_1$ under the Fixed-Point formula $x_{n+1} = g(x_n)$?",
-    options: ["$1.0$", "$0.0$", "$-1.0$", "Undefined, since $\\cos(0.0)$ cannot be computed"],
+    options: [
+      "$1.0$",
+      "$0.0$",
+      "$-1.0$",
+      "Undefined, since $\\cos(0.0)$ cannot be computed",
+    ],
     correctAnswer: 0,
     explanation:
       "$x_1 = g(x_0) = \\cos(0.0) = 1.0$, applying the Fixed-Point formula directly with the given $g(x)$ and $x_0$.\n\n$0.0$ would only result if $x_1$ were left unchanged from $x_0$, which does not match the formula's substitution.\n\n$-1.0$ does not match $\\cos(0.0)$, which evaluates to $1.0$, not $-1.0$.\n\n$\\cos(0.0)$ is a perfectly well-defined, computable value equal to $1.0$; it is not undefined.",
@@ -1461,7 +1491,12 @@ const csc308Chapter3Questions: QuestionV2[] = [
     course: "CSC 308",
     chapter: "Chapter 3",
     text: "For $f(x) = x^3 - x - 1.0 = 0.0$ on $[1.0, 2.0]$, evaluating $f(1.0) = -1.0$ and $f(2.0) = 5.0$ confirms the Bisection precondition. After computing the first midpoint $m$ and finding $f(m) = 0.875$, in which sub-interval does the root lie?",
-    options: ["$[1.0, m]$", "$[m, 2.0]$", "Exactly at $m$ itself", "The precondition fails, so no conclusion can be drawn"],
+    options: [
+      "$[1.0, m]$",
+      "$[m, 2.0]$",
+      "Exactly at $m$ itself",
+      "The precondition fails, so no conclusion can be drawn",
+    ],
     correctAnswer: 0,
     explanation:
       "$f(1.0) = -1.0$ is negative and $f(m) = 0.875$ is positive, so $f(1.0)$ and $f(m)$ have different signs, meaning the root lies between $1.0$ and $m$, that is, in $[1.0, m]$.\n\n$[m, 2.0]$ would instead be correct only if $f(1.0)$ and $f(m)$ shared the same sign, which is not the case here.\n\n$f(m) = 0.875 \\neq 0.0$, so $m$ itself is not yet the exact root; further iteration is still required.\n\n$f(1.0) \\times f(2.0) = -5.0 \\leq 0.0$, so the precondition is satisfied, not failed.",
@@ -1481,7 +1516,12 @@ const csc308Chapter3Questions: QuestionV2[] = [
     course: "CSC 308",
     chapter: "Chapter 3",
     text: "For $f(x) = 2.0x^3 + x^2 - 20.0x + 12.0 = 0.0$ on $[0.0, 1.0]$, with $f(0.0) = 12.0$ and the first midpoint $m = 0.5$ giving $f(m) = 2.5$, in which sub-interval does the Bisection method place the root next?",
-    options: ["$[m, 1.0]$", "$[0.0, m]$", "Exactly at $m$ itself", "$[0.0, 1.0]$, unchanged from the original interval"],
+    options: [
+      "$[m, 1.0]$",
+      "$[0.0, m]$",
+      "Exactly at $m$ itself",
+      "$[0.0, 1.0]$, unchanged from the original interval",
+    ],
     correctAnswer: 0,
     explanation:
       "Both $f(0.0) = 12.0$ and $f(m) = 2.5$ are positive, the same sign, so the root does NOT lie in $[0.0, m]$; the Bisection method instead narrows the interval to $[m, 1.0]$.\n\n$[0.0, m]$ would be correct only if $f(0.0)$ and $f(m)$ had different signs, which is not the case here, since both are positive.\n\n$f(m) = 2.5 \\neq 0.0$, so $m$ is not yet the exact root.\n\nThe Bisection method always narrows the interval at each step when a root is present; it does not leave the interval unchanged after a successful sign test.",
@@ -1501,7 +1541,12 @@ const csc308Chapter3Questions: QuestionV2[] = [
     course: "CSC 308",
     chapter: "Chapter 3",
     text: "For $f(x) = 2.0\\sin x - x = 0.0$ on $[1.0, 2.5]$, with $f(1.0) \\approx 0.6829$ and the first midpoint giving $f(m) \\approx 0.2180$, in which sub-interval does the Bisection method place the root next?",
-    options: ["$[m, 2.5]$", "$[1.0, m]$", "Exactly at $m$ itself", "The root cannot lie in $[1.0, 2.5]$ at all"],
+    options: [
+      "$[m, 2.5]$",
+      "$[1.0, m]$",
+      "Exactly at $m$ itself",
+      "The root cannot lie in $[1.0, 2.5]$ at all",
+    ],
     correctAnswer: 0,
     explanation:
       "Both $f(1.0) \\approx 0.6829$ and $f(m) \\approx 0.2180$ are positive, the same sign, so the root does not lie in $[1.0, m]$; the method narrows the interval to $[m, 2.5]$ instead.\n\n$[1.0, m]$ would be correct only if $f(1.0)$ and $f(m)$ had different signs, which is not the case here.\n\n$f(m) \\approx 0.2180 \\neq 0.0$, so $m$ is not yet the exact root.\n\n$f(1.0) \\times f(2.5) < 0.0$ (a positive value times a negative value), so a root is confirmed to lie somewhere in $[1.0, 2.5]$.",
@@ -1521,7 +1566,12 @@ const csc308Chapter3Questions: QuestionV2[] = [
     course: "CSC 308",
     chapter: "Chapter 3",
     text: "For $f(x) = 3.0x - (1.0 - \\sin x)^{1/2} = 0.0$ on $[0.0, 1.0]$, with $f(0.0) = -1.0$ and the first midpoint giving $f(m) \\approx 0.7785$, in which sub-interval does the Bisection method place the root next?",
-    options: ["$[0.0, m]$", "$[m, 1.0]$", "Exactly at $m$ itself", "Both sub-intervals equally"],
+    options: [
+      "$[0.0, m]$",
+      "$[m, 1.0]$",
+      "Exactly at $m$ itself",
+      "Both sub-intervals equally",
+    ],
     correctAnswer: 0,
     explanation:
       "$f(0.0) = -1.0$ is negative and $f(m) \\approx 0.7785$ is positive, different signs, so the root lies between $0.0$ and $m$, that is, in $[0.0, m]$.\n\n$[m, 1.0]$ would instead be correct if $f(0.0)$ and $f(m)$ shared the same sign, which is not the case here.\n\n$f(m) \\approx 0.7785 \\neq 0.0$, so $m$ is not yet the exact root.\n\nThe Bisection method's sign test always selects exactly one of the two sub-intervals to continue with, never both equally.",
@@ -1541,7 +1591,12 @@ const csc308Chapter3Questions: QuestionV2[] = [
     course: "CSC 308",
     chapter: "Chapter 3",
     text: "For $f(x) = \\cos x - xe^x = 0.0$ on $[0.0, \\pi/2.0]$, with $f(0.0) = 1.0$ and the first midpoint giving $f(m) \\approx -1.0155$, in which sub-interval does the Bisection method place the root next?",
-    options: ["$[0.0, m]$", "$[m, \\pi/2.0]$", "Exactly at $m$ itself", "The precondition fails, so no conclusion can be drawn"],
+    options: [
+      "$[0.0, m]$",
+      "$[m, \\pi/2.0]$",
+      "Exactly at $m$ itself",
+      "The precondition fails, so no conclusion can be drawn",
+    ],
     correctAnswer: 0,
     explanation:
       "$f(0.0) = 1.0$ is positive and $f(m) \\approx -1.0155$ is negative, different signs, so the root lies between $0.0$ and $m$, that is, in $[0.0, m]$.\n\n$[m, \\pi/2.0]$ would instead be correct if $f(0.0)$ and $f(m)$ shared the same sign, which is not the case here.\n\n$f(m) \\approx -1.0155 \\neq 0.0$, so $m$ is not yet the exact root.\n\n$f(0.0) \\times f(\\pi/2.0) < 0.0$ (a positive value times a negative value), so the precondition is satisfied, not failed.",
@@ -1561,7 +1616,12 @@ const csc308Chapter3Questions: QuestionV2[] = [
     course: "CSC 308",
     chapter: "Chapter 3",
     text: "For $f(x) = x^3 - 3.0x^2 + 4.0x - 2.0 = 0.0$ on $[0.8, 1.5]$, with $f(0.8) \\approx -0.208$ and the first midpoint giving $f(m) \\approx 0.1534$, in which sub-interval does the Bisection method place the root next?",
-    options: ["$[0.8, m]$", "$[m, 1.5]$", "Exactly at $m$ itself", "Neither sub-interval contains the root"],
+    options: [
+      "$[0.8, m]$",
+      "$[m, 1.5]$",
+      "Exactly at $m$ itself",
+      "Neither sub-interval contains the root",
+    ],
     correctAnswer: 0,
     explanation:
       "$f(0.8) \\approx -0.208$ is negative and $f(m) \\approx 0.1534$ is positive, different signs, so the root lies between $0.8$ and $m$, that is, in $[0.8, m]$.\n\n$[m, 1.5]$ would instead be correct if $f(0.8)$ and $f(m)$ shared the same sign, which is not the case here.\n\n$f(m) \\approx 0.1534 \\neq 0.0$, so $m$ is not yet the exact root.\n\nSince $f(0.8) \\times f(1.5) \\leq 0.0$, a root is confirmed to lie somewhere within $[0.8, 1.5]$, so one of the two sub-intervals does contain it.",
