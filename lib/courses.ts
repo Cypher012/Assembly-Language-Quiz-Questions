@@ -5,7 +5,7 @@ import { Question, QuestionV2 } from "./quiz-types";
 // import { csc311InfoSystemsCourse } from "./courses/csc311-info-systems";
 // import { csc221ComputerAppreciation } from "./courses/csc221-computer-appreciation";
 // import { csc315DSACourse } from "./courses/csc315-dsa";
-import { csc302OOPCourse } from "./courses/csc302-oop";
+import { csc302JavaProgrammingCourse } from "./courses/csc302-oop";
 import { csc304BusinessProgrammingCourse } from "./courses/csc304-bcp";
 import { cpe310AgentBasedSystemsCourse } from "./courses/cpe310-agent-based";
 import { csc306HciCourse } from "./courses/csc306-hci";
@@ -40,7 +40,7 @@ export const courses: Course[] = [
   mth302DifferentialEquationsCourse,
   csc308NumericalComputationIICourse,
   aee302StatisticsCourse,
-  // csc302OOPCourse,
+  csc302JavaProgrammingCourse,
 
   // cpe301AssemblyCourse,
   // csc315DSACourse,
