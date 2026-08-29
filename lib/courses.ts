@@ -1,10 +1,5 @@
 import { Question, QuestionV2 } from "./quiz-types";
 
-// Import course data
-// import { cpe301AssemblyCourse } from "./courses/cpe301-assembly";
-// import { csc311InfoSystemsCourse } from "./courses/csc311-info-systems";
-// import { csc221ComputerAppreciation } from "./courses/csc221-computer-appreciation";
-// import { csc315DSACourse } from "./courses/csc315-dsa";
 import { csc302JavaProgrammingCourse } from "./courses/csc302-oop";
 import { csc304BusinessProgrammingCourse } from "./courses/csc304-bcp";
 import { cpe310AgentBasedSystemsCourse } from "./courses/cpe310-agent-based";
@@ -41,11 +36,6 @@ export const courses: Course[] = [
   csc308NumericalComputationIICourse,
   aee302StatisticsCourse,
   csc302JavaProgrammingCourse,
-
-  // cpe301AssemblyCourse,
-  // csc315DSACourse,
-  // csc311InfoSystemsCourse,
-  // csc221ComputerAppreciation,
 ];
 
 // Default enabled state for courses

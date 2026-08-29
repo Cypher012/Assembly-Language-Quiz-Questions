@@ -143,11 +143,11 @@ const aee302Chapter6Questions: QuestionV2[] = [
     text: "Based on the additive model, how does the total sum of squares (SST) relate to the treatment and error sums of squares?",
     options: [
       "SST = SS Treatment $\\times$ SS Error",
-      "SST = SS Treatment $-$ SS Error",
       "SST = SS Treatment $+$ SS Error",
+      "SST = SS Treatment $-$ SS Error",
       "SST = SS Treatment $\\div$ SS Error"
     ],
-    correctAnswer: 2,
+    correctAnswer: 1,
     explanation: "The One Factor Designs section states that, based on the additive model, the total sum of squares can be split into two parts: SST = SS Treatment (SSTr) + SS Error (SSE).\n\nMultiplying the two sum-of-squares terms does not match the additive decomposition the section describes.\n\nSubtracting the error sum of squares from the treatment sum of squares does not match the additive decomposition given.\n\nDividing the treatment sum of squares by the error sum of squares does not match the additive decomposition given; the two terms are added, not divided."
   },
   {
@@ -348,11 +348,11 @@ const aee302Chapter6Questions: QuestionV2[] = [
     text: "How is $S_T^2$, the between-sample mean square, computed from $S_T$?",
     options: [
       "$S_T^2 = S_T \\times (K-1)$",
-      "$S_T^2 = S_T / (K-1)$",
       "$S_T^2 = S_T / N$",
+      "$S_T^2 = S_T / (K-1)$",
       "$S_T^2 = S_T + (K-1)$"
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: "The section defines the between-sample mean square as $S_T^2 = \\Sigma n_i(\\bar{x}_i-\\bar{\\bar{x}})^2 / (K-1) = S_T/(K-1)$.\n\nMultiplying $S_T$ by $K-1$, rather than dividing, inverts the formula's structure.\n\nDividing $S_T$ by $N$, the total number of observations, does not match the treatment degrees of freedom, $K-1$, used in the formula.\n\nAdding $K-1$ to $S_T$ does not match the division the formula actually performs."
   },
   {
@@ -511,11 +511,11 @@ const aee302Chapter6Questions: QuestionV2[] = [
     text: "In the coagulation-time study, diet A's four recorded coagulation times are 62, 60, 63, and 59. What is the mean coagulation time for diet A?",
     options: [
       "60",
-      "61",
       "62",
+      "61",
       "63"
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: "Summing the four values gives $62+60+63+59=244$, and dividing by 4 gives a mean of $244/4=61$.\n\n60 results from mistakenly dividing the sum by a slightly larger divisor than 4.\n\n62 simply restates one of the individual recorded values, not the computed mean of all four.\n\n63 also simply restates one of the individual recorded values, not the computed mean."
   },
   {
@@ -539,11 +539,11 @@ const aee302Chapter6Questions: QuestionV2[] = [
     text: "In the coagulation-time study, diet C's six recorded coagulation times are 68, 64, 71, 67, 68, and 68. What is the mean coagulation time for diet C, rounded to two decimal places?",
     options: [
       "66.67",
-      "67.00",
       "67.67",
+      "67.00",
       "68.00"
     ],
-    correctAnswer: 2,
+    correctAnswer: 1,
     explanation: "Summing the six values gives $68+64+71+67+68+68=406$, and dividing by 6 gives a mean of $406/6 \\approx 67.67$.\n\n66.67 results from mistakenly including one fewer unit in the running total before dividing.\n\n67.00 results from a small rounding slip that drops the exact fractional remainder of the true mean.\n\n68.00 simply restates the most frequently recorded individual value, not the computed mean of all six."
   },
   {
@@ -552,12 +552,12 @@ const aee302Chapter6Questions: QuestionV2[] = [
     chapter: "Chapter 6",
     text: "Given the diet means in the coagulation-time study (A=61, B=66, C$\\approx$67.67, D=61) and diet totals (A: 244 over 4 animals, B: 396 over 6, C: 406 over 6, D: 488 over 8), what is the grand mean coagulation time across all 24 animals, rounded to two decimal places?",
     options: [
-      "63.92",
       "63.83",
       "65.00",
+      "63.92",
       "64.50"
     ],
-    correctAnswer: 0,
+    correctAnswer: 2,
     explanation: "Summing all four diet totals gives $244+396+406+488=1534$, and dividing by the total of 24 animals gives a grand mean of $1534/24 \\approx 63.92$.\n\n63.83 results from a small rounding slip in the final division.\n\n65.00 results from mistakenly averaging the four diet means themselves without weighting by each diet's number of animals.\n\n64.50 results from mistakenly dividing the total by 24 after adding an extra measurement that was not actually recorded."
   },
   {
@@ -567,11 +567,11 @@ const aee302Chapter6Questions: QuestionV2[] = [
     text: "Given the diet means computed for the coagulation-time study (A=61, B=66, C$\\approx$67.67, D=61), which diet shows the highest average coagulation time?",
     options: [
       "Diet A",
-      "Diet B",
       "Diet C",
+      "Diet B",
       "Diet D"
     ],
-    correctAnswer: 2,
+    correctAnswer: 1,
     explanation: "Comparing the four computed diet means, 61, 66, 67.67, and 61, diet C has the highest average coagulation time at approximately 67.67.\n\nDiet A's mean of 61 is the lowest of the four, tied with diet D.\n\nDiet B's mean of 66 is higher than diets A and D but still lower than diet C's mean.\n\nDiet D's mean of 61 is tied for the lowest of the four, not the highest."
   },
   {
@@ -582,10 +582,10 @@ const aee302Chapter6Questions: QuestionV2[] = [
     options: [
       "Treatment df = 4, error df = 24",
       "Treatment df = 3, error df = 23",
-      "Treatment df = 4, error df = 20",
-      "Treatment df = 3, error df = 20"
+      "Treatment df = 3, error df = 20",
+      "Treatment df = 4, error df = 20"
     ],
-    correctAnswer: 3,
+    correctAnswer: 2,
     explanation: "Using treatment df $=K-1=4-1=3$ and, since this design is unbalanced, error df $=N-K=24-4=20$.\n\nTreatment df of 4 mistakenly reports K itself, without subtracting 1, and error df of 24 mistakenly reports N itself, without subtracting K.\n\nError df of 23 mistakenly uses $N-1$, the total degrees of freedom, rather than $N-K$, the error degrees of freedom.\n\nTreatment df of 4 again mistakenly reports K itself, without subtracting 1."
   },
   {
@@ -604,11 +604,11 @@ const aee302Chapter6Questions: QuestionV2[] = [
     text: "Suppose the coagulation-time study's design (K=4, N=24, treatment df=3, error df=20) produces a treatment sum of squares $SS_{Tr}=90$ and an error sum of squares $SSE=200$. What is $MST_r$?",
     options: [
       "90",
-      "10",
       "30",
+      "10",
       "20"
     ],
-    correctAnswer: 2,
+    correctAnswer: 1,
     explanation: "Using $MST_r = SS_{Tr}/(K-1) = 90/3 = 30$.\n\n90 simply restates $SS_{Tr}$ itself, without dividing by the treatment degrees of freedom.\n\n10 is instead the value of MSE, computed by dividing SSE by the error degrees of freedom, not $MST_r$.\n\n20 results from mistakenly dividing $SS_{Tr}$ by a divisor of 4.5 rather than the correct treatment degrees of freedom of 3."
   },
   {
@@ -619,10 +619,10 @@ const aee302Chapter6Questions: QuestionV2[] = [
     options: [
       "200",
       "30",
-      "4",
-      "10"
+      "10",
+      "4"
     ],
-    correctAnswer: 3,
+    correctAnswer: 2,
     explanation: "Using $MSE = SSE/(N-K) = 200/20 = 10$.\n\n200 simply restates $SSE$ itself, without dividing by the error degrees of freedom.\n\n30 is instead the value of $MST_r$ computed from $SS_{Tr}$, not MSE.\n\n4 results from mistakenly dividing $SSE$ by a divisor of 50 rather than the correct error degrees of freedom of 20."
   },
   {
@@ -675,10 +675,10 @@ const aee302Chapter6Questions: QuestionV2[] = [
     options: [
       "Treatment df = 3, error df = 15",
       "Treatment df = 2, error df = 15",
-      "Treatment df = 3, error df = 12",
-      "Treatment df = 2, error df = 12"
+      "Treatment df = 2, error df = 12",
+      "Treatment df = 3, error df = 12"
     ],
-    correctAnswer: 3,
+    correctAnswer: 2,
     explanation: "Using treatment df $=k-1=3-1=2$ and, since this design is balanced, error df $=k(n-1)=3(5-1)=12$.\n\nTreatment df of 3 mistakenly reports k itself, without subtracting 1, and error df of 15 mistakenly reports $kn$, the total sample size, rather than $k(n-1)$.\n\nTreatment df of 3 again mistakenly reports k itself, without subtracting 1.\n\nError df of 15 again mistakenly reports $kn$, the total sample size, rather than $k(n-1)$."
   },
   {
@@ -688,11 +688,11 @@ const aee302Chapter6Questions: QuestionV2[] = [
     text: "For that design ($k=3$, $n=5$, treatment df=2, error df=12), suppose $SS_{Tr}=60$ and $SSE=96$. What is $MST_r$?",
     options: [
       "60",
-      "20",
       "30",
+      "20",
       "8"
     ],
-    correctAnswer: 2,
+    correctAnswer: 1,
     explanation: "Using $MST_r = SS_{Tr}/(k-1) = 60/2 = 30$.\n\n60 simply restates $SS_{Tr}$ itself, without dividing by the treatment degrees of freedom.\n\n20 results from mistakenly dividing $SS_{Tr}$ by 3 instead of 2.\n\n8 is instead the value of MSE, computed by dividing SSE by the error degrees of freedom, not $MST_r$."
   },
   {
@@ -703,10 +703,10 @@ const aee302Chapter6Questions: QuestionV2[] = [
     options: [
       "96",
       "48",
-      "30",
-      "8"
+      "8",
+      "30"
     ],
-    correctAnswer: 3,
+    correctAnswer: 2,
     explanation: "Using $MSE = SSE/[k(n-1)] = 96/12 = 8$.\n\n96 simply restates $SSE$ itself, without dividing by the error degrees of freedom.\n\n48 results from mistakenly dividing $SSE$ by 2 instead of 12.\n\n30 is instead the value of $MST_r$ computed from $SS_{Tr}$, not MSE."
   },
   {
@@ -716,11 +716,11 @@ const aee302Chapter6Questions: QuestionV2[] = [
     text: "For that same design, with $MST_r=30$ and $MSE=8$, what is the F test statistic, rounded to two decimal places?",
     options: [
       "240.00",
-      "0.27",
       "3.75",
+      "0.27",
       "38.00"
     ],
-    correctAnswer: 2,
+    correctAnswer: 1,
     explanation: "Using $F = MST_r/MSE = 30/8 = 3.75$.\n\n240.00 results from mistakenly multiplying $MST_r$ and $MSE$ together instead of dividing.\n\n0.27 results from inverting the ratio, computing $MSE/MST_r$ instead of $MST_r/MSE$.\n\n38.00 results from mistakenly adding $MST_r$ and $MSE$ together instead of dividing."
   },
   {
@@ -753,11 +753,11 @@ const aee302Chapter6Questions: QuestionV2[] = [
     text: "A third one-factor design has $k=3$ treatments with $n=4$ replicates each, and treatment means $\\bar{x}_1=10$, $\\bar{x}_2=14$, and $\\bar{x}_3=18$. What is the grand mean?",
     options: [
       "12",
-      "14",
       "16",
+      "14",
       "42"
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: "Since each treatment has the same number of replicates, the grand mean is the simple average of the treatment means: $(10+14+18)/3=42/3=14$.\n\n12 results from mistakenly averaging only the first two treatment means, 10 and 14.\n\n16 results from mistakenly averaging only the last two treatment means, 14 and 18.\n\n42 simply restates the sum of the three treatment means, without dividing by 3."
   },
   {
@@ -767,11 +767,11 @@ const aee302Chapter6Questions: QuestionV2[] = [
     text: "For that design (grand mean=14, $n=4$ each), using $SS_{Tr}=n\\Sigma(\\bar{x}_i-\\bar{\\bar{x}})^2$, what is $SS_{Tr}$?",
     options: [
       "32",
-      "64",
       "128",
+      "64",
       "8"
     ],
-    correctAnswer: 2,
+    correctAnswer: 1,
     explanation: "The squared deviations from the grand mean are $(10-14)^2=16$, $(14-14)^2=0$, and $(18-14)^2=16$, summing to 32; multiplying by $n=4$ gives $SS_{Tr}=4 \\times 32=128$.\n\n32 is the sum of squared deviations before multiplying by $n$, not the final value of $SS_{Tr}$.\n\n64 results from mistakenly multiplying the sum of squared deviations by 2 instead of 4.\n\n8 results from mistakenly dividing the sum of squared deviations by 4 instead of multiplying."
   },
   {
@@ -781,11 +781,11 @@ const aee302Chapter6Questions: QuestionV2[] = [
     text: "For that design ($SS_{Tr}=128$, $k=3$), what is $MST_r$?",
     options: [
       "128",
-      "64",
       "42.67",
+      "64",
       "32"
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: "Using $MST_r=SS_{Tr}/(k-1)=128/2=64$.\n\n128 simply restates $SS_{Tr}$ itself, without dividing by the treatment degrees of freedom.\n\n42.67 results from mistakenly dividing $SS_{Tr}$ by 3 instead of 2.\n\n32 is the sum of squared deviations before multiplying by $n$, an intermediate value, not $MST_r$."
   },
   {
@@ -809,11 +809,11 @@ const aee302Chapter6Questions: QuestionV2[] = [
     text: "For that design ($k=3$, $n=4$ each, error df$=k(n-1)=9$), suppose $SSE=48$. What is MSE, rounded to two decimal places?",
     options: [
       "48.00",
-      "16.00",
       "5.33",
+      "16.00",
       "12.00"
     ],
-    correctAnswer: 2,
+    correctAnswer: 1,
     explanation: "Using $MSE=SSE/[k(n-1)]=48/9 \\approx 5.33$.\n\n48.00 simply restates $SSE$ itself, without dividing by the error degrees of freedom.\n\n16.00 results from mistakenly dividing $SSE$ by 3 instead of 9.\n\n12.00 results from mistakenly dividing $SSE$ by 4 instead of 9."
   },
   {

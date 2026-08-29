@@ -23,10 +23,10 @@ const aee302Chapter4Questions: QuestionV2[] = [
     options: [
       "C.I. = estimate $\\times$ critical value $\\times$ measure of variability",
       "C.I. = estimate $-$ critical value $\\div$ measure of variability",
-      "C.I. = critical value $\\pm$ estimate $\\times$ measure of variability",
-      "C.I. = estimate $\\pm$ critical value $\\times$ measure of variability"
+      "C.I. = estimate $\\pm$ critical value $\\times$ measure of variability",
+      "C.I. = critical value $\\pm$ estimate $\\times$ measure of variability"
     ],
-    correctAnswer: 3,
+    correctAnswer: 2,
     explanation: "The Confidence Interval for Location Effects section gives the formula as C.I. = estimate $\\pm$ critical value $\\times$ measure of variability.\n\nMultiplying the estimate by the critical value, rather than adding or subtracting, does not match the additive structure the section describes.\n\nSubtracting and dividing rather than adding/subtracting and multiplying misstates both operations in the formula.\n\nSwapping the estimate and critical value's roles changes which term is varied by $\\pm$, which is not how the section states the formula."
   },
   {
@@ -36,11 +36,11 @@ const aee302Chapter4Questions: QuestionV2[] = [
     text: "A sample has $n=16$ observations with a known population standard deviation of $\\sigma=8$. Using $SE=\\sigma/\\sqrt{n}$, what is the standard error?",
     options: [
       "8.00",
-      "0.50",
       "2.00",
+      "0.50",
       "4.00"
     ],
-    correctAnswer: 2,
+    correctAnswer: 1,
     explanation: "Using $SE=\\sigma/\\sqrt{n} = 8/\\sqrt{16} = 8/4 = 2.00$.\n\n8.00 simply restates $\\sigma$ itself, without dividing by $\\sqrt{n}$ at all.\n\n0.50 results from mistakenly dividing $\\sigma$ by $n$ directly instead of by $\\sqrt{n}$.\n\n4.00 results from mistakenly dividing $\\sigma$ by 2 instead of by $\\sqrt{n}=4$."
   },
   {
@@ -63,12 +63,12 @@ const aee302Chapter4Questions: QuestionV2[] = [
     chapter: "Chapter 4",
     text: "For that same sample ($n=16$, $\\sigma=8$, mean $=100$), using a critical z-value of 1.96 and $SE=2.00$, what is the margin of error?",
     options: [
-      "3.92",
       "2.00",
       "1.96",
+      "3.92",
       "0.98"
     ],
-    correctAnswer: 0,
+    correctAnswer: 2,
     explanation: "The margin of error is $1.96 \\times 2.00 = 3.92$.\n\n2.00 simply restates the standard error itself, without multiplying by the critical z-value.\n\n1.96 simply restates the critical z-value itself, not the computed margin of error.\n\n0.98 results from mistakenly dividing the standard error by the critical value instead of multiplying."
   },
   {
@@ -129,11 +129,11 @@ const aee302Chapter4Questions: QuestionV2[] = [
     text: "A machine's rolled sheet thickness is measured 15 times, with the following recorded values (cm): 0.00397, 0.00393, 0.00402, 0.00409, 0.00393, 0.00404, 0.00396, 0.00404, 0.00399, 0.00399, 0.00398, 0.00413, 0.00404, 0.00395, and 0.00397. What is the sample mean thickness?",
     options: [
       "0.003998 cm",
-      "0.004002 cm",
       "0.004010 cm",
+      "0.004002 cm",
       "0.003990 cm"
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: "Summing all 15 values gives 0.06003 cm, and dividing by 15 gives a sample mean of 0.004002 cm.\n\n0.003998 cm results from a small rounding slip in the running total before dividing.\n\n0.004010 cm results from mistakenly including an extra 0.00008 cm in the sum.\n\n0.003990 cm results from mistakenly dropping one of the larger recorded values from the sum."
   },
   {
@@ -171,11 +171,11 @@ const aee302Chapter4Questions: QuestionV2[] = [
     text: "Using the standard error formula $SE = \\sigma/\\sqrt{n}$ for a sample mean with known population standard deviation, what is the standard error for a sample of 15 sheet-thickness measurements, given $\\sigma = 0.0005$ cm, rounded to six decimal places?",
     options: [
       "0.000500",
-      "0.000033",
       "0.000129",
+      "0.000033",
       "0.001936"
     ],
-    correctAnswer: 2,
+    correctAnswer: 1,
     explanation: "Using $SE = \\sigma/\\sqrt{n} = 0.0005/\\sqrt{15} = 0.0005/3.873 \\approx 0.000129$ cm.\n\n0.000500 simply restates $\\sigma$ itself, without dividing by $\\sqrt{n}$ at all.\n\n0.000033 results from mistakenly dividing $\\sigma$ by $n$ directly instead of by $\\sqrt{n}$.\n\n0.001936 results from mistakenly multiplying $\\sigma$ by $\\sqrt{15}$ instead of dividing by it."
   },
   {
@@ -185,11 +185,11 @@ const aee302Chapter4Questions: QuestionV2[] = [
     text: "Using a critical z-value of 1.96 for the 95% confidence level, and a standard error of approximately 0.000129 cm, what is the margin of error (critical value $\\times$ measure of variability), rounded to six decimal places?",
     options: [
       "0.000129",
-      "0.000253",
       "0.000065",
+      "0.000253",
       "0.000500"
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: "The margin of error is $1.96 \\times 0.000129 \\approx 0.000253$ cm.\n\n0.000129 simply restates the standard error itself, without multiplying by the critical value.\n\n0.000065 results from mistakenly halving the standard error rather than multiplying by 1.96.\n\n0.000500 simply restates the given population standard deviation, not the computed margin of error."
   },
   {
@@ -236,11 +236,11 @@ const aee302Chapter4Questions: QuestionV2[] = [
     text: "Which two confidence levels are explicitly named in this unit as examples matching P = 1 - $\\alpha$, alongside their $\\alpha$ values?",
     options: [
       "90% ($\\alpha = 0.1$) and 95% ($\\alpha = 0.05$)",
-      "95% ($\\alpha = 0.05$) and 99% ($\\alpha = 0.01$)",
       "80% ($\\alpha = 0.2$) and 90% ($\\alpha = 0.1$)",
+      "95% ($\\alpha = 0.05$) and 99% ($\\alpha = 0.01$)",
       "99% ($\\alpha = 0.01$) and 99.9% ($\\alpha = 0.001$)"
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: "The Confidence Interval for Location Effects section names 95% with $\\alpha = 0.05$ and 99% with $\\alpha = 0.01$ as consistent examples of P = 1 - $\\alpha$.\n\n90% with $\\alpha = 0.1$ is consistent with P = 1 - $\\alpha$ in principle, but this pairing is not one of the two values the section names alongside a correctly matching second example.\n\n80% and 90% are not the confidence levels named in the section at all.\n\n99.9% with $\\alpha = 0.001$ is not a confidence level named anywhere in the section."
   },
   {
@@ -250,11 +250,11 @@ const aee302Chapter4Questions: QuestionV2[] = [
     text: "Using a sample mean of 0.004002 cm and a margin of error of 0.000253 cm, what is the upper bound of the 95% confidence interval, rounded to six decimal places?",
     options: [
       "0.003749",
-      "0.004128",
       "0.004255",
+      "0.004128",
       "0.000253"
     ],
-    correctAnswer: 2,
+    correctAnswer: 1,
     explanation: "The upper bound is estimate plus margin of error: $0.004002 + 0.000253 = 0.004255$ cm.\n\n0.003749 is instead the lower bound, formed by subtracting the margin of error rather than adding it.\n\n0.004128 results from adding only half of the computed margin of error.\n\n0.000253 simply restates the margin of error itself, not the combined upper bound."
   },
   {
@@ -358,10 +358,10 @@ const aee302Chapter4Questions: QuestionV2[] = [
     options: [
       "4.95",
       "5.03",
-      "4.99",
-      "5.10"
+      "5.10",
+      "4.99"
     ],
-    correctAnswer: 2,
+    correctAnswer: 3,
     explanation: "Summing all 8 values gives 39.9, and dividing by 8 gives a sample mean of 4.9875, which rounds to 4.99.\n\n4.95 results from a small rounding slip in the running total before dividing.\n\n5.03 results from mistakenly including an extra 0.5 in the sum before dividing.\n\n5.10 simply restates one of the individual recorded weights, not the computed mean of all eight."
   },
   {
@@ -371,11 +371,11 @@ const aee302Chapter4Questions: QuestionV2[] = [
     text: "For a t-distribution critical value needed to build a confidence interval from a single sample, how many degrees of freedom are used, given a sample of 8 observations?",
     options: [
       "9",
-      "8",
       "7",
+      "8",
       "6"
     ],
-    correctAnswer: 2,
+    correctAnswer: 1,
     explanation: "As in Unit 3's t-tests, the degrees of freedom for a t-distribution built from a single sample of size n is $n-1$, so for 8 observations, df $= 8-1 = 7$.\n\n9 overstates the correct degrees of freedom by adding 1 rather than subtracting it.\n\n8 mistakenly reports the sample size itself rather than subtracting 1.\n\n6 mistakenly subtracts 2, the adjustment used for two-sample t-tests in Unit 3, rather than 1 for a single sample."
   },
   {
@@ -384,12 +384,12 @@ const aee302Chapter4Questions: QuestionV2[] = [
     chapter: "Chapter 4",
     text: "Suppose a sample of 8 rod weights has a sample standard deviation of $s=0.24$. Using $SE = s/\\sqrt{n}$, what is the standard error, rounded to four decimal places?",
     options: [
-      "0.0849",
       "0.2400",
       "0.0300",
+      "0.0849",
       "0.6788"
     ],
-    correctAnswer: 0,
+    correctAnswer: 2,
     explanation: "Using $SE = s/\\sqrt{n} = 0.24/\\sqrt{8} = 0.24/2.828 \\approx 0.0849$.\n\n0.2400 simply restates $s$ itself, without dividing by $\\sqrt{n}$ at all.\n\n0.0300 results from mistakenly dividing $s$ by $n$ directly instead of by $\\sqrt{n}$.\n\n0.6788 results from mistakenly multiplying $s$ by $\\sqrt{8}$ instead of dividing by it."
   },
   {
@@ -412,12 +412,12 @@ const aee302Chapter4Questions: QuestionV2[] = [
     chapter: "Chapter 4",
     text: "Using a critical t-value of 2.365 (df = 7) and a standard error of approximately 0.0849, what is the margin of error, rounded to three decimal places?",
     options: [
-      "0.201",
       "0.0849",
       "0.036",
-      "2.365"
+      "2.365",
+      "0.201"
     ],
-    correctAnswer: 0,
+    correctAnswer: 3,
     explanation: "The margin of error is $2.365 \\times 0.0849 \\approx 0.201$.\n\n0.0849 simply restates the standard error itself, without multiplying by the critical t-value.\n\n0.036 results from mistakenly dividing the standard error by the critical value instead of multiplying.\n\n2.365 simply restates the critical t-value itself, not the computed margin of error."
   },
   {
@@ -427,11 +427,11 @@ const aee302Chapter4Questions: QuestionV2[] = [
     text: "Using a sample mean of 4.99 and a margin of error of 0.201, what is the lower bound of the 95% confidence interval, rounded to two decimal places?",
     options: [
       "5.19",
-      "4.99",
       "4.79",
+      "4.99",
       "5.09"
     ],
-    correctAnswer: 2,
+    correctAnswer: 1,
     explanation: "The lower bound is estimate minus margin of error: $4.99 - 0.201 \\approx 4.79$.\n\n5.19 is instead the upper bound, formed by adding the margin of error rather than subtracting it.\n\n4.99 simply restates the sample mean, without subtracting the margin of error at all.\n\n5.09 results from subtracting a value roughly half the size of the actual margin of error."
   },
   {
@@ -442,10 +442,10 @@ const aee302Chapter4Questions: QuestionV2[] = [
     options: [
       "4.79",
       "0.201",
-      "4.99",
-      "5.19"
+      "5.19",
+      "4.99"
     ],
-    correctAnswer: 3,
+    correctAnswer: 2,
     explanation: "The upper bound is estimate plus margin of error: $4.99 + 0.201 \\approx 5.19$.\n\n4.79 is instead the lower bound, formed by subtracting the margin of error rather than adding it.\n\n0.201 simply restates the margin of error itself, not the combined upper bound.\n\n4.99 simply restates the sample mean, without adding the margin of error at all."
   },
   {
@@ -463,12 +463,12 @@ const aee302Chapter4Questions: QuestionV2[] = [
     chapter: "Chapter 4",
     text: "A separate sample has $n=25$ observations with a known population standard deviation of $\\sigma=3$. Using $SE=\\sigma/\\sqrt{n}$, what is the standard error?",
     options: [
-      "0.60",
       "0.12",
       "3.00",
-      "15.00"
+      "15.00",
+      "0.60"
     ],
-    correctAnswer: 0,
+    correctAnswer: 3,
     explanation: "Using $SE=\\sigma/\\sqrt{n} = 3/\\sqrt{25} = 3/5 = 0.60$.\n\n0.12 results from mistakenly dividing $\\sigma$ by $n$ directly instead of by $\\sqrt{n}$.\n\n3.00 simply restates $\\sigma$ itself, without dividing by $\\sqrt{n}$ at all.\n\n15.00 results from mistakenly multiplying $\\sigma$ by $\\sqrt{25}$ instead of dividing by it."
   },
   {
@@ -492,11 +492,11 @@ const aee302Chapter4Questions: QuestionV2[] = [
     text: "Using the mean of 50.2 and the margin of error of 1.18 for that sample, what is the lower bound of the 95% confidence interval?",
     options: [
       "51.38",
-      "49.02",
       "50.20",
+      "49.02",
       "48.84"
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: "The lower bound is estimate minus margin of error: $50.2 - 1.18 = 49.02$.\n\n51.38 is instead the upper bound, formed by adding the margin of error rather than subtracting it.\n\n50.20 simply restates the sample mean, without subtracting the margin of error at all.\n\n48.84 results from subtracting a margin roughly twice as large as the correct one."
   },
   {
@@ -547,12 +547,12 @@ const aee302Chapter4Questions: QuestionV2[] = [
     chapter: "Chapter 4",
     text: "For that sample ($n=10$, df $=9$), using a critical t-value of 2.262 for the 95% level and $SE \\approx 0.6641$, what is the margin of error, rounded to three decimal places?",
     options: [
-      "1.502",
       "0.664",
       "2.262",
+      "1.502",
       "0.294"
     ],
-    correctAnswer: 0,
+    correctAnswer: 2,
     explanation: "The margin of error is $2.262 \\times 0.6641 \\approx 1.502$.\n\n0.664 simply restates the standard error itself, without multiplying by the critical t-value.\n\n2.262 simply restates the critical t-value itself, not the computed margin of error.\n\n0.294 results from mistakenly dividing the standard error by the critical value instead of multiplying."
   },
   {
@@ -561,12 +561,12 @@ const aee302Chapter4Questions: QuestionV2[] = [
     chapter: "Chapter 4",
     text: "Using the mean of 20.5 and the margin of error of 1.502 for that sample, what is the 95% confidence interval, rounded to two decimal places?",
     options: [
-      "(19.00, 22.00)",
       "(18.34, 22.66)",
       "(20.50, 22.00)",
-      "(19.50, 21.50)"
+      "(19.50, 21.50)",
+      "(19.00, 22.00)"
     ],
-    correctAnswer: 0,
+    correctAnswer: 3,
     explanation: "The interval is estimate minus and plus the margin of error: $20.5 - 1.502 \\approx 19.00$ and $20.5 + 1.502 \\approx 22.00$.\n\n(18.34, 22.66) is instead the wider interval produced using the 99% critical value of 3.250, not the 95% critical value of 2.262.\n\n(20.50, 22.00) only adds the margin of error and fails to subtract it for the lower bound.\n\n(19.50, 21.50) uses a margin of error of only 1.00 rather than the correctly computed 1.502."
   },
   {
@@ -576,11 +576,11 @@ const aee302Chapter4Questions: QuestionV2[] = [
     text: "For the same sample ($n=10$, df $=9$, mean $=20.5$, $SE\\approx0.6641$), using a critical t-value of 3.250 for the 99% level, what is the margin of error, rounded to three decimal places?",
     options: [
       "3.250",
-      "0.664",
       "2.158",
+      "0.664",
       "1.502"
     ],
-    correctAnswer: 2,
+    correctAnswer: 1,
     explanation: "The margin of error is $3.250 \\times 0.6641 \\approx 2.158$.\n\n3.250 simply restates the critical t-value itself, not the computed margin of error.\n\n0.664 simply restates the standard error itself, without multiplying by the critical t-value.\n\n1.502 is instead the margin of error computed for the 95% level using the smaller critical value of 2.262."
   },
   {

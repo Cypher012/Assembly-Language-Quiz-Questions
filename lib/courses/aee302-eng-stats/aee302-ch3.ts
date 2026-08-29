@@ -293,10 +293,10 @@ const aee302Chapter3Questions: QuestionV2[] = [
     options: [
       "1",
       "4",
-      "2",
-      "3"
+      "3",
+      "2"
     ],
-    correctAnswer: 3,
+    correctAnswer: 2,
     explanation: "Three of the recorded values are negative: -2, -6, and -3, so three patients experienced a weight loss rather than a gain.\n\n1 undercounts the negative values in the list; there are more than one.\n\n4 overcounts the negative values in the list; only three of the ten values are negative.\n\n2 also undercounts the negative values in the list; a careful recount finds three, not two."
   },
   {
@@ -306,11 +306,11 @@ const aee302Chapter3Questions: QuestionV2[] = [
     text: "10 hospital patients are given a new diet, and each patient's weight gain (kg) is recorded as: 7, -2, -6, 7, 5, 6, -3, 9, 8, 9. What is the sum of the 10 recorded weight gains?",
     options: [
       "44",
-      "40",
       "36",
+      "40",
       "50"
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: "Adding the ten recorded values gives 7 + (-2) + (-6) + 7 + 5 + 6 + (-3) + 9 + 8 + 9 = 40.\n\n44 results from mis-adding one of the negative values as positive.\n\n36 results from dropping one of the positive values from the running total.\n\n50 results from treating one of the negative values as if it were ten units larger than recorded."
   },
   {
@@ -376,11 +376,11 @@ const aee302Chapter3Questions: QuestionV2[] = [
     text: "What does the null hypothesis state in a two-sample test of equality of means?",
     options: [
       "$\\mu_1 \\neq \\mu_2$",
-      "$\\mu_1 > \\mu_2$",
       "$\\mu_1 = \\mu_2$",
+      "$\\mu_1 > \\mu_2$",
       "$\\mu_1 < \\mu_2$"
     ],
-    correctAnswer: 2,
+    correctAnswer: 1,
     explanation: "The Hypothesis testing of equality of means section states that the null hypothesis always reflects no difference between the two populations, expressed as $\\mu_1 = \\mu_2$.\n\n$\\mu_1 \\neq \\mu_2$ is instead the two-sided alternative hypothesis, not the null hypothesis.\n\n$\\mu_1 > \\mu_2$ is one of the two one-sided forms the alternative hypothesis can take, not the null hypothesis.\n\n$\\mu_1 < \\mu_2$ is the other one-sided form the alternative hypothesis can take, likewise not the null hypothesis."
   },
   {
@@ -469,11 +469,11 @@ const aee302Chapter3Questions: QuestionV2[] = [
     text: "Which expression correctly gives the pooled t-test statistic for comparing two sample means?",
     options: [
       "$t_s = \\dfrac{\\bar{x}_1 - \\bar{x}_2}{\\sqrt{\\frac{1}{n_1}+\\frac{1}{n_2}}}$",
-      "$t_s = \\dfrac{\\bar{x}_1 - \\bar{x}_2}{S_p\\sqrt{\\frac{1}{n_1}+\\frac{1}{n_2}}}$",
       "$t_s = S_p\\left(\\bar{x}_1 - \\bar{x}_2\\right)\\sqrt{\\frac{1}{n_1}+\\frac{1}{n_2}}$",
+      "$t_s = \\dfrac{\\bar{x}_1 - \\bar{x}_2}{S_p\\sqrt{\\frac{1}{n_1}+\\frac{1}{n_2}}}$",
       "$t_s = \\dfrac{\\bar{x}_1 + \\bar{x}_2}{S_p\\sqrt{n_1+n_2}}$"
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: "The Hypothesis testing of equality of means section gives the pooled t-test as $t_s = \\dfrac{\\bar{x}_1 - \\bar{x}_2}{S_p\\sqrt{\\frac{1}{n_1}+\\frac{1}{n_2}}}$, with df $= n_1+n_2-2$.\n\nOmitting $S_p$ from the denominator leaves out the pooled standard deviation entirely, changing the formula's scale.\n\nMultiplying by $S_p$ and the square root term, rather than dividing by them, inverts the structure of the formula.\n\nAdding the two sample means instead of subtracting them, and using $n_1+n_2$ instead of the reciprocal sum, both misstate the formula."
   },
   {
@@ -613,11 +613,11 @@ const aee302Chapter3Questions: QuestionV2[] = [
     text: "Under the P value decision rule, what significance level is normally used as the comparison default, and what is concluded if the P value exceeds it?",
     options: [
       "0.5, or 50%; if the P value exceeds it, accept Ho",
+      "0.05, or 5%; if the P value exceeds it, accept Ho",
       "0.01, or 1%; if the P value exceeds it, accept Ho",
-      "0.05, or 5%; if the P value exceeds it, accept H1",
-      "0.05, or 5%; if the P value exceeds it, accept Ho"
+      "0.05, or 5%; if the P value exceeds it, accept H1"
     ],
-    correctAnswer: 3,
+    correctAnswer: 1,
     explanation: "The Decision rule section states that if the P value exceeds the significance level, Ho is accepted, with the significance level normally taken as 0.05 or 5%.\n\n0.5 or 50% is far higher than the low significance levels the section describes as typical.\n\n0.01 or 1% is a valid low significance level in general, but not the value the section names as the normal default here.\n\nConcluding H1 is accepted when P exceeds the significance level reverses the rule; exceeding the significance level leads to accepting Ho, not H1."
   },
   {
@@ -640,12 +640,12 @@ const aee302Chapter3Questions: QuestionV2[] = [
     chapter: "Chapter 3",
     text: "Two independent samples have $n_1=6$ with $S_1^2=16$, and $n_2=8$ with $S_2^2=25$. What is the ratio of the larger sample variance to the smaller sample variance?",
     options: [
-      "1.5625",
       "0.64",
       "1.5",
+      "1.5625",
       "9"
     ],
-    correctAnswer: 0,
+    correctAnswer: 2,
     explanation: "The ratio of the larger to smaller sample variance is $25/16 = 1.5625$.\n\n0.64 results from inverting the ratio, computing $16/25$ instead of $25/16$.\n\n1.5 results from a rounding slip that drops the exact fractional remainder of the true ratio.\n\n9 results from subtracting the two variances instead of dividing them."
   },
   {
@@ -712,10 +712,10 @@ const aee302Chapter3Questions: QuestionV2[] = [
     options: [
       "The separate-variance t-test; $t_s \\approx 1.14$",
       "The pooled t-test; $t_s \\approx 2.28$",
-      "The separate-variance t-test; $t_s \\approx 5.00$",
-      "The separate-variance t-test; $t_s \\approx 2.28$"
+      "The separate-variance t-test; $t_s \\approx 2.28$",
+      "The separate-variance t-test; $t_s \\approx 5.00$"
     ],
-    correctAnswer: 3,
+    correctAnswer: 2,
     explanation: "Since the ratio $20/4=5$ exceeds 3, the separate-variance t-test applies: $t_s = \\dfrac{30-25}{\\sqrt{\\frac{4}{5}+\\frac{20}{5}}} = \\dfrac{5}{\\sqrt{4.8}} \\approx \\dfrac{5}{2.19} \\approx 2.28$.\n\nHalving the correct result gives 1.14, which would result from mistakenly doubling the value under the square root.\n\nThe pooled t-test is the wrong choice here, since the ratio of 5 exceeds 3, calling for the separate-variance test instead.\n\nReporting 5.00 mistakenly skips the square root and division step, leaving only the numerator difference of means."
   },
   {
@@ -957,12 +957,12 @@ const aee302Chapter3Questions: QuestionV2[] = [
     chapter: "Chapter 3",
     text: "Two independent samples have $n_1=8$ and $n_2=10$, a pooled standard deviation of $S_p \\approx 3.60$, and sample means $\\bar{x}_1=62$ and $\\bar{x}_2=58$. What is the pooled t-test statistic $t_s$, rounded to two decimal places?",
     options: [
-      "2.34",
       "1.11",
+      "2.34",
       "3.60",
       "0.47"
     ],
-    correctAnswer: 0,
+    correctAnswer: 1,
     explanation: "Using $t_s = \\dfrac{\\bar{x}_1-\\bar{x}_2}{S_p\\sqrt{\\frac{1}{n_1}+\\frac{1}{n_2}}}$, the numerator is $62-58=4$, and $\\sqrt{\\frac{1}{8}+\\frac{1}{10}} = \\sqrt{0.225} \\approx 0.47$, so $t_s \\approx 4/(3.60 \\times 0.47) \\approx 4/1.71 \\approx 2.34$.\n\n1.11 results from dividing 4 by $3.60$ alone, omitting the square root term entirely.\n\n3.60 simply restates $S_p$ rather than completing the full calculation for $t_s$.\n\n0.47 simply restates the square root term $\\sqrt{\\frac{1}{n_1}+\\frac{1}{n_2}}$ rather than completing the full calculation for $t_s$."
   },
   {
@@ -973,10 +973,10 @@ const aee302Chapter3Questions: QuestionV2[] = [
     options: [
       "18",
       "17",
-      "8",
-      "16"
+      "16",
+      "8"
     ],
-    correctAnswer: 3,
+    correctAnswer: 2,
     explanation: "Using df $= n_1+n_2-2$, the degrees of freedom are $8+10-2=16$.\n\n18 results from omitting the subtraction of 2 entirely.\n\n17 results from subtracting only 1 instead of 2.\n\n8 mistakenly reports only $n_1$ rather than combining both sample sizes."
   },
   {
@@ -1041,12 +1041,12 @@ const aee302Chapter3Questions: QuestionV2[] = [
     chapter: "Chapter 3",
     text: "What are the degrees of freedom for this separate-variance t-test on those two samples ($n_1=6, n_2=6$)?",
     options: [
-      "10",
       "12",
+      "10",
       "11",
       "6"
     ],
-    correctAnswer: 0,
+    correctAnswer: 1,
     explanation: "Using df $= n_1+n_2-2$, the same formula the source gives for the separate-variance test, the degrees of freedom are $6+6-2=10$.\n\n12 results from omitting the subtraction of 2 entirely.\n\n11 results from subtracting only 1 instead of 2.\n\n6 mistakenly reports only one sample size rather than combining both."
   },
   {
@@ -1071,10 +1071,10 @@ const aee302Chapter3Questions: QuestionV2[] = [
     options: [
       "0.25",
       "48",
-      "4.27",
-      "4"
+      "4",
+      "4.27"
     ],
-    correctAnswer: 3,
+    correctAnswer: 2,
     explanation: "Since 64 is the larger sample variance and 16 is the smaller, $F = 64/16 = 4$.\n\n0.25 results from inverting the ratio, computing $16/64$ instead of $64/16$.\n\n48 results from subtracting the two variances instead of dividing them.\n\n4.27 results from an unrelated arithmetic slip in the division."
   },
   {
@@ -1085,10 +1085,10 @@ const aee302Chapter3Questions: QuestionV2[] = [
     options: [
       "$df_1=13$ and $df_2=11$",
       "$df_1=10$ and $df_2=12$",
-      "$df_1=12$ and $df_2=10$",
-      "$df_1=11$ and $df_2=9$"
+      "$df_1=11$ and $df_2=9$",
+      "$df_1=12$ and $df_2=10$"
     ],
-    correctAnswer: 2,
+    correctAnswer: 3,
     explanation: "Using $df_1=n_1-1$ and $df_2=n_2-1$ for the larger and smaller sample variance estimates respectively, $df_1=13-1=12$ and $df_2=11-1=10$.\n\nUsing $n_1$ and $n_2$ directly, without subtracting 1, overstates both degrees of freedom.\n\nSwapping the two values reverses which degree of freedom belongs to the larger-variance sample and which belongs to the smaller.\n\nSubtracting 1 from the wrong pair of sample sizes shifts both computed values away from the correct ones."
   },
   {

@@ -129,11 +129,11 @@ const aee302Chapter8Questions: QuestionV2[] = [
     text: "For the pilot-plant example with k=3 factors, how many main effect and interaction effect determinations are possible?",
     options: [
       "3",
-      "6",
       "7",
+      "6",
       "8"
     ],
-    correctAnswer: 2,
+    correctAnswer: 1,
     explanation: "The number of effect determinations is $2^k-1=2^3-1=8-1=7$.\n\n3 mistakenly reports k itself, the number of factors, rather than $2^k-1$.\n\n6 results from mistakenly computing $2k$ instead of $2^k-1$.\n\n8 mistakenly reports $2^k$, the number of runs, without subtracting 1."
   },
   {
@@ -185,11 +185,11 @@ const aee302Chapter8Questions: QuestionV2[] = [
     text: "Using the yields 60, 72, 54, 68, 52, 83, 45, and 80 for runs 1 through 8 (in standard order), Method 1 computes the temperature effect from four comparisons: $(Y_2-Y_1)=12$, $(Y_4-Y_3)=14$, $(Y_6-Y_5)=31$, and $(Y_8-Y_7)=35$. What is the temperature main effect?",
     options: [
       "92",
-      "23",
       "18.4",
+      "23",
       "46"
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: "Summing the four comparisons gives $12+14+31+35=92$, and dividing by 4 gives the temperature main effect, $92/4=23$.\n\n92 is the sum of the four comparisons before dividing, not the final main effect.\n\n18.4 results from mistakenly dividing 92 by 5 instead of 4.\n\n46 results from mistakenly dividing 92 by 2 instead of 4."
   },
   {
@@ -199,11 +199,11 @@ const aee302Chapter8Questions: QuestionV2[] = [
     text: "Using the same yields, Method 1 computes the pressure effect from four comparisons: $(Y_3-Y_1)=-6$, $(Y_4-Y_2)=-4$, $(Y_7-Y_5)=-7$, and $(Y_8-Y_6)=-3$. What is the pressure main effect?",
     options: [
       "-20",
-      "-4",
       "-5",
+      "-4",
       "-10"
     ],
-    correctAnswer: 2,
+    correctAnswer: 1,
     explanation: "Summing the four comparisons gives $-6-4-7-3=-20$, and dividing by 4 gives the pressure main effect, $-20/4=-5$.\n\n-20 is the sum of the four comparisons before dividing, not the final main effect.\n\n-4 simply restates one of the individual comparisons, not the computed main effect.\n\n-10 results from mistakenly dividing -20 by 2 instead of 4."
   },
   {
@@ -278,11 +278,11 @@ const aee302Chapter8Questions: QuestionV2[] = [
     text: "Using Method 2, the average yield at high catalyst level B (runs 5, 6, 7, 8: 52, 83, 45, 80) is 65.0, and the average yield at low catalyst level A (runs 1, 2, 3, 4: 60, 72, 54, 68) is 63.5. What is the catalyst main effect?",
     options: [
       "128.5",
-      "1.5",
       "1.02",
+      "1.5",
       "0.5"
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: "The catalyst effect is $65.0-63.5=1.5$, matching the value obtained from Method 1.\n\n128.5 results from mistakenly adding the two averages instead of subtracting them.\n\n1.02 results from mistakenly dividing the two averages instead of subtracting them.\n\n0.5 is instead the value of the three-factor interaction, TPC, an unrelated quantity."
   },
   {
@@ -349,10 +349,10 @@ const aee302Chapter8Questions: QuestionV2[] = [
     options: [
       "46",
       "20",
-      "10",
-      "23"
+      "23",
+      "10"
     ],
-    correctAnswer: 2,
+    correctAnswer: 3,
     explanation: "The difference between the two conditional averages is $33-13=20$, and the $T \\times C$ interaction is half that difference, $20/2=10$.\n\n46 is the sum of the two conditional averages, not the interaction value.\n\n20 is the difference between the two conditional averages before halving, not the final interaction value.\n\n23 is instead the overall temperature main effect, an unrelated value."
   },
   {
@@ -362,11 +362,11 @@ const aee302Chapter8Questions: QuestionV2[] = [
     text: "At pressure level 200 kPa, the average temperature effect is $(14+35)/2=24.5$. At pressure level 100 kPa, the average temperature effect is $(12+31)/2=21.5$. What is the $T \\times P$ interaction?",
     options: [
       "46.0",
-      "3.0",
       "1.5",
+      "3.0",
       "24.5"
     ],
-    correctAnswer: 2,
+    correctAnswer: 1,
     explanation: "The difference between the two conditional averages is $24.5-21.5=3.0$, and the $T \\times P$ interaction is half that difference, $3.0/2=1.5$.\n\n46.0 is the sum of the two conditional averages, not the interaction value.\n\n3.0 is the difference between the two conditional averages before halving, not the final interaction value.\n\n24.5 simply restates one of the two conditional averages, not the computed interaction."
   },
   {
@@ -375,12 +375,12 @@ const aee302Chapter8Questions: QuestionV2[] = [
     chapter: "Chapter 8",
     text: "What value is stated for the $P \\times C$ (pressure by catalyst) interaction in this design?",
     options: [
-      "0",
       "10",
       "1.5",
+      "0",
       "23"
     ],
-    correctAnswer: 0,
+    correctAnswer: 2,
     explanation: "The section states that the $P \\times C$ interaction is 0.\n\n10 is instead the value of the $T \\times C$ interaction, a different quantity.\n\n1.5 is instead the value of the $T \\times P$ interaction, a different quantity.\n\n23 is instead the overall temperature main effect, an unrelated value."
   },
   {
@@ -413,11 +413,11 @@ const aee302Chapter8Questions: QuestionV2[] = [
     text: "The $T \\times P$ interaction with catalyst at level B is $[(Y_8-Y_7)-(Y_6-Y_5)]/2 = [(80-45)-(83-52)]/2 = (35-31)/2$. What is this value?",
     options: [
       "4",
-      "2",
       "66",
-      "1"
+      "1",
+      "2"
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: "The numerator is $35-31=4$, and dividing by 2 gives $4/2=2$.\n\n4 is the numerator before dividing by 2, not the final value.\n\n66 results from mistakenly adding 35 and 31 instead of subtracting them.\n\n1 is instead the corresponding value computed with catalyst at level A, a different quantity."
   },
   {
@@ -427,11 +427,11 @@ const aee302Chapter8Questions: QuestionV2[] = [
     text: "The $T \\times P$ interaction with catalyst at level A is $[(Y_4-Y_3)-(Y_2-Y_1)]/2 = [(68-54)-(72-60)]/2 = (14-12)/2$. What is this value?",
     options: [
       "2",
-      "26",
       "1",
+      "26",
       "0.5"
     ],
-    correctAnswer: 2,
+    correctAnswer: 1,
     explanation: "The numerator is $14-12=2$, and dividing by 2 gives $2/2=1$.\n\n2 is the numerator before dividing by 2, not the final value.\n\n26 results from mistakenly adding 14 and 12 instead of subtracting them.\n\n0.5 is instead the final three-factor interaction value, computed from this result and the catalyst-B result, not this intermediate value itself."
   },
   {
@@ -442,10 +442,10 @@ const aee302Chapter8Questions: QuestionV2[] = [
     options: [
       "3",
       "1",
-      "2",
-      "0.5"
+      "0.5",
+      "2"
     ],
-    correctAnswer: 3,
+    correctAnswer: 2,
     explanation: "The three-factor interaction is half the difference between the two conditional measures: $(2-1)/2=0.5$.\n\n3 results from mistakenly adding the two values instead of subtracting them before halving.\n\n1 is the difference between the two values before halving, not the final interaction value.\n\n2 simply restates the catalyst-B conditional value, not the final three-factor interaction."
   },
   {
@@ -497,11 +497,11 @@ const aee302Chapter8Questions: QuestionV2[] = [
     text: "Using the table of signs, the pressure effect is computed as $(-60-72+54+68-52-83+45+80)$, divided by the divisor. What is the pressure effect?",
     options: [
       "-20",
-      "-5",
       "-2.5",
-      "-80"
+      "-80",
+      "-5"
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: "The signed sum is $-60-72+54+68-52-83+45+80=-20$, and dividing by the divisor of 4 gives $-20/4=-5$.\n\n-20 is the signed sum before dividing by 4, not the final effect.\n\n-2.5 results from mistakenly dividing -20 by 8, the mean's divisor, instead of 4.\n\n-80 results from mistakenly multiplying -20 by 4 instead of dividing."
   },
   {
@@ -511,11 +511,11 @@ const aee302Chapter8Questions: QuestionV2[] = [
     text: "Using the table of signs, the $T \\times P \\times C$ interaction is computed as $(-60+72+54-68+52-83-45+80)$, divided by the divisor. What is this interaction?",
     options: [
       "2",
-      "8",
       "0.5",
+      "8",
       "0.25"
     ],
-    correctAnswer: 2,
+    correctAnswer: 1,
     explanation: "The signed sum is $-60+72+54-68+52-83-45+80=2$, and dividing by the divisor of 4 gives $2/4=0.5$.\n\n2 is the signed sum before dividing by 4, not the final effect.\n\n8 results from mistakenly multiplying 2 by 4 instead of dividing.\n\n0.25 results from mistakenly dividing 2 by 8, the mean's divisor, instead of 4."
   },
   {
@@ -576,11 +576,11 @@ const aee302Chapter8Questions: QuestionV2[] = [
     text: "In Yates' algorithm for this $2^3$ design, the first entry of column 1 (C1) is the sum of the first pair of yields, $Y_1+Y_2=60+72$. What is this value?",
     options: [
       "12",
-      "132",
       "60",
-      "4320"
+      "4320",
+      "132"
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: "Summing the first pair of yields gives $60+72=132$.\n\n12 is instead the difference, $72-60$, which appears later in column 1, not this first sum entry.\n\n60 simply restates the first yield value alone, not the sum of the pair.\n\n4320 results from mistakenly multiplying the two yields instead of adding them."
   },
   {
@@ -618,11 +618,11 @@ const aee302Chapter8Questions: QuestionV2[] = [
     text: "In Yates' algorithm, the final column (C3) entry for the mean row is 514, and the divisor for this row is 8. What is the mean estimate?",
     options: [
       "4112",
-      "64.25",
       "57.11",
-      "506"
+      "506",
+      "64.25"
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: "Dividing the column 3 entry by its divisor gives $514/8=64.25$, matching the grand mean of all 8 yields.\n\n4112 results from mistakenly multiplying 514 by 8 instead of dividing.\n\n57.11 results from mistakenly dividing 514 by 9 instead of 8.\n\n506 results from mistakenly subtracting 8 from 514 instead of dividing."
   },
   {
@@ -689,10 +689,10 @@ const aee302Chapter8Questions: QuestionV2[] = [
     options: [
       "4",
       "1",
-      "2",
-      "0.5"
+      "0.5",
+      "2"
     ],
-    correctAnswer: 2,
+    correctAnswer: 3,
     explanation: "Using $S_i^2=(\\text{difference})^2/2=2^2/2=4/2=2$.\n\n4 is the squared difference, $2^2$, before dividing by 2, not the final $S_i^2$ value.\n\n1 results from mistakenly dividing 2 by 2 again instead of stopping after the first division.\n\n0.5 results from an unrelated arithmetic slip in the division."
   },
   {
@@ -725,11 +725,11 @@ const aee302Chapter8Questions: QuestionV2[] = [
     text: "Summing each of the 8 runs' $S_i^2$ values gives $\\Sigma S_i^2=64$, with each run contributing 1 degree of freedom, for a total of 8 degrees of freedom. What is the pooled estimate of $\\sigma^2$?",
     options: [
       "64",
-      "8",
       "512",
+      "8",
       "0.125"
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: "The pooled estimate is $\\Sigma S_i^2$ divided by the total degrees of freedom: $64/8=8$.\n\n64 simply restates $\\Sigma S_i^2$ itself, without dividing by the total degrees of freedom.\n\n512 results from mistakenly multiplying 64 by 8 instead of dividing.\n\n0.125 results from inverting the ratio, computing $8/64$ instead of $64/8$."
   },
   {
@@ -740,10 +740,10 @@ const aee302Chapter8Questions: QuestionV2[] = [
     options: [
       "8",
       "10",
-      "16",
-      "64"
+      "64",
+      "16"
     ],
-    correctAnswer: 2,
+    correctAnswer: 3,
     explanation: "The total number of observations is $N=(\\text{number of runs}) \\times (\\text{number of replicates})=8 \\times 2=16$.\n\n8 simply restates the number of runs alone, without accounting for the replicates.\n\n10 results from mistakenly adding 8 and 2 instead of multiplying them.\n\n64 is instead the sum of the $S_i^2$ values, an unrelated quantity."
   },
   {

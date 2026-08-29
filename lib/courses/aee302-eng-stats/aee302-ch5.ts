@@ -200,10 +200,10 @@ const aee302Chapter5Questions: QuestionV2[] = [
     options: [
       "Mean difference $\\neq$ 0",
       "Mean difference > 0",
-      "Mean difference = 0",
-      "Mean difference < 0"
+      "Mean difference < 0",
+      "Mean difference = 0"
     ],
-    correctAnswer: 3,
+    correctAnswer: 2,
     explanation: "The Paired Sample Studies section lists mean difference less than 0, treatment 1 lower, as one of the three forms the alternative hypothesis can take.\n\nMean difference not equal to 0 is instead the general two-sided form, not the specific one-sided case of treatment 1 being lower.\n\nMean difference greater than 0 is the opposite one-sided form, corresponding to treatment 1 being higher, not lower.\n\nMean difference equal to 0 is the null hypothesis, not a form of the alternative hypothesis."
   },
   {
@@ -221,12 +221,12 @@ const aee302Chapter5Questions: QuestionV2[] = [
     chapter: "Chapter 5",
     text: "Which of the three alternative hypothesis forms in a paired comparison test corresponds to treatment 1 being higher than treatment 2?",
     options: [
-      "Mean difference > 0",
       "Mean difference < 0",
+      "Mean difference > 0",
       "Mean difference $\\neq$ 0",
       "Mean difference = 0"
     ],
-    correctAnswer: 0,
+    correctAnswer: 1,
     explanation: "The Paired Sample Studies section lists mean difference greater than 0, treatment 1 higher, as one of the three forms the alternative hypothesis can take.\n\nMean difference less than 0 is the opposite one-sided form, corresponding to treatment 1 being lower, not higher.\n\nMean difference not equal to 0 is the general two-sided form, not the specific one-sided case of treatment 1 being higher.\n\nMean difference equal to 0 is the null hypothesis, not a form of the alternative hypothesis."
   },
   {
@@ -334,11 +334,11 @@ const aee302Chapter5Questions: QuestionV2[] = [
     text: "Six paired plots give the following yields for plant types A and B: (A=1, B=3), (A=5, B=3), (A=6, B=8), (A=7, B=10), (A=12, B=8), (A=10, B=13). Defining $D = B - A$ for each pair, what is the mean difference $\\bar{D}$?",
     options: [
       "0.50",
-      "0.67",
       "1.00",
+      "0.67",
       "-0.67"
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: "The six differences are $3-1=2$, $3-5=-2$, $8-6=2$, $10-7=3$, $8-12=-4$, and $13-10=3$, summing to 4. Dividing by 6 pairs gives $\\bar{D} = 4/6 \\approx 0.67$.\n\n0.50 results from mistakenly dividing the sum of differences by 8 instead of 6.\n\n1.00 results from mistakenly dividing the sum of differences by 4 instead of 6.\n\n-0.67 results from reversing the sign, as would happen if $D$ were computed as $A-B$ instead of $B-A$ but the original positive mean were kept."
   },
   {
@@ -349,10 +349,10 @@ const aee302Chapter5Questions: QuestionV2[] = [
     options: [
       "Mean difference = 0",
       "Mean difference $\\neq$ 0",
-      "Mean difference > 0",
-      "Mean difference < 0"
+      "Mean difference < 0",
+      "Mean difference > 0"
     ],
-    correctAnswer: 2,
+    correctAnswer: 3,
     explanation: "Since $D=B-A$ and the question asks whether B's yield is higher than A's, this corresponds to the one-sided alternative hypothesis form mean difference greater than 0.\n\nMean difference equal to 0 is the null hypothesis, representing no difference, not the directional claim being tested.\n\nMean difference not equal to 0 is the general two-sided form, which would not specifically capture the directional claim that B is higher.\n\nMean difference less than 0 would instead correspond to asking whether A is higher than B, the opposite direction from the question asked."
   },
   {
@@ -362,11 +362,11 @@ const aee302Chapter5Questions: QuestionV2[] = [
     text: "For the potato-yield study, suppose the standard deviation of the six differences is $S_D \\approx 2.94$ and the mean difference is $\\bar{D} \\approx 0.67$. Using $t = \\bar{D}/(S_D/\\sqrt{n})$ with $n=6$, what is the test statistic $t$, rounded to two decimal places?",
     options: [
       "0.28",
-      "1.12",
       "0.56",
+      "1.12",
       "2.94"
     ],
-    correctAnswer: 2,
+    correctAnswer: 1,
     explanation: "Using $t = \\bar{D}/(S_D/\\sqrt{n})$, $S_D/\\sqrt{n} = 2.94/\\sqrt{6} \\approx 2.94/2.449 \\approx 1.20$, so $t \\approx 0.67/1.20 \\approx 0.56$.\n\n0.28 results from mistakenly halving the correctly computed value of $t$.\n\n1.12 results from mistakenly doubling the correctly computed value of $t$.\n\n2.94 simply restates $S_D$ itself, without completing the full calculation for $t$."
   },
   {
@@ -428,10 +428,10 @@ const aee302Chapter5Questions: QuestionV2[] = [
     options: [
       "0.35",
       "0.45",
-      "0.41",
-      "0.50"
+      "0.50",
+      "0.41"
     ],
-    correctAnswer: 2,
+    correctAnswer: 3,
     explanation: "Summing the 10 differences gives $0.8+0.6+0.3-0.1+1.1-0.2+0.3+0.5+0.5+0.3=4.1$, and dividing by 10 pairs gives $\\bar{D}=4.1/10=0.41$.\n\n0.35 results from a small rounding slip in the running total before dividing.\n\n0.45 results from mistakenly including an extra 0.4 in the sum before dividing.\n\n0.50 results from mistakenly dividing a sum of 5.0, an overstated total, by 10."
   },
   {
@@ -441,11 +441,11 @@ const aee302Chapter5Questions: QuestionV2[] = [
     text: "For the shoe-sole wear study, which alternative hypothesis form matches the question \"is there evidence to show that the two materials are NOT the same\"?",
     options: [
       "Mean difference > 0",
-      "Mean difference < 0",
       "Mean difference $\\neq$ 0",
+      "Mean difference < 0",
       "Mean difference = 0"
     ],
-    correctAnswer: 2,
+    correctAnswer: 1,
     explanation: "Asking whether the two materials are the same or not, without specifying a direction, corresponds to the general two-sided alternative hypothesis form, mean difference not equal to 0.\n\nMean difference greater than 0 is a one-sided form specifically claiming material B wears more, a narrower claim than simply asking if the materials differ at all.\n\nMean difference less than 0 is the opposite one-sided form, likewise narrower than the general question of whether the materials are the same.\n\nMean difference equal to 0 is the null hypothesis, representing no difference, the hypothesis being tested against, not the alternative."
   },
   {
@@ -484,10 +484,10 @@ const aee302Chapter5Questions: QuestionV2[] = [
     options: [
       "10",
       "8",
-      "9",
-      "11"
+      "11",
+      "9"
     ],
-    correctAnswer: 2,
+    correctAnswer: 3,
     explanation: "Using df $= n-1$, the degrees of freedom for 10 pairs are $10-1=9$.\n\n10 mistakenly reports the number of pairs itself, without subtracting 1.\n\n8 results from subtracting 2 instead of 1.\n\n11 results from adding 1 instead of subtracting it."
   },
   {
@@ -563,10 +563,10 @@ const aee302Chapter5Questions: QuestionV2[] = [
     options: [
       "8",
       "6",
-      "7",
-      "9"
+      "9",
+      "7"
     ],
-    correctAnswer: 2,
+    correctAnswer: 3,
     explanation: "Using df $= n-1$, the degrees of freedom for 8 blocks are $8-1=7$.\n\n8 mistakenly reports the number of blocks itself, without subtracting 1.\n\n6 results from subtracting 2 instead of 1.\n\n9 results from adding 1 instead of subtracting it."
   },
   {

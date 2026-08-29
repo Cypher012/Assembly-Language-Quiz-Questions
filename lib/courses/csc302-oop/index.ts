@@ -7,7 +7,6 @@ import csc302Chapter1_4Questions from "./csc302-ch1_4";
 import csc302Chapter2Questions from "./csc302-ch2";
 import csc302Chapter3Questions from "./csc302-ch3";
 
-// CSC302
 export const csc302JavaProgrammingCourse: Course = {
   id: "csc302-java-programming",
   code: "CSC302",

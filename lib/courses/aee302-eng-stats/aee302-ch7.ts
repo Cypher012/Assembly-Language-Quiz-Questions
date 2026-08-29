@@ -152,11 +152,11 @@ const aee302Chapter7Questions: QuestionV2[] = [
     text: "For a randomized block design with k treatments and n blocks, how many total experimental units are there?",
     options: [
       "$k+n$",
-      "$k-n$",
       "$kn$",
+      "$k-n$",
       "$k/n$"
     ],
-    correctAnswer: 2,
+    correctAnswer: 1,
     explanation: "The Randomized Block Design section states that there are k experimental units in each block, providing a total of $kn$ experimental units, the same total as in a completely randomized design.\n\nAdding k and n together does not match the multiplicative total the section describes.\n\nSubtracting n from k does not match the multiplicative total the section describes.\n\nDividing k by n does not match the multiplicative total the section describes."
   },
   {
@@ -273,11 +273,11 @@ const aee302Chapter7Questions: QuestionV2[] = [
     text: "In the ANOVA table for a randomized block design with n blocks, what are the degrees of freedom for the Blocks source of variation?",
     options: [
       "$n$",
-      "$n-1$",
       "$n+1$",
+      "$n-1$",
       "$kn-1$"
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: "The ANOVA table given in the Randomized Block Design section lists the Blocks degrees of freedom as $n-1$.\n\n$n$ itself overstates the degrees of freedom by not subtracting 1.\n\n$n+1$ likewise misstates the formula, adding rather than subtracting 1.\n\n$kn-1$ is instead the total degrees of freedom for the whole design, not specifically for the Blocks source."
   },
   {
@@ -287,11 +287,11 @@ const aee302Chapter7Questions: QuestionV2[] = [
     text: "In the ANOVA table for a randomized block design with k treatments, what are the degrees of freedom for the Treatments source of variation?",
     options: [
       "$k$",
-      "$k+1$",
       "$k-1$",
+      "$k+1$",
       "$(k-1)(n-1)$"
     ],
-    correctAnswer: 2,
+    correctAnswer: 1,
     explanation: "The ANOVA table given in the Randomized Block Design section lists the Treatments degrees of freedom as $k-1$.\n\n$k$ itself overstates the degrees of freedom by not subtracting 1.\n\n$k+1$ likewise misstates the formula, adding rather than subtracting 1.\n\n$(k-1)(n-1)$ is instead the Error degrees of freedom, not the Treatments degrees of freedom."
   },
   {
@@ -302,10 +302,10 @@ const aee302Chapter7Questions: QuestionV2[] = [
     options: [
       "$n-1$",
       "$k-1$",
-      "$kn-1$",
-      "$(k-1)(n-1)$"
+      "$(k-1)(n-1)$",
+      "$kn-1$"
     ],
-    correctAnswer: 3,
+    correctAnswer: 2,
     explanation: "The ANOVA table given in the Randomized Block Design section lists the Error degrees of freedom as $(k-1)(n-1)$.\n\n$n-1$ is instead the Blocks degrees of freedom, not the Error degrees of freedom.\n\n$k-1$ is instead the Treatments degrees of freedom, not the Error degrees of freedom.\n\n$kn-1$ is instead the Total degrees of freedom for the whole design, not the Error degrees of freedom."
   },
   {
@@ -314,12 +314,12 @@ const aee302Chapter7Questions: QuestionV2[] = [
     chapter: "Chapter 7",
     text: "In the ANOVA table for a randomized block design, what are the Total degrees of freedom?",
     options: [
-      "$kn-1$",
       "$k-1$",
+      "$kn-1$",
       "$n-1$",
       "$(k-1)(n-1)$"
     ],
-    correctAnswer: 0,
+    correctAnswer: 1,
     explanation: "The ANOVA table given in the Randomized Block Design section lists the Total degrees of freedom as $kn-1$, matching the total of $kn$ experimental units used across the design.\n\n$k-1$ is instead the Treatments degrees of freedom, not the Total.\n\n$n-1$ is instead the Blocks degrees of freedom, not the Total.\n\n$(k-1)(n-1)$ is instead the Error degrees of freedom, not the Total."
   },
   {
@@ -463,12 +463,12 @@ const aee302Chapter7Questions: QuestionV2[] = [
     chapter: "Chapter 7",
     text: "What is the treatment effect test statistic, and what are its degrees of freedom?",
     options: [
-      "$F = MST_r/MSE$, with $df_1 = k-1$ and $df_2 = (n-1)(k-1)$",
       "$F = MSB/MSE$, with $df_1 = n-1$ and $df_2 = (n-1)(k-1)$",
       "$F = MST_r/MSB$, with $df_1 = k-1$ and $df_2 = n-1$",
+      "$F = MST_r/MSE$, with $df_1 = k-1$ and $df_2 = (n-1)(k-1)$",
       "$F = MSE/MST_r$, with $df_1 = (n-1)(k-1)$ and $df_2 = k-1$"
     ],
-    correctAnswer: 0,
+    correctAnswer: 2,
     explanation: "The section gives the treatment effect test statistic as $F = MST_r/MSE$, with $df_1 = k-1$ and $df_2 = (n-1)(k-1)$, the treatment degrees of freedom and the error degrees of freedom.\n\n$F = MSB/MSE$ with $df_1=n-1$ is instead the block effect test statistic, not the treatment effect test statistic.\n\n$F = MST_r/MSB$ is not a ratio described anywhere in the section; treatment and block mean squares are each compared to error, not to each other.\n\nInverting the ratio to $MSE/MST_r$ does not match the variance ratio the section defines for the treatment effect."
   },
   {
@@ -478,11 +478,11 @@ const aee302Chapter7Questions: QuestionV2[] = [
     text: "What is the block effect test statistic, and what are its degrees of freedom?",
     options: [
       "$F = MST_r/MSE$, with $df_1 = k-1$ and $df_2 = (n-1)(k-1)$",
-      "$F = MSB/MST_r$, with $df_1 = n-1$ and $df_2 = k-1$",
       "$F = MSB/MSE$, with $df_1 = n-1$ and $df_2 = (n-1)(k-1)$",
+      "$F = MSB/MST_r$, with $df_1 = n-1$ and $df_2 = k-1$",
       "$F = MSE/MSB$, with $df_1 = (n-1)(k-1)$ and $df_2 = n-1$"
     ],
-    correctAnswer: 2,
+    correctAnswer: 1,
     explanation: "The section gives the block effect test statistic as $F = MSB/MSE$, with $df_1 = n-1$ and $df_2 = (n-1)(k-1)$.\n\n$F = MST_r/MSE$ with $df_1=k-1$ is instead the treatment effect test statistic, not the block effect test statistic.\n\n$F = MSB/MST_r$ is not a ratio described anywhere in the section; block and treatment mean squares are each compared to error, not to each other.\n\nInverting the ratio to $MSE/MSB$ does not match the variance ratio the section defines for the block effect."
   },
   {
@@ -664,11 +664,11 @@ const aee302Chapter7Questions: QuestionV2[] = [
     text: "For that design ($k=4$, $n=5$, Blocks df=4, Treatments df=3, Error df=12), suppose $SSB=50$. What is $MSB$?",
     options: [
       "50",
-      "12.5",
       "16.67",
+      "12.5",
       "4"
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: "Using $MSB=SSB/(n-1)=50/4=12.5$.\n\n50 simply restates $SSB$ itself, without dividing by the blocks degrees of freedom.\n\n16.67 results from mistakenly dividing $SSB$ by 3 instead of 4.\n\n4 is instead the blocks degrees of freedom itself, not the computed $MSB$."
   },
   {
@@ -678,11 +678,11 @@ const aee302Chapter7Questions: QuestionV2[] = [
     text: "For that same design (Treatments df=3), suppose $SSTr=90$. What is $MST_r$?",
     options: [
       "90",
-      "45",
       "30",
+      "45",
       "22.5"
     ],
-    correctAnswer: 2,
+    correctAnswer: 1,
     explanation: "Using $MST_r=SSTr/(k-1)=90/3=30$.\n\n90 simply restates $SSTr$ itself, without dividing by the treatment degrees of freedom.\n\n45 results from mistakenly dividing $SSTr$ by 2 instead of 3.\n\n22.5 results from mistakenly dividing $SSTr$ by 4 instead of 3."
   },
   {
@@ -692,11 +692,11 @@ const aee302Chapter7Questions: QuestionV2[] = [
     text: "For that same design (Error df=12), suppose $SSE=120$. What is $MSE$?",
     options: [
       "120",
-      "10",
       "60",
+      "10",
       "24"
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: "Using $MSE=SSE/[(k-1)(n-1)]=120/12=10$.\n\n120 simply restates $SSE$ itself, without dividing by the error degrees of freedom.\n\n60 results from mistakenly dividing $SSE$ by 2 instead of 12.\n\n24 results from mistakenly dividing $SSE$ by 5 instead of 12."
   },
   {
@@ -706,11 +706,11 @@ const aee302Chapter7Questions: QuestionV2[] = [
     text: "For that design, with $MST_r=30$ and $MSE=10$, what is the treatment effect F test statistic?",
     options: [
       "300.0",
-      "3.0",
       "40.0",
-      "0.33"
+      "0.33",
+      "3.0"
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: "Using $F=MST_r/MSE=30/10=3.0$.\n\n300.0 results from mistakenly multiplying $MST_r$ and $MSE$ together instead of dividing.\n\n40.0 results from mistakenly adding $MST_r$ and $MSE$ together instead of dividing.\n\n0.33 results from inverting the ratio, computing $MSE/MST_r$ instead of $MST_r/MSE$."
   },
   {
@@ -734,11 +734,11 @@ const aee302Chapter7Questions: QuestionV2[] = [
     text: "For that same design, with $MSB=12.5$ and $MSE=10$, what is the block effect F test statistic?",
     options: [
       "125.0",
+      "1.25",
       "22.5",
-      "0.8",
-      "1.25"
+      "0.8"
     ],
-    correctAnswer: 3,
+    correctAnswer: 1,
     explanation: "Using $F=MSB/MSE=12.5/10=1.25$.\n\n125.0 results from mistakenly multiplying $MSB$ and $MSE$ together instead of dividing.\n\n22.5 results from mistakenly adding $MSB$ and $MSE$ together instead of dividing.\n\n0.8 results from inverting the ratio, computing $MSE/MSB$ instead of $MSB/MSE$."
   },
   {
@@ -776,11 +776,11 @@ const aee302Chapter7Questions: QuestionV2[] = [
     text: "A separate randomized block design has $k=3$ treatments and $n=4$ blocks. What are the Blocks, Treatments, and Error degrees of freedom?",
     options: [
       "Blocks=4, Treatments=3, Error=12",
-      "Blocks=3, Treatments=2, Error=6",
       "Blocks=3, Treatments=4, Error=6",
+      "Blocks=3, Treatments=2, Error=6",
       "Blocks=4, Treatments=2, Error=8"
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: "Using Blocks df$=n-1=4-1=3$, Treatments df$=k-1=3-1=2$, and Error df$=(k-1)(n-1)=2 \\times 3=6$.\n\nReporting Blocks=4 and Treatments=3 mistakenly uses $n$ and $k$ directly, without subtracting 1 from either.\n\nSwapping Blocks and Treatments values reverses which degrees of freedom belongs to which source.\n\nReporting Error=8 results from mistakenly computing $k \\times n - 4$ rather than $(k-1)(n-1)$."
   },
   {
@@ -791,10 +791,10 @@ const aee302Chapter7Questions: QuestionV2[] = [
     options: [
       "18",
       "9",
-      "6",
-      "4.5"
+      "4.5",
+      "6"
     ],
-    correctAnswer: 2,
+    correctAnswer: 3,
     explanation: "Using $MSB=SSB/(n-1)=18/3=6$.\n\n18 simply restates $SSB$ itself, without dividing by the blocks degrees of freedom.\n\n9 results from mistakenly dividing $SSB$ by 2 instead of 3.\n\n4.5 results from mistakenly dividing $SSB$ by 4 instead of 3."
   },
   {
@@ -842,10 +842,10 @@ const aee302Chapter7Questions: QuestionV2[] = [
     options: [
       "0.1",
       "160.0",
-      "10.0",
-      "44.0"
+      "44.0",
+      "10.0"
     ],
-    correctAnswer: 2,
+    correctAnswer: 3,
     explanation: "Using $F=MST_r/MSE=40/4=10.0$.\n\n0.1 results from inverting the ratio, computing $MSE/MST_r$ instead of $MST_r/MSE$.\n\n160.0 results from mistakenly multiplying $MST_r$ and $MSE$ together instead of dividing.\n\n44.0 results from mistakenly adding $MST_r$ and $MSE$ together instead of dividing."
   },
   {
@@ -869,11 +869,11 @@ const aee302Chapter7Questions: QuestionV2[] = [
     text: "For that same design, with $MSB=6$ and $MSE=4$, what is the block effect F test statistic?",
     options: [
       "24.0",
+      "1.5",
       "10.0",
-      "0.67",
-      "1.5"
+      "0.67"
     ],
-    correctAnswer: 3,
+    correctAnswer: 1,
     explanation: "Using $F=MSB/MSE=6/4=1.5$.\n\n24.0 results from mistakenly multiplying $MSB$ and $MSE$ together instead of dividing.\n\n10.0 results from mistakenly adding $MSB$ and $MSE$ together instead of dividing.\n\n0.67 results from inverting the ratio, computing $MSE/MSB$ instead of $MSB/MSE$."
   },
   {
