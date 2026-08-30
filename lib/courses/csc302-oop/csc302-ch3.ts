@@ -8,7 +8,7 @@ const csc302Chapter3Questions: QuestionV2[] = [
     text: "What is a programming paradigm?",
     options: [
       "A fundamental style, model, or approach to computer programming that dictates how execution is conceptualized and code is organized",
-      "A compiler implementation is a tool, not a conceptual style of programming",
+      "A specific compiler implementation used to translate source code into machine instructions",
       "A licensing model that determines how a programming language may be commercially distributed",
       "A hardware specification describing how a processor executes instructions"
     ],
@@ -22,8 +22,8 @@ const csc302Chapter3Questions: QuestionV2[] = [
     text: "What is the relationship between a programming paradigm and a programming language?",
     options: [
       "A paradigm is a lens through which a language is designed and used, not the language itself",
-      "Syntax rules are a property of a specific language, not a description of the paradigm concept",
-      "A paradigm is a compiled binary produced from a language's source files",
+      "A paradigm is simply the complete, explicit set of syntax rules that a specific programming language internally defines",
+      "A paradigm is essentially just a compiled binary artifact that gets produced from a language's original source code files",
       "A paradigm is a certification a language earns after passing industry benchmarks"
     ],
     correctAnswer: 0,
@@ -59,8 +59,8 @@ const csc302Chapter3Questions: QuestionV2[] = [
     text: "What characterized the 1940s-1950s era in the evolution of programming paradigms?",
     options: [
       "Programmers wrote binary, assembly, or early Fortran based heavily on the underlying physical computer architecture",
-      "Symbolic and functional computation via Lisp, alongside Simula's classes, is placed in the 1960s Academic Divergence era",
-      "Logic programming and declarative databases emerged alongside the decline of GOTO",
+      "Symbolic and functional computation first properly emerged through Lisp, alongside Simula's early introduction of classes and subclasses",
+      "Logic programming and declarative databases both gradually emerged alongside the slow, steady decline of GOTO statements",
       "Functional capabilities such as lambdas were integrated into mainstream imperative languages"
     ],
     correctAnswer: 0,
@@ -115,9 +115,9 @@ const csc302Chapter3Questions: QuestionV2[] = [
     text: "What defined the 1970s-1980s era of paradigm evolution?",
     options: [
       "The decline of GOTO alongside the emergence of logic programming and declarative databases",
-      "Lisp's symbolic computation and Simula's classes belong to the 1960s",
-      "The dominance of C++ and Java in commercial software",
-      "The integration of lambdas into imperative and object-oriented languages"
+      "Lisp introduced symbolic and functional computation while Simula separately introduced the concept of classes",
+      "The widespread commercial dominance of C++ and Java throughout enterprise software development around the world",
+      "The gradual integration of lambdas into mainstream imperative and object-oriented programming languages absolutely everywhere today"
     ],
     correctAnswer: 0,
     explanation: "The Evolution of Paradigms timeline describes the 1970s-1980s as Structured and Relational Models, marked by the decline of GOTO and the emergence of logic programming (Prolog) and declarative databases (SQL).\n\nLisp's symbolic computation and Simula's classes belong to the 1960s.\n\nC++ and Java's dominance belongs to the 1990s.\n\nLambda integration into imperative and OOP languages belongs to the 2000s-Present era."
@@ -143,9 +143,9 @@ const csc302Chapter3Questions: QuestionV2[] = [
     text: "What is the lesson behind the idea that there is 'No Single Silver Bullet' among programming paradigms?",
     options: [
       "Believing one paradigm is universally superior to all others is a classic engineering pitfall, since paradigms are tools",
-      "The source never claims functional rewrites are mandatory for competitiveness",
-      "Only the imperative paradigm has proven durable enough to justify continued use in industry",
-      "Paradigms compete directly with one another and only one can be adopted per project"
+      "Functional rewrites of legacy systems are always considered absolutely mandatory for any company that truly wants to remain competitive",
+      "Only the imperative paradigm has ever truly proven durable enough to justify its continued widespread use across the entire industry",
+      "Paradigms are said to compete directly with one another, and only one of them can ever be adopted per project"
     ],
     correctAnswer: 0,
     explanation: "The Taxonomy section closes with the point that paradigms are tools, and believing one is universally superior to others is a classic engineering pitfall.\n\nThe source never claims functional rewrites are mandatory for competitiveness.\n\nIt does not single out imperative programming as uniquely durable; the whole taxonomy lists six meta-paradigms as valid tools.\n\nThe deck's overall theme, most modern languages are multi-paradigm, contradicts the idea that only one paradigm can be adopted per project."
@@ -157,7 +157,7 @@ const csc302Chapter3Questions: QuestionV2[] = [
     text: "What is the core premise of the imperative programming model?",
     options: [
       "Programs are sequences of commands that directly mutate a global or local state",
-      "Describing the desired result while a runtime handles control is the Declarative philosophy, not the imperative one",
+      "Programs describe the desired result while a runtime automatically determines the most efficient way to achieve it",
       "Programs are collections of isolated actors that communicate only by passing messages",
       "Programs are pure functions evaluated mathematically without state changes"
     ],
@@ -213,8 +213,8 @@ const csc302Chapter3Questions: QuestionV2[] = [
     text: "The operation x = x + 1 is used as an example. What point does this example illustrate about imperative programming?",
     options: [
       "The operation makes no mathematical sense as an equation, but represents a foundational state-transition in the imperative model",
-      "Referential transparency is a Functional Programming pillar describing replaceability with an evaluated result, which this mutating statement violates rather than illustrates",
-      "The operation is an example of a pure function with no observable side effects",
+      "The operation very clearly demonstrates referential transparency, since the entire expression can always be replaced by its evaluated result",
+      "The operation is a perfect textbook example of a pure function with absolutely no observable side effects whatsoever at all",
       "The operation shows how lazy evaluation defers computation until a value is actually needed"
     ],
     correctAnswer: 0,
@@ -241,7 +241,7 @@ const csc302Chapter3Questions: QuestionV2[] = [
     text: "In what year was Fortran developed?",
     options: [
       "1957",
-      "1958 is the year given for ALGOL's breakthrough (also cited as 1958/1960) and separately for Lisp's creation",
+      "1958",
       "1967",
       "1972"
     ],
@@ -255,7 +255,7 @@ const csc302Chapter3Questions: QuestionV2[] = [
     text: "Roughly how much of their time did programmers spend manually writing machine code before Fortran existed?",
     options: [
       "Up to 50%",
-      "The deck never cites a 90% figure for this anecdote",
+      "Up to 90% of the time",
       "Roughly 10%",
       "Roughly 25%"
     ],
@@ -269,9 +269,9 @@ const csc302Chapter3Questions: QuestionV2[] = [
     text: "What did Fortran prove about high-level abstract code?",
     options: [
       "That it could compile into assembly almost as fast as hand-optimized machine code",
-      "Fortran still relied on a compiler to perform this translation, so it did not eliminate compilers",
-      "That it required no variable type declarations of any kind",
-      "That it could run directly on quantum hardware without translation"
+      "That it eliminated the need for a compiler entirely",
+      "That it required absolutely no variable type declarations of any kind whatsoever in any program",
+      "That it could run directly on modern quantum computing hardware without any translation step at all"
     ],
     correctAnswer: 0,
     explanation: "The Fortran section states that Fortran (Formula Translation) proved high-level abstract code could compile into assembly almost as fast as hand-optimized machine code.\n\nFortran still relied on a compiler to perform this translation, so it did not eliminate compilers.\n\nFortran's legacy syntax actually relied on implicit typing rules by starting letter, not the total absence of type rules.\n\nQuantum hardware is a Part IX topic unrelated to Fortran's 1957 achievement."
@@ -297,9 +297,9 @@ const csc302Chapter3Questions: QuestionV2[] = [
     text: "In Fortran, how was a variable's type typically determined if it was not explicitly declared?",
     options: [
       "Implicitly, based on the starting letter of the variable name, with letters I through N indicating integers",
-      "Column position governed statement labels and continuation, not variable typing",
-      "Explicitly, since Fortran required every variable to be declared before use",
-      "Implicitly, based on whether the variable appeared before or after the statement label"
+      "Implicitly, based entirely on the exact, specific numbered column position in which the variable happens to be declared",
+      "Explicitly, since Fortran strictly and always required every single variable name to be declared before its very first use",
+      "Implicitly, based entirely on whether the variable name happened to appear before or after the statement label itself"
     ],
     correctAnswer: 0,
     explanation: "The Legacy Syntax Quirks note states variable types were implicit based on the starting letter, with I through N indicating integers.\n\nColumn position governed statement labels and continuation, not variable typing.\n\nThe whole point of this quirk is that Fortran did not require explicit declaration for these implicitly typed variables.\n\nPosition relative to the statement label is never described as determining type."
@@ -348,8 +348,8 @@ const csc302Chapter3Questions: QuestionV2[] = [
     text: "What problem did Edsger Dijkstra's 1968 letter 'Go To Statement Considered Harmful' address?",
     options: [
       "The hard-to-maintain 'spaghetti code' produced by arbitrary GOTO jumps in early imperative languages",
-      "Garbage collection overhead is never linked to Dijkstra's letter; it relates to Lisp and functional languages in Part IV",
-      "The steep learning curve of logic programming for real-world system tasks",
+      "The significant, measurable performance overhead introduced by automatic garbage collection during long-running production programs",
+      "The notoriously steep learning curve of logic programming for real-world enterprise system tasks generally",
       "The lack of built-in I/O capabilities in ALGOL"
     ],
     correctAnswer: 0,
@@ -362,7 +362,7 @@ const csc302Chapter3Questions: QuestionV2[] = [
     text: "How does the clarity of a program's structure relate to the density of GOTO statements?",
     options: [
       "Clarity is inversely proportional to the density of GOTO statements",
-      "Clarity is directly proportional to the density of GOTO statements",
+      "Clarity is always directly proportional to the density of GOTO statements",
       "Clarity is unrelated to GOTO statement density entirely",
       "Clarity only depends on the density of comments, not GOTO statements"
     ],
@@ -376,9 +376,9 @@ const csc302Chapter3Questions: QuestionV2[] = [
     text: "Which three constructs, identified by Böhm and Jacopini in 1966, can express any computable function?",
     options: [
       "Sequence, selection, and iteration",
-      "Recursion, inheritance, and polymorphism",
+      "Recursion, inheritance, and polymorphism together",
       "Assignment, message passing, and backtracking",
-      "Unification, resolution, and negation"
+      "Unification, resolution, and logical negation"
     ],
     correctAnswer: 0,
     explanation: "The GOTO Controversy section states Böhm and Jacopini's 1966 result shows any computable function can be expressed using only sequence (executing instructions one after another), selection (if-then-else), and iteration (while loops).\n\nInheritance and polymorphism are OOP pillars from Part III, not part of this 1966 result.\n\nMessage passing and backtracking belong to Smalltalk and Prolog respectively, unrelated concepts.\n\nUnification, resolution, and negation are Prolog mechanisms from Part V."
@@ -390,8 +390,8 @@ const csc302Chapter3Questions: QuestionV2[] = [
     text: "Who developed C, and for what purpose?",
     options: [
       "Dennis Ritchie at Bell Labs, to rewrite the Unix operating system",
-      "John Backus developed Fortran, not C, decades earlier for a different purpose",
-      "Martin Odersky at EPFL, to bridge functional and object-oriented programming",
+      "John Backus at IBM, to formalize Fortran's compiler design",
+      "Martin Odersky at EPFL in Switzerland, to bridge functional and object-oriented programming",
       "Robert Griesemer at Google, to simplify concurrent server programming"
     ],
     correctAnswer: 0,
@@ -418,9 +418,9 @@ const csc302Chapter3Questions: QuestionV2[] = [
     text: "A developer writes: char *dest = malloc(7); while(*dest++ = *src++); to copy a string in C. Which trait of C does this snippet best illustrate?",
     options: [
       "Its double-edged nature of unmatched runtime speed paired with bugs like buffer overflows and memory leaks",
-      "Purity and identical outputs for identical inputs describe Functional Programming in Part IV, not this mutable pointer-based snippet",
-      "Its reliance on an actor model where each pointer represents an isolated process",
-      "Its use of Horn clauses to resolve the copy operation through backtracking"
+      "Its guarantee of purity, always producing identical outputs for identical inputs",
+      "Its very heavy reliance on an actor-based model where each individual pointer represents a fully isolated process",
+      "Its very specific use of recursive Horn clauses to resolve the entire copy operation through backtracking search"
     ],
     correctAnswer: 0,
     explanation: "The C section presents this exact pointer snippet as the Typical C Pointer Paradigm, illustrating how C offers high-level constructs but lets programmers manipulate memory directly, described as a double-edged sword of unmatched speed alongside bugs like buffer overflows and memory leaks.\n\nPurity and identical outputs for identical inputs describe Functional Programming in Part IV, not this mutable pointer-based snippet.\n\nThe actor model with isolated processes describes Erlang in Part VI, unrelated to raw C pointers.\n\nHorn clauses and backtracking are Prolog mechanisms from Part V, not part of C's pointer semantics."
@@ -469,8 +469,8 @@ const csc302Chapter3Questions: QuestionV2[] = [
     text: "Imperative code is described as prone to which kind of verbosity?",
     options: [
       "'How-to' verbosity rather than 'what-to' clarity",
-      "'What-to' verbosity rather than 'how-to' clarity",
-      "Verbosity caused by mandatory politeness keywords",
+      "'What-to' verbosity rather than simple 'how-to' clarity",
+      "Verbosity caused entirely by mandatory politeness keywords",
       "Verbosity caused by mandatory monad wrapping of every value"
     ],
     correctAnswer: 0,
@@ -497,9 +497,9 @@ const csc302Chapter3Questions: QuestionV2[] = [
     text: "Why is the imperative paradigm described as a natural fit for embedded systems and system-level operations?",
     options: [
       "Because it offers high runtime performance and predictability suited to close hardware control",
-      "Purity and freedom from side effects are Functional Programming traits from Part IV, the opposite of the mutable-state imperative model",
+      "Because it guarantees purity and complete freedom from side effects",
       "Because it automatically restarts crashed processes in a known clean state",
-      "Because it relies on lazy evaluation to defer hardware operations until needed"
+      "Because it relies entirely on lazy evaluation to defer all hardware operations until strictly needed"
     ],
     correctAnswer: 0,
     explanation: "The Pros and Cons of Imperative Coding table lists a natural fit for embedded systems and system-level operations alongside high runtime performance and predictability as the imperative model's strengths.\n\nPurity and freedom from side effects are Functional Programming traits from Part IV, the opposite of the mutable-state imperative model.\n\nAutomatically restarting crashed processes describes Erlang's supervision trees in Part VI, not the general imperative paradigm.\n\nLazy evaluation is a Haskell trait from Part IV, not an imperative one."
@@ -511,9 +511,9 @@ const csc302Chapter3Questions: QuestionV2[] = [
     text: "What is the core premise of object-oriented programming, as contrasted with functions operating on passive data?",
     options: [
       "Software is a network of collaborating objects containing both state and behavior, shifting focus from actions to entity abstractions",
-      "Sequential commands mutating global state describes the Imperative paradigm's core premise in Part II, the very model OOP is contrasted against here",
-      "Software is a set of pure mathematical functions with no internal state at all",
-      "Software is a collection of facts, rules, and queries resolved by a logic engine"
+      "Software is fundamentally just a sequence of commands that directly and repeatedly mutate global or local program state itself entirely",
+      "Software is fundamentally just a set of pure mathematical functions with absolutely no internal state maintained at all ever whatsoever",
+      "Software is fundamentally just a collection of facts, rules, and queries that are all resolved entirely by a logic engine"
     ],
     correctAnswer: 0,
     explanation: "The Philosophy of Objects section states OOP treats software as a network of collaborating objects containing both state and behavior, shifting the focus from actions to entity abstractions.\n\nSequential commands mutating global state describes the Imperative paradigm's core premise in Part II, the very model OOP is contrasted against here.\n\nPure mathematical functions with no state describes Functional Programming's core premise in Part IV.\n\nFacts, rules, and queries resolved by a logic engine describes Prolog and the Declarative paradigm in Part V."
@@ -525,7 +525,7 @@ const csc302Chapter3Questions: QuestionV2[] = [
     text: "Which of the Four Pillars of OOP is described as bundling data and methods while hiding internal implementations?",
     options: [
       "Encapsulation",
-      "Abstraction is defined there as presenting simplified interfaces to hide complex logic, a related but distinct pillar",
+      "Abstraction",
       "Inheritance",
       "Polymorphism"
     ],
@@ -539,7 +539,7 @@ const csc302Chapter3Questions: QuestionV2[] = [
     text: "A UI library exposes a single simplified method call that hides many internal rendering steps from the caller. Which pillar of OOP does this best demonstrate?",
     options: [
       "Abstraction",
-      "Inheritance is about establishing hierarchies to reuse behavior, not about simplifying an interface",
+      "Inheritance",
       "Polymorphism",
       "Encapsulation"
     ],
@@ -553,8 +553,8 @@ const csc302Chapter3Questions: QuestionV2[] = [
     text: "Two subclasses each override the same method inherited from a shared parent class, and each responds differently when the method is called. Which pillar of OOP does this illustrate?",
     options: [
       "Polymorphism",
-      "Encapsulation concerns bundling and hiding data, not differing responses to a shared message",
-      "Abstraction concerns simplifying interfaces, not differing behavior across subclasses",
+      "Encapsulation",
+      "Abstraction",
       "Inheritance"
     ],
     correctAnswer: 0,
@@ -581,8 +581,8 @@ const csc302Chapter3Questions: QuestionV2[] = [
     text: "Which pillar of OOP is described as establishing hierarchies to reuse behavior?",
     options: [
       "Inheritance",
-      "Encapsulation instead bundles data and methods while hiding internal implementation",
-      "Abstraction instead presents simplified interfaces to hide complex logic",
+      "Encapsulation",
+      "Abstraction",
       "Polymorphism"
     ],
     correctAnswer: 0,
@@ -595,8 +595,8 @@ const csc302Chapter3Questions: QuestionV2[] = [
     text: "Who designed Simula 67, and where?",
     options: [
       "Ole-Johan Dahl and Kristen Nygaard at the Norwegian Computing Center in Oslo",
-      "Alan Kay and Dan Ingalls, along with Adele Goldberg, created Smalltalk at Xerox PARC, a separate language",
-      "Bjarne Stroustrup created C++, described later in Part III, not Simula",
+      "Alan Kay, Dan Ingalls, and Adele Goldberg together at Xerox PARC in California",
+      "Bjarne Stroustrup at Bell Labs in New Jersey, more than a decade afterward",
       "James Gosling at Sun Microsystems"
     ],
     correctAnswer: 0,
@@ -609,8 +609,8 @@ const csc302Chapter3Questions: QuestionV2[] = [
     text: "What problem originally led Dahl and Nygaard to develop the concepts behind Simula 67?",
     options: [
       "Standard imperative constructs proved clumsy for representing distinct interacting entities in physical simulations like ships moving through docks",
-      "A language that can be cooked and eaten describes Chef in Part VII, an entirely different, satirical project",
-      "A language with no syntactic similarities to existing ones describes INTERCAL's satirical premise in Part VII",
+      "They wanted to design an entirely new language whose finished programs could be cooked and eaten as real recipes",
+      "They wanted to create an entirely brand new language with absolutely no syntactic similarities to any existing language at all",
       "They needed a purely functional language with no side effects for academic papers"
     ],
     correctAnswer: 0,
@@ -623,8 +623,8 @@ const csc302Chapter3Questions: QuestionV2[] = [
     text: "Which of the following did Simula introduce?",
     options: [
       "Classes and subclasses, object creation via new, virtual procedures, and coroutines",
-      "Horn clauses and resolution theorem proving are Prolog concepts introduced in Part V, not Simula",
-      "The Actor Model with mailboxes is Erlang's contribution in Part VI, not Simula's",
+      "Horn clauses, resolution theorem proving, term unification, and recursive backtracking search techniques",
+      "The Actor Model, individual per-process mailboxes, and fully isolated message-passing processes generally",
       "The Hindley-Milner type inference system"
     ],
     correctAnswer: 0,
@@ -665,8 +665,8 @@ const csc302Chapter3Questions: QuestionV2[] = [
     text: "Who created Smalltalk, and at which institution?",
     options: [
       "Alan Kay, Dan Ingalls, and Adele Goldberg at Xerox PARC",
-      "Dahl and Nygaard created Simula, a different language, at the Norwegian Computing Center",
-      "Bjarne Stroustrup created C++ at Bell Labs, described later in Part III",
+      "Ole-Johan Dahl and Kristen Nygaard at the Norwegian Computing Center in Oslo",
+      "Bjarne Stroustrup at Bell Labs",
       "Martin Odersky at EPFL"
     ],
     correctAnswer: 0,
@@ -693,9 +693,9 @@ const csc302Chapter3Questions: QuestionV2[] = [
     text: "What did Alan Kay famously say was 'the big idea' behind Smalltalk?",
     options: [
       "Messaging",
-      "Inheritance",
+      "Pure inheritance",
       "Garbage collection",
-      "Backtracking"
+      "Pure backtracking"
     ],
     correctAnswer: 0,
     explanation: "The Smalltalk section quotes Alan Kay stating 'The big idea is messaging.'\n\nInheritance is a general OOP pillar, but it is not the phrase Kay is quoted using for Smalltalk's big idea.\n\nGarbage collection is credited to Lisp in Part IV, not to Kay's quote about Smalltalk.\n\nBacktracking is a Prolog mechanism from Part V, unrelated to Kay's quote."
@@ -707,8 +707,8 @@ const csc302Chapter3Questions: QuestionV2[] = [
     text: "In Smalltalk's syntax example, how is the expression 3 + 4 parsed?",
     options: [
       "As sending the message + 4 to the object 3",
-      "As sending the message 3 to the object + 4",
-      "As a direct hardware addition instruction with no message involved",
+      "As instead sending the message 3 to the object + 4",
+      "As simply a direct hardware addition instruction with no message involved at all",
       "As a Horn clause resolving 3 and 4 into a single fact"
     ],
     correctAnswer: 0,
@@ -772,8 +772,8 @@ const csc302Chapter3Questions: QuestionV2[] = [
     text: "The 'Gang of Four' book, published in 1994, formalized how many classic software design patterns?",
     options: [
       "23",
-      "The number 4 refers to the four authors of the book, not the pattern count",
-      "The number 8 does not appear anywhere in the deck's discussion of the GoF book",
+      "4",
+      "8",
       "50"
     ],
     correctAnswer: 0,
@@ -786,8 +786,8 @@ const csc302Chapter3Questions: QuestionV2[] = [
     text: "Which category of design pattern includes Singleton, Factory, and Builder?",
     options: [
       "Creational",
-      "Structural is the category containing Adapter, Composite, and Decorator instead",
-      "Behavioral is the category containing Observer, Strategy, and Command instead",
+      "Structural",
+      "Behavioral",
       "Declarative"
     ],
     correctAnswer: 0,
@@ -800,8 +800,8 @@ const csc302Chapter3Questions: QuestionV2[] = [
     text: "Adapter, Composite, and Decorator belong to which category of design pattern in the Gang of Four classification?",
     options: [
       "Structural",
-      "Creational is the category containing Singleton, Factory, and Builder instead",
-      "Behavioral is the category containing Observer, Strategy, and Command instead",
+      "Creational",
+      "Behavioral",
       "Functional"
     ],
     correctAnswer: 0,
@@ -814,8 +814,8 @@ const csc302Chapter3Questions: QuestionV2[] = [
     text: "What point does the Spring Framework class AbstractSingletonProxyFactoryBean illustrate?",
     options: [
       "The extremes of enterprise OOP abstraction that can result from over-engineering with design patterns",
-      "Minimal, absurd constructs describe esoteric languages like Brainfuck in Part VII, not this Spring Framework example",
-      "The steep learning curve of logic programming belongs to the Fifth Generation Project anecdote in Part V",
+      "The minimal, absurd constructs typical of esoteric languages designed for satire",
+      "The steep and often frustrating learning curve developers face when adopting logic programming for real-world tasks",
       "The performance cost of garbage collection in functional languages"
     ],
     correctAnswer: 0,
@@ -828,8 +828,8 @@ const csc302Chapter3Questions: QuestionV2[] = [
     text: "What issue with deep inheritance-based object-oriented hierarchies does Joe Armstrong's 'Gorilla-Banana Problem' observation describe?",
     options: [
       "Wanting one small piece of behavior forces a developer to pull in a large implicit environment along with it, like getting a gorilla holding the banana and the entire jungle",
-      "Compile-time type checking is never the subject of Armstrong's quote",
-      "The quote is about excess baggage from inheritance, not about objects being unable to communicate at all",
+      "The difficulty of enforcing compile-time type safety across a deep class hierarchy",
+      "The inability of objects in a hierarchy to communicate with one another at all",
       "They eliminate the possibility of code reuse entirely"
     ],
     correctAnswer: 0,
@@ -842,9 +842,9 @@ const csc302Chapter3Questions: QuestionV2[] = [
     text: "What is the Modern Engineering Consensus offered as a response to the Gorilla-Banana Problem?",
     options: [
       "Prefer Composition over Inheritance, using components to assemble behavior instead of extending base classes",
-      "Deeper inheritance chains are the very problem Armstrong's Gorilla-Banana observation criticizes, not the recommended fix",
-      "Rewriting in a purely functional language is never proposed as the consensus fix in this section",
-      "Prefer replacing all classes with Horn clauses and resolution"
+      "Prefer building much deeper, more specialized inheritance chains in order to isolate behavior even more precisely",
+      "Rewrite all of the affected systems entirely from scratch using a purely functional programming language",
+      "Prefer replacing every single class entirely with Horn clauses and logical resolution rules instead"
     ],
     correctAnswer: 0,
     explanation: "The Pitfall of Deep Hierarchies section states the Modern Engineering Consensus is to prefer Composition over Inheritance, assembling behavior from components instead of extending base classes.\n\nDeeper inheritance chains are the very problem Armstrong's Gorilla-Banana observation criticizes, not the recommended fix.\n\nRewriting in a purely functional language is never proposed as the consensus fix in this section.\n\nReplacing classes with Horn clauses and resolution is a Prolog concept from Part V, not mentioned here."
@@ -856,8 +856,8 @@ const csc302Chapter3Questions: QuestionV2[] = [
     text: "Why does hiding state inside objects create a problem for concurrency in object-oriented programming?",
     options: [
       "Because mutating hidden state makes concurrency hard to coordinate safely",
-      "Because hidden state automatically triggers deadlocks on every method call",
-      "Because hidden state prevents any object from ever being instantiated",
+      "Because hidden state automatically triggers fatal deadlocks on every single method call",
+      "Because hidden state always prevents any object from ever being properly instantiated",
       "Because hidden state requires a Horn clause to be resolved before mutation"
     ],
     correctAnswer: 0,
@@ -870,8 +870,8 @@ const csc302Chapter3Questions: QuestionV2[] = [
     text: "What did Alan Kay lament about modern OOP languages like Java and C++?",
     options: [
       "That they focused too much on class inheritance and local data storage, and not enough on pure dynamic messaging and scaling models",
-      "The critique is about overemphasis on classes and inheritance, not about abandoning classes",
-      "The deck never claims Java and C++ removed encapsulation and abstraction support",
+      "That they abandoned classes entirely in favor of pure dynamic messaging",
+      "That they removed support for encapsulation and abstraction entirely",
       "That they were too slow compared to esoteric languages like Brainfuck"
     ],
     correctAnswer: 0,
@@ -884,8 +884,8 @@ const csc302Chapter3Questions: QuestionV2[] = [
     text: "What does 'Execution Bloat' mean as a critique of object-oriented programming?",
     options: [
       "Creating instances of objects for simple operations introduces unnecessary runtime and memory overhead",
-      "Unbounded backtracking is a Prolog concern from Part V, not the OOP critique of Execution Bloat",
-      "Mandatory monad wrapping is a Haskell concept from Part IV, unrelated to Execution Bloat",
+      "Unbounded backtracking search consuming excessive runtime memory",
+      "Mandatory wrapping of every value inside a monad before it can be used anywhere",
       "Every Go channel operation blocks the entire program until resolved"
     ],
     correctAnswer: 0,
@@ -912,8 +912,8 @@ const csc302Chapter3Questions: QuestionV2[] = [
     text: "What is the core premise of functional programming's approach to computation?",
     options: [
       "To treat computation as the mathematical evaluation of pure functions, avoiding state changes and mutable data",
-      "Commands mutating global or local state describes the Imperative core premise from Part II, the opposite approach",
-      "Collaborating objects with hidden state and behavior describes the OOP core premise from Part III",
+      "To treat all computation as a strict sequence of commands that directly mutate global or local state",
+      "To treat all computation purely as a network of collaborating objects with internally hidden state and behavior",
       "To treat computation as facts, rules, and queries resolved through backtracking"
     ],
     correctAnswer: 0,
@@ -982,9 +982,9 @@ const csc302Chapter3Questions: QuestionV2[] = [
     text: "Which pillar of functional programming means any function call can be replaced with its evaluated result without changing the program's behavior?",
     options: [
       "Referential Transparency",
-      "Immutability instead concerns values not being modifiable once created",
-      "Purity instead concerns functions lacking side effects and having consistent output",
-      "First-Class/Higher-Order Functions"
+      "Immutability",
+      "Purity",
+      "First-Class and Higher-Order Functions"
     ],
     correctAnswer: 0,
     explanation: "The Pillars of Functional Programming section defines Referential Transparency as: any function call can be replaced with its evaluated result without changing the program's behavior.\n\nImmutability instead concerns values not being modifiable once created.\n\nPurity instead concerns functions lacking side effects and having consistent output.\n\nFirst-Class/Higher-Order Functions instead concerns functions being passed, returned, and stored like other values."
@@ -1024,8 +1024,8 @@ const csc302Chapter3Questions: QuestionV2[] = [
     text: "Which of the following describes Lisp's age among high-level languages?",
     options: [
       "The second-oldest active high-level programming language, after Fortran",
-      "The very first high-level programming language ever created",
-      "A language created after both Haskell and Prolog",
+      "The very first high-level programming language ever created historically",
+      "A language that was created after both Haskell and Prolog",
       "The newest of the languages discussed in the functional programming section"
     ],
     correctAnswer: 0,
@@ -1038,9 +1038,9 @@ const csc302Chapter3Questions: QuestionV2[] = [
     text: "What does homoiconicity mean in the context of Lisp?",
     options: [
       "Code is represented using the language's own primary data structures, so in Lisp, code is simply nested lists",
-      "Immutability once created is the Functional Programming pillar of Immutability, a separate concept from homoiconicity",
-      "Same output for same input describes Purity, another separate pillar",
-      "Every program must use a politeness keyword a specific number of times to compile"
+      "Values, once they are first created in memory, can never afterward be modified or reassigned to something else entirely",
+      "A function always returns the exact same output whenever it is given the exact same set of input values",
+      "Every single program must use a designated politeness keyword a very specific number of times in order to compile"
     ],
     correctAnswer: 0,
     explanation: "The Lisp section defines homoiconicity as a language where code is represented using its own primary data structures, noting that in Lisp, code is simply nested lists, which makes writing powerful macros straightforward.\n\nImmutability once created is the Functional Programming pillar of Immutability, a separate concept from homoiconicity.\n\nSame output for same input describes Purity, another separate pillar.\n\nA politeness keyword requirement describes INTERCAL's PLEASE rule in Part VII, unrelated to homoiconicity."
@@ -1077,7 +1077,7 @@ const csc302Chapter3Questions: QuestionV2[] = [
       "Under no circumstances can it modify a variable or perform unmonitored I/O",
       "It must always execute before any other function in the program",
       "It must be wrapped in a Horn clause before it can be called",
-      "It must be compiled to fewer than 200 bytes of machine code"
+      "It must always be compiled to fewer than 200 bytes of machine code"
     ],
     correctAnswer: 0,
     explanation: "The Pure Haskell section states Purity Enforced means under no circumstances can a standard Haskell function modify a variable or perform unmonitored I/O.\n\nExecution ordering relative to other functions is never the subject of this Purity Enforced rule.\n\nHorn clauses are a Prolog concept from Part V, unrelated to Haskell's purity enforcement.\n\nCompiling to fewer than 200 bytes is the goal cited for Brainfuck in Part VII, unrelated to Haskell."
@@ -1089,8 +1089,8 @@ const csc302Chapter3Questions: QuestionV2[] = [
     text: "What does Lazy Evaluation in Haskell allow developers to do?",
     options: [
       "Easily construct and work with infinite data structures, since expressions are evaluated only when their values are actually needed",
-      "Type inference, not lazy evaluation, is what allows omitting explicit type declarations, and it does not mean types are ignored",
-      "Constant-time execution guarantees are never claimed anywhere in the deck",
+      "Omit explicit type declarations entirely, since the compiler infers every type automatically",
+      "Guarantee constant-time execution for any recursive function",
       "Automatically convert imperative loops into recursive Prolog rules"
     ],
     correctAnswer: 0,
@@ -1103,8 +1103,8 @@ const csc302Chapter3Questions: QuestionV2[] = [
     text: "In the Infinite Fibonacci Sequence example, fibs = 0 : 1 : zipWith (+) fibs (tail fibs), what happens when a developer calls take 10 fibs?",
     options: [
       "Only the first 10 numbers of the infinite sequence are evaluated",
-      "Evaluating the entire infinite sequence first would be impossible and contradicts the whole point of lazy evaluation illustrated here",
-      "The example is presented specifically to show Haskell can represent infinite structures, not that it crashes attempting to",
+      "The entire infinite sequence is evaluated first, then the first 10 numbers are extracted",
+      "The program simply crashes attempting to compute an infinite number of values",
       "The compiler rejects the program for being 'overly pleading'"
     ],
     correctAnswer: 0,
@@ -1117,9 +1117,9 @@ const csc302Chapter3Questions: QuestionV2[] = [
     text: "What problem do Monads solve for a purely functional language with no side effects?",
     options: [
       "How to handle real-world challenges like database writes, file I/O, or user inputs while keeping side effects cleanly isolated",
-      "Compiling to under 200 bytes is Brainfuck's Part VII design goal, unrelated to monads",
-      "Guaranteeing Prolog query termination is a Part V topic about backtracking and infinite loops, unrelated to monads",
-      "How to allow a class to inherit from more than one superclass"
+      "How to compile an entire finished program down to the smallest possible number of raw machine code bytes ever",
+      "How to guarantee mathematically and formally that every single logical query submitted eventually terminates successfully every time",
+      "How to allow a single class to inherit behavior directly from more than one separate superclass all at once"
     ],
     correctAnswer: 0,
     explanation: "The Monad Mystique section poses the question of how a purely functional language handles database writes, file I/O, or user inputs, and answers that Monads wrap values and chain computations while keeping side effects cleanly isolated.\n\nCompiling to under 200 bytes is Brainfuck's Part VII design goal, unrelated to monads.\n\nGuaranteeing Prolog query termination is a Part V topic about backtracking and infinite loops, unrelated to monads.\n\nMultiple inheritance is a C++ feature from Part III, unrelated to the monad problem being solved."
@@ -1145,8 +1145,8 @@ const csc302Chapter3Questions: QuestionV2[] = [
     text: "How can the concept of a Monad be simplified for someone unfamiliar with Category Theory?",
     options: [
       "As a programmable wrapper that controls how operations are piped together, automatically managing state or failure behind the scenes",
-      "A keyword required a specific number of times describes INTERCAL's PLEASE rule in Part VII, unrelated to monads",
-      "A hierarchy of manager actors restarting workers describes Erlang's supervision trees in Part VI, unrelated to monads",
+      "As a special keyword that must appear a very specific number of times before the program will compile",
+      "As a supervised hierarchy of manager actors that automatically restart any failed worker processes",
       "As a table matching primary concerns to recommended paradigms"
     ],
     correctAnswer: 0,
@@ -1173,8 +1173,8 @@ const csc302Chapter3Questions: QuestionV2[] = [
     text: "In the Comparative Code example, the functional (Haskell/JS-like) approach sum (map (\\x -> x * x) (filter even list)) achieves the sum of squares of even numbers through which technique?",
     options: [
       "Function composition: filtering the list, mapping a squaring function, then summing the results",
-      "Mutating a shared sum variable inside a for loop is exactly what the deck attributes to the imperative approach instead, the contrasting example",
-      "Sending a message to an object describes Smalltalk's message-passing philosophy from Part III, not this functional code example",
+      "Mutating a shared sum variable inside a for loop that iterates over the list",
+      "Sending a message to an object that computes the sum internally",
       "Resolving a recursive Horn clause over the list's elements"
     ],
     correctAnswer: 0,
@@ -1187,9 +1187,9 @@ const csc302Chapter3Questions: QuestionV2[] = [
     text: "What is the key feature of the Hindley-Milner Type System used by languages like Haskell, OCaml, and ML?",
     options: [
       "Type Inference, where the compiler can mathematically deduce the most general type for every expression without explicit declarations",
-      "Type Erasure, where all type information is discarded before compilation begins",
-      "Type Coercion, where the compiler silently converts between incompatible types",
-      "Type Duplication, where every value must be declared with two redundant type annotations"
+      "Type Erasure, where all static type information is completely and permanently discarded before compilation even begins at all",
+      "Type Coercion, where the compiler silently and automatically converts values between otherwise entirely incompatible types",
+      "Type Duplication, where every single value must always be explicitly declared with two completely redundant type annotations"
     ],
     correctAnswer: 0,
     explanation: "The Advanced Type Systems section states the key feature of Hindley-Milner is Type Inference: the compiler can mathematically deduce the most general type for every expression without requiring explicit type declarations.\n\nType erasure, silent coercion, and redundant duplicate annotations are not concepts the deck attributes to Hindley-Milner; the section instead emphasizes deduction without explicit declarations."
@@ -1201,8 +1201,8 @@ const csc302Chapter3Questions: QuestionV2[] = [
     text: "What does the Algebraic Data Type declaration data Maybe a = Nothing | Just a represent for safe division?",
     options: [
       "A way to return an ADT representing success or absence of a value, instead of throwing exceptions or returning null",
-      "Constant-time execution guarantees are never claimed for this ADT; it is about representing presence or absence of a value, not runtime performance",
-      "Horn clauses and recursive Prolog rules are a Part V concept unrelated to this Haskell-style ADT",
+      "A guarantee that the division operation always completes in constant time",
+      "A recursive Horn clause that resolves the division through backtracking",
       "A way to represent an actor's mailbox contents as a queue of messages"
     ],
     correctAnswer: 0,
@@ -1215,9 +1215,9 @@ const csc302Chapter3Questions: QuestionV2[] = [
     text: "Algebraic Data Types create expressive composite types using which two kinds of types?",
     options: [
       "Sum types (OR) and product types (AND)",
-      "XOR and NAND framing is never used in the deck's description of ADTs",
-      "Recursive versus mutable is not the pairing given; functional programming instead emphasizes immutability throughout",
-      "Static versus dynamic typing is a general language classification, not the specific OR/AND pairing the deck attributes to ADTs"
+      "XOR gates (exclusive-or) and NAND gates (negated-and), common in digital logic design",
+      "Recursive types and mutable types",
+      "Static types and dynamic types"
     ],
     correctAnswer: 0,
     explanation: "The Advanced Type Systems section states Algebraic Data Types create expressive composite types using sum types (OR) and product types (AND).\n\nXOR and NAND framing is never used in the deck's description of ADTs.\n\nRecursive versus mutable is not the pairing given; functional programming instead emphasizes immutability throughout.\n\nStatic versus dynamic typing is a general language classification, not the specific OR/AND pairing the deck attributes to ADTs."
@@ -1243,9 +1243,9 @@ const csc302Chapter3Questions: QuestionV2[] = [
     text: "What weakness related to garbage collection applies to functional programming?",
     options: [
       "Garbage collection and creating new immutable objects can hurt performance",
-      "The table never claims garbage collection prevents recursion; it separately lists deep recursion causing stack overflows as its own weakness",
-      "Higher-order functions are listed as a strength-enabling pillar of functional programming, not something garbage collection prevents",
-      "Lisp is specifically credited with introducing garbage collection, so it is not absent from functional languages"
+      "Garbage collection prevents deep recursive functions from ever completing",
+      "Garbage collection prevents the use of higher-order functions in performance-critical code",
+      "Functional languages avoid garbage collection entirely by relying on manual memory management"
     ],
     correctAnswer: 0,
     explanation: "The Pros and Cons of Functional Coding table lists as a weakness: garbage collection and creating new immutable objects can hurt performance.\n\nThe table never claims garbage collection prevents recursion; it separately lists deep recursion causing stack overflows as its own weakness.\n\nHigher-order functions are listed as a strength-enabling pillar of functional programming, not something garbage collection prevents.\n\nLisp is specifically credited with introducing garbage collection, so it is not absent from functional languages."
@@ -1285,9 +1285,9 @@ const csc302Chapter3Questions: QuestionV2[] = [
     text: "What is the core philosophy of the declarative programming paradigm?",
     options: [
       "To shift the focus from how to achieve a result to describing what the desired result actually looks like",
-      "Emphasizing precisely how each step executes describes the imperative philosophy this paradigm is contrasted against, the opposite framing",
-      "Actor-based message passing is Erlang's concurrency model from Part VI, unrelated to the general declarative philosophy",
-      "Static versus dynamic typing is a separate axis of language design never framed as the declarative core philosophy"
+      "To emphasize precisely how each step of execution should occur",
+      "To coordinate isolated actors that communicate only through message passing",
+      "To enforce a strict static type system across all expressions"
     ],
     correctAnswer: 0,
     explanation: "The Declarative Philosophy section states the core philosophy is to shift focus from how to achieve a result to describing what the desired result actually looks like.\n\nEmphasizing precisely how each step executes describes the imperative philosophy this paradigm is contrasted against, the opposite framing.\n\nActor-based message passing is Erlang's concurrency model from Part VI, unrelated to the general declarative philosophy.\n\nStatic versus dynamic typing is a separate axis of language design never framed as the declarative core philosophy."
@@ -1313,9 +1313,9 @@ const csc302Chapter3Questions: QuestionV2[] = [
     text: "In the declarative philosophy 'Algorithm = Logic + Control', what does the developer provide, and what does the runtime framework handle?",
     options: [
       "The developer provides the logic (rules, facts, and relations), and the runtime handles the execution control (how to search, resolve, or calculate)",
-      "Reversing the roles, developer providing control and runtime providing logic, misstates the division described",
-      "The entire point of declarative programming is that the runtime, not the developer, handles execution control, so the developer providing both leaves nothing for the framework to do",
-      "The developer must still supply the logic; the runtime alone cannot invent the rules, facts, and relations"
+      "The developer provides the execution control, while the runtime supplies the logic, rules, and facts",
+      "The developer provides both the logic and the execution control entirely by hand, and the runtime simply executes each given instruction in strict order",
+      "Neither the developer nor the runtime ever handles the logic directly at all; the compiler infers all rules automatically at compile time itself"
     ],
     correctAnswer: 0,
     explanation: "The Declarative Philosophy section states the developer provides the logic (the rules, facts, and relations), while the underlying runtime framework handles the execution control (how to search, resolve, or calculate).\n\nReversing the roles, developer providing control and runtime providing logic, misstates the division described.\n\nThe entire point of declarative programming is that the runtime, not the developer, handles execution control, so the developer providing both leaves nothing for the framework to do.\n\nThe developer must still supply the logic; the runtime alone cannot invent the rules, facts, and relations."
@@ -1341,9 +1341,9 @@ const csc302Chapter3Questions: QuestionV2[] = [
     text: "Who created Prolog, and where?",
     options: [
       "Alain Colmerauer and Philippe Roussel in Marseille, France",
-      "Robert Kowalski is quoted regarding declarative philosophy, and Philip Wadler regarding monads, but neither is credited with creating Prolog",
-      "John McCarthy created Lisp at MIT; Alonzo Church developed Lambda Calculus, not Prolog",
-      "Dahl and Nygaard created Simula in Oslo, an entirely different, object-oriented language"
+      "Robert Kowalski and Philip Wadler at the University of Edinburgh, Scotland",
+      "John McCarthy and Alonzo Church at MIT",
+      "Ole-Johan Dahl and Kristen Nygaard together in Oslo, Norway"
     ],
     correctAnswer: 0,
     explanation: "The Prolog section credits Alain Colmerauer and Philippe Roussel with creating Prolog in Marseille, France, in 1972.\n\nRobert Kowalski is quoted regarding declarative philosophy, and Philip Wadler regarding monads, but neither is credited with creating Prolog.\n\nJohn McCarthy created Lisp at MIT; Alonzo Church developed Lambda Calculus, not Prolog.\n\nDahl and Nygaard created Simula in Oslo, an entirely different, object-oriented language."
@@ -1355,9 +1355,9 @@ const csc302Chapter3Questions: QuestionV2[] = [
     text: "Prolog is built on which mathematical foundation?",
     options: [
       "First-Order Predicate Calculus and resolution theorem proving",
-      "Lambda Calculus underlies functional programming, and Category Theory underlies monads, both Part IV concepts, not Prolog's foundation",
-      "The Von Neumann architecture underlies imperative programming, described in Part II, not Prolog",
-      "Hindley-Milner is the type system used by functional languages like Haskell, described in Part IV, not Prolog's foundation"
+      "Lambda Calculus and Category Theory",
+      "The Von Neumann architecture and register-based memory addressing",
+      "The Hindley-Milner type inference algorithm"
     ],
     correctAnswer: 0,
     explanation: "The Prolog section states it is built on First-Order Predicate Calculus and resolution theorem proving.\n\nLambda Calculus underlies functional programming, and Category Theory underlies monads, both Part IV concepts, not Prolog's foundation.\n\nThe Von Neumann architecture underlies imperative programming, described in Part II, not Prolog.\n\nHindley-Milner is the type system used by functional languages like Haskell, described in Part IV, not Prolog's foundation."
@@ -1370,7 +1370,7 @@ const csc302Chapter3Questions: QuestionV2[] = [
     options: [
       "A conditional relation expressed using Horn clauses",
       "An unconditional relation stated outright",
-      "A question posed to the resolution system",
+      "A simple question posed to the resolution system",
       "A keyword required a specific number of times to compile"
     ],
     correctAnswer: 0,
@@ -1383,9 +1383,9 @@ const csc302Chapter3Questions: QuestionV2[] = [
     text: "In the Simple Prolog Code example, ancestor(X, Y) :- parent(X, Z), ancestor(Z, Y). is labeled as which kind of rule?",
     options: [
       "A recursive rule",
-      "An unconditional fact",
+      "A simple unconditional fact",
       "A query posed to the system",
-      "A backtracking failure"
+      "A simple backtracking failure"
     ],
     correctAnswer: 0,
     explanation: "The Simple Prolog Code example labels ancestor(X, Y) :- parent(X, Z), ancestor(Z, Y). as a recursive rule, since it calls ancestor within its own definition.\n\nAn unconditional fact is exemplified instead by parent(john, mary)., a separate line in the same example.\n\nA query is a question posed to the system, not a rule definition like this one.\n\nA backtracking failure is a runtime event during resolution, not a label applied to this rule in the example."
@@ -1411,9 +1411,9 @@ const csc302Chapter3Questions: QuestionV2[] = [
     text: "What is Backtracking in Prolog?",
     options: [
       "If a chosen logical path fails to satisfy a query, the resolution engine systematically rolls back and tries alternate rules or facts",
-      "Matching two terms to make them identical is the definition given for Unification, the paired but distinct concept",
-      "Translating a rule into a Horn clause describes how Rules are structured, not the Backtracking process itself",
-      "Declaring a variable's type before use is a Fortran-style imperative concern from Part II, unrelated to Prolog's resolution engine"
+      "Matching two terms so that variables are bound to make them identical",
+      "Translating an unconditional relation into a Horn clause before evaluation",
+      "Declaring the type of every variable before the query can be resolved"
     ],
     correctAnswer: 0,
     explanation: "The Unification and Backtracking section defines Backtracking as the resolution engine systematically rolling back and trying alternate rules or facts when a chosen logical path fails.\n\nMatching two terms to make them identical is the definition given for Unification, the paired but distinct concept.\n\nTranslating a rule into a Horn clause describes how Rules are structured, not the Backtracking process itself.\n\nDeclaring a variable's type before use is a Fortran-style imperative concern from Part II, unrelated to Prolog's resolution engine."
@@ -1495,9 +1495,9 @@ const csc302Chapter3Questions: QuestionV2[] = [
     text: "Why does the Pros and Cons of Logic Programming table list difficulty designing general system tasks as a weakness?",
     options: [
       "Because logic programming is difficult to apply to tasks like socket handling, GUI, or I/O",
-      "Facts and rules are the fundamental building blocks of logic programming described throughout Part V, not something it cannot represent",
-      "Manual memory management via destructors is a C++ feature from Part III, unrelated to logic programming's weaknesses",
-      "The same table lists database interactions as an area where logic programming is highly expressive, a strength rather than something it cannot do"
+      "Because logic programming is fundamentally unable to represent facts and rules for any real-world relationships at all",
+      "Because logic programming always requires extensive, error-prone manual memory management via explicitly written destructor functions",
+      "Because logic programming is fundamentally and completely incapable of expressing database interactions of any kind whatsoever"
     ],
     correctAnswer: 0,
     explanation: "The Pros and Cons of Logic Programming table states it is difficult to design general system tasks like socket handling, GUI, or I/O, listing this as a weakness.\n\nFacts and rules are the fundamental building blocks of logic programming described throughout Part V, not something it cannot represent.\n\nManual memory management via destructors is a C++ feature from Part III, unrelated to logic programming's weaknesses.\n\nThe same table lists database interactions as an area where logic programming is highly expressive, a strength rather than something it cannot do."
@@ -1509,9 +1509,9 @@ const csc302Chapter3Questions: QuestionV2[] = [
     text: "Since the early 2000s, what shift in Moore's Law made concurrency a core design priority for modern programming languages?",
     options: [
       "A shift from single-core processor speed improvements to scaling out multi-core and distributed cloud architectures",
-      "The shift described moves toward multi-core, not back toward single-core designs",
-      "The section describes a shift in the type of scaling, not a complete halt in improvement",
-      "Quantum processors replacing classical multi-core chips is a Part IX speculation about the future, not this section's description of the early 2000s"
+      "A shift back toward maximizing raw single-core processor clock speed above absolutely all other engineering concerns",
+      "A complete halt in any further hardware performance improvements",
+      "A shift toward quantum processors gradually and fully replacing all classical multi-core chips entirely"
     ],
     correctAnswer: 0,
     explanation: "The Multi-Core / Cloud Reality section states that since the early 2000s, Moore's Law has shifted from single-core processor speed improvements to scaling out multi-core and distributed cloud architectures, making concurrency a core design priority.\n\nThe shift described moves toward multi-core, not back toward single-core designs.\n\nThe section describes a shift in the type of scaling, not a complete halt in improvement.\n\nQuantum processors replacing classical multi-core chips is a Part IX speculation about the future, not this section's description of the early 2000s."
@@ -1523,9 +1523,9 @@ const csc302Chapter3Questions: QuestionV2[] = [
     text: "How is concurrency distinguished from parallelism?",
     options: [
       "Concurrency is managing multiple tasks by overlapping their execution, while parallelism is running tasks at the exact same physical moment",
-      "The deck's distinction does not tie concurrency to requiring multiple physical processors; that requirement is instead closer to how parallelism is described",
-      "The section explicitly draws a distinction between the two terms rather than treating them as synonyms",
-      "Neither term is restricted to database transactions or graphics rendering in the deck"
+      "Concurrency requires multiple physical processors, while parallelism can run on a single core",
+      "Concurrency and parallelism are simply two different names for the exact same underlying mechanism",
+      "Concurrency applies only to database transactions, while parallelism applies only to graphics rendering"
     ],
     correctAnswer: 0,
     explanation: "The Concurrency vs. Parallelism section defines Concurrency as managing multiple tasks by overlapping their execution (dealing with a lot of things at once), and Parallelism as running tasks at the exact same physical moment (doing a lot of things at once).\n\nThe deck's distinction does not tie concurrency to requiring multiple physical processors; that requirement is instead closer to how parallelism is described.\n\nThe section explicitly draws a distinction between the two terms rather than treating them as synonyms.\n\nNeither term is restricted to database transactions or graphics rendering in the deck."
@@ -1593,9 +1593,9 @@ const csc302Chapter3Questions: QuestionV2[] = [
     text: "In Erlang's Actor Model, how do actors interact with one another?",
     options: [
       "They are completely isolated from one another, share no state, and communicate only by passing messages",
-      "Sharing a global memory block protected by semaphores and locks describes the shared-memory threading model the actor model is meant to avoid",
-      "Typed channel pipelines describe Go's CSP-based Goroutines and Channels, a different concurrency model discussed later in the same part",
-      "Unifying shared variables describes Prolog's Unification mechanism from Part V, unrelated to the actor model"
+      "They all share one single global memory block that is carefully protected by semaphores and locks",
+      "They communicate only through strictly typed channel pipelines that directly connect each of them together",
+      "They unify shared variables to make their internal states identical"
     ],
     correctAnswer: 0,
     explanation: "The Erlang section describes the Actor Model Philosophy: actors are completely isolated from one another, share no state, and communicate only by passing messages, with every actor having a mailbox.\n\nSharing a global memory block protected by semaphores and locks describes the shared-memory threading model the actor model is meant to avoid.\n\nTyped channel pipelines describe Go's CSP-based Goroutines and Channels, a different concurrency model discussed later in the same part.\n\nUnifying shared variables describes Prolog's Unification mechanism from Part V, unrelated to the actor model."
@@ -1621,9 +1621,9 @@ const csc302Chapter3Questions: QuestionV2[] = [
     text: "What does it mean to describe Erlang processes as 'Ultra-Lightweight'?",
     options: [
       "Millions of Erlang processes can run concurrently on a single CPU, managed by the Erlang Virtual Machine (BEAM)",
-      "Compiling to under 200 bytes is Brainfuck's Part VII design goal, unrelated to Erlang's lightweight processes",
-      "Every actor is explicitly described as having a mailbox, the opposite of lacking one",
-      "Supervision and restarting crashed processes is the entire point of Erlang's Let it Crash philosophy, the opposite of being unsupervisable"
+      "Every single Erlang process is always compiled down to fewer than 200 bytes of raw machine code in total",
+      "Erlang processes all share exactly one single centralized mailbox that is always managed directly by the virtual machine itself",
+      "Erlang processes can never ever be supervised or automatically restarted in any way at all if they happen to crash"
     ],
     correctAnswer: 0,
     explanation: "The Erlang section states processes are Ultra-Lightweight because millions of them can run concurrently on a single CPU, managed by the Erlang Virtual Machine (BEAM).\n\nCompiling to under 200 bytes is Brainfuck's Part VII design goal, unrelated to Erlang's lightweight processes.\n\nEvery actor is explicitly described as having a mailbox, the opposite of lacking one.\n\nSupervision and restarting crashed processes is the entire point of Erlang's Let it Crash philosophy, the opposite of being unsupervisable."
@@ -1637,7 +1637,7 @@ const csc302Chapter3Questions: QuestionV2[] = [
       "Don't try to handle fatal failures defensively; let the actor crash and restart it",
       "Write defensive code that catches and handles every possible unexpected error",
       "Prevent any actor from ever crashing through exhaustive compile-time checks",
-      "Log every error to a file and continue execution in an unknown state"
+      "Log every error to a file and quietly continue execution in an unknown, unrecoverable state"
     ],
     correctAnswer: 0,
     explanation: "The 'Let it Crash' Philosophy section states the Erlang Way is to not try to handle fatal failures defensively; instead, let the actor crash and restart it.\n\nWriting massive amounts of defensive error-catching code is described as the standard approach Erlang deliberately rejects.\n\nExhaustive compile-time checks to prevent crashes entirely is never described as Erlang's approach; it accepts that crashes will happen.\n\nContinuing execution in an unknown state is the opposite of restarting the actor in a known clean state, which the section specifies."
@@ -1691,9 +1691,9 @@ const csc302Chapter3Questions: QuestionV2[] = [
     text: "Who designed Go, and at which company?",
     options: [
       "Robert Griesemer, Rob Pike, and Ken Thompson at Google",
-      "Joe Armstrong at Ericsson",
-      "Martin Odersky at EPFL",
-      "James Gosling at Sun Microsystems"
+      "Joe Armstrong, working alone at the telecom company Ericsson in Sweden",
+      "Martin Odersky, working entirely alone at EPFL in Lausanne, Switzerland",
+      "James Gosling, working entirely alone at Sun Microsystems in California"
     ],
     correctAnswer: 0,
     explanation: "The Go section credits Robert Griesemer, Rob Pike, and Ken Thompson with designing Go at Google in 2009.\n\nJoe Armstrong designed Erlang at Ericsson, a different concurrent language discussed earlier in the same part.\n\nMartin Odersky created Scala at EPFL, discussed in Part VIII, not Go.\n\nJames Gosling created Java at Sun Microsystems, discussed in Part III, not Go."
@@ -1706,7 +1706,7 @@ const csc302Chapter3Questions: QuestionV2[] = [
     options: [
       "Communicating Sequential Processes (CSP), from C.A.R. Hoare",
       "Lambda Calculus, from Alonzo Church",
-      "First-Order Predicate Calculus, from Alain Colmerauer",
+      "First-Order Predicate Calculus, developed and formalized by Alain Colmerauer",
       "Category Theory, from Philip Wadler"
     ],
     correctAnswer: 0,
@@ -1735,7 +1735,7 @@ const csc302Chapter3Questions: QuestionV2[] = [
       "Typed pipelines that pass data between concurrent workers called Goroutines",
       "Isolated mailboxes that each actor uses to receive messages one at a time",
       "Manager processes that automatically restart crashed workers",
-      "Wrapping side effects so they remain isolated from pure computation"
+      "Wrapping side effects so they always remain isolated from pure computation"
     ],
     correctAnswer: 0,
     explanation: "The Go section states Go passes data between concurrent workers (Goroutines) using typed pipelines called Channels, instead of using objects to pass messages.\n\nMailboxes for receiving messages describe Erlang's actor model earlier in the same part, a different concurrency mechanism.\n\nManager processes restarting crashed workers describe Erlang's supervision trees, not Go's channels.\n\nWrapping side effects for isolation describes Haskell's monads in Part IV, unrelated to Go's channels."
@@ -1747,7 +1747,7 @@ const csc302Chapter3Questions: QuestionV2[] = [
     text: "In the Go Channel Syntax example, what does the expression value := <-ch represent?",
     options: [
       "Receiving a value from a channel",
-      "Sending a value to a channel",
+      "Sending a single value to a channel",
       "Declaring a new channel with a buffer size",
       "Closing a channel permanently"
     ],
@@ -1762,8 +1762,8 @@ const csc302Chapter3Questions: QuestionV2[] = [
     options: [
       "They are multiplexed onto a pool of operating system threads automatically by Go's runtime scheduler",
       "Each Goroutine is given its own dedicated operating system process",
-      "Goroutines bypass the operating system entirely and run directly on hardware interrupts",
-      "Goroutines must be manually assigned to specific CPU cores by the developer"
+      "Goroutines always bypass the operating system entirely and run directly on raw hardware interrupts instead",
+      "Goroutines must always be manually assigned to a specific CPU core by the developer directly beforehand"
     ],
     correctAnswer: 0,
     explanation: "The Go section states Goroutines are multiplexed onto a pool of operating system threads automatically by Go's runtime scheduler.\n\nGiving each Goroutine its own dedicated OS process would contradict the described lightweight multiplexing model.\n\nBypassing the operating system to run on hardware interrupts directly is never described anywhere in the deck.\n\nManual CPU core assignment by the developer contradicts the word 'automatically' used to describe the scheduler's behavior."
@@ -1775,7 +1775,7 @@ const csc302Chapter3Questions: QuestionV2[] = [
     text: "Which concurrency model uses locks, semaphores, and mutexes as its core abstraction?",
     options: [
       "Shared State",
-      "Actor Model",
+      "The Actor Model",
       "CSP",
       "Async/Await"
     ],
@@ -1817,8 +1817,8 @@ const csc302Chapter3Questions: QuestionV2[] = [
     text: "What is the hard truth about designing distributed, split-brain-resilient systems?",
     options: [
       "There is no hardware magic; it requires managing network and logical state trade-offs",
-      "Quantum hardware fully eliminates the need to reason about distributed state",
-      "Choosing the Actor Model automatically guarantees a system is split-brain-resilient",
+      "Quantum hardware fully eliminates the ongoing need to reason carefully about distributed system state",
+      "Choosing the Actor Model alone automatically guarantees that any system becomes fully split-brain-resilient",
       "Only shared-memory threading can achieve true distributed resilience"
     ],
     correctAnswer: 0,
@@ -1831,9 +1831,9 @@ const csc302Chapter3Questions: QuestionV2[] = [
     text: "What are Esoteric Programming Languages (Esolangs) designed for?",
     options: [
       "Not commercial utility, but to explore boundaries, challenge programming paradigms, or serve as artistic and satiric expression",
-      "Primarily to maximize enterprise adoption in large-scale commercial software",
-      "Primarily to replace mainstream languages like Java and Python in production systems",
-      "Primarily to provide a stable, long-term standard for academic research papers"
+      "Primarily to maximize widespread enterprise adoption across large-scale commercial software systems absolutely everywhere in the world",
+      "Primarily to fully and completely replace mainstream languages like Java and Python across all production systems worldwide",
+      "Primarily to provide a stable, long-term standard specifically for formal academic research papers absolutely everywhere"
     ],
     correctAnswer: 0,
     explanation: "The Art of Esoteric Computation section defines Esolangs as languages designed not for commercial utility, but to explore boundaries, challenge programming paradigms, or serve as forms of artistic and satiric expression.\n\nMaximizing enterprise adoption is explicitly ruled out, since the section states they are not designed for commercial utility.\n\nReplacing mainstream production languages is never claimed as their purpose.\n\nProviding a stable academic-paper standard describes ALGOL's original goal in Part II, not esolangs."
@@ -1846,7 +1846,7 @@ const csc302Chapter3Questions: QuestionV2[] = [
     options: [
       "That it can be achieved with extremely minimal, absurd, or beautiful constraints",
       "That it can never be achieved outside of mainstream imperative languages",
-      "That it requires at least 23 formal design patterns to be implemented",
+      "That it requires at least 23 formal, well-documented design patterns to be fully implemented",
       "That it can only be achieved using quantum superposition"
     ],
     correctAnswer: 0,
@@ -1859,7 +1859,7 @@ const csc302Chapter3Questions: QuestionV2[] = [
     text: "Which of the following is given as a reason to study Esolangs?",
     options: [
       "They deepen understanding of compilation and formal grammar theory",
-      "They guarantee higher salaries for developers who master them",
+      "They guarantee much higher salaries for developers who master them",
       "They are required knowledge for passing industry certification exams",
       "They eliminate the need to learn any mainstream programming language"
     ],
@@ -1902,7 +1902,7 @@ const csc302Chapter3Questions: QuestionV2[] = [
     options: [
       "To write a compiler that compiled to less than 200 bytes of Amiga machine code",
       "To create a language with absolutely no syntactic similarities to any existing language",
-      "To create a language that could be cooked and eaten as a real dish",
+      "To create a language whose finished programs could be cooked and eaten as a real dish",
       "To build supercomputing hardware centered around logic programming"
     ],
     correctAnswer: 0,
@@ -1957,9 +1957,9 @@ const csc302Chapter3Questions: QuestionV2[] = [
     text: "What was the satirical premise behind INTERCAL's design?",
     options: [
       "To create a language with absolutely no syntactic similarities to any existing programming languages of its time",
-      "To create a language that compiles to fewer than 200 bytes of machine code",
+      "To create a language whose finished programs compile down to fewer than 200 bytes of machine code total",
       "To create a language where code is represented as abstract, colored images",
-      "To create a language whose programs can be cooked and eaten as real dishes"
+      "To create a language whose finished programs can literally be cooked at home and eaten as real dishes"
     ],
     correctAnswer: 0,
     explanation: "The INTERCAL section states its satirical premise was to create a language with absolutely no syntactic similarities to any existing programming languages of its time.\n\nCompiling to fewer than 200 bytes was Brainfuck's design goal, a different esolang.\n\nCode as abstract, colored images describes Piet, by David Morgan-Mar, a different esolang.\n\nPrograms that can be cooked and eaten describes Chef, also by David Morgan-Mar, a different esolang."
@@ -1971,7 +1971,7 @@ const csc302Chapter3Questions: QuestionV2[] = [
     text: "What happens in INTERCAL if the keyword PLEASE is used too many times in a program?",
     options: [
       "The compiler rejects it as 'overly pleading' and fails to compile",
-      "The compiler declares the program 'unpolite' and refuses to compile it",
+      "The compiler instead declares the program 'unpolite' and refuses outright to compile it",
       "The program automatically converts every loop into an infinite one",
       "The program is silently accepted with no consequence whatsoever"
     ],
@@ -2038,7 +2038,7 @@ const csc302Chapter3Questions: QuestionV2[] = [
       "They have been adopted into mainstream imperative and OOP languages",
       "They have been entirely removed from all functional languages",
       "They have been replaced by esoteric language constructs",
-      "They have only ever existed inside Prolog and SQL"
+      "They have only ever existed inside the Prolog and SQL query languages"
     ],
     correctAnswer: 0,
     explanation: "The Modern Paradigm Convergence section states that over the last decade, classic functional features (lambdas, list comprehensions, pattern matching) have been adopted into mainstream imperative and OOP languages.\n\nThe features remain part of functional languages themselves; the section describes their spread into other paradigms, not their removal.\n\nEsoteric language constructs are an entirely separate topic from Part VII, unrelated to this convergence.\n\nLambdas and pattern matching originate in functional languages like Lisp and Haskell, not in Prolog or SQL."
@@ -2092,7 +2092,7 @@ const csc302Chapter3Questions: QuestionV2[] = [
     text: "What does Python's design philosophy prioritize?",
     options: [
       "Developer readability and rapid prototyping over strictly enforcing a single paradigm",
-      "Strict enforcement of a single, pure paradigm above all other concerns",
+      "Strict enforcement of a single, pure programming paradigm above all other design concerns",
       "Maximum raw runtime performance above readability",
       "Compile-time memory safety through a borrow checker"
     ],
@@ -2106,8 +2106,8 @@ const csc302Chapter3Questions: QuestionV2[] = [
     text: "What is the Borrow Checker in Rust designed to do?",
     options: [
       "Manage memory safety at compile time using ownership lifetimes without requiring a garbage collector",
-      "Manage memory safety at runtime by pausing execution to collect garbage periodically",
-      "Manage message delivery between isolated actors using mailboxes",
+      "Manage memory safety entirely at runtime by periodically and repeatedly pausing program execution to collect garbage",
+      "Manage message delivery reliably between isolated actors using individual per-actor mailboxes at runtime",
       "Manage type inference using the Hindley-Milner algorithm"
     ],
     correctAnswer: 0,
@@ -2164,7 +2164,7 @@ const csc302Chapter3Questions: QuestionV2[] = [
       "Martin Odersky, to bridge functional programming with the enterprise Java VM",
       "James Gosling, to simplify C++ syntax for enterprise developers",
       "Robert Kowalski, to formalize the relationship between logic and control",
-      "Alan Kay, to introduce pure message passing to enterprise software"
+      "Alan Kay, to introduce pure object-oriented message passing into enterprise software systems"
     ],
     correctAnswer: 0,
     explanation: "The Scala section credits Martin Odersky with creating Scala in 2004 to bridge functional programming with the enterprise Java VM.\n\nJames Gosling created Java itself in Part III, not Scala, which runs on the Java VM Gosling's language established.\n\nRobert Kowalski is credited with the 'Algorithm = Logic + Control' quote in Part V, not with creating Scala.\n\nAlan Kay is credited with Smalltalk's messaging philosophy in Part III, not with creating Scala."
@@ -2176,8 +2176,8 @@ const csc302Chapter3Questions: QuestionV2[] = [
     text: "What is the Synthesis that Scala achieves between objects and functions?",
     options: [
       "Every value in Scala is an object, and every function in Scala is a first-class value",
-      "Every value in Scala is immutable, and no function may ever be reassigned",
-      "Every object in Scala must inherit from at least two separate base classes",
+      "Every single value in Scala is always immutable, and no function may ever be reassigned afterward at all",
+      "Every single object created in Scala must always inherit from at least two separate base classes",
       "Every function in Scala must be wrapped in a monad before execution"
     ],
     correctAnswer: 0,
@@ -2190,9 +2190,9 @@ const csc302Chapter3Questions: QuestionV2[] = [
     text: "What is the difference between an Internal DSL and an External DSL?",
     options: [
       "An Internal DSL leverages the host language's syntax, while an External DSL is a standalone language with its own custom parser and interpreter",
-      "An Internal DSL requires a dedicated hardware chip, while an External DSL runs entirely in software",
-      "An Internal DSL is always faster at runtime than any External DSL",
-      "An Internal DSL can only be written in Prolog, while an External DSL can only be written in Lisp"
+      "An Internal DSL always requires its own dedicated, specially manufactured hardware chip, while an External DSL runs entirely in ordinary software instead regardless",
+      "An Internal DSL is always dramatically and measurably faster at runtime execution than any comparable External DSL implementation could ever possibly be",
+      "An Internal DSL can only ever be written using Prolog syntax, while an External DSL can only ever be written using Lisp syntax instead"
     ],
     correctAnswer: 0,
     explanation: "The Domain-Specific Languages section states Internal DSLs leverage the host language's syntax (e.g., Gradle in Groovy, Rails routes in Ruby), while External DSLs are standalone languages with their own custom parsers and interpreters (e.g., SQL, CSS, regular expressions).\n\nDedicated hardware chips are never mentioned anywhere in the deck's discussion of DSLs.\n\nRelative runtime speed between Internal and External DSLs is never compared in the source.\n\nThe deck never restricts Internal DSLs to Prolog or External DSLs to Lisp; its own examples use Groovy, Ruby, SQL, CSS, and regular expressions."
@@ -2205,8 +2205,8 @@ const csc302Chapter3Questions: QuestionV2[] = [
     options: [
       "To abstract away low-level programming mechanics, allowing domain experts to read and write business-focused rules directly",
       "To replace the need for any general-purpose programming language entirely",
-      "To guarantee that a program compiles to fewer than 200 bytes of machine code",
-      "To require every developer to be fluent in First-Order Predicate Calculus"
+      "To guarantee that every single compiled program is reduced down to fewer than 200 bytes of machine code total",
+      "To require that every single developer become fully fluent in First-Order Predicate Calculus notation entirely"
     ],
     correctAnswer: 0,
     explanation: "The Domain-Specific Languages section states the Ultimate Goal of a DSL is to abstract away low-level programming mechanics, allowing domain experts to read and write business-focused rules directly.\n\nDSLs are described as solving specific complex problems, not as a full replacement for general-purpose languages.\n\nCompiling to under 200 bytes is Brainfuck's unrelated design goal from Part VII.\n\nFirst-Order Predicate Calculus fluency is a Prolog foundation from Part V, not a DSL requirement."
@@ -2261,7 +2261,7 @@ const csc302Chapter3Questions: QuestionV2[] = [
     options: [
       "Superposition and quantum entanglement",
       "Semaphores and locks",
-      "Horn clauses and resolution",
+      "Horn clauses and resolution theorem proving",
       "Message passing and mailboxes"
     ],
     correctAnswer: 0,
@@ -2274,8 +2274,8 @@ const csc302Chapter3Questions: QuestionV2[] = [
     text: "Which languages are building new, specialized paradigms to express quantum operations safely?",
     options: [
       "Microsoft's Q# and IBM's Qiskit",
-      "Go and Erlang",
-      "Prolog and SQL",
+      "Go and Erlang, both classical concurrent languages",
+      "Prolog and SQL, both declarative languages",
       "Rust and Scala"
     ],
     correctAnswer: 0,
@@ -2330,7 +2330,7 @@ const csc302Chapter3Questions: QuestionV2[] = [
     text: "Which paradigm is recommended if the primary concern is raw hardware performance?",
     options: [
       "Imperative / Systems Programming (C, C++, Rust)",
-      "Functional / Message-Passing (Erlang, Elixir, Clojure)",
+      "Functional / Message-Passing paradigm (Erlang, Elixir, and Clojure)",
       "Declarative (SQL)",
       "Logic Programming (Prolog)"
     ],

@@ -8,12 +8,12 @@ const csc302Chapter1Questions: QuestionV2[] = [
     text: "Which company originally developed Java, and in what year was it released?",
     options: [
       "Sun Microsystems, the original developer of Java in 1995",
-      "Oracle Corporation, which released Java in 1995 after developing it independently of Sun Microsystems",
-      "Sun Microsystems, which released Java in 2010 shortly before Oracle's acquisition of the company",
-      "Oracle Corporation, which acquired Java in 1995 and then released it publicly in 2010"
+      "Oracle Corporation, the original developer of Java in 1995",
+      "Sun Microsystems, the original developer of Java in 1991",
+      "Oracle Corporation, the company that acquired Java in 1995"
     ],
     correctAnswer: 0,
-    explanation: "The Introduction section states that Java was developed by Sun Microsystems in 1995 and later acquired by Oracle Corporation in 2010.\n\nThe claim that Oracle released Java in 1995 reverses the roles, since Oracle was the later acquirer, not the original developer.\n\nThe claim that Sun released Java in 2010 swaps the years, since 1995 is the release year and 2010 is the acquisition year.\n\nThe claim that Oracle acquired Java in 1995 and released it in 2010 reverses both the company roles and the order of events."
+    explanation: "The Introduction section states that Java was developed by Sun Microsystems in 1995 and later acquired by Oracle Corporation in 2010.\n\nAttributing original development to Oracle Corporation reverses the roles, since Oracle was the later acquirer, not the original developer.\n\nThe claim that Sun released Java in 1991 misstates the year the source gives, which is 1995.\n\nThe claim that Oracle acquired Java in 1995 misstates the acquisition year, which the source places in 2010, well after Java's 1995 release."
   },
   {
     id: "csc302_ch_1_1_002",

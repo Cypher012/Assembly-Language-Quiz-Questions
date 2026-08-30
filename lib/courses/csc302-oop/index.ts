@@ -6,6 +6,9 @@ import csc302Chapter1_3Questions from "./csc302-ch1_3";
 import csc302Chapter1_4Questions from "./csc302-ch1_4";
 import csc302Chapter2Questions from "./csc302-ch2";
 import csc302Chapter3Questions from "./csc302-ch3";
+import csc302Chapter4Questions from "./csc302-ch4";
+import csc302Chapter5Questions from "./csc302-ch5";
+import csc302Chapter6Questions from "./csc302-ch6";
 
 export const csc302JavaProgrammingCourse: Course = {
   id: "csc302-java-programming",
@@ -50,6 +53,24 @@ export const csc302JavaProgrammingCourse: Course = {
       description:
         "The history, philosophy, and code anecdotes behind imperative, OOP, functional, declarative, concurrent, esoteric, and multi-paradigm languages.",
     },
+    {
+      id: "Chapter 4",
+      label: "L02-OOP Presentation",
+      description:
+        "The Pre-OOP crisis, the Four Pillars, ancestral OOP languages, SOLID/GRASP principles, GoF design patterns, memory layout, and modern critiques of OOP.",
+    },
+    {
+      id: "Chapter 5",
+      label: "OOP-Apps Presentation",
+      description:
+        "Real-world OOP architectures across enterprise, GUI, game engine, systems/network, scientific/CAD, and design-pattern domains.",
+    },
+    {
+      id: "Chapter 6",
+      label: "OOP-Paradigm Presentation",
+      description:
+        "The paradigm shift into OOP, the Four Pillars, advanced structural concepts, SOLID/DRY/Demeter, language implementations, and modern critiques.",
+    },
   ],
   getQuestions: (): QuestionV2[] => {
     return [
@@ -59,6 +80,9 @@ export const csc302JavaProgrammingCourse: Course = {
       ...csc302Chapter1_4Questions,
       ...csc302Chapter2Questions,
       ...csc302Chapter3Questions,
+      ...csc302Chapter4Questions,
+      ...csc302Chapter5Questions,
+      ...csc302Chapter6Questions,
     ];
   },
 };

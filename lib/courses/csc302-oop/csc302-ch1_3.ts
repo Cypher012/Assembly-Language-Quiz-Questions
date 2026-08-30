@@ -21,7 +21,7 @@ const csc302Chapter3Questions: QuestionV2[] = [
     chapter: "Chapter 1.3",
     text: "In the exception handling program, what happens immediately when the statement int result = 10 / 0; executes inside the try block?",
     options: [
-      "The finally block executes immediately first, skipping the catch block entirely without running it at all",
+      "The finally block runs first, before the catch block has a chance to execute",
       "An ArithmeticException is thrown, and control passes to the matching catch block",
       "The program prints \"Cannot divide by zero!\" without running any catch block",
       "The program terminates immediately without running the finally block"
@@ -49,8 +49,8 @@ const csc302Chapter3Questions: QuestionV2[] = [
     chapter: "Chapter 1.3",
     text: "What is the defining characteristic of a finally block in Java exception handling?",
     options: [
-      "It only executes in situations where no exception of any kind is ever thrown inside the enclosing try block",
-      "It only executes when the catch block has successfully finished handling the thrown exception without any errors at all",
+      "It only executes in cases where the enclosing try block finishes without any exception being thrown during execution",
+      "It only executes when the catch block has finished handling the thrown exception without encountering any further errors",
       "It executes after the try and catch blocks regardless of whether an exception was thrown or caught",
       "It replaces the need for a catch block entirely"
     ],
@@ -144,8 +144,8 @@ const csc302Chapter3Questions: QuestionV2[] = [
     options: [
       "To print the final greeting message to the console",
       "To release the resources held by the Scanner object once input reading is finished",
-      "To read one additional line of user input right before the entire program finally comes to an end",
-      "To reset the Scanner completely so that it can then read from an entirely new input source"
+      "To read one additional line of leftover input just before the program finishes running and exits",
+      "To reset the Scanner so it can then read from a completely different input source"
     ],
     correctAnswer: 1,
     explanation: "The Reading Input from User example places scanner.close(); after all reading is done, matching its role of releasing the resources held by the Scanner object once input reading is finished.\n\nPrinting the final greeting message is done by the System.out.println() call that combines the name and age, which happens before scanner.close() is called.\n\nReading one more line of input is not what close() does; it ends the Scanner's ability to read, rather than performing another read.\n\nResetting the Scanner to read from a new source is not shown anywhere in the example, which uses one Scanner for one input stream from start to finish."
@@ -514,7 +514,7 @@ const csc302Chapter3Questions: QuestionV2[] = [
     chapter: "Chapter 1.3",
     text: "In the HashMap iteration example, what does the loop for (Map.Entry<String, String> entry : capitals.entrySet()) do?",
     options: [
-      "It iterates over only the keys in the capitals HashMap, ignoring the values",
+      "It iterates over only the keys in the capitals HashMap, printing each key without ever accessing its associated value",
       "It iterates over only the values in the capitals HashMap, ignoring the keys",
       "It iterates over each key-value pair in the capitals HashMap using entries returned by entrySet()",
       "It creates a new HashMap from the capitals HashMap's entries"
@@ -530,7 +530,7 @@ const csc302Chapter3Questions: QuestionV2[] = [
     options: [
       "Only the capital city, such as \"Abuja\"",
       "Only the country name, such as \"Nigeria\"",
-      "The capital city followed by the country name, such as \"Abuja -> Nigeria\"",
+      "The capital city printed first, followed by an arrow and then the full country name, such as \"Abuja -> Nigeria\"",
       "The country name, an arrow, and its capital city, such as \"Nigeria -> Abuja\""
     ],
     correctAnswer: 3,
@@ -607,7 +607,7 @@ const csc302Chapter3Questions: QuestionV2[] = [
     chapter: "Chapter 1.3",
     text: "Given the names ArrayList containing \"Isaac\", \"Chinedu\", and \"Oluwafemi\" added in that order, what does names.forEach(name -> System.out.println(\"Student: \" + name)); print?",
     options: [
-      "\"Student: Oluwafemi\", \"Student: Chinedu\", and \"Student: Isaac\", in reverse order",
+      "\"Student: Oluwafemi\", \"Student: Chinedu\", and \"Student: Isaac\", printed on three separate lines in reverse order",
       "\"Student: Isaac\", \"Student: Chinedu\", and \"Student: Oluwafemi\", each on its own line",
       "\"Isaac\", \"Chinedu\", and \"Oluwafemi\", without the \"Student: \" prefix",
       "A single line reading \"Student: Isaac, Chinedu, Oluwafemi\""

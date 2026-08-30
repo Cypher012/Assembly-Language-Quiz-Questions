@@ -22,12 +22,12 @@ const csc302Chapter2OopFundamentalsQuestions: QuestionV2[] = [
     text: "Which of the following is one of the four stated objectives of the CSC302 course?",
     options: [
       "Master the use of one specific integrated development environment for writing code",
-      "Memorize the exact syntax of every object-oriented language in existence",
+      "Memorize the exact syntax rules of one specific programming language",
       "Apply object-oriented principles to solve real-world problems",
       "Learn database normalization techniques"
     ],
     correctAnswer: 2,
-    explanation: "The course intro section lists four objectives: understanding OOP basics, designing and implementing object-oriented programs, applying object-oriented principles to solve real-world problems, and using a programming language to implement object-oriented concepts. Mastering one IDE, memorizing every language's syntax, and database normalization are not among the four listed objectives."
+    explanation: "The course intro section lists four objectives: understanding OOP basics, designing and implementing object-oriented programs, applying object-oriented principles to solve real-world problems, and using a programming language to implement object-oriented concepts. Mastering one IDE, memorizing one language's exact syntax rules, and database normalization are not among the four listed objectives."
   },
   {
     id: "csc302_ch2_003",
@@ -49,7 +49,7 @@ const csc302Chapter2OopFundamentalsQuestions: QuestionV2[] = [
     chapter: "Chapter 2",
     text: "Which of the following is given as a reason computing is considered attractive as a field?",
     options: [
-      "It only benefits one narrowly defined industry and excludes all others entirely",
+      "It mainly benefits the finance industry",
       "It allows for global connectivity and collaboration across many industries",
       "It removes the need for creativity",
       "It restricts personal growth"
@@ -119,7 +119,7 @@ const csc302Chapter2OopFundamentalsQuestions: QuestionV2[] = [
     chapter: "Chapter 2",
     text: "Since 1897, what has the term computer applied to?",
     options: [
-      "Only mechanical calculating devices built entirely without any electronic components or moving digital parts whatsoever",
+      "Hand-operated mechanical calculating devices with no electronic components",
       "Programmable electronic devices that accept, process, store, and retrieve data quickly",
       "Human clerks performing manual arithmetic",
       "Paper-based record-keeping systems"
@@ -471,11 +471,11 @@ const csc302Chapter2OopFundamentalsQuestions: QuestionV2[] = [
     options: [
       "Optimized Data Structures",
       "Hybrid Approaches, combining functional programming with imperative programming to leverage the strengths of both",
-      "Removing all mutable state from every system",
-      "Abandoning functional programming entirely"
+      "State Management Libraries, primarily used to reduce performance overhead from excessive copying",
+      "Rewriting the stateful components in an imperative programming style"
     ],
     correctAnswer: 1,
-    explanation: "The Functional Programming era section lists Hybrid Approaches, combining FP with imperative programming to leverage the strengths of both paradigms, alongside Optimized Data Structures and State Management Libraries, as mitigations for FP's criticisms. Optimized Data Structures is listed for performance overhead specifically rather than stateful modeling, and the remaining two options are not mitigations named in the source."
+    explanation: "The Functional Programming era section lists Hybrid Approaches, combining FP with imperative programming to leverage the strengths of both paradigms, alongside Optimized Data Structures and State Management Libraries, as mitigations for FP's criticisms. Optimized Data Structures and State Management Libraries are both listed for performance overhead specifically rather than stateful modeling, and rewriting all stateful components in an imperative style is not one of the mitigations named in the source, which instead recommends a hybrid combination of the two paradigms."
   },
   {
     id: "csc302_ch2_035",
@@ -693,13 +693,13 @@ const csc302Chapter2OopFundamentalsQuestions: QuestionV2[] = [
     chapter: "Chapter 2",
     text: "How can polymorphism be achieved?",
     options: [
-      "Only through creating entirely new, unrelated classes",
+      "Through creating a separate unrelated class for each behaviour",
       "Through method overloading or method overriding",
-      "Only through declaring all attributes as private",
-      "Only through removing all inherited methods"
+      "Through declaring every attribute as private",
+      "Through removing methods inherited from a superclass"
     ],
     correctAnswer: 1,
-    explanation: "The polymorphism section states that polymorphism refers to the ability of an object, variable, or function to take on multiple forms, and that it can be achieved through method overloading or method overriding. The remaining options describe actions unrelated to how polymorphism is achieved in this material."
+    explanation: "The polymorphism section states that polymorphism refers to the ability of an object, variable, or function to take on multiple forms, and that it can be achieved through method overloading or method overriding. Creating a separate class for each behaviour, declaring attributes private, and removing inherited methods are each actions described elsewhere in the material for unrelated purposes, not how polymorphism is achieved."
   },
   {
     id: "csc302_ch2_051",
@@ -848,7 +848,7 @@ const csc302Chapter2OopFundamentalsQuestions: QuestionV2[] = [
     text: "Which key concept refers to calling a method on an object?",
     options: [
       "Instantiation, the act of creating a brand new object from a class",
-      "Method invocation",
+      "Method invocation, the act of calling a method that already belongs to an object",
       "Encapsulation, the bundling of data and methods within a single unit",
       "Class definition, the declaration of a blueprint used to create objects"
     ],
@@ -1058,12 +1058,12 @@ const csc302Chapter2OopFundamentalsQuestions: QuestionV2[] = [
     text: "Besides performing actions, what else can methods do?",
     options: [
       "They can be overloaded or overridden",
-      "They can only be called before an object is instantiated",
-      "They can never operate on the class's own attributes",
-      "They can only exist in a superclass, never a subclass"
+      "They store an object's state independently of its attributes",
+      "They run automatically before any object has been created",
+      "They belong exclusively to the class that first defines them"
     ],
     correctAnswer: 0,
-    explanation: "The attributes, methods, constructors, and destructors section states that methods are functions that belong to a class, can operate on attributes and perform actions, and can be overloaded or overridden. The remaining options contradict this, since methods do operate on attributes, are called after instantiation, and can exist in both superclasses and subclasses."
+    explanation: "The attributes, methods, constructors, and destructors section states that methods are functions that belong to a class, can operate on attributes and perform actions, and can be overloaded or overridden. The remaining options contradict this, since an object's state is stored in its attributes rather than separately by its methods, methods are called after instantiation rather than automatically beforehand, and methods can be inherited and overridden in subclasses rather than staying exclusive to the defining class."
   },
   {
     id: "csc302_ch2_077",
@@ -1142,12 +1142,12 @@ const csc302Chapter2OopFundamentalsQuestions: QuestionV2[] = [
     text: "What does exception handling help prevent?",
     options: [
       "Program crashes, while providing meaningful error messages",
-      "The need for any error messages at all",
+      "The need to display error messages to the user",
       "The use of try and except blocks in a program",
-      "All runtime errors from ever occurring in the source code"
+      "Runtime errors from occurring in the source code in the first place"
     ],
     correctAnswer: 0,
-    explanation: "The exception handling section states that exception handling is a mechanism to handle runtime errors and exceptions, helping to prevent program crashes and provide meaningful error messages. It does not remove the need for error messages, does not eliminate the use of try and except blocks since those are its own mechanism, and does not claim to stop runtime errors from occurring in the first place, only to handle them."
+    explanation: "The exception handling section states that exception handling is a mechanism to handle runtime errors and exceptions, helping to prevent program crashes and provide meaningful error messages. It does not remove the need for error messages, does not eliminate the use of try and except blocks since those are its own mechanism, and does not claim to stop runtime errors from occurring in the first place, only to handle them once they occur."
   },
   {
     id: "csc302_ch2_083",

@@ -68,7 +68,7 @@ const csc302Chapter2Questions: QuestionV2[] = [
     text: "In the ForLoopExample program, what determines how many times the loop body executes?",
     options: [
       "The loop condition, i <= 5, which is evaluated before each pass through the loop body",
-      "The total number of println statements written inside the loop body",
+      "The total number of println statements written inside the loop body, regardless of what the loop's condition or increment specify",
       "The value stored in the args array passed to main",
       "The order in which println statements appear inside the class"
     ],
@@ -198,7 +198,7 @@ const csc302Chapter2Questions: QuestionV2[] = [
     text: "Which situation calls for a traditional for loop instead of a for-each loop?",
     options: [
       "The program needs to modify elements in place or iterate in reverse order",
-      "The program only needs to read each element once, in order",
+      "The program only needs to read each element once, in order, without tracking a position",
       "The program is iterating over an ArrayList of strings",
       "The program does not need to know each element's index"
     ],
@@ -421,7 +421,7 @@ const csc302Chapter2Questions: QuestionV2[] = [
     options: [
       "Without a base case, the method keeps calling itself indefinitely instead of stopping",
       "Without a base case, the method cannot accept any parameters",
-      "Without a base case, the method runs faster than an iterative loop",
+      "Without a base case, the method runs faster than an iterative loop solving the same problem",
       "Without a base case, the compiler refuses to compile the class"
     ],
     correctAnswer: 0,
@@ -558,13 +558,13 @@ const csc302Chapter2Questions: QuestionV2[] = [
     chapter: "Chapter 1.2",
     text: "Which of the following is true about recursive methods, based on how FactorialRecursion, SumRecursion, and MaxInArray are written?",
     options: [
-      "Recursive solutions always run faster than an equivalent loop",
+      "Recursive solutions run faster than an equivalent loop because they skip repeated condition checks",
       "A method can only call itself recursively if it takes no parameters",
       "All of these",
       "None of these"
     ],
     correctAnswer: 3,
-    explanation: "The Recursion vs Iteration comparison lists recursion's performance as slower than iteration because of function call overhead, which directly contradicts the claim that recursive solutions always run faster.\n\nFactorialRecursion's factorial(int n), SumRecursion's sum(int n), and MaxInArray's findMax(int[] arr, int index) each take one or more parameters and still call themselves recursively, contradicting the claim that a method needs no parameters to call itself. Since both specific statements are contradicted by the source, \"None of these\" is correct."
+    explanation: "The Recursion vs Iteration comparison lists recursion's performance as slower than iteration because of function call overhead, which directly contradicts the claim that recursive solutions run faster.\n\nFactorialRecursion's factorial(int n), SumRecursion's sum(int n), and MaxInArray's findMax(int[] arr, int index) each take one or more parameters and still call themselves recursively, contradicting the claim that a method needs no parameters to call itself. Since both specific statements are contradicted by the source, \"None of these\" is correct."
   },
   {
     id: "csc302_ch_1_2_046",
@@ -572,7 +572,7 @@ const csc302Chapter2Questions: QuestionV2[] = [
     chapter: "Chapter 1.2",
     text: "What is the base case in MaxInArray's findMax method?",
     options: [
-      "When index equals 0, the method returns arr[0]",
+      "When index equals 0, the method returns arr[0] without making a recursive call",
       "When index equals arr.length - 1, the method returns arr[index]",
       "When arr is empty, the method returns 0",
       "When index equals arr.length, the method returns arr[index]"
@@ -595,13 +595,13 @@ const csc302Chapter2Questions: QuestionV2[] = [
     chapter: "Chapter 1.2",
     text: "How does the Recursion vs Iteration comparison describe the readability of each approach?",
     options: [
-      "Recursion is usually harder to read than iteration in every case",
-      "Iteration is always more elegant than recursion regardless of the problem",
-      "Both approaches are described as equally readable in every situation",
+      "Recursion is usually harder to read than iteration",
+      "Iteration is usually more elegant than recursion, while recursion can be longer but more straightforward",
+      "Both approaches are described as equally readable",
       "Recursion is usually cleaner and more elegant, while iteration can be longer but more straightforward"
     ],
     correctAnswer: 3,
-    explanation: "The Recursion vs Iteration comparison lists recursion's readability as usually cleaner and elegant, while describing iteration as can be longer but straightforward.\n\nDescribing recursion as usually harder to read reverses what the comparison states about recursion's readability.\n\nDescribing iteration as always more elegant also reverses the comparison, which credits recursion, not iteration, with being cleaner and more elegant.\n\nThe comparison does not describe the two approaches as equally readable; it draws a distinction between them on this row of the table."
+    explanation: "The Recursion vs Iteration comparison lists recursion's readability as usually cleaner and elegant, while describing iteration as can be longer but straightforward.\n\nDescribing recursion as usually harder to read reverses what the comparison states about recursion's readability.\n\nDescribing iteration as usually more elegant also reverses the comparison, which credits recursion, not iteration, with being cleaner and more elegant.\n\nThe comparison does not describe the two approaches as equally readable; it draws a distinction between them on this row of the table."
   },
   {
     id: "csc302_ch_1_2_049",
@@ -612,10 +612,10 @@ const csc302Chapter2Questions: QuestionV2[] = [
       "Recursion for tree traversal and factorial-style problems, iteration for simple loops and large data",
       "Recursion for simple loops and large data, iteration for tree traversal and factorial-style problems",
       "Both recursion and iteration are best suited for exactly the same kinds of problems",
-      "Recursion for large data only, iteration for tree traversal only"
+      "Recursion for large data and factorial-style problems, iteration for simple loops and tree traversal"
     ],
     correctAnswer: 0,
-    explanation: "The Recursion vs Iteration comparison lists recursion's best-for row as tree traversal, factorial, Fibonacci, and Tower of Hanoi, while listing iteration's best-for row as simple loops and large data.\n\nSwapping the two, recursion for simple loops and large data with iteration for tree traversal, reverses what the table actually pairs with each approach.\n\nThe table does not treat the two approaches as suited to the same kinds of problems; it lists distinct best-for categories for each.\n\nRestricting recursion to large data only and iteration to tree traversal only both misassigns the categories, which the table pairs the opposite way around."
+    explanation: "The Recursion vs Iteration comparison lists recursion's best-for row as tree traversal, factorial, Fibonacci, and Tower of Hanoi, while listing iteration's best-for row as simple loops and large data.\n\nSwapping the two, recursion for simple loops and large data with iteration for tree traversal, reverses what the table actually pairs with each approach.\n\nThe table does not treat the two approaches as suited to the same kinds of problems; it lists distinct best-for categories for each.\n\nPairing recursion with large data and iteration with tree traversal also crosses the categories the table assigns to each approach."
   },
   {
     id: "csc302_ch_1_2_050",

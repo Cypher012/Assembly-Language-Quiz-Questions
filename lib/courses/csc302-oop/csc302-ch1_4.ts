@@ -142,13 +142,13 @@ const csc302Chapter4Questions: QuestionV2[] = [
     chapter: "Chapter 1.4",
     text: "Given String s1 = \"Java\"; and String s3 = new String(\"Java\");, what does s1.equals(s3) return?",
     options: [
-      "false, because s3 was created with new and therefore is never considered equal to a literal string by any comparison method",
+      "false, because equals() compares memory addresses rather than character content",
       "true, but only because both strings happen to be stored at the same memory address",
       "true, because equals compares the actual character content of the two strings",
       "false, because the letter cases differ"
     ],
     correctAnswer: 2,
-    explanation: "The String Comparison example shows s1.equals(s3) returning true, because equals() compares the actual character content of the two strings rather than their memory addresses.\n\ns3 being created with new does not block equals() from reporting a match, since equals() is defined to compare content, not origin.\n\nThe result is true regardless of memory address, since s1 and s3 are, in fact, separate objects at different addresses despite the true result.\n\nThe letter cases match exactly between the two strings, so a case difference is not the explanation."
+    explanation: "The String Comparison example shows s1.equals(s3) returning true, because equals() compares the actual character content of the two strings rather than their memory addresses.\n\nThis option reverses the definition: equals() is specifically defined to compare content, not memory addresses, so a false result from an address mismatch is not how equals() works.\n\nThe result is true regardless of memory address, since s1 and s3 are, in fact, separate objects at different addresses despite the true result.\n\nThe letter cases match exactly between the two strings, so a case difference is not the explanation."
   },
   {
     id: "csc302_ch_1_4_012",
@@ -157,12 +157,12 @@ const csc302Chapter4Questions: QuestionV2[] = [
     text: "Given String s1 = \"Java\"; and String s2 = \"java\";, what does s1.equalsIgnoreCase(s2) return?",
     options: [
       "false, because equalsIgnoreCase still treats uppercase and lowercase letters as different characters",
-      "false, because s2 was declared after s1 and Java compares declaration order first",
+      "false, because equalsIgnoreCase only ignores case for the first letter of each string",
       "true, but only for strings created with the new keyword rather than literals",
       "true"
     ],
     correctAnswer: 3,
-    explanation: "The String Comparison example shows s1.equalsIgnoreCase(s2) returning true, since equalsIgnoreCase() compares content while ignoring letter case, and \"Java\" and \"java\" match once case is set aside.\n\nequalsIgnoreCase() is defined specifically so that uppercase and lowercase letters are treated as matching, not as different characters.\n\nDeclaration order has no bearing on this comparison; only the character content, ignoring case, is examined.\n\nequalsIgnoreCase() works the same way regardless of whether the strings were created with a literal or with new, so it is not limited to new String objects."
+    explanation: "The String Comparison example shows s1.equalsIgnoreCase(s2) returning true, since equalsIgnoreCase() compares content while ignoring letter case, and \"Java\" and \"java\" match once case is set aside.\n\nequalsIgnoreCase() is defined specifically so that uppercase and lowercase letters are treated as matching, not as different characters.\n\nequalsIgnoreCase() ignores case across the entire string, not only the first letter, so this partial description of its scope is incorrect.\n\nequalsIgnoreCase() works the same way regardless of whether the strings were created with a literal or with new, so it is not limited to new String objects."
   },
   {
     id: "csc302_ch_1_4_013",
@@ -184,13 +184,13 @@ const csc302Chapter4Questions: QuestionV2[] = [
     chapter: "Chapter 1.4",
     text: "What is the key difference between using .equals() and using == to compare two String objects in Java?",
     options: [
-      ".equals() always returns the same result as ==, because Java automatically converts every String comparison into a reference comparison at compile time regardless of how the strings were created",
+      ".equals() and == both compare whether two variables reference the same object in memory",
       ".equals() checks whether the character content is the same, while == checks whether both variables reference the same object in memory",
       "== checks character content while .equals() checks memory location",
       "There is no difference between them"
     ],
     correctAnswer: 1,
-    explanation: "The String Comparison example demonstrates that .equals() checks whether the character content of two strings matches, while == checks whether both variables point to the very same object in memory.\n\n.equals() and == are shown to give different results for s1 and s3, so they do not always agree, contrary to the claim that Java converts every comparison into the same check.\n\nThe roles are the reverse of what this option states: content checking belongs to .equals(), and reference checking belongs to ==.\n\nThe example specifically shows a case where .equals() and == disagree, so there is a real difference between them."
+    explanation: "The String Comparison example demonstrates that .equals() checks whether the character content of two strings matches, while == checks whether both variables point to the very same object in memory.\n\n.equals() and == are shown to give different results for s1 and s3, so they do not both check references; only == checks references, while .equals() checks content, contrary to this claim.\n\nThe roles are the reverse of what this option states: content checking belongs to .equals(), and reference checking belongs to ==.\n\nThe example specifically shows a case where .equals() and == disagree, so there is a real difference between them."
   },
   {
     id: "csc302_ch_1_4_015",
@@ -336,10 +336,10 @@ const csc302Chapter4Questions: QuestionV2[] = [
       "java.nio was introduced in Java 1.4 and the java.nio.file (NIO.2) portion was greatly improved in Java 7",
       "java.nio.file has existed since Java 1.0, the same as java.io",
       "Both packages were introduced together in Java 7 for the first time",
-      "java.nio was introduced after java.io was removed from the language"
+      "java.nio was introduced in Java 7, the same version in which the NIO.2 improvements to java.nio.file were made"
     ],
     correctAnswer: 0,
-    explanation: "The File Handling Packages overview states that java.nio was introduced in Java 1.4 and that the java.nio.file (NIO.2) portion was greatly improved in Java 7.\n\njava.io, not java.nio.file, is the package that has existed since Java 1.0.\n\njava.nio was introduced in Java 1.4, not Java 7, even though NIO.2 was improved in Java 7.\n\njava.io was never removed from the language, and both packages remain available for use."
+    explanation: "The File Handling Packages overview states that java.nio was introduced in Java 1.4 and that the java.nio.file (NIO.2) portion was greatly improved in Java 7.\n\njava.io, not java.nio.file, is the package that has existed since Java 1.0.\n\njava.nio was introduced in Java 1.4, not Java 7, even though NIO.2 was improved in Java 7.\n\njava.nio itself dates to Java 1.4, well before Java 7; only the NIO.2 portion of java.nio.file was improved in Java 7, so this option merges two separate dates into one."
   },
   {
     id: "csc302_ch_1_4_026",
@@ -673,13 +673,13 @@ const csc302Chapter4Questions: QuestionV2[] = [
     chapter: "Chapter 1.4",
     text: "When is it appropriate to prefer java.io streams over java.nio.file for a file handling task?",
     options: [
-      "For every new project written from 2026 onward, because java.nio.file was fully removed from the Java language and no longer exists",
+      "Only when working with unusually large files that substantially exceed available memory, since java.nio.file cannot handle large files efficiently",
       "For beginners and simple applications, or when low-level control over reading and writing streams is specifically needed",
       "Never; java.nio.file should always be used regardless of the situation",
       "Only when writing unit tests"
     ],
     correctAnswer: 1,
-    explanation: "The Which One Should You Use guidance recommends starting with java.io for beginners and simple applications, and it notes that java.io streams remain useful when low-level control over reading and writing is specifically needed.\n\njava.nio.file was never removed from Java; the guidance actually recommends it for all new code, while still keeping java.io available.\n\nThe guidance allows mixing both packages rather than saying java.io should never be used.\n\nThe guidance does not restrict java.io usage to unit testing; it applies to beginners, simple applications, and cases needing low-level stream control."
+    explanation: "The Which One Should You Use guidance recommends starting with java.io for beginners and simple applications, and it notes that java.io streams remain useful when low-level control over reading and writing is specifically needed.\n\njava.nio.file is in fact the package better suited to large files and high-concurrency workloads, the reverse of what this option claims, so preferring java.io there is not the guidance given.\n\nThe guidance allows mixing both packages rather than saying java.io should never be used.\n\nThe guidance does not restrict java.io usage to unit testing; it applies to beginners, simple applications, and cases needing low-level stream control."
   }
 ];
 
