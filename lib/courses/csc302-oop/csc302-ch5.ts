@@ -2042,12 +2042,12 @@ const csc302Chapter5Questions: QuestionV2[] = [
     id: "csc302_ch5_149",
     course: "CSC 302",
     chapter: "Chapter 5",
-    text: "Which class or interface below plays a role most analogous to the DiscountStrategy interface, in that both let an algorithm be swapped dynamically without changing the code that uses them?",
+    text: "A pricing engine defines a DiscountStrategy interface so that different discount algorithms can be swapped at runtime without changing the code that applies them. Which of the following plays a role most analogous to that interface?",
     options: [
-      "The LayoutManager interface, whose concrete strategies can be swapped at runtime",
-      "The FSNode base class, which defines name, size, and permissions",
-      "The Connection class, which manages authorization and transaction sessions",
-      "The Lead object, which encapsulates history logs and contact coordinates"
+      "A LayoutManager interface, whose concrete layout strategies a container can swap at runtime",
+      "A file-system node base class, which defines fixed name, size, and permission fields",
+      "A database Connection class, which manages authorization and transaction sessions",
+      "A sales Lead object, which encapsulates history logs and contact coordinates"
     ],
     correctAnswer: 0,
     explanation: "Design Patterns: Strategies in Pricing Engines describes DiscountStrategy as a swappable algorithm interface, and Layout Managers as Strategy Objects describes the LayoutManager interface as declaring formatting contracts with concrete strategies like BorderLayout and GridLayout that containers can swap at runtime, both following the Strategy pattern's swappable-algorithm structure.\n\nThe FSNode base class defines static structural properties, not a swappable algorithm.\n\nThe Connection class manages a database session, not an interchangeable algorithm.\n\nThe Lead object stores customer data, not a swappable algorithm."

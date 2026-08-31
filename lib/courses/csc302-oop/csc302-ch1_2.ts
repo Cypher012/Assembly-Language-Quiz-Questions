@@ -5,7 +5,7 @@ const csc302Chapter2Questions: QuestionV2[] = [
     id: "csc302_ch_1_2_001",
     course: "CSC 302",
     chapter: "Chapter 1.2",
-    text: "In the IfElseExample program, which condition must be true for the message \"You are an adult.\" to be printed?",
+    text: "A program runs this chain: if (age >= 18) prints \"You are an adult.\"; else if (age >= 13) prints \"You are a teenager.\"; else prints \"You are a child.\". Which condition must be true for \"You are an adult.\" to be printed?",
     options: [
       "age is greater than or equal to 18",
       "age is greater than or equal to 13 but less than 18",
@@ -19,7 +19,7 @@ const csc302Chapter2Questions: QuestionV2[] = [
     id: "csc302_ch_1_2_002",
     course: "CSC 302",
     chapter: "Chapter 1.2",
-    text: "IfElseExample sets age to 20 before evaluating the if-else chain. What does the program print?",
+    text: "A program sets int age = 20; and then runs this chain: if (age >= 18) prints \"You are an adult.\"; else if (age >= 13) prints \"You are a teenager.\"; else prints \"You are a child.\". What does the program print?",
     options: [
       "You are a teenager.",
       "You are an adult.",
@@ -33,7 +33,7 @@ const csc302Chapter2Questions: QuestionV2[] = [
     id: "csc302_ch_1_2_003",
     course: "CSC 302",
     chapter: "Chapter 1.2",
-    text: "In the SwitchExample program, each case block ends with a break statement so that execution does not continue into the next case.",
+    text: "In a switch statement where each case block ends with a break statement, the break stops execution from continuing into the next case.",
     options: ["True", "False", "Maybe", "I don't know"],
     correctAnswer: 0,
     explanation: "The Switch Statement example places a break after each case's println call, including case 1, case 2, and case 3, so once a matching case runs, the break exits the switch rather than letting execution fall through to the case that follows it."
@@ -42,7 +42,7 @@ const csc302Chapter2Questions: QuestionV2[] = [
     id: "csc302_ch_1_2_004",
     course: "CSC 302",
     chapter: "Chapter 1.2",
-    text: "In the SwitchExample program, what is the purpose of the default clause?",
+    text: "A switch statement tests the variable day against case 1, case 2, and case 3, and also includes a default clause. What is the purpose of that default clause?",
     options: [
       "It runs first, before any of the numbered cases are checked",
       "It runs after every case regardless of whether one already matched",
@@ -56,7 +56,7 @@ const csc302Chapter2Questions: QuestionV2[] = [
     id: "csc302_ch_1_2_005",
     course: "CSC 302",
     chapter: "Chapter 1.2",
-    text: "SwitchExample sets day to 3 before running the switch statement. What does the program print?",
+    text: "A program sets int day = 3; and then runs a switch on day where case 1 prints Monday, case 2 prints Tuesday, case 3 prints Wednesday, and default prints Other day. What does the program print?",
     options: ["Tuesday", "Monday", "Other day", "Wednesday"],
     correctAnswer: 3,
     explanation: "The Switch Statement example maps day 3 to case 3, which prints \"Wednesday\" and then breaks out of the switch.\n\n\"Tuesday\" prints only when day is 2, not 3.\n\n\"Monday\" prints only when day is 1, not 3.\n\n\"Other day\" prints only when day matches none of the listed cases, but 3 does match case 3, so default never runs here."
@@ -65,7 +65,7 @@ const csc302Chapter2Questions: QuestionV2[] = [
     id: "csc302_ch_1_2_006",
     course: "CSC 302",
     chapter: "Chapter 1.2",
-    text: "In the ForLoopExample program, what determines how many times the loop body executes?",
+    text: "A loop is written as for (int i = 1; i <= 5; i++) { System.out.println(\"Count: \" + i); }. What determines how many times the loop body executes?",
     options: [
       "The loop condition, i <= 5, which is evaluated before each pass through the loop body",
       "The total number of println statements written inside the loop body, regardless of what the loop's condition or increment specify",
@@ -93,7 +93,7 @@ const csc302Chapter2Questions: QuestionV2[] = [
     id: "csc302_ch_1_2_008",
     course: "CSC 302",
     chapter: "Chapter 1.2",
-    text: "How many times does the loop body in ForLoopExample run, and what is the last line it prints?",
+    text: "A loop is written as for (int i = 1; i <= 5; i++) { System.out.println(\"Count: \" + i); }. How many times does the loop body run, and what is the last line it prints?",
     options: [
       "Four times, ending with Count: 4",
       "Five times, ending with Count: 5",
@@ -139,7 +139,7 @@ const csc302Chapter2Questions: QuestionV2[] = [
     id: "csc302_ch_1_2_012",
     course: "CSC 302",
     chapter: "Chapter 1.2",
-    text: "What does ForEachArray print after the line \"Numbers in array:\"?",
+    text: "A program declares int[] numbers = {10, 20, 30, 40, 50};, prints \"Numbers in array:\", then runs for (int num : numbers) { System.out.println(num); }. What is printed after the \"Numbers in array:\" line?",
     options: [
       "10, then 20, then 30, then 40, then 50, each on its own line",
       "50, then 40, then 30, then 20, then 10, each on its own line",
@@ -153,7 +153,7 @@ const csc302Chapter2Questions: QuestionV2[] = [
     id: "csc302_ch_1_2_013",
     course: "CSC 302",
     chapter: "Chapter 1.2",
-    text: "What does ForEachArrayList print for each student in the list?",
+    text: "An ArrayList<String> named students holds Isaac, Ade, Chinedu, and Oluwa. The program runs for (String student : students) { System.out.println(\"- \" + student); }. What is printed for each student?",
     options: [
       "Only the student's name, with no other characters",
       "A hyphen followed by a space and the student's name",
@@ -167,7 +167,7 @@ const csc302Chapter2Questions: QuestionV2[] = [
     id: "csc302_ch_1_2_014",
     course: "CSC 302",
     chapter: "Chapter 1.2",
-    text: "In ForEachString, what is printed for the fruit stored at the first position of the array?",
+    text: "A program declares String[] fruits = {\"Apple\", \"Banana\", \"Mango\", \"Orange\"}; and runs for (String fruit : fruits) { System.out.println(\"- \" + fruit); }. What is printed for the fruit stored at the first position of the array?",
     options: [
       "- Mango",
       "Apple",
@@ -181,7 +181,7 @@ const csc302Chapter2Questions: QuestionV2[] = [
     id: "csc302_ch_1_2_015",
     course: "CSC 302",
     chapter: "Chapter 1.2",
-    text: "In ForEachLimitations, why does the array still hold its original values after the first for-each loop runs?",
+    text: "A program declares int[] numbers = {5, 10, 15, 20, 25}; and then runs for (int num : numbers) { num = num * 2; }. Why does the array still hold its original values after this loop runs?",
     options: [
       "The array was declared as final, which prevents any of its values from changing",
       "The multiplication num * 2 throws an exception that is silently caught",
@@ -209,7 +209,7 @@ const csc302Chapter2Questions: QuestionV2[] = [
     id: "csc302_ch_1_2_017",
     course: "CSC 302",
     chapter: "Chapter 1.2",
-    text: "In WhileExample, what is the last line printed by the while loop before the do-while loop begins?",
+    text: "A program runs int i = 1; while (i <= 3) { System.out.println(\"While: \" + i); i++; }, and a do-while loop follows it. What is the last line printed by this while loop?",
     options: [
       "While: 4",
       "While: 3",
@@ -223,7 +223,7 @@ const csc302Chapter2Questions: QuestionV2[] = [
     id: "csc302_ch_1_2_018",
     course: "CSC 302",
     chapter: "Chapter 1.2",
-    text: "In WhileExample, how many lines does the do-while loop print, and what is the first one?",
+    text: "A program runs int j = 1; do { System.out.println(\"Do-While: \" + j); j++; } while (j <= 3);. How many lines does this do-while loop print, and what is the first one?",
     options: [
       "Two lines, starting with Do-While: 1",
       "Three lines, starting with Do-While: 1",
@@ -237,7 +237,7 @@ const csc302Chapter2Questions: QuestionV2[] = [
     id: "csc302_ch_1_2_019",
     course: "CSC 302",
     chapter: "Chapter 1.2",
-    text: "Which keyword in SwitchExample prevents execution from continuing into the next case after a match is found?",
+    text: "Which keyword, placed at the end of a case block, prevents execution from continuing into the next case after a match is found?",
     options: ["default", "return", "continue", "break"],
     correctAnswer: 3,
     explanation: "The Switch Statement example places break at the end of case 1, case 2, and case 3, which exits the switch statement immediately after a matching case finishes, stopping execution from continuing into the next case.\n\ndefault is the fallback branch that runs when no case matches; it does not control fall-through between cases.\n\nreturn does not appear anywhere in this switch statement.\n\ncontinue also does not appear in this example, and in Java it controls loop iteration rather than switch fall-through."
@@ -246,7 +246,7 @@ const csc302Chapter2Questions: QuestionV2[] = [
     id: "csc302_ch_1_2_020",
     course: "CSC 302",
     chapter: "Chapter 1.2",
-    text: "What does the line int[] numbers = {10, 20, 30, 40, 50}; declare in ArrayExample?",
+    text: "What does the line int[] numbers = {10, 20, 30, 40, 50}; declare?",
     options: [
       "An array of five integers containing 10, 20, 30, 40, and 50, in that order",
       "Five separate integer variables named numbers",
@@ -260,7 +260,7 @@ const csc302Chapter2Questions: QuestionV2[] = [
     id: "csc302_ch_1_2_021",
     course: "CSC 302",
     chapter: "Chapter 1.2",
-    text: "In ArrayExample, what value does numbers[0] refer to?",
+    text: "Given the declaration int[] numbers = {10, 20, 30, 40, 50};, what value does numbers[0] refer to?",
     options: ["50", "10", "20", "0"],
     correctAnswer: 1,
     explanation: "The Arrays in Java example declares numbers as {10, 20, 30, 40, 50}, and array indexing starts at 0, so numbers[0] refers to the first stored value, 10, which is exactly what the program prints as \"First element: 10\".\n\n50 is stored at the last index, 4, not index 0.\n\n20 is stored at index 1, one position after the first element.\n\n0 is the index value itself, not the element stored at that index."
@@ -269,7 +269,7 @@ const csc302Chapter2Questions: QuestionV2[] = [
     id: "csc302_ch_1_2_022",
     course: "CSC 302",
     chapter: "Chapter 1.2",
-    text: "Which of the following is an accurate statement about ArrayExample's numbers array?",
+    text: "Which of the following is an accurate statement about an array declared as int[] numbers = {10, 20, 30, 40, 50};?",
     options: [
       "Accessing numbers[0] retrieves the first value stored in the array, which is 10",
       "Reassigning a value inside a for-each loop over numbers permanently changes the stored elements",
@@ -283,7 +283,7 @@ const csc302Chapter2Questions: QuestionV2[] = [
     id: "csc302_ch_1_2_023",
     course: "CSC 302",
     chapter: "Chapter 1.2",
-    text: "The numbers array in ArrayExample stores five elements. Which index refers to its last element, the value 50?",
+    text: "An array declared as int[] numbers = {10, 20, 30, 40, 50}; stores five elements. Which index refers to its last element, the value 50?",
     options: ["5", "0", "4", "50"],
     correctAnswer: 2,
     explanation: "The Arrays in Java example stores five elements at indexes 0, 1, 2, 3, and 4, so the last element, 50, is stored at index 4, since array indexing runs from 0 up to the element count minus one.\n\nIndex 5 would be out of bounds for an array with only five elements, since valid indexes stop at 4.\n\nIndex 0 refers to the first element, 10, not the last one.\n\n50 is the value stored at the last index, not the index number itself."
@@ -292,7 +292,7 @@ const csc302Chapter2Questions: QuestionV2[] = [
     id: "csc302_ch_1_2_024",
     course: "CSC 302",
     chapter: "Chapter 1.2",
-    text: "What line does ArrayExample print using the expression \"First element: \" + numbers[0]?",
+    text: "Given the declaration int[] numbers = {10, 20, 30, 40, 50};, what line does System.out.println(\"First element: \" + numbers[0]); print?",
     options: [
       "First element: 50",
       "First element: 0",
@@ -306,7 +306,7 @@ const csc302Chapter2Questions: QuestionV2[] = [
     id: "csc302_ch_1_2_025",
     course: "CSC 302",
     chapter: "Chapter 1.2",
-    text: "What data type are the values stored in the numbers array in ArrayExample?",
+    text: "What data type are the values stored in an array declared as int[] numbers = {10, 20, 30, 40, 50};?",
     options: ["double", "String", "int", "long"],
     correctAnswer: 2,
     explanation: "The Arrays in Java example declares the array as int[] numbers, so every element it stores, including 10, 20, 30, 40, and 50, is an int.\n\ndouble would require the declaration double[] numbers, which is not what the example uses.\n\nString would require quoted text values and a String[] declaration, but the array holds whole numbers without quotes.\n\nlong would require an explicit long[] declaration and typically an L suffix on the literals, neither of which appears here."
@@ -315,7 +315,7 @@ const csc302Chapter2Questions: QuestionV2[] = [
     id: "csc302_ch_1_2_026",
     course: "CSC 302",
     chapter: "Chapter 1.2",
-    text: "After printing the first element directly, what does ArrayExample do next with the numbers array?",
+    text: "A program declares int[] numbers = {10, 20, 30, 40, 50};, prints the first element directly with numbers[0], and then runs for (int num : numbers) { System.out.println(num); }. What does this second step do?",
     options: [
       "It sorts the array before printing it again",
       "It uses a for-each loop to print every element of the array in order",
@@ -329,7 +329,7 @@ const csc302Chapter2Questions: QuestionV2[] = [
     id: "csc302_ch_1_2_027",
     course: "CSC 302",
     chapter: "Chapter 1.2",
-    text: "What does calling greet() print in MethodExample?",
+    text: "A class defines static void greet() { System.out.println(\"Hello!\"); }. What does calling greet() print?",
     options: ["Hello, World!", "Greetings!", "Hello!", "Hi!"],
     correctAnswer: 2,
     explanation: "The Methods and Method Overloading example defines greet() as static void greet() { System.out.println(\"Hello!\"); }, so calling it prints exactly \"Hello!\".\n\n\"Hello, World!\" is not the string literal used in this method's body.\n\n\"Greetings!\" also does not match the literal text passed to println inside greet().\n\n\"Hi!\" is a shorter, different greeting than the one actually written in the source code."
@@ -338,7 +338,7 @@ const csc302Chapter2Questions: QuestionV2[] = [
     id: "csc302_ch_1_2_028",
     course: "CSC 302",
     chapter: "Chapter 1.2",
-    text: "What allows MethodExample to define two different methods both named add?",
+    text: "A class defines both static int add(int a, int b) { return a + b; } and static double add(double a, double b) { return a + b; }. What allows these two different methods to share the name add?",
     options: [
       "Method overriding, since a subclass replaces the parent class's version",
       "Constructor chaining, since one method calls the other internally",
@@ -352,7 +352,7 @@ const csc302Chapter2Questions: QuestionV2[] = [
     id: "csc302_ch_1_2_029",
     course: "CSC 302",
     chapter: "Chapter 1.2",
-    text: "What does MethodExample print for the line calling add(5, 3)?",
+    text: "A class defines static int add(int a, int b) { return a + b; }. What does System.out.println(\"Sum (int): \" + add(5, 3)); print?",
     options: [
       "Sum (int): 15",
       "Sum (int): 53",
@@ -366,7 +366,7 @@ const csc302Chapter2Questions: QuestionV2[] = [
     id: "csc302_ch_1_2_030",
     course: "CSC 302",
     chapter: "Chapter 1.2",
-    text: "In FactorialRecursion, the factorial method returns 1 immediately, without a further recursive call, when n equals 0 or n equals 1.",
+    text: "A recursive method is written as: public static long factorial(int n) { if (n == 0 || n == 1) { return 1; } return n * factorial(n - 1); }. This method returns 1 immediately, without a further recursive call, when n equals 0 or n equals 1.",
     options: ["True", "False", "Maybe", "I don't know"],
     correctAnswer: 0,
     explanation: "The Simple Recursion Example: Factorial code shows the base case as if (n == 0 || n == 1) { return 1; }, which returns immediately for either value without calling factorial again. Only when n is greater than 1 does the method reach the recursive case, return n * factorial(n - 1)."
@@ -375,7 +375,7 @@ const csc302Chapter2Questions: QuestionV2[] = [
     id: "csc302_ch_1_2_031",
     course: "CSC 302",
     chapter: "Chapter 1.2",
-    text: "What does MethodExample print for the line calling add(5.5, 3.2)?",
+    text: "A class defines static double add(double a, double b) { return a + b; }. What does System.out.println(\"Sum (double): \" + add(5.5, 3.2)); print?",
     options: [
       "Sum (double): 8.5",
       "Sum (double): 8.7",
@@ -389,7 +389,7 @@ const csc302Chapter2Questions: QuestionV2[] = [
     id: "csc302_ch_1_2_032",
     course: "CSC 302",
     chapter: "Chapter 1.2",
-    text: "In what order does MethodExample's main method print its three lines of output?",
+    text: "A main method calls greet();, which prints Hello!, then runs System.out.println(\"Sum (int): \" + add(5, 3)); and System.out.println(\"Sum (double): \" + add(5.5, 3.2));, in that source order. In what order does it print its three lines of output?",
     options: [
       "Sum (int): 8, then Sum (double): 8.7, then Hello!",
       "Hello!, then Sum (double): 8.7, then Sum (int): 8",
@@ -403,7 +403,7 @@ const csc302Chapter2Questions: QuestionV2[] = [
     id: "csc302_ch_1_2_033",
     course: "CSC 302",
     chapter: "Chapter 1.2",
-    text: "What is recursion, as demonstrated by the FactorialRecursion, SumRecursion, and MaxInArray programs?",
+    text: "What is recursion, as a programming technique?",
     options: [
       "A technique where a loop repeats a fixed number of times using a counter variable",
       "A technique where one class inherits fields and methods from another class",
@@ -459,7 +459,7 @@ const csc302Chapter2Questions: QuestionV2[] = [
     id: "csc302_ch_1_2_037",
     course: "CSC 302",
     chapter: "Chapter 1.2",
-    text: "What condition triggers the base case in FactorialRecursion's factorial method?",
+    text: "A recursive method is written as: public static long factorial(int n) { if (n == 0 || n == 1) { return 1; } return n * factorial(n - 1); }. What condition triggers its base case?",
     options: [
       "n is equal to 0 only",
       "n is less than or equal to 5",
@@ -473,7 +473,7 @@ const csc302Chapter2Questions: QuestionV2[] = [
     id: "csc302_ch_1_2_038",
     course: "CSC 302",
     chapter: "Chapter 1.2",
-    text: "What does the recursive case in FactorialRecursion return when the base case does not apply?",
+    text: "A recursive method is written as: public static long factorial(int n) { if (n == 0 || n == 1) { return 1; } return n * factorial(n - 1); }. What does its recursive case return when the base case does not apply?",
     options: [
       "n added to the result of factorial(n - 1)",
       "n multiplied by the result of factorial(n + 1)",
@@ -487,7 +487,7 @@ const csc302Chapter2Questions: QuestionV2[] = [
     id: "csc302_ch_1_2_039",
     course: "CSC 302",
     chapter: "Chapter 1.2",
-    text: "FactorialRecursion computes factorial(5) inside main. What value does it print?",
+    text: "A recursive method is written as: public static long factorial(int n) { if (n == 0 || n == 1) { return 1; } return n * factorial(n - 1); }. What value does factorial(5) produce?",
     options: ["100", "24", "15", "120"],
     correctAnswer: 3,
     explanation: "The Simple Recursion Example: Factorial code computes factorial(5) as 5 * 4 * 3 * 2 * 1, which equals 120, matching the program's own printed output, \"Factorial of 5 is: 120\".\n\n100 is not the product of 5 multiplied down to 1.\n\n24 is the value of factorial(4), one step short of the full unwind to factorial(5).\n\n15 is the sum of 5 + 4 + 3 + 2 + 1, not the product that factorial computes."
@@ -519,7 +519,7 @@ const csc302Chapter2Questions: QuestionV2[] = [
     id: "csc302_ch_1_2_042",
     course: "CSC 302",
     chapter: "Chapter 1.2",
-    text: "What is the base case in SumRecursion's sum method?",
+    text: "A recursive method is written as: public static int sum(int n) { if (n == 1) { return 1; } return n + sum(n - 1); }. What is its base case?",
     options: [
       "When n equals 0, the method returns 0",
       "When n equals 10, the method returns 55",
@@ -533,7 +533,7 @@ const csc302Chapter2Questions: QuestionV2[] = [
     id: "csc302_ch_1_2_043",
     course: "CSC 302",
     chapter: "Chapter 1.2",
-    text: "What does the recursive case in SumRecursion return?",
+    text: "A recursive method is written as: public static int sum(int n) { if (n == 1) { return 1; } return n + sum(n - 1); }. What does its recursive case return?",
     options: [
       "n multiplied by the result of sum(n - 1)",
       "n plus the result of sum(n + 1)",
@@ -547,7 +547,7 @@ const csc302Chapter2Questions: QuestionV2[] = [
     id: "csc302_ch_1_2_044",
     course: "CSC 302",
     chapter: "Chapter 1.2",
-    text: "SumRecursion computes sum(10) inside main. What value does it print as the sum of the first 10 numbers?",
+    text: "A recursive method is written as: public static int sum(int n) { if (n == 1) { return 1; } return n + sum(n - 1); }. What value does sum(10) produce as the sum of the first 10 numbers?",
     options: ["45", "100", "50", "55"],
     correctAnswer: 3,
     explanation: "The Recursion Example: Sum of Natural Numbers code computes sum(10) as 10 + 9 + 8 + ... + 1, which equals 55, matching the program's own printed output, \"Sum of first 10 numbers = 55\".\n\n45 is the sum of the first 9 numbers, one short of the full sequence down to 1.\n\n100 does not match the sum of the integers from 1 through 10.\n\n50 is also not the correct total of the first 10 natural numbers."
@@ -556,7 +556,7 @@ const csc302Chapter2Questions: QuestionV2[] = [
     id: "csc302_ch_1_2_045",
     course: "CSC 302",
     chapter: "Chapter 1.2",
-    text: "Which of the following is true about recursive methods, based on how FactorialRecursion, SumRecursion, and MaxInArray are written?",
+    text: "Which of the following is true about recursive methods in general?",
     options: [
       "Recursive solutions run faster than an equivalent loop because they skip repeated condition checks",
       "A method can only call itself recursively if it takes no parameters",
@@ -570,7 +570,7 @@ const csc302Chapter2Questions: QuestionV2[] = [
     id: "csc302_ch_1_2_046",
     course: "CSC 302",
     chapter: "Chapter 1.2",
-    text: "What is the base case in MaxInArray's findMax method?",
+    text: "A recursive method is written as: public static int findMax(int[] arr, int index) { if (index == arr.length - 1) { return arr[index]; } int maxOfRest = findMax(arr, index + 1); return Math.max(arr[index], maxOfRest); }. What is its base case?",
     options: [
       "When index equals 0, the method returns arr[0] without making a recursive call",
       "When index equals arr.length - 1, the method returns arr[index]",
@@ -584,7 +584,7 @@ const csc302Chapter2Questions: QuestionV2[] = [
     id: "csc302_ch_1_2_047",
     course: "CSC 302",
     chapter: "Chapter 1.2",
-    text: "MaxInArray calls findMax on the array {12, 45, 7, 89, 23, 56} starting at index 0. What value does it print as the maximum number?",
+    text: "A recursive method is written as: public static int findMax(int[] arr, int index) { if (index == arr.length - 1) { return arr[index]; } int maxOfRest = findMax(arr, index + 1); return Math.max(arr[index], maxOfRest); }. Called on the array {12, 45, 7, 89, 23, 56} starting at index 0, what value does it produce as the maximum number?",
     options: ["56", "45", "89", "12"],
     correctAnswer: 2,
     explanation: "The Recursion with Array - Find Maximum code recursively compares each element against the largest of the rest using Math.max, and across {12, 45, 7, 89, 23, 56}, 89 is greater than every other element, so findMax(numbers, 0) returns 89, matching the program's own printed output.\n\n56 is the last element in the array and the base case's return value, but comparisons at earlier indexes replace it with the larger value 89 as the recursion unwinds.\n\n45 is larger than some elements but smaller than 89, so it is not the overall maximum.\n\n12 is the first element and the smallest of the group, not the maximum."

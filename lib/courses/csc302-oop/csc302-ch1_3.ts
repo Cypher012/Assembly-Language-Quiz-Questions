@@ -61,7 +61,7 @@ const csc302Chapter3Questions: QuestionV2[] = [
     id: "csc302_ch_1_3_005",
     course: "CSC 302",
     chapter: "Chapter 1.3",
-    text: "When the exception handling program runs and the division 10 / 0 executes, what does the program print, in order?",
+    text: "A try block executes int result = 10 / 0;, a catch block for ArithmeticException prints \"Error: Cannot divide by zero!\", and a finally block prints \"This block always executes.\". When the program runs, what does it print, in order?",
     options: [
       "\"This block always executes.\" followed by \"Error: Cannot divide by zero!\"",
       "\"Error: Cannot divide by zero!\" followed by \"This block always executes.\"",
@@ -140,7 +140,7 @@ const csc302Chapter3Questions: QuestionV2[] = [
     id: "csc302_ch_1_3_011",
     course: "CSC 302",
     chapter: "Chapter 1.3",
-    text: "Why does the input example call scanner.close(); at the end of the program?",
+    text: "A program runs: Scanner scanner = new Scanner(System.in); System.out.print(\"Enter your name: \"); String name = scanner.nextLine(); System.out.print(\"Enter your age: \"); int age = scanner.nextInt(); System.out.println(\"Hello \" + name + \"! You are \" + age + \" years old.\"); scanner.close(); Why does it call scanner.close(); at the end?",
     options: [
       "To print the final greeting message to the console",
       "To release the resources held by the Scanner object once input reading is finished",
@@ -154,7 +154,7 @@ const csc302Chapter3Questions: QuestionV2[] = [
     id: "csc302_ch_1_3_012",
     course: "CSC 302",
     chapter: "Chapter 1.3",
-    text: "In the input example, after the user enters a name and an age, what does the program print?",
+    text: "A program runs: Scanner scanner = new Scanner(System.in); System.out.print(\"Enter your name: \"); String name = scanner.nextLine(); System.out.print(\"Enter your age: \"); int age = scanner.nextInt(); System.out.println(\"Hello \" + name + \"! You are \" + age + \" years old.\"); scanner.close(); After the user enters a name and an age, what does the program print?",
     options: [
       "Only the entered name, without the age",
       "A greeting combining the entered name and age into one sentence",
@@ -326,7 +326,7 @@ const csc302Chapter3Questions: QuestionV2[] = [
     id: "csc302_ch_1_3_025",
     course: "CSC 302",
     chapter: "Chapter 1.3",
-    text: "Among print combined with println, println with string concatenation, and printf, which approach does the output comparison program identify as cleanest for formatting output?",
+    text: "Three ways of printing a student's name and score are compared: print combined with println, println with string concatenation, and printf with format specifiers. Which approach is identified as the cleanest for formatting output?",
     options: [
       "print combined with println, since it prints values in separate pieces on one line",
       "println with string concatenation, since it joins text and values using the plus operator",
@@ -568,7 +568,7 @@ const csc302Chapter3Questions: QuestionV2[] = [
     id: "csc302_ch_1_3_043",
     course: "CSC 302",
     chapter: "Chapter 1.3",
-    text: "In the lambda with functional interface example, what characterizes the Greeting interface marked with @FunctionalInterface?",
+    text: "An interface is declared as: @FunctionalInterface interface Greeting { void sayHello(String name); }, and it is then implemented by the lambda (name) -> System.out.println(\"Hello \" + name + \"!\"). What characterizes this Greeting interface?",
     options: [
       "It declares two abstract methods that the lambda must implement together",
       "It declares exactly one abstract method, sayHello(String name), which the lambda implements",

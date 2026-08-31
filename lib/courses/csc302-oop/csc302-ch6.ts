@@ -168,7 +168,7 @@ const csc302Chapter6Questions: QuestionV2[] = [
     id: "csc302_ch6_013",
     course: "CSC 302",
     chapter: "Chapter 6",
-    text: "In the table mapping real-world concepts to OOP constructs, what system role is assigned to a Physical Asset represented as an Object Instance?",
+    text: "When a real-world Physical Asset is modelled in OOP as an Object Instance, what system role does it play?",
     options: [
       "Specifies template and constraints",
       "Holds state and executes actions",
@@ -653,7 +653,7 @@ const csc302Chapter6Questions: QuestionV2[] = [
     id: "csc302_ch6_049",
     course: "CSC 302",
     chapter: "Chapter 6",
-    text: "In the table summarising the structural roles of the four core pillars, which key mechanism is paired with Inheritance?",
+    text: "Among the four core pillars of OOP, which key mechanism is paired with Inheritance?",
     options: [
       "Method overriding and late binding",
       "Access modifiers (private, etc.)",

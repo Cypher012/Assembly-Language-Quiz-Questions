@@ -396,7 +396,7 @@ const csc302Chapter4Questions: QuestionV2[] = [
     id: "csc302_ch_1_4_030",
     course: "CSC 302",
     chapter: "Chapter 1.4",
-    text: "In IoExample.java, try (FileWriter writer = new FileWriter(\"data.txt\")) { writer.write(...); } is used with no explicit call to writer.close(). Why does this still close the file safely?",
+    text: "A program writes to a file using try (FileWriter writer = new FileWriter(\"data.txt\")) { writer.write(...); }, with no explicit call to writer.close(). Why does this still close the file safely?",
     options: [
       "FileWriter objects in java.io do not need to be closed at all because the garbage collector releases file handles immediately after the last write statement runs",
       "The catch block that follows is responsible for calling close() automatically behind the scenes before the program continues",
@@ -410,7 +410,7 @@ const csc302Chapter4Questions: QuestionV2[] = [
     id: "csc302_ch_1_4_031",
     course: "CSC 302",
     chapter: "Chapter 1.4",
-    text: "In IoExample.java, after writing to data.txt, the code reads it back with BufferedReader br = new BufferedReader(new FileReader(\"data.txt\")) inside a while loop calling br.readLine(). What does this loop do?",
+    text: "After writing to data.txt, a program reads it back with BufferedReader br = new BufferedReader(new FileReader(\"data.txt\")) inside a while loop calling br.readLine(). What does this loop do?",
     options: [
       "It reads the entire file into a single String all at once and then splits that string into an array of lines before printing each element",
       "It counts the total number of lines in the file without printing any of their content",
@@ -424,7 +424,7 @@ const csc302Chapter4Questions: QuestionV2[] = [
     id: "csc302_ch_1_4_032",
     course: "CSC 302",
     chapter: "Chapter 1.4",
-    text: "Unlike IoExample.java, WriteFile.java opens its FileWriter with a plain FileWriter writer = new FileWriter(\"output.txt\"); statement rather than try-with-resources. What must the code do as a result?",
+    text: "A program opens its writer with a plain FileWriter writer = new FileWriter(\"output.txt\"); statement rather than with try-with-resources. What must the code do as a result?",
     options: [
       "It must call writer.close() explicitly after the write calls, and it does so inside the try block before the catch block handles any IOException",
       "Nothing extra, since java.io automatically closes every FileWriter once the program reaches the end of main",
@@ -438,7 +438,7 @@ const csc302Chapter4Questions: QuestionV2[] = [
     id: "csc302_ch_1_4_033",
     course: "CSC 302",
     chapter: "Chapter 1.4",
-    text: "What classes does ReadFileScanner.java import and use together to read output.txt?",
+    text: "Which combination of classes is used to read a text file line by line while handling the case where the file does not exist?",
     options: [
       "BufferedReader wrapped around a FileReader, combined with a try-with-resources block that catches only IOException and never FileNotFoundException",
       "File to represent the path, and Scanner to read it, catching FileNotFoundException if the file is missing",
@@ -452,7 +452,7 @@ const csc302Chapter4Questions: QuestionV2[] = [
     id: "csc302_ch_1_4_034",
     course: "CSC 302",
     chapter: "Chapter 1.4",
-    text: "In ReadFileScanner.java, what does the loop while (scanner.hasNextLine()) { String line = scanner.nextLine(); ... } do?",
+    text: "A program reads a file using the loop while (scanner.hasNextLine()) { String line = scanner.nextLine(); System.out.println(line); }. What does this loop do?",
     options: [
       "It checks whether the file itself still exists on disk before reading a single fixed line from the very beginning of the file each time",
       "It counts how many total lines and total characters the file contains without printing any of the actual text",
@@ -466,21 +466,21 @@ const csc302Chapter4Questions: QuestionV2[] = [
     id: "csc302_ch_1_4_035",
     course: "CSC 302",
     chapter: "Chapter 1.4",
-    text: "Which of the following is true about the ReadBuffered.java and AppendFile.java examples?",
+    text: "Which of the following is true about reading and appending to text files in Java?",
     options: [
-      "ReadBuffered.java opens its FileReader without try-with-resources and requires an explicit call to br.close()",
-      "AppendFile.java passes true as a second argument to FileWriter so new text is added after the existing content rather than overwriting it",
+      "Reading a file with a BufferedReader always requires an explicit br.close() call, because try-with-resources cannot be used with readers",
+      "Passing true as a second argument to FileWriter adds new text after the existing content rather than overwriting it",
       "All of these",
       "None of these"
     ],
     correctAnswer: 1,
-    explanation: "ReadBuffered.java actually opens its BufferedReader and FileReader inside a try-with-resources statement, so it does not require an explicit call to br.close(), which contradicts the first statement.\n\nThe Appending to an Existing File example shows FileWriter(\"output.txt\", true), where the true flag adds new text after the existing content instead of overwriting it, confirming the second statement.\n\nOnly the statement about AppendFile.java holds, so the correct choice is that single option rather than both or neither."
+    explanation: "A BufferedReader can be declared inside a try-with-resources statement, which closes it automatically, so an explicit br.close() call is not always required, and the first statement is false.\n\nOpening a writer as FileWriter(\"output.txt\", true) uses the true flag to add new text after the existing content instead of overwriting it, so the second statement is true.\n\nSince only the appending statement holds, the correct choice is that single option rather than both or neither."
   },
   {
     id: "csc302_ch_1_4_036",
     course: "CSC 302",
     chapter: "Chapter 1.4",
-    text: "What resource-management pattern does ReadBuffered.java use to read output.txt with a BufferedReader?",
+    text: "A program reads a text file by declaring its BufferedReader inside the parentheses of the try statement itself, so no explicit close() call appears anywhere. What resource-management pattern is this?",
     options: [
       "A manual try block followed by an explicit call to br.close() inside a finally block",
       "A static utility method that closes the reader automatically after each single readLine() call",
@@ -494,7 +494,7 @@ const csc302Chapter4Questions: QuestionV2[] = [
     id: "csc302_ch_1_4_037",
     course: "CSC 302",
     chapter: "Chapter 1.4",
-    text: "In AppendFile.java, what does passing true as the second argument to new FileWriter(\"output.txt\", true) accomplish?",
+    text: "What does passing true as the second argument to new FileWriter(\"output.txt\", true) accomplish?",
     options: [
       "It tells FileWriter to append new content to the end of the existing file instead of overwriting and erasing what was already there",
       "It tells FileWriter to overwrite the file's existing content from the very beginning",
@@ -587,7 +587,7 @@ const csc302Chapter4Questions: QuestionV2[] = [
     id: "csc302_ch_1_4_044",
     course: "CSC 302",
     chapter: "Chapter 1.4",
-    text: "In NioExample.java, what does Path path = Paths.get(\"data.txt\"); do?",
+    text: "In a program using the java.nio.file package, what does Path path = Paths.get(\"data.txt\"); do?",
     options: [
       "It immediately opens data.txt for reading and loads its entire contents into memory as a single large String before any other statement runs",
       "It creates a Path object representing the location \"data.txt\", without opening or reading the file yet",
@@ -601,7 +601,7 @@ const csc302Chapter4Questions: QuestionV2[] = [
     id: "csc302_ch_1_4_045",
     course: "CSC 302",
     chapter: "Chapter 1.4",
-    text: "In NioExample.java, what does Files.writeString(path, \"Welcome to CSC302!\\nThis uses java.nio.file\"); do?",
+    text: "In a program using the java.nio.file package, what does Files.writeString(path, \"Welcome to CSC302!\\nThis uses java.nio.file\"); do?",
     options: [
       "It opens the file, wraps it in a BufferedWriter, writes the text one character at a time, and then manually flushes and closes every stream involved",
       "It reads the current contents of the file located at path and returns them as a single String",
@@ -615,7 +615,7 @@ const csc302Chapter4Questions: QuestionV2[] = [
     id: "csc302_ch_1_4_046",
     course: "CSC 302",
     chapter: "Chapter 1.4",
-    text: "In NioExample.java, what does List<String> lines = Files.readAllLines(path); do?",
+    text: "In a program using the java.nio.file package, what does List<String> lines = Files.readAllLines(path); do?",
     options: [
       "It reads the entire file at path and returns every line as a separate element inside a List of String values",
       "It reads only the first line of the file and discards the rest",
@@ -643,7 +643,7 @@ const csc302Chapter4Questions: QuestionV2[] = [
     id: "csc302_ch_1_4_048",
     course: "CSC 302",
     chapter: "Chapter 1.4",
-    text: "In NioExample.java, what does System.out.println(\"File exists: \" + Files.exists(path)); check?",
+    text: "In a program using the java.nio.file package, what does System.out.println(\"File exists: \" + Files.exists(path)); check?",
     options: [
       "Whether the file at the given path is currently open for writing by another running program on the same machine",
       "Whether a file or directory currently exists at the given path, returning a boolean result",
