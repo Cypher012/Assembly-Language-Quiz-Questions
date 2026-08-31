@@ -8,6 +8,7 @@ import { csc312SystemAnalysisCourse } from "./courses/csc312-system-analysis";
 import { mth302DifferentialEquationsCourse } from "./courses/mth301-differential-equation";
 import { csc308NumericalComputationIICourse } from "./courses/csc308-numerical-computation-II";
 import { aee302StatisticsCourse } from "./courses/aee302-eng-stats";
+import { cpe316Course } from "./courses/cpe316-intro-ai";
 
 export interface Chapter {
   id: string;
@@ -36,6 +37,7 @@ export const courses: Course[] = [
   csc308NumericalComputationIICourse,
   aee302StatisticsCourse,
   csc302JavaProgrammingCourse,
+  cpe316Course,
 ];
 
 // Default enabled state for courses
