@@ -24,11 +24,13 @@ interface ChapterSelectProps {
     chapter: string | null,
     shuffle: boolean,
     durationMinutes: number | null,
+    studyMode: boolean,
   ) => void;
   onSelectCustomChapters: (
     chapters: string[],
     shuffle: boolean,
     durationMinutes: number | null,
+    studyMode: boolean,
   ) => void;
   onStartExam: (config: ExamConfig) => void;
   onBackToCourses: () => void;
@@ -89,14 +91,23 @@ export default function ChapterSelect({
     setPendingSelection(selection);
   };
 
-  const handleStart = (shuffle: boolean, durationMinutes: number | null) => {
+  const handleStart = (
+    shuffle: boolean,
+    durationMinutes: number | null,
+    studyMode: boolean,
+  ) => {
     const selection = pendingSelection;
     setPendingSelection(null);
     if (!selection) return;
     if (selection.kind === "chapter") {
-      onSelectChapter(selection.chapterId, shuffle, durationMinutes);
+      onSelectChapter(selection.chapterId, shuffle, durationMinutes, studyMode);
     } else {
-      onSelectCustomChapters(selection.chapters, shuffle, durationMinutes);
+      onSelectCustomChapters(
+        selection.chapters,
+        shuffle,
+        durationMinutes,
+        studyMode,
+      );
     }
   };
 

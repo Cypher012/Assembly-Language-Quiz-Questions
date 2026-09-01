@@ -33,6 +33,9 @@ interface QuestionNavigatorProps {
   questionIds: string[];
   onNavigate: (index: number) => void;
   hideCorrectness?: boolean; // Hide correctness info in exam mode
+  // Study mode has no answers to gate on: every question is reachable and
+  // there is no running score to report.
+  isStudyMode?: boolean;
 }
 
 export default function QuestionNavigator({
@@ -42,6 +45,7 @@ export default function QuestionNavigator({
   questionIds,
   onNavigate,
   hideCorrectness = false,
+  isStudyMode = false,
 }: QuestionNavigatorProps) {
   const [isExpanded, setIsExpanded] = useState(false);
 
@@ -95,26 +99,30 @@ export default function QuestionNavigator({
                 </span>
                 /{totalQuestions}
               </span>
-              <span className="text-board-line hidden sm:inline">|</span>
-              <span className="text-board-ink-muted hidden sm:inline whitespace-nowrap">
-                Answered:{" "}
-                <span className="text-board-ink font-bold">
-                  {answeredCount}
-                </span>
-              </span>
-              <span className="text-chalk-sage font-bold whitespace-nowrap">
-                {correctCount} ✓
-              </span>
-              <span className="text-chalk-coral font-bold whitespace-nowrap">
-                {answeredCount - correctCount} ✗
-              </span>
-              {passPercentage !== null && (
-                <span
-                  className="font-bold whitespace-nowrap"
-                  style={{ color: getPercentageColor(passPercentage) }}
-                >
-                  {passPercentage}%
-                </span>
+              {!isStudyMode && (
+                <>
+                  <span className="text-board-line hidden sm:inline">|</span>
+                  <span className="text-board-ink-muted hidden sm:inline whitespace-nowrap">
+                    Answered:{" "}
+                    <span className="text-board-ink font-bold">
+                      {answeredCount}
+                    </span>
+                  </span>
+                  <span className="text-chalk-sage font-bold whitespace-nowrap">
+                    {correctCount} ✓
+                  </span>
+                  <span className="text-chalk-coral font-bold whitespace-nowrap">
+                    {answeredCount - correctCount} ✗
+                  </span>
+                  {passPercentage !== null && (
+                    <span
+                      className="font-bold whitespace-nowrap"
+                      style={{ color: getPercentageColor(passPercentage) }}
+                    >
+                      {passPercentage}%
+                    </span>
+                  )}
+                </>
               )}
             </div>
           )}
@@ -162,6 +170,7 @@ export default function QuestionNavigator({
               <div className="flex flex-wrap justify-center gap-1.5">
                 {Array.from({ length: totalQuestions }, (_, index) => {
                   const answered = isAnswered(index);
+                  const canNavigate = isStudyMode || answered;
                   const status = getAnswerStatus(index);
                   const isCurrent = index === currentIndex;
 
@@ -171,7 +180,7 @@ export default function QuestionNavigator({
                       onClick={(e) => {
                         e.preventDefault();
                         e.stopPropagation();
-                        if (answered) {
+                        if (canNavigate) {
                           onNavigate(index);
                           setIsExpanded(false);
                         }
@@ -179,7 +188,7 @@ export default function QuestionNavigator({
                       onTouchStart={(e) => {
                         e.stopPropagation();
                       }}
-                      disabled={!answered}
+                      disabled={!canNavigate}
                       className={cn(
                         "relative w-8 h-8 sm:w-7 sm:h-7 rounded-sm text-xs font-bold transition-all duration-200",
                         "flex items-center justify-center",
@@ -198,7 +207,11 @@ export default function QuestionNavigator({
                           hideCorrectness &&
                           "bg-board-2 text-board-ink hover:bg-board-2/80 cursor-pointer",
                         !answered &&
+                          !canNavigate &&
                           "bg-board-2 text-board-ink-muted cursor-not-allowed",
+                        !answered &&
+                          canNavigate &&
+                          "bg-board-2 text-board-ink hover:bg-board-2/80 cursor-pointer",
                         isCurrent && !answered && "bg-chalk-yellow/20 text-chalk-yellow",
                       )}
                       style={{ touchAction: "manipulation" }}

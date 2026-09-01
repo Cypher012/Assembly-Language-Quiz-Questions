@@ -87,6 +87,9 @@ export default function QuizContainer() {
   const [userAnswers, setUserAnswers] = useState<UserAnswer[]>([]);
   const [score, setScore] = useState(0);
 
+  // Study mode -- answers are pre-revealed and nothing is scored.
+  const [isStudyMode, setIsStudyMode] = useState(false);
+
   // Exam mode state
   const [isExamMode, setIsExamMode] = useState(false);
   const [examEndTime, setExamEndTime] = useState<number | null>(null);
@@ -161,11 +164,13 @@ export default function QuizContainer() {
     chapter: string | null,
     shuffle: boolean,
     durationMinutes: number | null,
+    studyMode: boolean,
   ) => {
     if (!selectedCourse) return;
 
     setSelectedChapter(chapter);
     setShufflePreference(shuffle);
+    setIsStudyMode(studyMode);
     const courseQuestions = selectedCourse.getQuestions();
     const filtered = filterByChapter(courseQuestions, chapter);
     const processedQuestions = processQuestions(filtered, shuffle);
@@ -179,12 +184,14 @@ export default function QuizContainer() {
     chapters: string[],
     shuffle: boolean,
     durationMinutes: number | null,
+    studyMode: boolean,
   ) => {
     if (!selectedCourse) return;
 
     setSelectedChapter(null);
     setSelectedChapters(chapters);
     setShufflePreference(shuffle);
+    setIsStudyMode(studyMode);
     const courseQuestions = selectedCourse.getQuestions();
     const filtered = filterByChapters(courseQuestions, chapters);
     const processedQuestions = processQuestions(filtered, shuffle);
@@ -215,6 +222,7 @@ export default function QuizContainer() {
       setState("idle");
       setExamEndTime(endTimestamp);
       setIsExamMode(true);
+      setIsStudyMode(false);
       setTimerDurationMinutes(config.durationMinutes);
       setIsReady(true);
 
@@ -305,7 +313,7 @@ export default function QuizContainer() {
   const currentQuestion = questions[currentIndex];
   const isLastQuestion = currentIndex === questions.length - 1;
   const isAnswered = state !== "idle";
-  const isRevealed = state === "revealed" || state === "complete";
+  const isRevealed = state === "revealed" || state === "complete" || isStudyMode;
 
   // Human-readable label for which chapter(s) this run covers, shown on the
   // results screen. selectedChapters (multi-chapter custom quiz or practice
@@ -332,6 +340,8 @@ export default function QuizContainer() {
   })();
 
   const handleSelectOption = (optionId: string) => {
+    // Study mode is read-only -- the answer is already shown.
+    if (isStudyMode) return;
     // In exam mode, allow changing answer even if already answered
     if (isAnswered && !isExamMode) return;
 
@@ -390,8 +400,18 @@ export default function QuizContainer() {
     setState("revealed");
   };
 
+  const handlePreviousQuestion = () => {
+    if (currentIndex === 0) return;
+    handleNavigateToQuestion(currentIndex - 1);
+  };
+
   const handleNextQuestion = () => {
     if (isLastQuestion) {
+      if (isStudyMode) {
+        // Nothing was answered, so a scored results page would be nonsense.
+        handleBackToChapters();
+        return;
+      }
       clearExamState();
       setState("complete");
     } else {
@@ -427,6 +447,7 @@ export default function QuizContainer() {
 
     // Reuses the shuffle preference chosen when this topic was started
     const processedQuestions = processQuestions(filtered, shufflePreference);
+    // isStudyMode intentionally persists -- restarting a study run keeps it
     setQuestions(processedQuestions);
     // A timed run gets a fresh full-length timer, not silently untimed
     applyTimerChoice(timerDurationMinutes, processedQuestions, selectedCourse.id);
@@ -440,6 +461,7 @@ export default function QuizContainer() {
   const handleBackToChapters = () => {
     clearExamState();
     setIsExamMode(false);
+    setIsStudyMode(false);
     setExamEndTime(null);
     setSelectedChapter(undefined);
     setSelectedChapters(null);
@@ -455,6 +477,7 @@ export default function QuizContainer() {
   const handleBackToCourses = () => {
     clearExamState();
     setIsExamMode(false);
+    setIsStudyMode(false);
     setExamEndTime(null);
     setSelectedCourse(null);
     setSelectedChapter(undefined);
@@ -469,6 +492,15 @@ export default function QuizContainer() {
   };
 
   const handleNavigateToQuestion = (index: number) => {
+    // Study mode has no answers to gate on -- every question is reachable.
+    if (isStudyMode) {
+      if (index < 0 || index >= questions.length) return;
+      setCurrentIndex(index);
+      setSelectedOption(null);
+      setState("idle");
+      return;
+    }
+
     // Only allow navigation to answered questions
     const questionId = questions[index]?.id;
     const previousAnswer = userAnswers.find((a) => a.questionId === questionId);
@@ -631,6 +663,7 @@ export default function QuizContainer() {
           showExitButton={true}
           onShowShortcuts={() => setIsShortcutsModalOpen(true)}
           onShowCalculator={() => setIsCalculatorOpen(true)}
+          isStudyMode={isStudyMode}
         />
 
         <QuestionCard
@@ -639,10 +672,13 @@ export default function QuizContainer() {
           isRevealed={isRevealed}
           isAnswered={isAnswered}
           isExamMode={isExamMode}
+          isStudyMode={isStudyMode}
           onSelectOption={handleSelectOption}
           onConfirmAnswer={handleConfirmAnswer}
           onNextQuestion={handleNextQuestion}
+          onPreviousQuestion={handlePreviousQuestion}
           isLastQuestion={isLastQuestion}
+          isFirstQuestion={currentIndex === 0}
         />
       </div>
 
@@ -653,6 +689,7 @@ export default function QuizContainer() {
         questionIds={questions.map((q) => q.id)}
         onNavigate={handleNavigateToQuestion}
         hideCorrectness={isExamMode}
+        isStudyMode={isStudyMode}
       />
 
       <KeyboardShortcutsModal

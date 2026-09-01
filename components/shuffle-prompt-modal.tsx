@@ -18,7 +18,11 @@ const FOCUS_RING =
 interface ShufflePromptModalProps {
   open: boolean;
   onOpenChange: (open: boolean) => void;
-  onStart: (shuffle: boolean, durationMinutes: number | null) => void;
+  onStart: (
+    shuffle: boolean,
+    durationMinutes: number | null,
+    studyMode: boolean,
+  ) => void;
 }
 
 export default function ShufflePromptModal({
@@ -28,17 +32,20 @@ export default function ShufflePromptModal({
 }: ShufflePromptModalProps) {
   const [shuffle, setShuffle] = useState(true);
   const [durationMinutes, setDurationMinutes] = useState<number | null>(null);
+  const [studyMode, setStudyMode] = useState(false);
 
   // Don't carry the previous quiz's choices into a fresh prompt.
   useEffect(() => {
     if (open) {
       setShuffle(true);
       setDurationMinutes(null);
+      setStudyMode(false);
     }
   }, [open]);
 
   const handleStart = () => {
-    onStart(shuffle, durationMinutes);
+    // Study mode is a read-through, so a countdown would be meaningless.
+    onStart(shuffle, studyMode ? null : durationMinutes, studyMode);
   };
 
   return (
@@ -50,8 +57,8 @@ export default function ShufflePromptModal({
             Set Up Your Quiz
           </DialogTitle>
           <DialogDescription className="text-board-ink-muted text-sm leading-relaxed">
-            Answer options are always shuffled. Choose the question order and
-            whether to run against a clock.
+            Answer options are always shuffled. Choose the question order, how
+            you want to work through them, and whether to run against a clock.
           </DialogDescription>
         </DialogHeader>
 
@@ -90,11 +97,48 @@ export default function ShufflePromptModal({
             </div>
           </div>
 
-          {/* Step 2 -- Optional timer */}
+          {/* Step 2 -- Quiz vs. study (answers pre-revealed) */}
           <div>
             <div className="flex items-center gap-2 mb-3">
               <span className="w-5 h-5 rounded-full bg-chalk-yellow text-chalk-yellow-ink text-xs font-bold flex items-center justify-center">
                 2
+              </span>
+              <p className="text-sm font-bold text-board-ink">Mode</p>
+            </div>
+            <div className="flex gap-2">
+              <button
+                onClick={() => setStudyMode(false)}
+                className={`flex-1 px-4 py-2 rounded-md text-sm font-bold transition-all duration-200 border ${FOCUS_RING} ${
+                  !studyMode
+                    ? "bg-chalk-yellow border-chalk-yellow text-chalk-yellow-ink"
+                    : "bg-board-2 border-board-line text-board-ink-muted hover:border-board-ink-muted hover:text-board-ink"
+                }`}
+              >
+                Quiz me
+              </button>
+              <button
+                onClick={() => setStudyMode(true)}
+                className={`flex-1 px-4 py-2 rounded-md text-sm font-bold transition-all duration-200 border ${FOCUS_RING} ${
+                  studyMode
+                    ? "bg-chalk-yellow border-chalk-yellow text-chalk-yellow-ink"
+                    : "bg-board-2 border-board-line text-board-ink-muted hover:border-board-ink-muted hover:text-board-ink"
+                }`}
+              >
+                Show answers
+              </button>
+            </div>
+            <p className="text-xs text-board-ink-muted mt-2 leading-relaxed">
+              {studyMode
+                ? "Correct answers and explanations are shown up front - read through without answering. Nothing is scored."
+                : "Pick an answer on each question and get marked as you go."}
+            </p>
+          </div>
+
+          {/* Step 3 -- Optional timer (pointless while just reading answers) */}
+          <div className={studyMode ? "hidden" : undefined}>
+            <div className="flex items-center gap-2 mb-3">
+              <span className="w-5 h-5 rounded-full bg-chalk-yellow text-chalk-yellow-ink text-xs font-bold flex items-center justify-center">
+                3
               </span>
               <p className="text-sm font-bold text-board-ink">Timer</p>
             </div>
@@ -129,7 +173,7 @@ export default function ShufflePromptModal({
             onClick={handleStart}
             className="w-full h-auto min-h-11 py-2 text-sm font-bold rounded-md"
           >
-            Start Quiz
+            {studyMode ? "Start Studying" : "Start Quiz"}
           </Button>
         </div>
       </DialogContent>

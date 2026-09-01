@@ -35,6 +35,7 @@ interface ProgressHeaderProps {
   showExitButton?: boolean;
   onShowShortcuts?: () => void;
   onShowCalculator?: () => void;
+  isStudyMode?: boolean;
 }
 
 export default function ProgressHeader({
@@ -47,6 +48,7 @@ export default function ProgressHeader({
   showExitButton,
   onShowShortcuts,
   onShowCalculator,
+  isStudyMode = false,
 }: ProgressHeaderProps) {
   const progress = (current / total) * 100;
   const [secondsLeft, setSecondsLeft] = useState<number>(() => {
@@ -149,6 +151,15 @@ export default function ProgressHeader({
           )}
           {examEndTime ? (
             <ExamTimer secondsLeft={secondsLeft} />
+          ) : isStudyMode ? (
+            <div className="text-right board-surface rounded-md p-3 sm:p-4 border-2 border-board-line">
+              <p className="text-[10px] uppercase tracking-wide text-board-ink-muted mb-0.5">
+                Mode
+              </p>
+              <p className="text-lg sm:text-xl font-bold text-chalk-yellow">
+                Study
+              </p>
+            </div>
           ) : (
             <div className="text-right board-surface rounded-md p-3 sm:p-4 border-2 border-board-line">
               <p className="text-[10px] uppercase tracking-wide text-board-ink-muted mb-0.5">

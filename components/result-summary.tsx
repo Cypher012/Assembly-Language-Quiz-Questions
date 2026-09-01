@@ -13,6 +13,11 @@ import rehypeKatex from "rehype-katex";
 const FOCUS_RING =
   "outline-none focus-visible:ring-[3px] focus-visible:ring-chalk-yellow/70 focus-visible:ring-offset-2 focus-visible:ring-offset-paper";
 
+const FOCUS_RING_BOARD =
+  "outline-none focus-visible:ring-[3px] focus-visible:ring-chalk-yellow/70 focus-visible:ring-offset-2 focus-visible:ring-offset-board";
+
+type ReviewFilter = "wrong" | "correct" | "all";
+
 interface UserAnswer {
   questionId: string;
   selectedOptionId: string;
@@ -47,6 +52,12 @@ export default function ResultSummary({
   onBackToCourses,
 }: ResultSummaryProps) {
   const [expandedId, setExpandedId] = useState<string | null>(null);
+  const wrongCount = userAnswers.filter((a) => !a.isCorrect).length;
+  // Default to the mistakes -- that is what a review is actually for, and it
+  // avoids scrolling a long list to find them.
+  const [reviewFilter, setReviewFilter] = useState<ReviewFilter>(
+    wrongCount > 0 ? "wrong" : "all",
+  );
   const percentage = total > 0 ? Math.round((score / total) * 100) : 0;
   const passed = percentage >= 70;
 
@@ -58,6 +69,22 @@ export default function ResultSummary({
     if (percentage >= 60) return "Not Bad!";
     return "Keep Practicing!";
   };
+
+  // Question numbers stay tied to the original run order so they still match
+  // the quiz even when the list is filtered down.
+  const numberedAnswers = userAnswers.map((answer, index) => ({
+    answer,
+    number: index + 1,
+  }));
+  const visibleAnswers = numberedAnswers.filter(({ answer }) =>
+    reviewFilter === "all" ? true : reviewFilter === "wrong" ? !answer.isCorrect : answer.isCorrect,
+  );
+
+  const reviewTabs: { id: ReviewFilter; label: string; count: number }[] = [
+    { id: "wrong", label: "Wrong", count: wrongCount },
+    { id: "correct", label: "Correct", count: userAnswers.length - wrongCount },
+    { id: "all", label: "All", count: userAnswers.length },
+  ];
 
   return (
     <div className="min-h-screen board-surface p-4 sm:p-6 lg:p-8">
@@ -157,11 +184,44 @@ export default function ResultSummary({
 
         {/* Review Section */}
         <div className="space-y-4">
-          <h2 className="font-display text-2xl text-board-ink chalk-underline inline-block mb-4">
-            Review Your Answers
-          </h2>
+          <div className="flex flex-wrap items-center justify-between gap-3 mb-4">
+            <h2 className="font-display text-2xl text-board-ink chalk-underline inline-block">
+              Review Your Answers
+            </h2>
+            <div className="flex gap-2">
+              {reviewTabs.map((tab) => (
+                <button
+                  key={tab.id}
+                  onClick={() => {
+                    setReviewFilter(tab.id);
+                    setExpandedId(null);
+                  }}
+                  className={cn(
+                    "px-3 py-1.5 rounded-md text-xs font-bold border transition-all duration-200",
+                    FOCUS_RING_BOARD,
+                    reviewFilter === tab.id
+                      ? tab.id === "wrong"
+                        ? "bg-chalk-coral border-chalk-coral text-white"
+                        : tab.id === "correct"
+                          ? "bg-chalk-sage border-chalk-sage text-white"
+                          : "bg-chalk-yellow border-chalk-yellow text-chalk-yellow-ink"
+                      : "bg-board-2 border-board-line text-board-ink-muted hover:text-board-ink hover:border-board-ink-muted",
+                  )}
+                >
+                  {tab.label} ({tab.count})
+                </button>
+              ))}
+            </div>
+          </div>
 
-          {userAnswers.map((answer, index) => {
+          {visibleAnswers.length === 0 ? (
+            <p className="text-board-ink-muted text-sm py-8 text-center">
+              {reviewFilter === "wrong"
+                ? "Nothing wrong here - you got every question right."
+                : "You did not get any question right this run."}
+            </p>
+          ) : (
+            visibleAnswers.map(({ answer, number }) => {
             const question = questions.find((q) => q.id === answer.questionId);
             if (!question) return null;
 
@@ -218,7 +278,7 @@ export default function ResultSummary({
                     <div className="flex-1">
                       <div className="flex items-center gap-2 mb-2">
                         <span className="text-sm font-bold text-rule-red">
-                          Q{index + 1}
+                          Q{number}
                         </span>
                         <span
                           className={cn(
@@ -307,7 +367,8 @@ export default function ResultSummary({
                 )}
               </div>
             );
-          })}
+            })
+          )}
         </div>
       </div>
     </div>

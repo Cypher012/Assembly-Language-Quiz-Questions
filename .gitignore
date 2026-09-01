@@ -41,3 +41,5 @@ lib/courses/csc312-system-analysis/fixed_questions.py
 lib/courses/csc312-system-analysis/lecture-3-fixed_new.ts
 .impeccable/
 d.md
+.playwright-mcp/
+setup-modal.png

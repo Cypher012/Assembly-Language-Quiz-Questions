@@ -17,10 +17,13 @@ interface QuestionCardProps {
   isRevealed: boolean;
   isAnswered: boolean;
   isExamMode: boolean;
+  isStudyMode?: boolean;
   onSelectOption: (optionId: string) => void;
   onConfirmAnswer: () => void;
   onNextQuestion: () => void;
+  onPreviousQuestion?: () => void;
   isLastQuestion: boolean;
+  isFirstQuestion?: boolean;
 }
 
 export default function QuestionCard({
@@ -29,10 +32,13 @@ export default function QuestionCard({
   isRevealed,
   isAnswered,
   isExamMode,
+  isStudyMode = false,
   onSelectOption,
   onConfirmAnswer,
   onNextQuestion,
+  onPreviousQuestion,
   isLastQuestion,
+  isFirstQuestion = false,
 }: QuestionCardProps) {
   // Handle both old and new question formats for correctness check
   const isCorrect =
@@ -75,7 +81,7 @@ export default function QuestionCard({
                   isCorrect={label === question.displayCorrectAnswer}
                   isRevealed={isRevealed}
                   onClick={() => onSelectOption(label)}
-                  isDisabled={isAnswered && !isExamMode}
+                  isDisabled={isStudyMode || (isAnswered && !isExamMode)}
                   isExamMode={isExamMode}
                 />
               ))
@@ -96,7 +102,7 @@ export default function QuestionCard({
                       isCorrect={index === question.correctAnswer}
                       isRevealed={isRevealed}
                       onClick={() => onSelectOption(label)}
-                      isDisabled={isAnswered && !isExamMode}
+                      isDisabled={isStudyMode || (isAnswered && !isExamMode)}
                       isExamMode={isExamMode}
                     />
                   );
@@ -112,7 +118,7 @@ export default function QuestionCard({
                     }
                     isRevealed={isRevealed}
                     onClick={() => onSelectOption(option.id)}
-                    isDisabled={isAnswered && !isExamMode}
+                    isDisabled={isStudyMode || (isAnswered && !isExamMode)}
                     isExamMode={isExamMode}
                   />
                 ))}
@@ -123,12 +129,33 @@ export default function QuestionCard({
           <FeedbackPanel
             isCorrect={isCorrect}
             explanation={question.explanation}
+            neutral={isStudyMode}
           />
         )}
 
         {/* Action Buttons */}
         <div className="flex gap-3 pt-6 border-t border-paper-line">
-          {isExamMode ? (
+          {isStudyMode ? (
+            // Study mode: nothing to confirm, just page through the material
+            <>
+              {onPreviousQuestion && (
+                <Button
+                  onClick={onPreviousQuestion}
+                  disabled={isFirstQuestion}
+                  variant="outline"
+                  className="h-10 sm:h-11 px-5 text-base font-bold bg-paper border-2 border-board text-paper-ink hover:bg-paper-2 transition-all duration-200"
+                >
+                  Previous
+                </Button>
+              )}
+              <Button
+                onClick={onNextQuestion}
+                className="flex-1 h-10 sm:h-11 text-base font-bold transition-all duration-200"
+              >
+                {isLastQuestion ? "Finish" : "Next Question"}
+              </Button>
+            </>
+          ) : isExamMode ? (
             // Exam mode: only show "Next Question" button after selecting an option
             selectedOption && (
               <Button
