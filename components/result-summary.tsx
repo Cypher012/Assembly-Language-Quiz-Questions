@@ -87,10 +87,10 @@ export default function ResultSummary({
   ];
 
   return (
-    <div className="min-h-screen board-surface p-4 sm:p-6 lg:p-8">
+    <div className="min-h-screen board-surface px-3 py-4 sm:p-6 lg:p-8">
       <div className="max-w-3xl mx-auto">
         {/* Summary Card — the graded paper handed back */}
-        <div className="paper-surface rounded-md shadow-2xl p-6 sm:p-8 pl-16 sm:pl-20 border-2 border-board mb-8 animate-in fade-in duration-500 relative overflow-hidden">
+        <div className="paper-surface rounded-md shadow-2xl p-4 sm:p-8 pl-10 sm:pl-20 border-2 border-board mb-8 animate-in fade-in duration-500 relative overflow-hidden">
           <div
             className={cn(
               "absolute top-4 right-4 sm:top-6 sm:right-8 w-20 h-20 sm:w-24 sm:h-24 rounded-full border-4 flex flex-col items-center justify-center rotate-6",
@@ -131,22 +131,22 @@ export default function ResultSummary({
             </p>
           </div>
 
-          <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 mb-8">
-            <div className="bg-paper-2 rounded-md p-4 text-center border border-paper-line">
-              <p className="text-sm text-paper-ink-muted mb-1">Score</p>
-              <p className="text-3xl font-bold font-mono tabular-nums text-paper-ink">
+          <div className="grid grid-cols-3 gap-2 sm:gap-4 mb-8">
+            <div className="bg-paper-2 rounded-md p-3 sm:p-4 text-center border border-paper-line">
+              <p className="text-xs sm:text-sm text-paper-ink-muted mb-1">Score</p>
+              <p className="text-xl sm:text-3xl font-bold font-mono tabular-nums text-paper-ink">
                 {score}/{total}
               </p>
             </div>
-            <div className="bg-paper-2 rounded-md p-4 text-center border border-paper-line">
-              <p className="text-sm text-paper-ink-muted mb-1">Percentage</p>
-              <p className="text-3xl font-bold font-mono tabular-nums text-paper-ink">
+            <div className="bg-paper-2 rounded-md p-3 sm:p-4 text-center border border-paper-line">
+              <p className="text-xs sm:text-sm text-paper-ink-muted mb-1">Percentage</p>
+              <p className="text-xl sm:text-3xl font-bold font-mono tabular-nums text-paper-ink">
                 {percentage}%
               </p>
             </div>
-            <div className="bg-paper-2 rounded-md p-4 text-center col-span-2 sm:col-span-1 border border-paper-line">
-              <p className="text-sm text-paper-ink-muted mb-1">Correct</p>
-              <p className="text-3xl font-bold font-mono tabular-nums text-chalk-sage-ink">
+            <div className="bg-paper-2 rounded-md p-3 sm:p-4 text-center border border-paper-line">
+              <p className="text-xs sm:text-sm text-paper-ink-muted mb-1">Correct</p>
+              <p className="text-xl sm:text-3xl font-bold font-mono tabular-nums text-chalk-sage-ink">
                 {score}
               </p>
             </div>
@@ -257,7 +257,7 @@ export default function ResultSummary({
               <div
                 key={answer.questionId}
                 className={cn(
-                  "paper-surface rounded-md border-2 overflow-hidden transition-all duration-200 pl-14 sm:pl-16",
+                  "paper-surface rounded-md border-2 overflow-hidden transition-all duration-200 pl-9 sm:pl-16",
                   answer.isCorrect ? "border-chalk-sage/50" : "border-chalk-coral/50",
                 )}
               >

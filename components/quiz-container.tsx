@@ -314,6 +314,14 @@ export default function QuizContainer() {
   const isLastQuestion = currentIndex === questions.length - 1;
   const isAnswered = state !== "idle";
   const isRevealed = state === "revealed" || state === "complete" || isStudyMode;
+  const showingResults = state === "complete";
+
+  // Changing question (or landing on the results) should put you at the top of
+  // the new screen, not wherever the previous question's buttons happened to
+  // leave the scroll position.
+  useEffect(() => {
+    window.scrollTo({ top: 0 });
+  }, [currentIndex, showingResults]);
 
   // Human-readable label for which chapter(s) this run covers, shown on the
   // results screen. selectedChapters (multi-chapter custom quiz or practice
@@ -623,8 +631,8 @@ export default function QuizContainer() {
 
   if (!isReady) {
     return (
-      <div className="min-h-screen board-surface p-4 sm:p-6 lg:p-8">
-        <div className="max-w-2xl mx-auto flex flex-col items-center justify-center gap-3 min-h-[50vh]">
+      <div className="min-h-screen board-surface px-3 py-4 sm:p-6 lg:p-8">
+        <div className="max-w-3xl mx-auto flex flex-col items-center justify-center gap-3 min-h-[50vh]">
           <Spinner className="size-6 text-chalk-yellow" />
           <div className="text-board-ink text-lg">Loading quiz...</div>
         </div>
@@ -651,8 +659,8 @@ export default function QuizContainer() {
   }
 
   return (
-    <div className="min-h-screen board-surface p-4 sm:p-6 lg:p-8 pb-20">
-      <div className="max-w-2xl mx-auto">
+    <div className="min-h-screen board-surface px-3 py-4 sm:p-6 lg:p-8 pb-20">
+      <div className="max-w-3xl mx-auto">
         <ProgressHeader
           current={currentIndex + 1}
           total={questions.length}

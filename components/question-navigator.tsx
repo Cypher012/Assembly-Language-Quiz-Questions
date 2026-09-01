@@ -88,7 +88,7 @@ export default function QuestionNavigator({
     >
       {/* Collapsed view - always visible */}
       <div className="px-4 py-2">
-        <div className="max-w-2xl mx-auto flex items-center justify-between gap-2">
+        <div className="max-w-3xl mx-auto flex items-center justify-between gap-2">
           {/* Hide score stats in exam mode */}
           {!hideCorrectness && (
             <div className="flex items-center gap-2 sm:gap-4 text-xs sm:text-sm min-w-0">
@@ -158,7 +158,7 @@ export default function QuestionNavigator({
           onTouchStart={(e) => e.stopPropagation()}
           onTouchMove={(e) => e.stopPropagation()}
         >
-          <div className="max-w-2xl mx-auto pt-3">
+          <div className="max-w-3xl mx-auto pt-3">
             <div
               className="max-h-32 overflow-y-auto overscroll-contain"
               style={{

@@ -50,7 +50,7 @@ export default function QuestionCard({
 
   return (
     <div className="mt-8 animate-in fade-in slide-in-from-bottom-2 duration-500">
-      <div className="paper-surface rounded-md shadow-2xl p-6 sm:p-8 pl-16 sm:pl-20 border-2 border-board">
+      <div className="paper-surface rounded-md shadow-2xl p-4 sm:p-8 pl-10 sm:pl-20 border-2 border-board">
         {/* Question Text */}
         <div className="mb-8">
           <div className="max-w-none text-xl sm:text-2xl font-bold text-paper-ink text-balance [&_code]:text-xs [&_code]:sm:text-sm [&_pre]:text-xs [&_pre]:sm:text-sm [&_pre]:my-3 [&_p]:mb-2">

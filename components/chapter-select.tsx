@@ -126,7 +126,7 @@ export default function ChapterSelect({
   const allSelected = selectedChapters.length === allChapterIds.length;
 
   return (
-    <div className="min-h-screen board-surface p-4 sm:p-6 lg:p-8">
+    <div className="min-h-screen board-surface px-3 py-4 sm:p-6 lg:p-8">
       <div className="max-w-4xl mx-auto flex flex-col min-h-[calc(100vh-2rem)] sm:min-h-[calc(100vh-3rem)] lg:min-h-[calc(100vh-4rem)]">
         {/* Back button */}
         <button
@@ -162,7 +162,7 @@ export default function ChapterSelect({
                   requestStart({ kind: "chapter", chapterId: chapter.id })
                 }
                 disabled={isEmpty}
-                className={`paper-surface rounded-md shadow-[0_10px_24px_-10px_rgba(15,20,17,0.55)] hover:shadow-[0_16px_32px_-10px_rgba(15,20,17,0.6)] hover:-translate-y-0.5 transition-all duration-200 text-left group pl-14 pr-5 py-5 sm:pl-16 sm:pr-6 sm:py-6 disabled:opacity-60 disabled:hover:shadow-[0_10px_24px_-10px_rgba(15,20,17,0.55)] disabled:hover:translate-y-0 disabled:cursor-not-allowed ${FOCUS_RING}`}
+                className={`paper-surface rounded-md shadow-[0_10px_24px_-10px_rgba(15,20,17,0.55)] hover:shadow-[0_16px_32px_-10px_rgba(15,20,17,0.6)] hover:-translate-y-0.5 transition-all duration-200 text-left group pl-9 pr-4 py-4 sm:pl-16 sm:pr-6 sm:py-6 disabled:opacity-60 disabled:hover:shadow-[0_10px_24px_-10px_rgba(15,20,17,0.55)] disabled:hover:translate-y-0 disabled:cursor-not-allowed ${FOCUS_RING}`}
               >
                 <div className="flex items-start justify-between gap-3">
                   <div>
@@ -191,7 +191,7 @@ export default function ChapterSelect({
           {/* All Chapters option */}
           <button
             onClick={() => requestStart({ kind: "chapter", chapterId: null })}
-            className={`paper-surface rounded-md shadow-[0_10px_24px_-10px_rgba(15,20,17,0.55)] hover:shadow-[0_16px_32px_-10px_rgba(15,20,17,0.6)] hover:-translate-y-0.5 transition-all duration-200 text-left group pl-14 pr-5 py-5 sm:pl-16 sm:pr-6 sm:py-6 ${FOCUS_RING}`}
+            className={`paper-surface rounded-md shadow-[0_10px_24px_-10px_rgba(15,20,17,0.55)] hover:shadow-[0_16px_32px_-10px_rgba(15,20,17,0.6)] hover:-translate-y-0.5 transition-all duration-200 text-left group pl-9 pr-4 py-4 sm:pl-16 sm:pr-6 sm:py-6 ${FOCUS_RING}`}
           >
             <div className="flex items-center justify-between gap-3">
               <div>
@@ -212,7 +212,7 @@ export default function ChapterSelect({
           {/* Custom Quiz option */}
           <button
             onClick={toggleCustomMode}
-            className={`paper-surface rounded-md shadow-[0_10px_24px_-10px_rgba(15,20,17,0.55)] hover:shadow-[0_16px_32px_-10px_rgba(15,20,17,0.6)] hover:-translate-y-0.5 transition-all duration-200 text-left group pl-14 pr-5 py-5 sm:pl-16 sm:pr-6 sm:py-6 ${FOCUS_RING}`}
+            className={`paper-surface rounded-md shadow-[0_10px_24px_-10px_rgba(15,20,17,0.55)] hover:shadow-[0_16px_32px_-10px_rgba(15,20,17,0.6)] hover:-translate-y-0.5 transition-all duration-200 text-left group pl-9 pr-4 py-4 sm:pl-16 sm:pr-6 sm:py-6 ${FOCUS_RING}`}
           >
             <div className="flex items-center justify-between gap-3">
               <div>

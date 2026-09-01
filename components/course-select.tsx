@@ -16,7 +16,7 @@ export default function CourseSelect({
   onSelectCourse,
 }: CourseSelectProps) {
   return (
-    <div className="min-h-screen board-surface p-4 sm:p-6 lg:p-8">
+    <div className="min-h-screen board-surface px-3 py-4 sm:p-6 lg:p-8">
       <div className="max-w-7xl mx-auto flex flex-col min-h-[calc(100vh-2rem)] sm:min-h-[calc(100vh-3rem)] lg:min-h-[calc(100vh-4rem)]">
         <div className="flex items-center gap-2 mb-8 sm:mb-10">
           <span className="font-display text-xl text-chalk-yellow -rotate-2 inline-block">
@@ -42,7 +42,7 @@ export default function CourseSelect({
             <button
               key={course.id}
               onClick={() => onSelectCourse(course.id)}
-              className={`paper-surface rounded-md shadow-[0_10px_24px_-10px_rgba(15,20,17,0.55)] hover:shadow-[0_16px_32px_-10px_rgba(15,20,17,0.6)] hover:-translate-y-0.5 transition-all duration-200 text-left group pl-14 pr-5 py-5 sm:pl-16 sm:pr-6 sm:py-6 ${FOCUS_RING}`}
+              className={`paper-surface rounded-md shadow-[0_10px_24px_-10px_rgba(15,20,17,0.55)] hover:shadow-[0_16px_32px_-10px_rgba(15,20,17,0.6)] hover:-translate-y-0.5 transition-all duration-200 text-left group pl-9 pr-4 py-4 sm:pl-16 sm:pr-6 sm:py-6 ${FOCUS_RING}`}
             >
               <div className="flex flex-col h-full">
                 <div className="flex items-start justify-between mb-3">
