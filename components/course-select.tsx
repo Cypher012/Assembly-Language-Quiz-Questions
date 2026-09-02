@@ -2,6 +2,7 @@
 
 import { Course } from "@/lib/courses";
 import { ChevronRight } from "lucide-react";
+import ThemeToggle from "./theme-toggle";
 
 const FOCUS_RING =
   "outline-none focus-visible:ring-[3px] focus-visible:ring-chalk-yellow/70 focus-visible:ring-offset-2 focus-visible:ring-offset-board";
@@ -25,6 +26,9 @@ export default function CourseSelect({
           <span className="text-board-ink-muted text-sm">
             &mdash; practice, together
           </span>
+          <div className="ml-auto">
+            <ThemeToggle />
+          </div>
         </div>
 
         <div className="text-center mb-10 sm:mb-12">

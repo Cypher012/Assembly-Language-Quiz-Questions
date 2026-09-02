@@ -6,6 +6,7 @@ import { isQuestionV2, isShuffledQuestion } from "@/lib/quiz-types";
 import { Button } from "@/components/ui/button";
 import { ChevronDown } from "lucide-react";
 import { cn } from "@/lib/utils";
+import ThemeToggle from "./theme-toggle";
 import ReactMarkdown from "react-markdown";
 import remarkMath from "remark-math";
 import rehypeKatex from "rehype-katex";
@@ -89,6 +90,10 @@ export default function ResultSummary({
   return (
     <div className="min-h-screen board-surface px-3 py-4 sm:p-6 lg:p-8">
       <div className="max-w-3xl mx-auto">
+        <div className="flex justify-end mb-3">
+          <ThemeToggle />
+        </div>
+
         {/* Summary Card — the graded paper handed back */}
         <div className="paper-surface rounded-md shadow-2xl p-4 sm:p-8 pl-10 sm:pl-20 border-2 border-board mb-8 animate-in fade-in duration-500 relative overflow-hidden">
           <div

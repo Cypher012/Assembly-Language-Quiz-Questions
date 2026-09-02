@@ -1,6 +1,8 @@
 @import 'tailwindcss';
 @import 'tw-animate-css';
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 /*
   QuizSpark — Chalkboard & Exercise Book
   The lecture hall itself as the interface. Chalkboard chrome carries
@@ -24,6 +26,7 @@
   --paper-line: #ddd0ac;
   --rule-blue: #9fb8d4;
   --rule-red: #bd5445;
+  --rule-line: rgba(159, 184, 212, 0.32);
 
   /* Chalk accents */
   --chalk-yellow: #e3b431;
@@ -69,6 +72,35 @@
   --sidebar-accent-foreground: var(--board-ink);
   --sidebar-border: var(--board-line);
   --sidebar-ring: var(--chalk-yellow);
+}
+
+/*
+  Night desk: the lamp is off. Board sinks deeper, the exercise-book paper
+  becomes warm dark stock with off-white ink -- the paper/board separation
+  and the chalk accents survive, the page just stops glaring.
+*/
+.dark {
+  --board: #141c18;
+  --board-2: #19231e;
+  --board-ink: #dee3dc;
+  --board-ink-muted: #919e94;
+  --board-line: #2d3a33;
+
+  --paper: #262320;
+  --paper-2: #2f2b27;
+  --paper-ink: #ece6d8;
+  --paper-ink-muted: #a89e8d;
+  --paper-line: #443e36;
+  --rule-line: rgba(159, 184, 212, 0.13);
+  --rule-red: #9d4b3e;
+
+  /* Sage/coral "ink" are only ever text on paper or a 10-15% tint, never on a
+     solid fill, so they flip light. chalk-yellow-ink is always text ON solid
+     chalk-yellow, so it must stay dark. */
+  --chalk-sage-ink: #8fd3ab;
+  --chalk-coral-ink: #f0a68f;
+
+  --destructive-foreground: #fbf1ec;
 }
 
 @theme inline {
@@ -167,8 +199,8 @@
         to bottom,
         transparent 0px,
         transparent 27px,
-        rgba(159, 184, 212, 0.32) 27px,
-        rgba(159, 184, 212, 0.32) 28px
+        var(--rule-line) 27px,
+        var(--rule-line) 28px
       );
     background-repeat: no-repeat, repeat-y;
     background-size:

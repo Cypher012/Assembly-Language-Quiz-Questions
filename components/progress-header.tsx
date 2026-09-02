@@ -21,6 +21,7 @@ import {
   Keyboard,
   Calculator as CalculatorIcon,
 } from "lucide-react";
+import ThemeToggle from "./theme-toggle";
 
 const FOCUS_RING =
   "outline-none focus-visible:ring-[3px] focus-visible:ring-chalk-yellow/70 focus-visible:ring-offset-2 focus-visible:ring-offset-board";
@@ -91,6 +92,7 @@ export default function ProgressHeader({
         </div>
 
         <div className="flex items-center gap-3">
+          <ThemeToggle />
           {onShowCalculator && (
             <button
               onClick={onShowCalculator}

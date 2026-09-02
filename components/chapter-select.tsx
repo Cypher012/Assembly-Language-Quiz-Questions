@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button";
 import PracticeExamModal from "./practice-exam-modal";
 import ShufflePromptModal from "./shuffle-prompt-modal";
 import type { ExamConfig } from "@/lib/quiz-types";
+import ThemeToggle from "./theme-toggle";
 import {
   ChevronLeft,
   ChevronRight,
@@ -129,13 +130,16 @@ export default function ChapterSelect({
     <div className="min-h-screen board-surface px-3 py-4 sm:p-6 lg:p-8">
       <div className="max-w-4xl mx-auto flex flex-col min-h-[calc(100vh-2rem)] sm:min-h-[calc(100vh-3rem)] lg:min-h-[calc(100vh-4rem)]">
         {/* Back button */}
-        <button
-          onClick={onBackToCourses}
-          className={`mb-6 flex items-center text-board-ink-muted hover:text-chalk-yellow transition-colors group rounded-lg self-start ${FOCUS_RING}`}
-        >
-          <ChevronLeft className="w-5 h-5 mr-2 group-hover:-translate-x-1 transition-transform" />
-          Back to Courses
-        </button>
+        <div className="mb-6 flex items-center justify-between gap-3">
+          <button
+            onClick={onBackToCourses}
+            className={`flex items-center text-board-ink-muted hover:text-chalk-yellow transition-colors group rounded-lg ${FOCUS_RING}`}
+          >
+            <ChevronLeft className="w-5 h-5 mr-2 group-hover:-translate-x-1 transition-transform" />
+            Back to Courses
+          </button>
+          <ThemeToggle />
+        </div>
 
         <div className="text-center mb-8">
           <span className="inline-flex items-center px-2.5 py-1 text-[11px] font-bold tracking-wide bg-chalk-yellow text-chalk-yellow-ink rounded-sm -rotate-1 mb-4">
