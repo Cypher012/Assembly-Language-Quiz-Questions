@@ -83,13 +83,15 @@
   --board: #141c18;
   --board-2: #19231e;
   --board-ink: #dee3dc;
-  --board-ink-muted: #919e94;
+  --board-ink-muted: #a7b3a9;
   --board-line: #2d3a33;
 
   --paper: #262320;
   --paper-2: #2f2b27;
   --paper-ink: #ece6d8;
-  --paper-ink-muted: #a89e8d;
+  /* Explanation bodies are long runs of 14px text; the light-mode muted
+     value only cleared ~5:1 here, which reads washed out. */
+  --paper-ink-muted: #c9c0b0;
   --paper-line: #443e36;
   --rule-line: rgba(159, 184, 212, 0.13);
   --rule-red: #9d4b3e;
